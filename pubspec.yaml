@@ -71,7 +71,11 @@ flutter:
         - asset: assets/fonts/Nokora-Bold.ttf
           weight: 500
         - asset: assets/fonts/Nokora-Regular.ttf
-          weight: 300  # тут вызов опеределенного шрифта в жирности шрифтов
+          weight: 300
+      # тут вызов опеределенного шрифта в жирности шрифтов
+    - family: MyFlutterApp
+      fonts:
+         - asset: assets/fonts/MyFlutterApp.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
