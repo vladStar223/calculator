@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import 'package:calculator/theme.dart';
 import 'package:flutter/material.dart';
-=======
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
->>>>>>> a7fdccb (layout created)
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -14,8 +11,8 @@ void main() {
     create: (BuildContext context) {},
     child: ResponsiveApp(
       builder: (context) => MaterialApp(
-        // код для создание переключения между монолитными виджетами
-        // дальше   инцилизируется библиотеки для передачи данных
+// код для создание переключения между монолитными виджетами
+// дальше   инцилизируется библиотеки для передачи данных
 
         initialRoute: '/',
         routes: {
@@ -31,19 +28,9 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-<<<<<<< HEAD
-    return Scaffold(
-      body: Center(
-        child: Text(
-          "dd4444",
-          style: TextStyle(
-              fontFamily: "Nokora",
-              color: AppColors().color,
-              fontWeight: FontWeight.w300),
-=======
-    // To make this screen full screen.
-    // It will hide status bar and notch.
+// TODO: implement build
+// To make this screen full screen.
+// It will hide status bar and notch.
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     return MultiProvider(
       providers: [
@@ -51,7 +38,7 @@ class Main extends StatelessWidget {
       ],
       child: Scaffold(
         drawerEnableOpenDragGesture: false,
-        //backgroundColor: AppColors().fon,
+//backgroundColor: AppColors().fon,
         drawer: Drawer(
             child: new DrawerHeader(
           child: const Text("Заголовок меню"),
@@ -383,14 +370,10 @@ class Main extends StatelessWidget {
               ),
             ),
           ],
->>>>>>> a7fdccb (layout created)
         ),
       ),
     );
   }
 }
-<<<<<<< HEAD
-=======
 
 class peter1 extends ChangeNotifier {}
->>>>>>> a7fdccb (layout created)
