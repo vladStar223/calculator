@@ -34,7 +34,8 @@ class Main extends StatelessWidget {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     return MultiProvider(
       providers: [
-        // Provider<peter1>(create: (_) => peter1()), я его закоментил
+        Provider<peter1_BBOD_ELEVENTOB>(
+            create: (_) => peter1_BBOD_ELEVENTOB()), //добавь второй класс
       ],
       child: Scaffold(
         drawerEnableOpenDragGesture: false,
@@ -375,6 +376,8 @@ class Main extends StatelessWidget {
     );
   }
 }
+
+class peter1 extends ChangeNotifier {}
 
 class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0; // переменные
@@ -881,3 +884,5 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
 //идет работа
   }
 }
+
+class peter1_PEWEHUE extends ChangeNotifier {}
