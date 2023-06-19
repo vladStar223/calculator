@@ -380,7 +380,10 @@ class Main extends StatelessWidget {
 class peter1 extends ChangeNotifier {}
 
 class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
-  double a = 0.0, b = 0.0, c = 0.0, d = 0.0; // переменные
+  double a = 0.0,
+      b = 0.0,
+      c = 0.0,
+      d = 0.0; // переменные
   String a_text = '',
       b_text = '',
       c_text = '',
@@ -417,448 +420,55 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
     c_trigger = false;
     d_trigger = true;
   }
+
 // функции триггера
 
-  void One_press() {
+  void Nums_press(String enternumber) {
     if (a_trigger) {
       if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '1';
+        a_text += enternumber;
       } else if (a_text.length < 7 &&
           (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '1';
+        a_text += enternumber;
       } else if (a_text.length < 8 &&
           (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '1';
+        a_text += enternumber;
       }
     } else if (b_trigger) {
       if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '1';
+        b_text += enternumber;
       } else if (b_text.length < 7 &&
           (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '1';
+        b_text += enternumber;
       } else if (b_text.length < 8 &&
           (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '1';
+        b_text += enternumber;
       }
     } else if (c_trigger) {
       if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '1';
+        c_text += enternumber;
       } else if (c_text.length < 7 &&
           (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '1';
+        c_text += enternumber;
       } else if (c_text.length < 8 &&
           (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '1';
+        c_text += enternumber;
       }
     } else if (d_trigger) {
       if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '1';
+        d_text += enternumber;
       } else if (d_text.length < 7 &&
           (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '1';
+        d_text += enternumber;
       } else if (d_text.length < 8 &&
           (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '1';
+        d_text += enternumber;
       }
     }
   }
 
-  void Two_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '2';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '2';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '2';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '2';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '2';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '2';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '2';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '2';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '2';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '2';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '2';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '2';
-      }
-    }
-  }
-
-  void Three_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '3';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '3';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '3';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '3';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '3';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '3';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '3';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '3';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '3';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '3';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '3';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '3';
-      }
-    }
-  }
-
-  void Four_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '4';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '4';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '4';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '4';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '4';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '4';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '4';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '4';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '4';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '4';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '4';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '4';
-      }
-    }
-  }
-
-  void Five_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '5';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '5';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '5';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '5';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '5';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '5';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '5';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '5';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '5';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '5';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '5';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '5';
-      }
-    }
-  }
-
-  void Six_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '6';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '6';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '6';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '6';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '6';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '6';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '6';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '6';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '6';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '6';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '6';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '6';
-      }
-    }
-  }
-
-  void Seven_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '7';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '7';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '7';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '7';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '7';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '7';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '7';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '7';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '7';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '7';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '7';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '7';
-      }
-    }
-  }
-
-  void Eight_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '8';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '8';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '8';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '8';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '8';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '8';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '8';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '8';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '8';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '8';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '8';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '8';
-      }
-    }
-  }
-
-  void Nine_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '9';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '9';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '9';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '9';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '9';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '9';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '9';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '9';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '9';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '9';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '9';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '9';
-      }
-    }
-  }
-
-  void Null_press() {
-    if (a_trigger) {
-      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += '0';
-      } else if (a_text.length < 7 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += '0';
-      } else if (a_text.length < 8 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += '0';
-      }
-    } else if (b_trigger) {
-      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
-        b_text += '0';
-      } else if (b_text.length < 7 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += '0';
-      } else if (b_text.length < 8 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += '0';
-      }
-    } else if (c_trigger) {
-      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
-        c_text += '0';
-      } else if (c_text.length < 7 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += '0';
-      } else if (c_text.length < 8 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += '0';
-      }
-    } else if (d_trigger) {
-      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
-        d_text += '0';
-      } else if (d_text.length < 7 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += '0';
-      } else if (d_text.length < 8 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += '0';
-      }
-    }
-  }
   // ввод цифр идет при условии что текущая длина символов <6 (минус и запятая не в счет)
+  // при вызове onPressed надо передать значение цифры через анонимную функцию
 
   void Delete_press() {
     if (a_trigger) {
@@ -881,8 +491,55 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
   }
 
   void Minus_press() {
-//идет работа
+    if (a_trigger) {
+      if (a_text.length < 8 && !a_text.contains('-')) {
+        a_text = '-' + a_text;
+      } else if (a_text.contains('-')) {
+        a_text = a_text.substring(1, a_text.length);
+      }
+    }
+    else if (b_trigger) {
+      if (b_text.length < 8 && !b_text.contains('-')) {
+        b_text = '-' + b_text;
+      } else if (b_text.contains('-')) {
+        b_text = b_text.substring(1, b_text.length);
+      }
+    } else if (c_trigger) {
+      if (c_text.length < 8 && !c_text.contains('-')) {
+        c_text = '-' + c_text;
+      } else if (c_text.contains('-')) {
+        c_text = c_text.substring(1, c_text.length);
+      }
+    } else if (d_trigger) {
+      if (d_text.length < 8 && !d_text.contains('-')) {
+        d_text = '-' + d_text;
+      } else if (d_text.contains('-')) {
+        d_text = d_text.substring(1, d_text.length);
+      }
+    }
+
   }
+
+  void Comma_press() {
+    if (a_trigger) {
+      if (!a_text.contains('.')) {
+        a_text += '.';
+      }
+    } else if (b_trigger) {
+      if (!b_text.contains('.')) {
+        b_text += '.';
+      }
+    } else if (c_trigger) {
+      if (!c_text.contains('.')) {
+        c_text += '.';
+      }
+    } else if (d_trigger) {
+      if (!d_text.contains('.')) {
+        d_text += '.';
+      }
+    }
+  }
+
 }
 
 class peter1_PEWEHUE extends ChangeNotifier {}
