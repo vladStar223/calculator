@@ -1010,8 +1010,151 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
       } else if (d_text.contains('-')) {
         d_text = d_text.substring(1, d_text.length);
       }
+      notifyListeners();
     }
-    notifyListeners();
+    
+class peter1 extends ChangeNotifier {}
+
+class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
+  double a = 0.0,
+      b = 0.0,
+      c = 0.0,
+      d = 0.0; // переменные
+  String a_text = '',
+      b_text = '',
+      c_text = '',
+      d_text = ''; // текст с полей ввода для переменных
+  bool a_trigger = false,
+      c_trigger = false,
+      b_trigger = false,
+      d_trigger = false; // триггеры коэффицентов
+
+  void A_trigger() {
+    a_trigger = true;
+    b_trigger = false;
+    c_trigger = false;
+    d_trigger = false;
+  }
+
+  void B_trigger() {
+    a_trigger = false;
+    b_trigger = true;
+    c_trigger = false;
+    d_trigger = false;
+  }
+
+  void C_trigger() {
+    a_trigger = false;
+    b_trigger = false;
+    c_trigger = true;
+    d_trigger = false;
+  }
+
+  void D_trigger() {
+    a_trigger = false;
+    b_trigger = false;
+    c_trigger = false;
+    d_trigger = true;
+  }
+
+// функции триггера
+
+  void Nums_press(String enternumber) {
+    if (a_trigger) {
+      if (a_text.length < 6 && !a_text.contains('.') && !a_text.contains('-')) {
+        a_text += enternumber;
+      } else if (a_text.length < 7 &&
+          (a_text.contains('.') || a_text.contains('-'))) {
+        a_text += enternumber;
+      } else if (a_text.length < 8 &&
+          (a_text.contains('.') && a_text.contains('-'))) {
+        a_text += enternumber;
+      }
+    } else if (b_trigger) {
+      if (b_text.length < 6 && !b_text.contains('.') && !b_text.contains('-')) {
+        b_text += enternumber;
+      } else if (b_text.length < 7 &&
+          (b_text.contains('.') || b_text.contains('-'))) {
+        b_text += enternumber;
+      } else if (b_text.length < 8 &&
+          (b_text.contains('.') && b_text.contains('-'))) {
+        b_text += enternumber;
+      }
+    } else if (c_trigger) {
+      if (c_text.length < 6 && !c_text.contains('.') && !c_text.contains('-')) {
+        c_text += enternumber;
+      } else if (c_text.length < 7 &&
+          (c_text.contains('.') || c_text.contains('-'))) {
+        c_text += enternumber;
+      } else if (c_text.length < 8 &&
+          (c_text.contains('.') && c_text.contains('-'))) {
+        c_text += enternumber;
+      }
+    } else if (d_trigger) {
+      if (d_text.length < 6 && !d_text.contains('.') && !d_text.contains('-')) {
+        d_text += enternumber;
+      } else if (d_text.length < 7 &&
+          (d_text.contains('.') || d_text.contains('-'))) {
+        d_text += enternumber;
+      } else if (d_text.length < 8 &&
+          (d_text.contains('.') && d_text.contains('-'))) {
+        d_text += enternumber;
+      }
+    }
+  }
+
+  // ввод цифр идет при условии что текущая длина символов <6 (минус и запятая не в счет)
+  // при вызове onPressed надо передать значение цифры через анонимную функцию
+
+  void Delete_press() {
+    if (a_trigger) {
+      if (a_text.isNotEmpty) {
+        a_text = a_text.substring(0, a_text.length - 1);
+      }
+    } else if (b_trigger) {
+      if (b_text.isNotEmpty) {
+        b_text = b_text.substring(0, b_text.length - 1);
+      }
+    } else if (c_trigger) {
+      if (c_text.isNotEmpty) {
+        c_text = c_text.substring(0, c_text.length - 1);
+      }
+    } else if (d_trigger) {
+      if (d_text.isNotEmpty) {
+        d_text = d_text.substring(0, d_text.length - 1);
+      }
+    }
+  }
+
+  void Minus_press() {
+    if (a_trigger) {
+      if (a_text.length < 8 && !a_text.contains('-')) {
+        a_text = '-' + a_text;
+      } else if (a_text.contains('-')) {
+        a_text = a_text.substring(1, a_text.length);
+      }
+    }
+    else if (b_trigger) {
+      if (b_text.length < 8 && !b_text.contains('-')) {
+        b_text = '-' + b_text;
+      } else if (b_text.contains('-')) {
+        b_text = b_text.substring(1, b_text.length);
+      }
+    } else if (c_trigger) {
+      if (c_text.length < 8 && !c_text.contains('-')) {
+        c_text = '-' + c_text;
+      } else if (c_text.contains('-')) {
+        c_text = c_text.substring(1, c_text.length);
+      }
+    } else if (d_trigger) {
+      if (d_text.length < 8 && !d_text.contains('-')) {
+        d_text = '-' + d_text;
+      } else if (d_text.contains('-')) {
+        d_text = d_text.substring(1, d_text.length);
+      }
+    }
+
+
   }
 
   void Comma_press() {
@@ -1032,9 +1175,9 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
         d_text += '.';
       }
     }
+    notifyListeners();
   }
 
-  notifyListeners();
 }
 
 class peter1_PEWEHUE extends ChangeNotifier {}
