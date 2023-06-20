@@ -287,6 +287,585 @@ class _quadratic_equationState extends State<quadratic_equation> {
       ),
     );
     throw UnimplementedError();
+
+  }
+}
+
+class keyboard extends StatefulWidget {
+  @override
+  State<keyboard> createState() => _keyboardState();
+}
+
+class _keyboardState extends State<keyboard> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: 10.sh,
+              width: 17.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "AC",
+                  style: TextStyle(
+                      color: AppColors().orange,
+                      fontSize: 5.sw,
+                      fontFamily: "Nokora"),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("7");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "7",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("8");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "8",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("9");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "9",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 8.sh,
+              width: 17.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Delete_press();
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "Del",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 5.5.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 0.4.sh,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: 10.sh,
+              width: 17.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "x^4",
+                  style: TextStyle(
+                      color: AppColors().orange,
+                      fontSize: 5.sw,
+                      fontFamily: "Nokora"),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("4");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "4",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("5");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "5",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("6");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "6",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 8.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Minus_press();
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "+",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 14.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 0.4.sh,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: 10.sh,
+              width: 17.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "x^3",
+                  style: TextStyle(
+                      color: AppColors().orange,
+                      fontSize: 5.sw,
+                      fontFamily: "Nokora"),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("1");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "1",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("2");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "2",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("3");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "3",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 8.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Minus_press();
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "-",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 14.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 0.4.sh,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: 10.sh,
+              width: 17.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Text(
+                  textAlign: TextAlign.center,
+                  "x^2",
+                  style: TextStyle(
+                      color: AppColors().orange,
+                      fontSize: 5.sw,
+                      fontFamily: "Nokora"),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "e",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("0");
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "0",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 10.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().black,
+                shape: BoxShape.circle,
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: AppColors().black,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    ".",
+                    style: TextStyle(
+                        color: AppColors().orange,
+                        fontSize: 8.sw,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 9.sh,
+              width: 16.sw,
+              decoration: BoxDecoration(
+                color: AppColors().orange,
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  backgroundColor: AppColors().orange,
+                  animationDuration: const Duration(milliseconds: 2500),
+                ),
+                child: Center(
+                  child: Text(
+                    "=",
+                    style: TextStyle(
+                        color: AppColors().fon,
+                        fontSize: 15.sw,
+                        fontFamily: "Nokora",
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
 
@@ -912,7 +1491,49 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
     c_trigger = false;
     d_trigger = true;
     notifyListeners();
+
   }
+}
+
+
+class peter1 extends ChangeNotifier {}
+
+class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
+  @override
+  double a = 0.0, b = 0.0, c = 0.0, d = 0.0; // переменные
+  String a_text = '0',
+      b_text = '0',
+      c_text = '0',
+      d_text = '0'; // текст с полей ввода для переменных
+  bool a_trigger = false,
+      c_trigger = false,
+      b_trigger = false,
+      d_trigger = false; // триггеры коэффицентов
+
+  void A_trigger() {
+    a_trigger = true;
+    b_trigger = false;
+    c_trigger = false;
+    d_trigger = false;
+    notifyListeners();
+  }
+
+  void B_trigger() {
+    a_trigger = false;
+    b_trigger = true;
+    c_trigger = false;
+    d_trigger = false;
+    notifyListeners();
+  }
+
+  void C_trigger() {
+    a_trigger = false;
+    b_trigger = false;
+    c_trigger = true;
+    d_trigger = false;
+    notifyListeners();
+  }
+
 
 // функции триггера
 
@@ -1055,6 +1676,7 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
     b_trigger = false;
     c_trigger = false;
     d_trigger = true;
+    notifyListeners();
   }
 
 // функции триггера
@@ -1101,6 +1723,7 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
         d_text += enternumber;
       }
     }
+    notifyListeners();
   }
 
   // ввод цифр идет при условии что текущая длина символов <6 (минус и запятая не в счет)
@@ -1124,6 +1747,7 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
         d_text = d_text.substring(0, d_text.length - 1);
       }
     }
+    notifyListeners();
   }
 
   void Minus_press() {
@@ -1134,7 +1758,7 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
         a_text = a_text.substring(1, a_text.length);
       }
     }
-    else if (b_trigger) {
+    else if (b_trigger) {r
       if (b_text.length < 8 && !b_text.contains('-')) {
         b_text = '-' + b_text;
       } else if (b_text.contains('-')) {
@@ -1153,7 +1777,7 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
         d_text = d_text.substring(1, d_text.length);
       }
     }
-
+    notifyListeners();
 
   }
 
@@ -1175,9 +1799,7 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
         d_text += '.';
       }
     }
-    notifyListeners();
   }
-
 }
 
 class peter1_PEWEHUE extends ChangeNotifier {}
