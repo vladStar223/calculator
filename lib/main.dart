@@ -42,7 +42,8 @@ class _MainState extends State<Main> {
     const displayName = "displayName";
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => peter1_BBOD_ELEVENTOB())
+        ChangeNotifierProvider(create: (context) => peter1_BBOD_ELEVENTOB()),
+        ChangeNotifierProvider(create: (context) => choose_button()),
       ],
       child: Scaffold(
         drawerEnableOpenDragGesture: false,
@@ -82,8 +83,7 @@ class _MainState extends State<Main> {
             ),
             Column(
               children: [
-                SizedBox(
-                    height: 50.sh, width: 95.sw, child: quadratic_equation()),
+                SizedBox(height: 50.sh, width: 95.sw, child: cubic_equation()),
                 SizedBox(height: 43.8.sh, width: 95.sw, child: keyboard()),
               ],
             ),
@@ -290,6 +290,249 @@ class _quadratic_equationState extends State<quadratic_equation> {
   }
 }
 
+class cubic_equation extends StatefulWidget {
+  const cubic_equation({super.key});
+
+  @override
+  State<cubic_equation> createState() => _cubic_equationState();
+}
+
+class _cubic_equationState extends State<cubic_equation> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors().black,
+        borderRadius: BorderRadius.circular(45),
+      ),
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Center(
+                  child: Container(
+                    width: 75.sw,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: AppColors().white,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "ax^3 + bx^2 + cx + d",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            fontSize: 30,
+                            fontWeight: FontWeight.w200,
+                            color: AppColors().orange),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Text(
+                  "a = ",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontFamily: "Nokora",
+                      color: AppColors().orange),
+                ),
+                Center(
+                  child: Center(
+                    child: Container(
+                      width: 53.sw,
+                      height: 5.1.sh,
+                      decoration: BoxDecoration(
+                        color: AppColors().white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ))),
+                        onPressed: () {
+                          context.read<peter1_BBOD_ELEVENTOB>().A_trigger();
+                        },
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            Provider.of<peter1_BBOD_ELEVENTOB>(context).a_text,
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                                color: AppColors().orange,
+                                fontSize: 26,
+                                fontFamily: "Nokora",
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              children: [
+                Text(
+                  "b = ",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontFamily: "Nokora",
+                      color: AppColors().orange),
+                ),
+                Center(
+                  child: Center(
+                    child: Container(
+                      width: 53.sw,
+                      height: 5.1.sh,
+                      decoration: BoxDecoration(
+                        color: AppColors().white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ))),
+                        onPressed: () {
+                          context.read<peter1_BBOD_ELEVENTOB>().B_trigger();
+                        },
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            textAlign: TextAlign.right,
+                            Provider.of<peter1_BBOD_ELEVENTOB>(context).b_text,
+                            style: TextStyle(
+                                color: AppColors().orange,
+                                fontSize: 26,
+                                fontFamily: "Nokora",
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              children: [
+                Text(
+                  "c = ",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontFamily: "Nokora",
+                      color: AppColors().orange),
+                ),
+                Center(
+                  child: Center(
+                    child: Container(
+                      width: 53.8.sw,
+                      height: 5.1.sh,
+                      decoration: BoxDecoration(
+                        color: AppColors().white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ))),
+                        onPressed: () {
+                          context.read<peter1_BBOD_ELEVENTOB>().C_trigger();
+                        },
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            textAlign: TextAlign.right,
+                            Provider.of<peter1_BBOD_ELEVENTOB>(context).c_text,
+                            style: TextStyle(
+                                color: AppColors().orange,
+                                fontSize: 26,
+                                fontFamily: "Nokora",
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Row(
+              children: [
+                Text(
+                  "d = ",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontFamily: "Nokora",
+                      color: AppColors().orange),
+                ),
+                Center(
+                  child: Center(
+                    child: Container(
+                      width: 53.8.sw,
+                      height: 5.1.sh,
+                      decoration: BoxDecoration(
+                        color: AppColors().white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ))),
+                        onPressed: () {
+                          context.read<peter1_BBOD_ELEVENTOB>().D_trigger();
+                        },
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            textAlign: TextAlign.right,
+                            Provider.of<peter1_BBOD_ELEVENTOB>(context).d_text,
+                            style: TextStyle(
+                                color: AppColors().orange,
+                                fontSize: 26,
+                                fontFamily: "Nokora",
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class keyboard extends StatefulWidget {
   @override
   State<keyboard> createState() => _keyboardState();
@@ -410,20 +653,18 @@ class _keyboardState extends State<keyboard> {
               ),
             ),
             Container(
-              height: 8.sh,
-              width: 17.sw,
+              height: 10.sh,
+              width: 16.sw,
               decoration: BoxDecoration(
                 color: AppColors().black,
-                borderRadius: BorderRadius.circular(20),
+                shape: BoxShape.circle,
               ),
               child: ElevatedButton(
                 onPressed: () {
                   context.read<peter1_BBOD_ELEVENTOB>().Delete_press();
                 },
                 style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+                  shape: const CircleBorder(),
                   backgroundColor: AppColors().black,
                   animationDuration: const Duration(milliseconds: 2500),
                 ),
@@ -432,7 +673,7 @@ class _keyboardState extends State<keyboard> {
                     "Del",
                     style: TextStyle(
                         color: AppColors().orange,
-                        fontSize: 5.5.sw,
+                        fontSize: 5.1.sw,
                         fontFamily: "Nokora"),
                   ),
                 ),
@@ -446,15 +687,19 @@ class _keyboardState extends State<keyboard> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
+            AnimatedContainer(
               height: 10.sh,
               width: 17.sw,
               decoration: BoxDecoration(
-                color: AppColors().black,
+                color: Provider.of<choose_button>(context, listen: true)
+                    .color_button,
                 shape: BoxShape.circle,
               ),
+              duration: Duration(microseconds: 300),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<choose_button>().change_color();
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   backgroundColor: AppColors().black,
@@ -556,15 +801,15 @@ class _keyboardState extends State<keyboard> {
               width: 16.sw,
               decoration: BoxDecoration(
                 color: AppColors().black,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(30),
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Minus_press();
+                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                   backgroundColor: AppColors().black,
                   animationDuration: const Duration(milliseconds: 2500),
@@ -698,15 +943,15 @@ class _keyboardState extends State<keyboard> {
               width: 16.sw,
               decoration: BoxDecoration(
                 color: AppColors().black,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(100),
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Minus_press();
+                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(100),
                   ),
                   backgroundColor: AppColors().black,
                   animationDuration: const Duration(milliseconds: 2500),
@@ -716,7 +961,7 @@ class _keyboardState extends State<keyboard> {
                     "-",
                     style: TextStyle(
                         color: AppColors().orange,
-                        fontSize: 14.sw,
+                        fontSize: 13.sw,
                         fontFamily: "Nokora"),
                   ),
                 ),
@@ -834,29 +1079,30 @@ class _keyboardState extends State<keyboard> {
               ),
             ),
             Container(
-              height: 9.sh,
+              height: 8.sh,
               width: 16.sw,
               decoration: BoxDecoration(
-                color: AppColors().orange,
-                borderRadius: BorderRadius.circular(25),
+                color: AppColors().black,
+                borderRadius: BorderRadius.circular(20),
               ),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  backgroundColor: AppColors().orange,
+                  backgroundColor: AppColors().black,
                   animationDuration: const Duration(milliseconds: 2500),
                 ),
                 child: Center(
                   child: Text(
                     "=",
                     style: TextStyle(
-                        color: AppColors().fon,
-                        fontSize: 15.sw,
-                        fontFamily: "Nokora",
-                        fontWeight: FontWeight.w300),
+                        color: AppColors().orange,
+                        fontSize: 14.sw,
+                        fontFamily: "Nokora"),
                   ),
                 ),
               ),
@@ -868,7 +1114,19 @@ class _keyboardState extends State<keyboard> {
   }
 }
 
-class peter1 extends ChangeNotifier {}
+class choose_button extends ChangeNotifier {
+  Color _color_button1 = AppColors().black;
+  Color _color_button2 = AppColors().white;
+  Color color_button = AppColors().black;
+  void change_color() {
+    if (color_button == _color_button1) {
+      color_button = _color_button2;
+    } else {
+      color_button = _color_button1;
+    }
+    notifyListeners();
+  }
+}
 
 class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
   @override
