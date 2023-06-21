@@ -545,6 +545,7 @@ class _keyboardState extends State<keyboard> {
     return Column(
       children: [
         Row(
+          // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
@@ -678,7 +679,7 @@ class _keyboardState extends State<keyboard> {
                   ),
                 ),
               ),
-            ),
+            ), //нужна анимация кнопки в провайдере есть цвет . нужно чтобы былол плавно
           ],
         ),
         SizedBox(
@@ -687,23 +688,22 @@ class _keyboardState extends State<keyboard> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            AnimatedContainer(
+            Container(
               height: 10.sh,
               width: 17.sw,
-              decoration: BoxDecoration(
-                color: Provider.of<choose_button>(context, listen: true)
-                    .color_button,
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
               ),
-              duration: Duration(microseconds: 300),
               child: ElevatedButton(
                 onPressed: () {
                   context.read<choose_button>().change_color();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
-                  backgroundColor: AppColors().black,
-                  animationDuration: const Duration(milliseconds: 2500),
+                  backgroundColor:
+                      Provider.of<choose_button>(context, listen: true)
+                          .color_button,
+                  animationDuration: const Duration(milliseconds: 300),
                 ),
                 child: Text(
                   textAlign: TextAlign.center,
@@ -1126,7 +1126,7 @@ class choose_button extends ChangeNotifier {
     }
     notifyListeners();
   }
-}
+} //класс который отвечает за  смену цвета в кнопке
 
 class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
   @override
