@@ -51,9 +51,9 @@ class _MainState extends State<Main> {
         key: scaffoldKey,
         drawer: Drawer(
             child: new DrawerHeader(
-          child: const Text("Заголовок меню"),
-          decoration: BoxDecoration(color: Colors.green),
-        )),
+              child: const Text("Заголовок меню"),
+              decoration: BoxDecoration(color: Colors.green),
+            )),
         body: Column(
           children: [
             Row(
@@ -84,12 +84,12 @@ class _MainState extends State<Main> {
             Column(
               children: [
                 Stack(
-            children: [
-              first_animated_screen(),
-              second_animated_screen(),
-              third_animated_screen(),
-              resuilt_animated_screen(),
-            ], //АНИМАЦИИ
+                  children: [
+                    first_animated_screen(),
+                    second_animated_screen(),
+                    third_animated_screen(),
+                    resuilt_animated_screen(),
+                  ], //АНИМАЦИИ
                 ),
                 SizedBox(height: 43.8.sh, width: 95.sw, child: keyboard()),
               ],
@@ -169,8 +169,8 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
+                              borderRadius: BorderRadius.circular(5),
+                            ))),
                         onPressed: () {
                           context.read<input_number>().A_trigger();
                         },
@@ -217,8 +217,8 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
+                              borderRadius: BorderRadius.circular(5),
+                            ))),
                         onPressed: () {
                           context.read<input_number>().B_trigger();
                         },
@@ -265,8 +265,8 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
+                              borderRadius: BorderRadius.circular(5),
+                            ))),
                         onPressed: () {
                           context.read<input_number>().C_trigger();
                         },
@@ -307,235 +307,235 @@ class _cubic_equationState extends State<cubic_equation> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return
-        Container(
-      decoration: BoxDecoration(
-        color: AppColors().black,
-        borderRadius: BorderRadius.circular(45),
-      ),
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Center(
-                  child: Container(
-                    width: 75.sw,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: AppColors().white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "ax^3 + bx^2 + cx + d",
-                        style: TextStyle(
-                            fontFamily: "Nokora",
-                            fontSize: 30,
-                            fontWeight: FontWeight.w200,
-                            color: AppColors().orange),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Text(
-                  "a = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().A_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            Provider.of<input_number>(context).a_text,
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Text(
-                  "b = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().B_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).b_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Text(
-                  "c = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.8.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().C_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).c_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Text(
-                  "d = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.8.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().D_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).d_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+      Container(
+        decoration: BoxDecoration(
+          color: AppColors().black,
+          borderRadius: BorderRadius.circular(45),
         ),
-      ),
-        );
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Center(
+                    child: Container(
+                      width: 75.sw,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: AppColors().white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "ax^3 + bx^2 + cx + d",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 30,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors().orange),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "a = ",
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontFamily: "Nokora",
+                        color: AppColors().orange),
+                  ),
+                  Center(
+                    child: Center(
+                      child: Container(
+                        width: 53.sw,
+                        height: 5.1.sh,
+                        decoration: BoxDecoration(
+                          color: AppColors().white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: TextButton(
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ))),
+                          onPressed: () {
+                            context.read<input_number>().A_trigger();
+                          },
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              Provider.of<input_number>(context).a_text,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors().orange,
+                                  fontSize: 26,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "b = ",
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontFamily: "Nokora",
+                        color: AppColors().orange),
+                  ),
+                  Center(
+                    child: Center(
+                      child: Container(
+                        width: 53.sw,
+                        height: 5.1.sh,
+                        decoration: BoxDecoration(
+                          color: AppColors().white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: TextButton(
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ))),
+                          onPressed: () {
+                            context.read<input_number>().B_trigger();
+                          },
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              textAlign: TextAlign.right,
+                              Provider.of<input_number>(context).b_text,
+                              style: TextStyle(
+                                  color: AppColors().orange,
+                                  fontSize: 26,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "c = ",
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontFamily: "Nokora",
+                        color: AppColors().orange),
+                  ),
+                  Center(
+                    child: Center(
+                      child: Container(
+                        width: 53.8.sw,
+                        height: 5.1.sh,
+                        decoration: BoxDecoration(
+                          color: AppColors().white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: TextButton(
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ))),
+                          onPressed: () {
+                            context.read<input_number>().C_trigger();
+                          },
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              textAlign: TextAlign.right,
+                              Provider.of<input_number>(context).c_text,
+                              style: TextStyle(
+                                  color: AppColors().orange,
+                                  fontSize: 26,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "d = ",
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontFamily: "Nokora",
+                        color: AppColors().orange),
+                  ),
+                  Center(
+                    child: Center(
+                      child: Container(
+                        width: 53.8.sw,
+                        height: 5.1.sh,
+                        decoration: BoxDecoration(
+                          color: AppColors().white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: TextButton(
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ))),
+                          onPressed: () {
+                            context.read<input_number>().D_trigger();
+                          },
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              textAlign: TextAlign.right,
+                              Provider.of<input_number>(context).d_text,
+                              style: TextStyle(
+                                  color: AppColors().orange,
+                                  fontSize: 26,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
   }
 }
 
@@ -708,8 +708,8 @@ class _keyboardState extends State<keyboard> {
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   backgroundColor:
-                      Provider.of<choose_button>(context, listen: true)
-                          .color_button,
+                  Provider.of<choose_button>(context, listen: true)
+                      .color_button,
                   animationDuration: const Duration(milliseconds: 300),
                 ),
                 child: Text(
@@ -991,7 +991,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed:
-                  animation.Animated_first_screen,
+                animation.Animated_first_screen,
 
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -1355,8 +1355,8 @@ class first_animated_screenState extends State<first_animated_screen> {
         duration: const Duration(milliseconds: 250),
         opacity: animated.first_anim_screen ? 1 : 0,
         child: SizedBox(height: 50.sh, width: 95.sw, child: quadratic_equation()),
-        ),
-      );
+      ),
+    );
   }
 } //КЛАСС ДЛЯ УРАВНЕНИЙ Х^2
 
@@ -1394,7 +1394,7 @@ class third_animated_screenState extends State<third_animated_screen> {
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
     return IgnorePointer(
-        ignoring: animated.third_anim_screen ? false : true,
+      ignoring: animated.third_anim_screen ? false : true,
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 250),
         opacity: animated.third_anim_screen ? 1 : 0,
@@ -1453,4 +1453,4 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
       ),
     );
   }
-} // КЛАСС ДЛЯ ЭКРАНА ВЫВОДА РЕШЕНИЯ
+}
