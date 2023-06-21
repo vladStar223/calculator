@@ -42,7 +42,7 @@ class _MainState extends State<Main> {
     const displayName = "displayName";
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => peter1_BBOD_ELEVENTOB()),
+        ChangeNotifierProvider(create: (context) => input_number()),
         ChangeNotifierProvider(create: (context) => choose_button()),
       ],
       child: Scaffold(
@@ -83,7 +83,14 @@ class _MainState extends State<Main> {
             ),
             Column(
               children: [
-                SizedBox(height: 50.sh, width: 95.sw, child: cubic_equation()),
+                Stack(
+            children: [
+              first_animated_screen(),
+              second_animated_screen(),
+              third_animated_screen(),
+              resuilt_animated_screen(),
+            ], //АНИМАЦИИ
+                ),
                 SizedBox(height: 43.8.sh, width: 95.sw, child: keyboard()),
               ],
             ),
@@ -100,7 +107,6 @@ class quadratic_equation extends StatefulWidget {
   @override
   State<quadratic_equation> createState() => _quadratic_equationState();
 }
-
 class _quadratic_equationState extends State<quadratic_equation> {
   @override
   Widget build(BuildContext context) {
@@ -166,12 +172,12 @@ class _quadratic_equationState extends State<quadratic_equation> {
                           borderRadius: BorderRadius.circular(5),
                         ))),
                         onPressed: () {
-                          context.read<peter1_BBOD_ELEVENTOB>().A_trigger();
+                          context.read<input_number>().A_trigger();
                         },
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            Provider.of<peter1_BBOD_ELEVENTOB>(context).a_text,
+                            Provider.of<input_number>(context).a_text,
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors().orange,
@@ -214,13 +220,13 @@ class _quadratic_equationState extends State<quadratic_equation> {
                           borderRadius: BorderRadius.circular(5),
                         ))),
                         onPressed: () {
-                          context.read<peter1_BBOD_ELEVENTOB>().B_trigger();
+                          context.read<input_number>().B_trigger();
                         },
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<peter1_BBOD_ELEVENTOB>(context).b_text,
+                            Provider.of<input_number>(context).b_text,
                             style: TextStyle(
                                 color: AppColors().orange,
                                 fontSize: 26,
@@ -262,13 +268,13 @@ class _quadratic_equationState extends State<quadratic_equation> {
                           borderRadius: BorderRadius.circular(5),
                         ))),
                         onPressed: () {
-                          context.read<peter1_BBOD_ELEVENTOB>().C_trigger();
+                          context.read<input_number>().C_trigger();
                         },
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<peter1_BBOD_ELEVENTOB>(context).c_text,
+                            Provider.of<input_number>(context).c_text,
                             style: TextStyle(
                                 color: AppColors().orange,
                                 fontSize: 26,
@@ -296,12 +302,12 @@ class cubic_equation extends StatefulWidget {
   @override
   State<cubic_equation> createState() => _cubic_equationState();
 }
-
 class _cubic_equationState extends State<cubic_equation> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
+    return
+        Container(
       decoration: BoxDecoration(
         color: AppColors().black,
         borderRadius: BorderRadius.circular(45),
@@ -362,12 +368,12 @@ class _cubic_equationState extends State<cubic_equation> {
                           borderRadius: BorderRadius.circular(5),
                         ))),
                         onPressed: () {
-                          context.read<peter1_BBOD_ELEVENTOB>().A_trigger();
+                          context.read<input_number>().A_trigger();
                         },
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            Provider.of<peter1_BBOD_ELEVENTOB>(context).a_text,
+                            Provider.of<input_number>(context).a_text,
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors().orange,
@@ -410,13 +416,13 @@ class _cubic_equationState extends State<cubic_equation> {
                           borderRadius: BorderRadius.circular(5),
                         ))),
                         onPressed: () {
-                          context.read<peter1_BBOD_ELEVENTOB>().B_trigger();
+                          context.read<input_number>().B_trigger();
                         },
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<peter1_BBOD_ELEVENTOB>(context).b_text,
+                            Provider.of<input_number>(context).b_text,
                             style: TextStyle(
                                 color: AppColors().orange,
                                 fontSize: 26,
@@ -458,13 +464,13 @@ class _cubic_equationState extends State<cubic_equation> {
                           borderRadius: BorderRadius.circular(5),
                         ))),
                         onPressed: () {
-                          context.read<peter1_BBOD_ELEVENTOB>().C_trigger();
+                          context.read<input_number>().C_trigger();
                         },
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<peter1_BBOD_ELEVENTOB>(context).c_text,
+                            Provider.of<input_number>(context).c_text,
                             style: TextStyle(
                                 color: AppColors().orange,
                                 fontSize: 26,
@@ -506,13 +512,13 @@ class _cubic_equationState extends State<cubic_equation> {
                           borderRadius: BorderRadius.circular(5),
                         ))),
                         onPressed: () {
-                          context.read<peter1_BBOD_ELEVENTOB>().D_trigger();
+                          context.read<input_number>().D_trigger();
                         },
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<peter1_BBOD_ELEVENTOB>(context).d_text,
+                            Provider.of<input_number>(context).d_text,
                             style: TextStyle(
                                 color: AppColors().orange,
                                 fontSize: 26,
@@ -529,7 +535,7 @@ class _cubic_equationState extends State<cubic_equation> {
           ],
         ),
       ),
-    );
+        );
   }
 }
 
@@ -537,10 +543,10 @@ class keyboard extends StatefulWidget {
   @override
   State<keyboard> createState() => _keyboardState();
 }
-
 class _keyboardState extends State<keyboard> {
   @override
   Widget build(BuildContext context) {
+    final animation = Provider.of<input_number>(context); // Я ЗАБЫЛ ИСПОЛЬЗУЮ ЛИ Я ЕЕ ВООБЩЕ ИЛИ НЕТ И НЕ ЗНАЮ ИМЕЕТ ЛИ ОНО СМЫСЛ
     // TODO: implement build
     return Column(
       children: [
@@ -581,7 +587,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("7");
+                  context.read<input_number>().Nums_press("7");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -608,7 +614,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("8");
+                  context.read<input_number>().Nums_press("8");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -635,7 +641,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("9");
+                  context.read<input_number>().Nums_press("9");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -662,7 +668,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Delete_press();
+                  context.read<input_number>().Delete_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -697,6 +703,7 @@ class _keyboardState extends State<keyboard> {
               child: ElevatedButton(
                 onPressed: () {
                   context.read<choose_button>().change_color();
+                  animation.Animated_third_screen();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -711,7 +718,7 @@ class _keyboardState extends State<keyboard> {
                   style: TextStyle(
                       color: AppColors().orange,
                       fontSize: 5.sw,
-                      fontFamily: "Nokora"),
+                      fontFamily: "Nokora"),//ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
                 ),
               ),
             ),
@@ -724,7 +731,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("4");
+                  context.read<input_number>().Nums_press("4");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -751,7 +758,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("5");
+                  context.read<input_number>().Nums_press("5");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -778,7 +785,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("6");
+                  context.read<input_number>().Nums_press("6");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -805,7 +812,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
+                  context.read<input_number>().Comma_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -841,7 +848,7 @@ class _keyboardState extends State<keyboard> {
                 shape: BoxShape.circle,
               ),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: animation.Animated_second_screen,
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   backgroundColor: AppColors().black,
@@ -853,7 +860,7 @@ class _keyboardState extends State<keyboard> {
                   style: TextStyle(
                       color: AppColors().orange,
                       fontSize: 5.sw,
-                      fontFamily: "Nokora"),
+                      fontFamily: "Nokora"),//ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
                 ),
               ),
             ),
@@ -866,7 +873,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("1");
+                  context.read<input_number>().Nums_press("1");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -893,7 +900,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("2");
+                  context.read<input_number>().Nums_press("2");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -920,7 +927,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("3");
+                  context.read<input_number>().Nums_press("3");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -947,7 +954,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
+                  context.read<input_number>().Comma_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -983,7 +990,9 @@ class _keyboardState extends State<keyboard> {
                 shape: BoxShape.circle,
               ),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed:
+                  animation.Animated_first_screen,
+
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   backgroundColor: AppColors().black,
@@ -995,7 +1004,7 @@ class _keyboardState extends State<keyboard> {
                   style: TextStyle(
                       color: AppColors().orange,
                       fontSize: 5.sw,
-                      fontFamily: "Nokora"),
+                      fontFamily: "Nokora"),//ffffffffffffffffffffFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 ),
               ),
             ),
@@ -1033,7 +1042,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Nums_press("0");
+                  context.read<input_number>().Nums_press("0");
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -1060,7 +1069,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
+                  context.read<input_number>().Comma_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -1087,7 +1096,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<peter1_BBOD_ELEVENTOB>().Comma_press();
+                  context.read<input_number>().Resuilt_anim_screen();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -1128,17 +1137,23 @@ class choose_button extends ChangeNotifier {
   }
 } //класс который отвечает за  смену цвета в кнопке
 
-class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
+class input_number extends ChangeNotifier {
   @override
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0; // переменные
   String a_text = '0',
       b_text = '0',
       c_text = '0',
       d_text = '0'; // текст с полей ввода для переменных
-  bool a_trigger = false,
+  bool a_trigger = true,
       c_trigger = false,
       b_trigger = false,
-      d_trigger = false; // триггеры коэффицентов
+      d_trigger = false;// триггеры коэффицентов
+  bool first_anim_screen = true,
+      second_anim_screen = false,
+      third_anim_screen = false,
+      resuilt_anim_screen = false;// БУЛЬКИ ДЛЯ АНИМАЦИЙ
+
+
 
   void A_trigger() {
     a_trigger = true;
@@ -1147,7 +1162,6 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
     d_trigger = false;
     notifyListeners();
   }
-
   void B_trigger() {
     a_trigger = false;
     b_trigger = true;
@@ -1155,7 +1169,6 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
     d_trigger = false;
     notifyListeners();
   }
-
   void C_trigger() {
     a_trigger = false;
     b_trigger = false;
@@ -1163,13 +1176,42 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
     d_trigger = false;
     notifyListeners();
   }
-
   void D_trigger() {
     a_trigger = false;
     b_trigger = false;
     c_trigger = false;
     d_trigger = true;
     notifyListeners();
+  }
+
+  void Animated_first_screen(){
+    first_anim_screen = true;
+    second_anim_screen = false;
+    third_anim_screen = false;
+    resuilt_anim_screen = false;
+    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^2
+  }
+  void Animated_second_screen(){
+    first_anim_screen = false;
+    second_anim_screen = true;
+    third_anim_screen = false;
+    resuilt_anim_screen = false;
+    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^3
+  }
+
+  void Animated_third_screen(){
+    first_anim_screen = false;
+    second_anim_screen = false;
+    third_anim_screen = true;
+    resuilt_anim_screen = false;
+    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^4 (ДОБАВЬ)
+  }
+  void Resuilt_anim_screen(){
+    first_anim_screen = false;
+    second_anim_screen = false;
+    third_anim_screen = false;
+    resuilt_anim_screen = true;
+    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА РАВНО (ДОБАВЬ)
   }
 
 // функции триггера
@@ -1218,7 +1260,6 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
     }
     notifyListeners();
   }
-
   // ввод цифр идет при условии что текущая длина символов <6 (минус и запятая не в счет)
   // при вызове onPressed надо передать значение цифры через анонимную функцию
 
@@ -1290,9 +1331,126 @@ class peter1_BBOD_ELEVENTOB extends ChangeNotifier {
         d_text += '.';
       }
     }
+    notifyListeners();
   }
-
   notifyListeners();
 }
 
 class peter1_PEWEHUE extends ChangeNotifier {}
+
+
+class first_animated_screen extends StatefulWidget {
+  const first_animated_screen({super.key});
+
+  @override
+  State<first_animated_screen> createState() => first_animated_screenState();
+}
+class first_animated_screenState extends State<first_animated_screen> {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return IgnorePointer(
+      ignoring: animated.first_anim_screen ? false : true,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: animated.first_anim_screen ? 1 : 0,
+        child: SizedBox(height: 50.sh, width: 95.sw, child: quadratic_equation()),
+        ),
+      );
+  }
+} //КЛАСС ДЛЯ УРАВНЕНИЙ Х^2
+
+
+class second_animated_screen extends StatefulWidget {
+  const second_animated_screen({super.key});
+
+  @override
+  State<second_animated_screen> createState() => second_animated_screenState();
+}
+class second_animated_screenState extends State<second_animated_screen> {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return IgnorePointer(
+      ignoring: animated.second_anim_screen ? false : true,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: animated.second_anim_screen ? 1 : 0,
+        child: SizedBox(height: 50.sh, width: 95.sw, child: cubic_equation()),
+      ),
+    );
+  }
+}// КЛАСС ДЛЯ УРАВНЕНИЙ Х^3
+
+
+class third_animated_screen extends StatefulWidget {
+  const third_animated_screen({super.key});
+
+  @override
+  State<third_animated_screen> createState() => third_animated_screenState();
+}
+class third_animated_screenState extends State<third_animated_screen> {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return IgnorePointer(
+        ignoring: animated.third_anim_screen ? false : true,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: animated.third_anim_screen ? 1 : 0,
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors().black,
+            borderRadius: BorderRadius.circular(45),
+          ),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+            child: Center(
+              child: Container(
+                width: 150,
+                height: 150,
+                color: Colors.blue,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+} // КЛАСС ДЛЯ УРАВНЕНИЙ Х^4
+
+class resuilt_animated_screen extends StatefulWidget {
+  const resuilt_animated_screen({super.key});
+
+  @override
+  State<resuilt_animated_screen> createState() => resuilt_animated_screenState();
+}
+class resuilt_animated_screenState extends State<resuilt_animated_screen> {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return IgnorePointer(
+      ignoring: animated.third_anim_screen ? false : true,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: animated.resuilt_anim_screen ? 1 : 0,
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors().black,
+            borderRadius: BorderRadius.circular(45),
+          ),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+            child: Center(
+              child: Container(
+                width: 150,
+                height: 150,
+                color: Colors.green,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+} // КЛАСС ДЛЯ ЭКРАНА ВЫВОДА РЕШЕНИЯ
