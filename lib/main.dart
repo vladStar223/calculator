@@ -1232,15 +1232,15 @@ class input_number extends ChangeNotifier {
     if (a_trigger) {
       if (a_text.length == 1 && a_text.indexOf('0') == 0){
         a_text = '';
-      if (a_text.length < 10 && !a_text.contains('.') && !a_text.contains('-')) {
-        a_text += enternumber;
-      } else if (a_text.length < 11 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += enternumber;
-      } else if (a_text.length < 12 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += enternumber;
-      }
+        if (a_text.length < 10 && !a_text.contains('.') && !a_text.contains('-')) {
+          a_text += enternumber;
+        } else if (a_text.length < 11 &&
+            (a_text.contains('.') || a_text.contains('-'))) {
+          a_text += enternumber;
+        } else if (a_text.length < 12 &&
+            (a_text.contains('.') && a_text.contains('-'))) {
+          a_text += enternumber;
+        }
       }
       else if (a_text.length < 10 && !a_text.contains('.') && !a_text.contains('-')) {
         a_text += enternumber;
