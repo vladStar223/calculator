@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:calculator/animated_class.dart';
 
 //начало программы
 void main() {
@@ -101,445 +102,6 @@ class _MainState extends State<Main> {
   }
 }
 
-class quadratic_equation extends StatefulWidget {
-  const quadratic_equation({super.key});
-
-  @override
-  State<quadratic_equation> createState() => _quadratic_equationState();
-}
-
-class _quadratic_equationState extends State<quadratic_equation> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors().black,
-        borderRadius: BorderRadius.circular(45),
-      ),
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Center(
-                  child: Container(
-                    width: 75.sw,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: AppColors().white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "ax^2 + bx - c",
-                        style: TextStyle(
-                            fontFamily: "Nokora",
-                            fontSize: 40,
-                            fontWeight: FontWeight.w200,
-                            color: AppColors().orange),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 46,
-            ),
-            Row(
-              children: [
-                Text(
-                  "a = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().A_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            Provider.of<input_number>(context).a_text,
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 35,
-            ),
-            Row(
-              children: [
-                Text(
-                  "b = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().B_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).b_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 35,
-            ),
-            Row(
-              children: [
-                Text(
-                  "c = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.8.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().C_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).c_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-    throw UnimplementedError();
-  }
-}
-
-class cubic_equation extends StatefulWidget {
-  const cubic_equation({super.key});
-
-  @override
-  State<cubic_equation> createState() => _cubic_equationState();
-}
-
-class _cubic_equationState extends State<cubic_equation> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors().black,
-        borderRadius: BorderRadius.circular(45),
-      ),
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Center(
-                  child: Container(
-                    width: 75.sw,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: AppColors().white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "ax^3 + bx^2 + cx + d",
-                        style: TextStyle(
-                            fontFamily: "Nokora",
-                            fontSize: 30,
-                            fontWeight: FontWeight.w200,
-                            color: AppColors().orange),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Text(
-                  "a = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().A_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            Provider.of<input_number>(context).a_text,
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Text(
-                  "b = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().B_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).b_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Text(
-                  "c = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.8.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().C_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).c_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                Text(
-                  "d = ",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontFamily: "Nokora",
-                      color: AppColors().orange),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.8.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().D_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).d_text,
-                            style: TextStyle(
-                                color: AppColors().orange,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class keyboard extends StatefulWidget {
   @override
   State<keyboard> createState() => _keyboardState();
@@ -548,8 +110,8 @@ class keyboard extends StatefulWidget {
 class _keyboardState extends State<keyboard> {
   @override
   Widget build(BuildContext context) {
-    final animation = Provider.of<input_number>(
-        context); // Я ЗАБЫЛ ИСПОЛЬЗУЮ ЛИ Я ЕЕ ВООБЩЕ ИЛИ НЕТ И НЕ ЗНАЮ ИМЕЕТ ЛИ ОНО СМЫСЛ
+    final animation = Provider.of<input_number>(context);
+    // используешь это удобно но когда все вместе такое
     // TODO: implement build
     return Column(
       children: [
@@ -566,6 +128,10 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
+                  context.read<input_number>().AC_press();
+                },
+                onLongPress: () {
+                  context.read<input_number>().setlongtap_ac();
                   context.read<input_number>().AC_press();
                 },
                 style: ElevatedButton.styleFrom(
@@ -707,7 +273,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<choose_button>().change_color();
+                  context.read<choose_button>().change_color(0);
                   animation.Animated_third_screen();
                 },
                 style: ElevatedButton.styleFrom(
@@ -818,7 +384,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<input_number>().Comma_press();
+                  context.read<input_number>().Minus_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -854,11 +420,16 @@ class _keyboardState extends State<keyboard> {
                 shape: BoxShape.circle,
               ),
               child: ElevatedButton(
-                onPressed: animation.Animated_second_screen,
+                onPressed: () {
+                  context.read<choose_button>().change_color(1);
+                  animation.Animated_second_screen();
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
-                  backgroundColor: AppColors().black,
-                  animationDuration: const Duration(milliseconds: 2500),
+                  backgroundColor:
+                      Provider.of<choose_button>(context, listen: true)
+                          .color_button1,
+                  animationDuration: const Duration(milliseconds: 300),
                 ),
                 child: Text(
                   textAlign: TextAlign.center,
@@ -961,7 +532,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<input_number>().Comma_press();
+                  context.read<input_number>().Minus_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -997,11 +568,16 @@ class _keyboardState extends State<keyboard> {
                 shape: BoxShape.circle,
               ),
               child: ElevatedButton(
-                onPressed: animation.Animated_first_screen,
+                onPressed: () {
+                  context.read<choose_button>().change_color(2);
+                  animation.Animated_first_screen();
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
-                  backgroundColor: AppColors().black,
-                  animationDuration: const Duration(milliseconds: 2500),
+                  backgroundColor:
+                      Provider.of<choose_button>(context, listen: true)
+                          .color_button2,
+                  animationDuration: const Duration(milliseconds: 300),
                 ),
                 child: Text(
                   textAlign: TextAlign.center,
@@ -1133,11 +709,35 @@ class choose_button extends ChangeNotifier {
   Color _color_button1 = AppColors().black;
   Color _color_button2 = AppColors().white;
   Color color_button = AppColors().black;
-  void change_color() {
-    if (color_button == _color_button1) {
-      color_button = _color_button2;
-    } else {
-      color_button = _color_button1;
+  Color color_button1 = AppColors().black;
+  Color color_button2 = AppColors().black;
+  void change_color(int number) {
+    if (number == 0) {
+      if (color_button == _color_button1) {
+        color_button = _color_button2;
+        color_button1 = _color_button1;
+        color_button2 = _color_button1;
+      } else {
+        color_button = _color_button1;
+      }
+    }
+    if (number == 1) {
+      if (color_button1 == _color_button1) {
+        color_button1 = _color_button2;
+        color_button = _color_button1;
+        color_button2 = _color_button1;
+      } else {
+        color_button1 = _color_button1;
+      }
+    }
+    if (number == 2) {
+      if (color_button2 == _color_button1) {
+        color_button2 = _color_button2;
+        color_button = _color_button1;
+        color_button1 = _color_button1;
+      } else {
+        color_button2 = _color_button1;
+      }
     }
     notifyListeners();
   }
@@ -1146,6 +746,8 @@ class choose_button extends ChangeNotifier {
 class input_number extends ChangeNotifier {
   @override
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0; // переменные
+  bool longtap =
+      false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
   String a_text = '0',
       b_text = '0',
       c_text = '0',
@@ -1445,141 +1047,44 @@ class input_number extends ChangeNotifier {
   }
 
   void AC_press() {
-    if (a_trigger) {
+    if (longtap == false) {
+      if (a_trigger) {
+        a_text = '0';
+      } else if (b_trigger) {
+        b_text = '0';
+      } else if (c_trigger) {
+        c_text = '0';
+      } else if (d_trigger) {
+        d_text = '0';
+      }
+    } else {
       a_text = '0';
-    } else if (b_trigger) {
       b_text = '0';
-    } else if (c_trigger) {
       c_text = '0';
-    } else if (d_trigger) {
       d_text = '0';
+      longtap = false;
+    }
+
+    notifyListeners();
+  }
+
+  void setlongtap_ac() {
+    if (longtap == true) {
+      longtap = false;
+    } else {
+      longtap = true;
     }
     notifyListeners();
   } // BUTTON OF TOTAL DELETE SELECTED VARIABLE (AC Button)
 }
+/* новая
+было добавленно длинное нажатие на кнопку  для очистки всего
+был создан отдельный фаил с анимациями для удобства и уменьшения размеров гдавного фаила
+исправляются и исправлены ошибки
 
-class peter1_PEWEHUE extends ChangeNotifier {}
+*/
 
-class first_animated_screen extends StatefulWidget {
-  const first_animated_screen({super.key});
-
-  @override
-  State<first_animated_screen> createState() => first_animated_screenState();
-}
-
-class first_animated_screenState extends State<first_animated_screen> {
-  @override
-  Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
-    return IgnorePointer(
-      ignoring: animated.first_anim_screen ? false : true,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 250),
-        opacity: animated.first_anim_screen ? 1 : 0,
-        child:
-            SizedBox(height: 50.sh, width: 95.sw, child: quadratic_equation()),
-      ),
-    );
-  }
-} //КЛАСС ДЛЯ УРАВНЕНИЙ Х^2
-
-class second_animated_screen extends StatefulWidget {
-  const second_animated_screen({super.key});
-
-  @override
-  State<second_animated_screen> createState() => second_animated_screenState();
-}
-
-class second_animated_screenState extends State<second_animated_screen> {
-  @override
-  Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
-    return IgnorePointer(
-      ignoring: animated.second_anim_screen ? false : true,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 250),
-        opacity: animated.second_anim_screen ? 1 : 0,
-        child: SizedBox(height: 50.sh, width: 95.sw, child: cubic_equation()),
-      ),
-    );
-  }
-} // КЛАСС ДЛЯ УРАВНЕНИЙ Х^3
-
-class third_animated_screen extends StatefulWidget {
-  const third_animated_screen({super.key});
-
-  @override
-  State<third_animated_screen> createState() => third_animated_screenState();
-}
-
-class third_animated_screenState extends State<third_animated_screen> {
-  @override
-  Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
-    return IgnorePointer(
-      ignoring: animated.third_anim_screen ? false : true,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 250),
-        opacity: animated.third_anim_screen ? 1 : 0,
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors().black,
-            borderRadius: BorderRadius.circular(45),
-          ),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
-            child: Center(
-              child: Container(
-                width: 150,
-                height: 150,
-                color: Colors.blue,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-} // КЛАСС ДЛЯ УРАВНЕНИЙ Х^4
-
-class resuilt_animated_screen extends StatefulWidget {
-  const resuilt_animated_screen({super.key});
-
-  @override
-  State<resuilt_animated_screen> createState() =>
-      resuilt_animated_screenState();
-}
-
-class resuilt_animated_screenState extends State<resuilt_animated_screen> {
-  @override
-  Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
-    return IgnorePointer(
-      ignoring: animated.third_anim_screen ? false : true,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 250),
-        opacity: animated.resuilt_anim_screen ? 1 : 0,
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors().black,
-            borderRadius: BorderRadius.circular(45),
-          ),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
-            child: Center(
-              child: Container(
-                width: 150,
-                height: 150,
-                color: Colors.green,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-/*
+/* прошлая версия
 БЫЛИ ДОБАВЛЕНЫ:
 АНИМИРОВАННЫЙ ЭКРАН ДЛЯ Х^2 (РАБОЧИЙ)
 АНИМИРОВАННЫЙ ЭКРАН ДЛЯ Х^3 (РАБОЧИЙ)
