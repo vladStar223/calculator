@@ -82,6 +82,16 @@ class third_animated_screenState extends State<third_animated_screen> {
           child: Center(
               child: SizedBox(
                   height: 50.sh, width: 95.sw, child: biquadrate_equation())),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+            child: Center(
+              child: Container(
+                width: 150,
+                height: 150,
+                color: Colors.blue,
+              ),
+            ),
+          ),
         ),
       ),
     );
