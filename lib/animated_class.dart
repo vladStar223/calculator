@@ -28,7 +28,7 @@ class first_animated_screenState extends State<first_animated_screen> {
         opacity: animated.first_anim_screen ? 1 : 0,
         child: Center(
             child: SizedBox(
-                height: 50.sh, width: 95.sw, child: quadratic_equation())),
+                height: 43.5.sh, width: 95.sw, child: quadratic_equation())),
       ),
     );
   }
@@ -51,8 +51,8 @@ class second_animated_screenState extends State<second_animated_screen> {
         duration: const Duration(milliseconds: 250),
         opacity: animated.second_anim_screen ? 1 : 0,
         child: Center(
-            child:
-                SizedBox(height: 50.sh, width: 95.sw, child: cubic_equation())),
+            child: SizedBox(
+                height: 43.5.sh, width: 95.sw, child: cubic_equation())),
       ),
     );
   }
@@ -76,22 +76,12 @@ class third_animated_screenState extends State<third_animated_screen> {
         opacity: animated.third_anim_screen ? 1 : 0,
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors().black,
+            color: AppColors().buttoncolor1,
             borderRadius: BorderRadius.circular(45),
           ),
           child: Center(
               child: SizedBox(
-                  height: 50.sh, width: 95.sw, child: biquadrate_equation())),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
-            child: Center(
-              child: Container(
-                width: 150,
-                height: 150,
-                color: Colors.blue,
-              ),
-            ),
-          ),
+                  height: 43.5.sh, width: 95.sw, child: biquadrate_equation())),
         ),
       ),
     );
@@ -117,7 +107,7 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
         opacity: animated.resuilt_anim_screen ? 1 : 0,
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors().black,
+            color: AppColors().buttoncolor1,
             borderRadius: BorderRadius.circular(45),
           ),
           child: Padding(
