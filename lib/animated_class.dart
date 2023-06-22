@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/main.dart';
+import 'package:calculator/screens_equations.dart';
 
 class peter1_PEWEHUE extends ChangeNotifier {}
 
@@ -78,6 +79,9 @@ class third_animated_screenState extends State<third_animated_screen> {
             color: AppColors().black,
             borderRadius: BorderRadius.circular(45),
           ),
+          child: Center(
+              child: SizedBox(
+                  height: 50.sh, width: 95.sw, child: biquadrate_equation())),
           child: Padding(
             padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
             child: Center(
