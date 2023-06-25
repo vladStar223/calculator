@@ -28,7 +28,7 @@ class first_animated_screenState extends State<first_animated_screen> {
         opacity: animated.first_anim_screen ? 1 : 0,
         child: Center(
             child: SizedBox(
-                height: 50.sh, width: 95.sw, child: quadratic_equation())),
+                height: 43.sh, width: 95.sw, child: quadratic_equation())),
       ),
     );
   }
@@ -52,7 +52,7 @@ class second_animated_screenState extends State<second_animated_screen> {
         opacity: animated.second_anim_screen ? 1 : 0,
         child: Center(
             child:
-                SizedBox(height: 50.sh, width: 95.sw, child: cubic_equation())),
+                SizedBox(height: 43.sh, width: 95.sw, child: cubic_equation())),
       ),
     );
   }
@@ -76,12 +76,12 @@ class third_animated_screenState extends State<third_animated_screen> {
         opacity: animated.third_anim_screen ? 1 : 0,
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors().black,
+            color: AppColors().buttoncolor1,
             borderRadius: BorderRadius.circular(45),
           ),
           child: Center(
               child: SizedBox(
-                  height: 50.sh, width: 95.sw, child: biquadrate_equation())),
+                  height: 43.sh, width: 95.sw, child: biquadrate_equation())),
         ),
       ),
     );
@@ -107,7 +107,7 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
         opacity: animated.resuilt_anim_screen ? 1 : 0,
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors().black,
+            color: AppColors().buttoncolor1,
             borderRadius: BorderRadius.circular(45),
           ),
           child: Padding(
