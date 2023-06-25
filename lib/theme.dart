@@ -17,10 +17,20 @@ extension HexColor on Color {
       '${blue.toRadixString(16).padLeft(2, '0')}';
 }
 
-class AppColors {
+class AppColors1 {
   final Color color = HexColor.fromHex('393E46');
   final Color fon = HexColor.fromHex('393E46'); // фон
   final Color white = HexColor.fromHex('EEEEEE'); // меню вывода
   final Color black = HexColor.fromHex('222831'); // кнопки
   final Color orange = HexColor.fromHex('FD7013'); // значики на кнопке
+}
+
+class AppColors {
+  final Color color = HexColor.fromHex('393E46');
+  final Color fon = HexColor.fromHex('242933'); // фон
+  final Color white = HexColor.fromHex('EEEEEE'); // меню вывода
+  final Color buttoncolor1 = HexColor.fromHex('363E53');
+  final Color buttoncolor2 = HexColor.fromHex('CBCBCB'); // кнопки
+  final Color textcolor = HexColor.fromHex('EEEEEE');
+  final Color textcolor2 = HexColor.fromHex('585858'); // значики на кнопке
 }
