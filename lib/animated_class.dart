@@ -1,4 +1,6 @@
 import 'package:calculator/my_flutter_app_icons.dart';
+import 'package:calculator/provider_class.dart';
+import 'package:calculator/result.dart';
 import 'package:calculator/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -110,16 +112,8 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
             color: AppColors().buttoncolor1,
             borderRadius: BorderRadius.circular(45),
           ),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
-            child: Center(
-              child: Container(
-                width: 150,
-                height: 150,
-                color: Colors.green,
-              ),
-            ),
-          ),
+          child: Center(
+              child: SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt())),
         ),
       ),
     );
