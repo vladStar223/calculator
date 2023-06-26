@@ -242,7 +242,7 @@ class _cubic_equationState extends State<cubic_equation> {
                         "ax^3 + bx^2 + cx + d = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 6.sw,
+                            fontSize: 6.9.sw,
                             fontWeight: FontWeight.w200,
                             color: AppColors().textcolor),
                       ),
