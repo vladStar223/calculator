@@ -51,8 +51,8 @@ class second_animated_screenState extends State<second_animated_screen> {
         duration: const Duration(milliseconds: 250),
         opacity: animated.second_anim_screen ? 1 : 0,
         child: Center(
-            child:
-                SizedBox(height: 43.sh, width: 95.sw, child: cubic_equation())),
+            child: SizedBox(
+                height: 43.5.sh, width: 95.sw, child: cubic_equation())),
       ),
     );
   }
@@ -81,7 +81,7 @@ class third_animated_screenState extends State<third_animated_screen> {
           ),
           child: Center(
               child: SizedBox(
-                  height: 43.sh, width: 95.sw, child: biquadrate_equation())),
+                  height: 43.5.sh, width: 95.sw, child: biquadrate_equation())),
         ),
       ),
     );
