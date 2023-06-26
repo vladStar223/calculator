@@ -72,6 +72,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().a_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -120,6 +121,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().b_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -171,6 +173,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().c_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -271,6 +274,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().a_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -319,6 +323,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().b_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -370,6 +375,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().c_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -418,6 +424,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().d_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -517,6 +524,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().a_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -565,6 +573,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().b_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -616,6 +625,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().c_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -664,6 +674,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                       decoration: BoxDecoration(
                         color: AppColors().white,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.read<input_number>().d_trigger ? context.read<input_number>().color_of_border  : Colors.transparent, width: 0.5.sw),
                       ),
                       child: TextButton(
                         style: ButtonStyle(

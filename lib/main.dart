@@ -567,7 +567,7 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("9");
+                  context.read<input_number>().Minus_press();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
@@ -747,18 +747,25 @@ class choose_button extends ChangeNotifier {
 } //класс который отвечает за  смену цвета в кнопке
 
 class input_number extends ChangeNotifier {
+
   @override
+
+  var color_of_border = Colors.blue; //цвет рамки для полей ввода
+
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0; // переменные
+
   bool longtap =
       false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
   String a_text = '0',
       b_text = '0',
       c_text = '0',
       d_text = '0'; // текст с полей ввода для переменных
+
   bool a_trigger = true,
       c_trigger = false,
       b_trigger = false,
       d_trigger = false; // триггеры коэффицентов
+
   bool first_anim_screen = true,
       second_anim_screen = false,
       third_anim_screen = false,
@@ -797,48 +804,59 @@ class input_number extends ChangeNotifier {
   }
 
   void Animated_first_screen() {
-    first_anim_screen = true;
-    second_anim_screen = false;
-    third_anim_screen = false;
-    resuilt_anim_screen = false;
-    a_text = '0';
-    b_text = '0';
-    c_text = '0';
-    d_text = '0';
-    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^2
-  }
+    if (!first_anim_screen) {
+      first_anim_screen = true;
+      second_anim_screen = false;
+      third_anim_screen = false;
+      resuilt_anim_screen = false;
+      A_trigger();
+      a_text = '0';
+      b_text = '0';
+      c_text = '0';
+      d_text = '0';
+    }
+    notifyListeners();
+  }  //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^2
 
   void Animated_second_screen() {
-    first_anim_screen = false;
-    second_anim_screen = true;
-    third_anim_screen = false;
-    resuilt_anim_screen = false;
-    a_text = '0';
-    b_text = '0';
-    c_text = '0';
-    d_text = '0';
-    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^3
-  }
+    if (!second_anim_screen) {
+      first_anim_screen = false;
+      second_anim_screen = true;
+      third_anim_screen = false;
+      resuilt_anim_screen = false;
+      A_trigger();;
+      a_text = '0';
+      b_text = '0';
+      c_text = '0';
+      d_text = '0';
+    }
+    notifyListeners();
+  } //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^3
 
   void Animated_third_screen() {
-    first_anim_screen = false;
-    second_anim_screen = false;
-    third_anim_screen = true;
-    resuilt_anim_screen = false;
-    a_text = '0';
-    b_text = '0';
-    c_text = '0';
-    d_text = '0';
-    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^4 (ДОБАВЬ)
-  }
+    if (!third_anim_screen) {
+      first_anim_screen = false;
+      second_anim_screen = false;
+      third_anim_screen = true;
+      resuilt_anim_screen = false;
+      A_trigger();
+      a_text = '0';
+      b_text = '0';
+      c_text = '0';
+      d_text = '0';
+    }
+      notifyListeners();
+    } //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^4
 
   void Resuilt_anim_screen() {
-    first_anim_screen = false;
-    second_anim_screen = false;
-    third_anim_screen = false;
-    resuilt_anim_screen = true;
-    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА РАВНО (ДОБАВЬ)
-  }
+    if (!resuilt_anim_screen) {
+      first_anim_screen = false;
+      second_anim_screen = false;
+      third_anim_screen = false;
+      resuilt_anim_screen = true;
+    }
+    notifyListeners();
+  } //ФУНКЦИЯ ПРИ НАЖАТИИ НА РАВНО
 
   void Nums_press(String enternumber) {
     if (a_trigger) {
@@ -1001,25 +1019,33 @@ class input_number extends ChangeNotifier {
 
   void Minus_press() {
     if (a_trigger) {
-      if (a_text.length < 8 && !a_text.contains('-')) {
-        a_text = '-' + a_text;
-      } else if (a_text.contains('-')) {
-        a_text = a_text.substring(1, a_text.length);
+      if (a_text == '0'){
+        a_text = '-';
+      } else if (a_text.length < 12 && !a_text.contains('-')) {
+          a_text = '-' + a_text;
+        } else if (a_text.contains('-')) {
+          a_text = a_text.substring(1, a_text.length);
       }
     } else if (b_trigger) {
-      if (b_text.length < 8 && !b_text.contains('-')) {
+      if (b_text == '0'){
+        b_text = '-';
+      } else if (b_text.length < 12 && !b_text.contains('-')) {
         b_text = '-' + b_text;
       } else if (b_text.contains('-')) {
         b_text = b_text.substring(1, b_text.length);
       }
     } else if (c_trigger) {
-      if (c_text.length < 8 && !c_text.contains('-')) {
+      if (c_text == '0'){
+        c_text = '-';
+      } else if (c_text.length < 12 && !c_text.contains('-')) {
         c_text = '-' + c_text;
       } else if (c_text.contains('-')) {
         c_text = c_text.substring(1, c_text.length);
       }
     } else if (d_trigger) {
-      if (d_text.length < 8 && !d_text.contains('-')) {
+      if (d_text == '0'){
+        d_text = '-';
+      } else if (d_text.length < 12 && !d_text.contains('-')) {
         d_text = '-' + d_text;
       } else if (d_text.contains('-')) {
         d_text = d_text.substring(1, d_text.length);
@@ -1079,15 +1105,52 @@ class input_number extends ChangeNotifier {
     }
     notifyListeners();
   } // BUTTON OF TOTAL DELETE SELECTED VARIABLE (AC Button)
+
+  void Switcher() {
+    if (first_anim_screen) {
+      if (a_trigger){
+        b_trigger = true;
+      } else if (b_trigger){
+        c_trigger = true;
+      } else if(c_trigger){
+        a_trigger = true;
+      }
+    } else if (!first_anim_screen){
+      if (a_trigger){
+        b_trigger = true;
+      } else if (b_trigger){
+        c_trigger = true;
+      } else if(c_trigger){
+        d_trigger = true;
+      } else if (d_trigger){
+        a_trigger = true;
+      }
+    }
+  } //функция для кнопки переключения триггеров коэффецентов (полей ввода), работает сверху вниз.
+
 }
-/* новая
+
+
+
+
+
+
+
+/*
+
+ update 0.0.3
+-теперь минус стирает собой ноль если тот одиночный в поле  ввода
+-теперь выбранные коэффеценты подсвечиваются синим (может есть цвет и получше)
+-добавлена функция 'switcher' для кнопки переключения триггеров  коэффецентов
+-кнопка минус и плюс используют одну функцию  'Minus_press'
+-переменные не стираются если нажать на уже активную кнопку вида уравнения
+
+ update 0.0.2
 было добавленно длинное нажатие на кнопку  для очистки всего
 был создан отдельный фаил с анимациями для удобства и уменьшения размеров гдавного фаила
 исправляются и исправлены ошибки
 
-*/
-
-/* прошлая версия
+ update 0.0.1
 БЫЛИ ДОБАВЛЕНЫ:
 АНИМИРОВАННЫЙ ЭКРАН ДЛЯ Х^2 (РАБОЧИЙ)
 АНИМИРОВАННЫЙ ЭКРАН ДЛЯ Х^3 (РАБОЧИЙ)
