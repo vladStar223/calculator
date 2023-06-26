@@ -1,6 +1,7 @@
 import 'package:calculator/my_flutter_app_icons.dart';
 import 'package:calculator/provider_class.dart';
 import 'package:calculator/result.dart';
+import 'package:calculator/screens_equations.dart';
 import 'package:calculator/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/main.dart';
-import 'package:calculator/screens_equations.dart';
 
 class peter1_PEWEHUE extends ChangeNotifier {}
 
