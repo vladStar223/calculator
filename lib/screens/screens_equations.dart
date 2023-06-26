@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/animated_class.dart';
 import 'package:calculator/main.dart';
+import 'package:calculator/provider_class.dart';
 
 class quadratic_equation extends StatefulWidget {
   const quadratic_equation({super.key});
@@ -242,7 +243,7 @@ class _cubic_equationState extends State<cubic_equation> {
                         "ax^3 + bx^2 + cx + d = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 6.9.sw,
+                            fontSize: 6.sw,
                             fontWeight: FontWeight.w200,
                             color: AppColors().textcolor),
                       ),
