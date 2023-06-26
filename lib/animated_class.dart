@@ -28,7 +28,7 @@ class first_animated_screenState extends State<first_animated_screen> {
         opacity: animated.first_anim_screen ? 1 : 0,
         child: Center(
             child: SizedBox(
-                height: 43.sh, width: 95.sw, child: quadratic_equation())),
+                height: 43.5.sh, width: 95.sw, child: quadratic_equation())),
       ),
     );
   }

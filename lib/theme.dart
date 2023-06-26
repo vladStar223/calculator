@@ -30,7 +30,8 @@ class AppColors {
   final Color fon = HexColor.fromHex('242933'); // фон
   final Color white = HexColor.fromHex('EEEEEE'); // меню вывода
   final Color buttoncolor1 = HexColor.fromHex('363E53');
-  final Color buttoncolor2 = HexColor.fromHex('CBCBCB'); // кнопки
+  final Color buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
   final Color textcolor = HexColor.fromHex('EEEEEE');
-  final Color textcolor2 = HexColor.fromHex('585858'); // значики на кнопке
+  final Color textcolor2 =
+     HexColor.fromHex('585858'); // цифры // значики на кнопке
 }

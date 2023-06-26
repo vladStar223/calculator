@@ -43,7 +43,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         "ax^2 + bx - c = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 40,
+                            fontSize: 5.sh,
                             fontWeight: FontWeight.w200,
                             color: AppColors().textcolor),
                       ),
@@ -53,14 +53,15 @@ class _quadratic_equationState extends State<quadratic_equation> {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 2.sh,
+
             ),
             Row(
               children: [
                 Text(
                   "a = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 10.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -89,7 +90,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+                                fontSize: 6.sw,
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -100,15 +101,15 @@ class _quadratic_equationState extends State<quadratic_equation> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 3.sh,
             ),
             Row(
               children: [
                 Text(
                   "b = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 10.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -137,7 +138,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                             Provider.of<input_number>(context).b_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+                                fontSize: 6.sw,
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -148,15 +149,15 @@ class _quadratic_equationState extends State<quadratic_equation> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 3.sh,
             ),
             Row(
               children: [
                 Text(
                   "c = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 10.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -188,7 +189,8 @@ class _quadratic_equationState extends State<quadratic_equation> {
                             Provider.of<input_number>(context).c_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+                                fontSize: 6.sw,
+
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -234,7 +236,7 @@ class _cubic_equationState extends State<cubic_equation> {
                     width: 75.sw,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: AppColors().white,
+                      color: AppColors().buttoncolor1,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Center(
@@ -242,7 +244,7 @@ class _cubic_equationState extends State<cubic_equation> {
                         "ax^3 + bx^2 + cx + d = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 27,
+                            fontSize: 6.sw,
                             fontWeight: FontWeight.w200,
                             color: AppColors().textcolor),
                       ),
@@ -252,14 +254,14 @@ class _cubic_equationState extends State<cubic_equation> {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 0.8.sh,
             ),
             Row(
               children: [
                 Text(
                   "a = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 9.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -287,8 +289,9 @@ class _cubic_equationState extends State<cubic_equation> {
                             Provider.of<input_number>(context).a_text,
                             textAlign: TextAlign.right,
                             style: TextStyle(
-                                color: AppColors().textcolor,
-                                fontSize: 26,
+                                color: AppColors().textcolor2,
+                                fontSize: 6.sw,
+                       
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -299,15 +302,15 @@ class _cubic_equationState extends State<cubic_equation> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 1.sh,
             ),
             Row(
               children: [
                 Text(
                   "b = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 9.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -336,7 +339,7 @@ class _cubic_equationState extends State<cubic_equation> {
                             Provider.of<input_number>(context).b_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+                                fontSize: 6.sw,
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -347,15 +350,15 @@ class _cubic_equationState extends State<cubic_equation> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 1.sh,
             ),
             Row(
               children: [
                 Text(
                   "c = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 9.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -387,7 +390,7 @@ class _cubic_equationState extends State<cubic_equation> {
                             Provider.of<input_number>(context).c_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+                                fontSize: 6.sw,
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -398,15 +401,15 @@ class _cubic_equationState extends State<cubic_equation> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 1.sh,
             ),
             Row(
               children: [
                 Text(
                   "d = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 9.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -434,9 +437,8 @@ class _cubic_equationState extends State<cubic_equation> {
                             textAlign: TextAlign.right,
                             Provider.of<input_number>(context).d_text,
                             style: TextStyle(
-                                color: AppColors().textcolor,
-                                fontSize: 26,
-                                fontFamily: "Nokora",
+                                color: AppColors().textcolor2,
+                                fontSize: 6.sw,                        fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
                         ),
@@ -480,15 +482,15 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                     width: 75.sw,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: AppColors().white,
+                      color: AppColors().buttoncolor1,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Center(
                       child: Text(
-                        "ax^4 + bx^2 - c = 0",
+                        "ax^4 + bx^3 + cx^2 + dx = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 35,
+                            fontSize: 6.sw,
                             fontWeight: FontWeight.w200,
                             color: AppColors().textcolor),
                       ),
@@ -498,14 +500,14 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
               ],
             ),
             SizedBox(
-              height: 46,
+              height: 0.8.sh,
             ),
             Row(
               children: [
                 Text(
                   "a = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 9.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -534,7 +536,10 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+
+                                fontSize: 6.sw,
+
+               
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -545,15 +550,15 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 35,
+            SizedBox(
+              height: 1.sh,
             ),
             Row(
               children: [
                 Text(
                   "b = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 9.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -582,7 +587,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                             Provider.of<input_number>(context).b_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+                                fontSize: 6.sw
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -593,15 +598,15 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 35,
+            SizedBox(
+              height: 1.sh,
             ),
             Row(
               children: [
                 Text(
                   "c = ",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 9.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -611,7 +616,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.8.sw,
+                      width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
                         color: AppColors().white,
@@ -633,8 +638,55 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                             Provider.of<input_number>(context).c_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 26,
+                                fontSize: 6.sw,
                                 fontFamily: "Nokora",
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 1.sh,
+            ),
+            Row(
+              children: [
+                Text(
+                  "d = ",
+                  style: TextStyle(
+                      fontSize: 9.sw,
+                      fontFamily: "Nokora",
+                      color: AppColors().textcolor),
+                ),
+                Center(
+                  child: Center(
+                    child: Container(
+                      width: 53.8.sw,
+                      height: 5.1.sh,
+                      decoration: BoxDecoration(
+                        color: AppColors().white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ))),
+                        onPressed: () {
+                          context.read<input_number>().D_trigger();
+                        },
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            textAlign: TextAlign.right,
+                            Provider.of<input_number>(context).d_text,
+                            style: TextStyle(
+                                color: AppColors().textcolor2,
+                                fontSize: 6.sw,                    fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
                         ),
