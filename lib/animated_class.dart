@@ -1,7 +1,7 @@
 import 'package:calculator/my_flutter_app_icons.dart';
 import 'package:calculator/provider_class.dart';
-import 'package:calculator/result.dart';
-import 'package:calculator/screens_equations.dart';
+import 'package:calculator/screens/result.dart';
+import 'package:calculator/screens/screens_equations.dart';
 import 'package:calculator/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
