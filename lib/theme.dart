@@ -33,5 +33,5 @@ class AppColors {
   final Color buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
   final Color textcolor = HexColor.fromHex('EEEEEE');
   final Color textcolor2 =
-      HexColor.fromHex('585858'); // цифры // значики на кнопке
+     HexColor.fromHex('585858'); // цифры // значики на кнопке
 }

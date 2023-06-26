@@ -1,5 +1,4 @@
 import 'package:calculator/my_flutter_app_icons.dart';
-import 'package:calculator/screens/resuilt.dart';
 import 'package:calculator/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/main.dart';
-import 'package:calculator/screens/screens_equations.dart';
-import 'package:calculator/provider_class.dart';
+import 'package:calculator/screens_equations.dart';
 
 class peter1_PEWEHUE extends ChangeNotifier {}
 
@@ -76,9 +74,15 @@ class third_animated_screenState extends State<third_animated_screen> {
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 250),
         opacity: animated.third_anim_screen ? 1 : 0,
-        child: Center(
-            child: SizedBox(
-                height: 43.5.sh, width: 95.sw, child: biquadrate_equation())),
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors().buttoncolor1,
+            borderRadius: BorderRadius.circular(45),
+          ),
+          child: Center(
+              child: SizedBox(
+                  height: 43.5.sh, width: 95.sw, child: biquadrate_equation())),
+        ),
       ),
     );
   }
@@ -101,8 +105,22 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 250),
         opacity: animated.resuilt_anim_screen ? 1 : 0,
-        child: Center(
-            child: SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt())),
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors().buttoncolor1,
+            borderRadius: BorderRadius.circular(45),
+          ),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+            child: Center(
+              child: Container(
+                width: 150,
+                height: 150,
+                color: Colors.green,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

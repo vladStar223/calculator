@@ -398,12 +398,6 @@ class input_number extends ChangeNotifier {
 }
 
 class decision_urv extends ChangeNotifier {
-  decision_urv({required input_number Input_number})
-      : _input_number = Input_number;
-
-  input_number _input_number;
-
-  String get greeting => "Hello, ${_input_number.a_text}";
   dynamic urv2;
   dynamic urv3;
   dynamic urv4;
