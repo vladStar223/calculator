@@ -54,6 +54,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
             ),
             SizedBox(
               height: 2.sh,
+
             ),
             Row(
               children: [
@@ -189,6 +190,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                             style: TextStyle(
                                 color: AppColors().textcolor2,
                                 fontSize: 6.sw,
+
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -289,6 +291,7 @@ class _cubic_equationState extends State<cubic_equation> {
                             style: TextStyle(
                                 color: AppColors().textcolor2,
                                 fontSize: 6.sw,
+                       
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -435,8 +438,7 @@ class _cubic_equationState extends State<cubic_equation> {
                             Provider.of<input_number>(context).d_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 6.sw,
-                                fontFamily: "Nokora",
+                                fontSize: 6.sw,                        fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
                         ),
@@ -534,7 +536,10 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
+
                                 fontSize: 6.sw,
+
+               
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -582,7 +587,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                             Provider.of<input_number>(context).b_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 6.sw,
+                                fontSize: 6.sw
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -681,8 +686,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                             Provider.of<input_number>(context).d_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
-                                fontSize: 6.sw,
-                                fontFamily: "Nokora",
+                                fontSize: 6.sw,                    fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
                         ),

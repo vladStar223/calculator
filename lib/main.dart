@@ -165,12 +165,14 @@ class _keyboardState extends State<keyboard> {
               ),
               child: ElevatedButton(
                 onPressed: () {
+                  context.read<choose_button>().change_color(0);
                   context.read<input_number>().Animated_first_screen();
                 },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
+                  backgroundColor:
+                      Provider.of<choose_button>(context, listen: true)
+                          .color_button,  animationDuration: const Duration(milliseconds: 2500),
                 ),
                 child: Center(
                   child: Text(
@@ -197,6 +199,12 @@ class _keyboardState extends State<keyboard> {
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   backgroundColor: AppColors().buttoncolor1,
+                  context.read<choose_button>().change_color(1);
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor:
+                      Provider.of<choose_button>(context).color_button1,
                   animationDuration: const Duration(milliseconds: 2500),
                 ),
                 child: Center(
@@ -215,6 +223,7 @@ class _keyboardState extends State<keyboard> {
               width: 20.sw,
               decoration: BoxDecoration(
                 color: AppColors().buttoncolor1,
+
                 shape: BoxShape.circle,
               ),
               child: ElevatedButton(
@@ -224,6 +233,12 @@ class _keyboardState extends State<keyboard> {
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   backgroundColor: AppColors().buttoncolor1,
+                  context.read<choose_button>().change_color(2);
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor:
+                      Provider.of<choose_button>(context).color_button2,
                   animationDuration: const Duration(milliseconds: 2500),
                 ),
                 child: Center(
@@ -710,8 +725,8 @@ class _keyboardState extends State<keyboard> {
 
 class choose_button extends ChangeNotifier {
   Color _color_button1 = AppColors().buttoncolor1;
-  Color _color_button2 = AppColors().white;
-  Color color_button = AppColors().buttoncolor1;
+  Color _color_button2 = AppColors().buttoncolor2;
+  Color color_button = AppColors().buttoncolor2;
   Color color_button1 = AppColors().buttoncolor1;
   Color color_button2 = AppColors().buttoncolor1;
   void change_color(int number) {
