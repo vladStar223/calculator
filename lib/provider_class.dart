@@ -50,6 +50,7 @@ class choose_button extends ChangeNotifier {
 
 class input_number extends ChangeNotifier {
   @override
+  var color_of_border = Colors.blue; //цвет рамки для полей ввода
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
   bool urv2 = true;
   bool urv3 = false;
@@ -317,25 +318,33 @@ class input_number extends ChangeNotifier {
 
   void Minus_press() {
     if (a_trigger) {
-      if (a_text.length < 8 && !a_text.contains('-')) {
+      if (a_text == '0'){
+        a_text = '-';
+      } else if (a_text.length < 12 && !a_text.contains('-')) {
         a_text = '-' + a_text;
       } else if (a_text.contains('-')) {
         a_text = a_text.substring(1, a_text.length);
       }
     } else if (b_trigger) {
-      if (b_text.length < 8 && !b_text.contains('-')) {
+      if (b_text == '0'){
+        b_text = '-';
+      } else if (b_text.length < 12 && !b_text.contains('-')) {
         b_text = '-' + b_text;
       } else if (b_text.contains('-')) {
         b_text = b_text.substring(1, b_text.length);
       }
     } else if (c_trigger) {
-      if (c_text.length < 8 && !c_text.contains('-')) {
+      if (c_text == '0'){
+        c_text = '-';
+      } else if (c_text.length < 12 && !c_text.contains('-')) {
         c_text = '-' + c_text;
       } else if (c_text.contains('-')) {
         c_text = c_text.substring(1, c_text.length);
       }
     } else if (d_trigger) {
-      if (d_text.length < 8 && !d_text.contains('-')) {
+      if (d_text == '0'){
+        d_text = '-';
+      } else if (d_text.length < 12 && !d_text.contains('-')) {
         d_text = '-' + d_text;
       } else if (d_text.contains('-')) {
         d_text = d_text.substring(1, d_text.length);

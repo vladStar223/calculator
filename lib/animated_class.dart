@@ -1,7 +1,7 @@
 import 'package:calculator/my_flutter_app_icons.dart';
 import 'package:calculator/provider_class.dart';
-import 'package:calculator/result.dart';
-import 'package:calculator/screens_equations.dart';
+import 'package:calculator/screens/result.dart';
+import 'package:calculator/screens/screens_equations.dart';
 import 'package:calculator/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -103,7 +103,7 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
     return IgnorePointer(
-      ignoring: animated.third_anim_screen ? false : true,
+      ignoring: animated.resuilt_anim_screen ? false : true,
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 250),
         opacity: animated.resuilt_anim_screen ? 1 : 0,
