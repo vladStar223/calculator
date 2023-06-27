@@ -46,7 +46,6 @@ class _MainState extends State<Main> {
       providers: [
         ChangeNotifierProvider(create: (context) => input_number()),
         ChangeNotifierProvider(create: (context) => choose_button()),
-        ChangeNotifierProvider(create: (context) => decision_urv()),
       ],
       child: Scaffold(
         drawerEnableOpenDragGesture: false,
