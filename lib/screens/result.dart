@@ -142,7 +142,7 @@ class _resuiltState extends State<resuilt> {
                   color: AppColors().textcolor),
             ),
             Text(
-              "",
+              Provider.of<decision_urv>(context, listen: true).x1.toString(),
               style: TextStyle(
                   fontFamily: "Nokora",
                   fontSize: 5.sw,
@@ -166,7 +166,7 @@ class _resuiltState extends State<resuilt> {
                   color: AppColors().textcolor),
             ),
             Text(
-              "",
+              Provider.of<decision_urv>(context).x2.toString(),
               style: TextStyle(
                   fontFamily: "Nokora",
                   fontSize: 5.sw,
