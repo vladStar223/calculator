@@ -57,7 +57,7 @@ class input_number extends ChangeNotifier {
   bool urv4 = false;
   // переменные
   bool longtap =
-      false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
+  false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
   String a_text = '0',
       b_text = '0',
       c_text = '0',
@@ -109,6 +109,10 @@ class input_number extends ChangeNotifier {
     second_anim_screen = false;
     third_anim_screen = false;
     resuilt_anim_screen = false;
+    if (d_trigger){
+      c_trigger = true;
+      d_trigger = false;
+    }
     notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^2
   }
 
@@ -324,7 +328,7 @@ class input_number extends ChangeNotifier {
         a_text = '-' + a_text;
       } else if (a_text.contains('-')) {
         a_text = a_text.substring(1, a_text.length);
-      }
+      } if (a_text == '') {a_text = '0';}
     } else if (b_trigger) {
       if (b_text == '0'){
         b_text = '-';
@@ -332,7 +336,7 @@ class input_number extends ChangeNotifier {
         b_text = '-' + b_text;
       } else if (b_text.contains('-')) {
         b_text = b_text.substring(1, b_text.length);
-      }
+      } if (b_text == '') {b_text = '0';}
     } else if (c_trigger) {
       if (c_text == '0'){
         c_text = '-';
@@ -340,7 +344,7 @@ class input_number extends ChangeNotifier {
         c_text = '-' + c_text;
       } else if (c_text.contains('-')) {
         c_text = c_text.substring(1, c_text.length);
-      }
+      } if (c_text == '') {c_text = '0';}
     } else if (d_trigger) {
       if (d_text == '0'){
         d_text = '-';
@@ -348,7 +352,7 @@ class input_number extends ChangeNotifier {
         d_text = '-' + d_text;
       } else if (d_text.contains('-')) {
         d_text = d_text.substring(1, d_text.length);
-      }
+      } if (d_text == '') {d_text = '0';}
     }
     notifyListeners();
   }
