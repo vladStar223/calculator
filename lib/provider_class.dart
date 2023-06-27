@@ -124,7 +124,7 @@ class input_number extends ChangeNotifier {
     first_anim_screen = false;
     second_anim_screen = false;
     third_anim_screen = true;
-    savemode(2);
+    //savemode(2);
     resuilt_anim_screen = false;
     notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^4 (ДОБАВЬ)
   }
@@ -397,7 +397,7 @@ class input_number extends ChangeNotifier {
   } // BUTTON OF TOTAL DELETE SELECTED VARIABLE (AC Button)
 }
 
-class decision_urv extends ChangeNotifier {
+/*class decision_urv extends ChangeNotifier {
   dynamic urv2;
   dynamic urv3;
   dynamic urv4;
@@ -467,3 +467,4 @@ class decision_urv extends ChangeNotifier {
     }
   }
 }
+*/

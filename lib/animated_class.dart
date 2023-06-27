@@ -103,7 +103,7 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
     return IgnorePointer(
-      ignoring: animated.third_anim_screen ? false : true,
+      ignoring: animated.resuilt_anim_screen ? false : true,
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 250),
         opacity: animated.resuilt_anim_screen ? 1 : 0,
