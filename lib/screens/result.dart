@@ -94,10 +94,10 @@ class _resuiltState extends State<resuilt> {
                   color: AppColors().textcolor),
             ),
             Text(
-              "тут должно как выглядить ",
+              Provider.of<input_number>(context).urvshow,
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 5.sw,
+                  fontSize: 6.sw,
                   fontWeight: FontWeight.w200,
                   color: AppColors().textcolor),
             ),

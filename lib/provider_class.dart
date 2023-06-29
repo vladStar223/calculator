@@ -428,8 +428,9 @@ class input_number extends ChangeNotifier {
   double x4 = 0;
   int kx = 0;
   int kv = 0;
-
+  String urvshow = "0";
   void decision_ur() {
+    urvshow = "${a_text} x²${b_text} x$c_text";
     a = double.parse(a_text);
     b = double.parse(b_text);
     c = double.parse(c_text);
