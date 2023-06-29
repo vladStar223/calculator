@@ -18,6 +18,13 @@ class resuilt extends StatefulWidget {
 class _resuiltState extends State<resuilt> {
   @override
   Widget build(BuildContext context) {
+    var fonturv = 7;
+    if (Provider.of<input_number>(context).urvshow.length > 27) {
+      fonturv = 5;
+    }
+    if (Provider.of<input_number>(context).urvshow.length > 35) {
+      fonturv = 4;
+    }
     return Container(
       decoration: BoxDecoration(
         color: AppColors().buttoncolor1,
@@ -34,139 +41,129 @@ class _resuiltState extends State<resuilt> {
                 color: AppColors().textcolor),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Вид уравнения:  ",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 6.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
-            Text(
-              "квадратное",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 6.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
-          ],
-        ),
         SizedBox(
           height: 1.sh,
+        ),
+        Text(
+          Provider.of<input_number>(context).urvshow,
+          style: TextStyle(
+              fontFamily: "Nokora",
+              fontSize: fonturv.sw,
+              fontWeight: FontWeight.w200,
+              color: AppColors().textcolor),
+        ),
+        Text(
+          "D = b² - 4 × a × c",
+          style: TextStyle(
+              fontFamily: "Nokora",
+              fontSize: 8.sw,
+              fontWeight: FontWeight.w200,
+              color: AppColors().textcolor),
+        ),
+        Text(
+          "X = -+√D ÷ 2 * a",
+          style: TextStyle(
+              fontFamily: "Nokora",
+              fontSize: 8.sw,
+              fontWeight: FontWeight.w200,
+              color: AppColors().textcolor),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              "Формула Дискримината",
+              "√D =",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 4.sw,
+                  fontSize: 9.sw,
                   fontWeight: FontWeight.w200,
                   color: AppColors().textcolor),
             ),
-            Text(
-              "D = b² - 4 × a × c",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 5.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
+            Container(
+              width: 60.sw,
+              height: 5.1.sh,
+              decoration: BoxDecoration(
+                color: AppColors().white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Text(
+                  Provider.of<input_number>(context).D.toString(),
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      color: AppColors().textcolor2,
+                      fontSize: 5.3.sw,
+                      fontFamily: "Nokora",
+                      fontWeight: FontWeight.w300),
+                ),
+              ),
             ),
           ],
-        ),
-        SizedBox(
-          height: 1.sh,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              Provider.of<input_number>(context).urvshow,
+              "X1 =",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 6.sw,
+                  fontSize: 9.sw,
                   fontWeight: FontWeight.w200,
                   color: AppColors().textcolor),
             ),
+            Container(
+              width: 60.sw,
+              height: 5.1.sh,
+              decoration: BoxDecoration(
+                color: AppColors().white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Text(
+                  Provider.of<input_number>(context).x1.toString(),
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      color: AppColors().textcolor2,
+                      fontSize: 5.3.sw,
+                      fontFamily: "Nokora",
+                      fontWeight: FontWeight.w300),
+                ),
+              ),
+            ),
           ],
-        ),
-        SizedBox(
-          height: 1.sh,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              "Формула X = ",
+              "X2 =",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 6.sw,
+                  fontSize: 9.sw,
                   fontWeight: FontWeight.w200,
                   color: AppColors().textcolor),
             ),
-            Text(
-              "-+ѴD ÷ 2 * a ",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 7.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 1.sh,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              "X1 = ",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 8.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
-            Text(
-              Provider.of<input_number>(context)
-                  .x1
-                  .toString(), //Provider.of<decision_urv>(context, listen: true).x1.toString(),
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 5.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 1.sh,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              "X2 = ",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 8.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
-            Text(
-              //Provider.of<decision_urv>(context).x2.toString(),
-              Provider.of<input_number>(context).x2.toString(),
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 5.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
+            Container(
+              width: 60.sw,
+              height: 5.1.sh,
+              decoration: BoxDecoration(
+                color: AppColors().white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Text(
+                  Provider.of<input_number>(context).x2.toString(),
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      color: AppColors().textcolor2,
+                      fontSize: 5.3.sw,
+                      fontFamily: "Nokora",
+                      fontWeight: FontWeight.w300),
+                ),
+              ),
             ),
           ],
         ),

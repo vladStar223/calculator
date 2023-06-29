@@ -76,15 +76,9 @@ class third_animated_screenState extends State<third_animated_screen> {
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 250),
         opacity: animated.third_anim_screen ? 1 : 0,
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors().buttoncolor1,
-            borderRadius: BorderRadius.circular(45),
-          ),
-          child: Center(
-              child: SizedBox(
-                  height: 43.5.sh, width: 95.sw, child: biquadrate_equation())),
-        ),
+        child: Center(
+            child: SizedBox(
+                height: 43.5.sh, width: 95.sw, child: biquadrate_equation())),
       ),
     );
   }
@@ -107,14 +101,8 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 250),
         opacity: animated.resuilt_anim_screen ? 1 : 0,
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors().buttoncolor1,
-            borderRadius: BorderRadius.circular(45),
-          ),
-          child: Center(
-              child: SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt())),
-        ),
+        child: Center(
+            child: SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt())),
       ),
     );
   }

@@ -106,6 +106,7 @@ class input_number extends ChangeNotifier {
   void Animated_first_screen() {
     first_anim_screen = true;
     savemode(0);
+    zerourv();
     second_anim_screen = false;
     third_anim_screen = false;
     resuilt_anim_screen = false;
@@ -120,6 +121,7 @@ class input_number extends ChangeNotifier {
     first_anim_screen = false;
     second_anim_screen = true;
     savemode(1);
+    zerourv();
     third_anim_screen = false;
     resuilt_anim_screen = false;
     notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^3
@@ -130,6 +132,7 @@ class input_number extends ChangeNotifier {
     second_anim_screen = false;
     third_anim_screen = true;
     savemode(2);
+    zerourv();
     resuilt_anim_screen = false;
     notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^4 (ДОБАВЬ)
   }
@@ -429,13 +432,14 @@ class input_number extends ChangeNotifier {
   int kx = 0;
   int kv = 0;
   String urvshow = "0";
+  double D = 0;
   void decision_ur() {
     a = double.parse(a_text);
     b = double.parse(b_text);
     c = double.parse(c_text);
     d = double.parse(d_text);
     if (urv2 == true) {
-      urvshow = "${a_text} x²${b_text} x$c_text";
+      urvshow = "${a_text} x² ${b_text} x ${c_text} = 0";
       kv = 0;
       d = (b * b) - 4 * a * c;
       if (a == 0) {
@@ -452,10 +456,12 @@ class input_number extends ChangeNotifier {
         x2 = -b / a;
       }
       if (d > 0) {
-        double D = sqrt(d);
+        D = sqrt(d);
         x1 = (d - b) / (2 * a);
         x2 = (-d - b) / (2 * a);
         kx = 2;
+      } else {
+        print("NOT XXXXXXXXXXXXX");
       }
       if (a == 0 && c == 0) {
         x1 = 0;
@@ -483,6 +489,16 @@ class input_number extends ChangeNotifier {
       kv = 2;
     }
     notifyListeners();
+  }
+
+  void zerourv() {
+    D = 0;
+    x1 = 0;
+    x2 = 0;
+    x3 = 0;
+    x4 = 0;
+    kv = 0;
+    kx = 0;
   }
 }
 
