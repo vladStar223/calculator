@@ -70,7 +70,7 @@ class _resuiltState extends State<resuilt> {
                   color: AppColors().textcolor),
             ),
             Text(
-              "D = b^2 - 4 * a * c",
+              "D = b² - 4 × a × c",
               style: TextStyle(
                   fontFamily: "Nokora",
                   fontSize: 5.sw,
@@ -85,14 +85,6 @@ class _resuiltState extends State<resuilt> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              "Вид",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 4.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
             Text(
               Provider.of<input_number>(context).urvshow,
               style: TextStyle(
@@ -118,7 +110,7 @@ class _resuiltState extends State<resuilt> {
                   color: AppColors().textcolor),
             ),
             Text(
-              "+-№D - 4 * a * c ",
+              "-+ѴD ÷ 2 * a ",
               style: TextStyle(
                   fontFamily: "Nokora",
                   fontSize: 7.sw,

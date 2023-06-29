@@ -175,7 +175,7 @@ class _keyboardState extends State<keyboard> {
                 ),
                 child: Center(
                   child: Text(
-                    "x^2",
+                    "x²",
                     style: TextStyle(
                         color: AppColors().textcolor,
                         fontSize: 5.sw,
@@ -202,7 +202,7 @@ class _keyboardState extends State<keyboard> {
                 ),
                 child: Center(
                   child: Text(
-                    "x^3",
+                    "x³",
                     style: TextStyle(
                         color: AppColors().textcolor,
                         fontSize: 5.sw,
@@ -229,7 +229,7 @@ class _keyboardState extends State<keyboard> {
                 ),
                 child: Center(
                   child: Text(
-                    "x^4",
+                    "x⁴",
                     style: TextStyle(
                         color: AppColors().textcolor,
                         fontSize: 5.sw,

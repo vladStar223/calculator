@@ -430,12 +430,12 @@ class input_number extends ChangeNotifier {
   int kv = 0;
   String urvshow = "0";
   void decision_ur() {
-    urvshow = "${a_text} x²${b_text} x$c_text";
     a = double.parse(a_text);
     b = double.parse(b_text);
     c = double.parse(c_text);
     d = double.parse(d_text);
     if (urv2 == true) {
+      urvshow = "${a_text} x²${b_text} x$c_text";
       kv = 0;
       d = (b * b) - 4 * a * c;
       if (a == 0) {

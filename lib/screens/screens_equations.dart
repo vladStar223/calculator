@@ -41,7 +41,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                     ),
                     child: Center(
                       child: Text(
-                        "ax^2 + bx - c = 0",
+                        "ax² + bx - c = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
                             fontSize: 5.sh,
@@ -255,7 +255,7 @@ class _cubic_equationState extends State<cubic_equation> {
                     ),
                     child: Center(
                       child: Text(
-                        "ax^3 + bx^2 + cx + d = 0",
+                        "ax³ + bx² + cx + d = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
                             fontSize: 6.sw,
@@ -521,7 +521,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                     ),
                     child: Center(
                       child: Text(
-                        "ax^4 + bx^3 + cx^2 + dx = 0",
+                        "ax⁴+ bx³ + cx² + dx = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
                             fontSize: 6.sw,
