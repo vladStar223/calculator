@@ -57,7 +57,7 @@ class input_number extends ChangeNotifier {
   bool urv4 = false;
   // переменные
   bool longtap =
-  false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
+      false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
   String a_text = '0',
       b_text = '0',
       c_text = '0',
@@ -109,7 +109,7 @@ class input_number extends ChangeNotifier {
     second_anim_screen = false;
     third_anim_screen = false;
     resuilt_anim_screen = false;
-    if (d_trigger){
+    if (d_trigger) {
       c_trigger = true;
       d_trigger = false;
     }
@@ -129,7 +129,7 @@ class input_number extends ChangeNotifier {
     first_anim_screen = false;
     second_anim_screen = false;
     third_anim_screen = true;
-    //savemode(2);
+    savemode(2);
     resuilt_anim_screen = false;
     notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА Х^4 (ДОБАВЬ)
   }
@@ -158,6 +158,7 @@ class input_number extends ChangeNotifier {
     second_anim_screen = false;
     third_anim_screen = false;
     resuilt_anim_screen = true;
+    decision_ur();
     notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА РАВНО (ДОБАВЬ)
   }
 
@@ -322,37 +323,49 @@ class input_number extends ChangeNotifier {
 
   void Minus_press() {
     if (a_trigger) {
-      if (a_text == '0'){
+      if (a_text == '0') {
         a_text = '-';
       } else if (a_text.length < 12 && !a_text.contains('-')) {
         a_text = '-' + a_text;
       } else if (a_text.contains('-')) {
         a_text = a_text.substring(1, a_text.length);
-      } if (a_text == '') {a_text = '0';}
+      }
+      if (a_text == '') {
+        a_text = '0';
+      }
     } else if (b_trigger) {
-      if (b_text == '0'){
+      if (b_text == '0') {
         b_text = '-';
       } else if (b_text.length < 12 && !b_text.contains('-')) {
         b_text = '-' + b_text;
       } else if (b_text.contains('-')) {
         b_text = b_text.substring(1, b_text.length);
-      } if (b_text == '') {b_text = '0';}
+      }
+      if (b_text == '') {
+        b_text = '0';
+      }
     } else if (c_trigger) {
-      if (c_text == '0'){
+      if (c_text == '0') {
         c_text = '-';
       } else if (c_text.length < 12 && !c_text.contains('-')) {
         c_text = '-' + c_text;
       } else if (c_text.contains('-')) {
         c_text = c_text.substring(1, c_text.length);
-      } if (c_text == '') {c_text = '0';}
+      }
+      if (c_text == '') {
+        c_text = '0';
+      }
     } else if (d_trigger) {
-      if (d_text == '0'){
+      if (d_text == '0') {
         d_text = '-';
       } else if (d_text.length < 12 && !d_text.contains('-')) {
         d_text = '-' + d_text;
       } else if (d_text.contains('-')) {
         d_text = d_text.substring(1, d_text.length);
-      } if (d_text == '') {d_text = '0';}
+      }
+      if (d_text == '') {
+        d_text = '0';
+      }
     }
     notifyListeners();
   }
@@ -398,7 +411,7 @@ class input_number extends ChangeNotifier {
     }
 
     notifyListeners();
-  }
+  } // BUTTON OF TOTAL DELETE SELECTED VARIABLE (AC Button)
 
   void setlongtap_ac() {
     if (longtap == true) {
@@ -407,17 +420,8 @@ class input_number extends ChangeNotifier {
       longtap = true;
     }
     notifyListeners();
-  } // BUTTON OF TOTAL DELETE SELECTED VARIABLE (AC Button)
-}
+  }
 
-/*class decision_urv extends ChangeNotifier {
-  dynamic urv2;
-  dynamic urv3;
-  dynamic urv4;
-  dynamic a;
-  dynamic b;
-  dynamic c;
-  dynamic d;
   double x1 = 0;
   double x2 = 0;
   double x3 = 0;
@@ -425,11 +429,11 @@ class input_number extends ChangeNotifier {
   int kx = 0;
   int kv = 0;
 
-  void getvar(a, b, c, d, urv2, urv3, urv4) {
-    a = double.parse(a);
-    b = double.parse(b);
-    c = double.parse(c);
-    d = double.parse(d);
+  void decision_ur() {
+    a = double.parse(a_text);
+    b = double.parse(b_text);
+    c = double.parse(c_text);
+    d = double.parse(d_text);
     if (urv2 == true) {
       kv = 0;
       d = (b * b) - 4 * a * c;
@@ -471,13 +475,17 @@ class input_number extends ChangeNotifier {
       }
       notifyListeners(); // не рабочие решения
     }
-    notifyListeners();
     if (urv3 == true) {
       kv = 1;
     }
     if (urv4 == true) {
       kv = 2;
     }
+    notifyListeners();
   }
+}
+
+/*class decision_urv extends ChangeNotifier {
+
 }
 */
