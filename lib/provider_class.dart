@@ -458,8 +458,8 @@ class input_number extends ChangeNotifier {
       }
       if (d > 0) {
         D = sqrt(d);
-        x1 = (d - b) / (2 * a);
-        x2 = (-d - b) / (2 * a);
+        x1 = (-b + D) / (2 * a);
+        x2 = (-b - D) / (2 * a);
         kx = 2;
       } else {
         print("NOT XXXXXXXXXXXXX");
@@ -503,7 +503,26 @@ class input_number extends ChangeNotifier {
       }
     }
     if (urv4 == true) {
-      kv = 2;
+      d = (b * b) - 4 * a * c;
+      D = sqrt(d);
+      x1 = (-b + D) / (2 * a);
+      x2 = (-b - D) / (2 * a);
+      if (x1 > 0 && x2 > 0) {
+        x1 = sqrt(x1) * 1;
+        x2 = sqrt(x1) * -1;
+        x3 = sqrt(x2) * -1;
+        x4 = sqrt(x2) * 1;
+      }
+      if (x1 < 0) {
+        x3 = sqrt(x2) * -1;
+        x4 = sqrt(x2) * 1;
+        print("нет корней x1");
+      }
+      if (x2 < 0) {
+        x1 = sqrt(x1) * 1;
+        x2 = sqrt(x1) * -1;
+        print("нет корней x2");
+      }
     }
     notifyListeners();
   }
@@ -536,10 +555,10 @@ class input_number extends ChangeNotifier {
       num x1 = (A + B) - a / 3;
       num w1 = -(A + B) / 2 * a / 3;
       num w2 = sqrt(3) * (A - B) / 2;
-      String x2 = w1.toString() + "+i*" + w2.toString();
+      String x2 = w1.toString() + " + i *" + w2.toString();
       w1 = (A + B) / 2 * a / 3;
       w2 = sqrt(3) * (A - B) / 2;
-      String x3 = w1.toString() + "+i*" + w2.toString();
+      String x3 = w1.toString() + "+ i *" + w2.toString();
       if (x2 == x3) {
         x2 = (-A - a / 3).toString();
         kx = 2;
