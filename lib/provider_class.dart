@@ -433,6 +433,7 @@ class input_number extends ChangeNotifier {
   int kv = 0;
   String urvshow = "0";
   double D = 0;
+  late List<String> x;
   void decision_ur() {
     a = double.parse(a_text);
     b = double.parse(b_text);
@@ -483,12 +484,73 @@ class input_number extends ChangeNotifier {
       notifyListeners(); // не рабочие решения
     }
     if (urv3 == true) {
-      kv = 1;
+      urvshow = "${a_text} x³ ${b_text} x² ${c_text} + ${d_text} = 0";
+      if (a != 1) {
+        double a1 = b / a;
+        double b1 = c / a;
+        double c1 = d / a;
+        decision_cubic(
+          a1,
+          b1,
+          c1,
+        );
+      } else {
+        decision_cubic(
+          b,
+          c,
+          d,
+        );
+      }
     }
     if (urv4 == true) {
       kv = 2;
     }
     notifyListeners();
+  }
+
+  void decision_cubic(double a, double b, double c) {
+    //числа после деления на а и без коэффицпента первого
+    num Q = ((a * a) - 3 * b) / 9;
+    num R = (2 * (a * a * a) - 9 * a * b + 27 * c) / 54;
+    num S = (Q * Q * Q) - (R * R);
+    print(Q);
+    print(R);
+    print(S);
+    if (S > 0) {
+      num f = (1 / 3) * acos(R / (sqrt(Q * Q * Q)));
+      num x1 = -2 * sqrt(Q) * cos(f) - a / 3;
+      num x2 = -2 * sqrt(Q) * cos(f + 2 * pi / 3) - a / 3;
+      num x3 = -2 * sqrt(Q) * cos(f - 2 * pi / 3) - a / 3;
+      print(x1);
+      print(x2);
+      print(x3);
+    } else {
+      num w = -R.sign * (R.abs() + sqrt(R * R - (Q * Q * Q)));
+      num A = pow(w, 1 / 3);
+      num B;
+      if (A != 0) {
+        B = Q / A;
+      } else {
+        B = 0;
+      }
+      num x1 = (A + B) - a / 3;
+      num w1 = -(A + B) / 2 * a / 3;
+      num w2 = sqrt(3) * (A - B) / 2;
+      String x2 = w1.toString() + "+i*" + w2.toString();
+      w1 = (A + B) / 2 * a / 3;
+      w2 = sqrt(3) * (A - B) / 2;
+      String x3 = w1.toString() + "+i*" + w2.toString();
+      if (x2 == x3) {
+        x2 = (-A - a / 3).toString();
+        kx = 2;
+      } else {
+        kx = 3;
+      }
+
+      print(x1);
+      print(x2);
+      print(x3);
+    }
   }
 
   void zerourv() {
