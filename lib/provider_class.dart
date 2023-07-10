@@ -439,8 +439,8 @@ class input_number extends ChangeNotifier {
   }
 
   double x1 = 0;
-  String x2 = "0";
-  String x3 = "0";
+  String x2 = "0.0";
+  String x3 = "0.0";
   double x4 = 0;
   int kx = 0;
   int kv = 0;

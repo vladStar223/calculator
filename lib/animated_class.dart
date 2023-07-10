@@ -103,7 +103,7 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
         opacity: animated.resuilt_anim_screen ? 1 : 0,
         child: Center(
             child:
-                SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt_urv3())),
+                SizedBox(height: 43.sh, width: 95.sw, child: resuilt_urv3())),
       ),
     );
   }

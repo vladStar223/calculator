@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:calculator/main.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BlurryDialog extends StatelessWidget {
   String title;
@@ -23,19 +25,27 @@ class BlurryDialog extends StatelessWidget {
             style: textStyle,
           ),
           actions: <Widget>[
-            new TextButton(
-              child: new Text("Continue"),
-              onPressed: () {
-                continueCallBack();
-              },
+            TextButton(
+              child: new Text("Открыть"),
+              onPressed: _launchURL,
             ),
             new TextButton(
-              child: Text("Cancel"),
+              child: Text("Закрыть"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
           ],
         ));
+  }
+}
+
+_launchURL() async {
+  const url =
+      'https://all-equa.ru/articles/priblizhennoe-vychislenie-korney-kubicheskogo-uravneniya/';
+  if (await canLaunchUrl(Uri.parse(url))) {
+    await launchUrl(Uri.parse(url));
+  } else {
+    throw 'Could not launch $url';
   }
 }

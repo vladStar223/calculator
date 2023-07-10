@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/animated_class.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'alertDialog_widget.dart';
 
@@ -43,8 +44,10 @@ class _MainState extends State<Main> {
             Navigator.of(context).pop(),
             // code on continue comes here
           };
-      BlurryDialog alert = BlurryDialog("Abort",
-          "Are you sure you want to abort this operation?", continueCallBack);
+      BlurryDialog alert = BlurryDialog(
+          "Сообщение",
+          "Для подробной информации перейдите на  интернет ресурс",
+          continueCallBack);
 
       showDialog(
         context: context,
