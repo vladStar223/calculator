@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/animated_class.dart';
 
+import 'alertDialog_widget.dart';
+
 //начало программы
 void main() {
   runApp(Provider(
@@ -36,6 +38,22 @@ class Main extends StatefulWidget {
 class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
+    _showDialog(BuildContext context) {
+      VoidCallback continueCallBack = () => {
+            Navigator.of(context).pop(),
+            // code on continue comes here
+          };
+      BlurryDialog alert = BlurryDialog("Abort",
+          "Are you sure you want to abort this operation?", continueCallBack);
+
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        },
+      );
+    }
+
 // TODO: implement build
 // To make this screen full screen.
 // It will hide status bar and notch.
@@ -78,7 +96,7 @@ class _MainState extends State<Main> {
                 IconButton(
                     color: AppColors().white,
                     onPressed: () {
-                      scaffoldKey.currentState!.openDrawer();
+                      _showDialog(context);
                     },
                     icon: Icon(MyFlutterApp.question_circle)),
               ],
