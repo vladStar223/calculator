@@ -182,6 +182,10 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var fonturv = 7;
+    var fontx = 5;
+    if (Provider.of<input_number>(context).x2.length > 17) {
+      fontx = 3;
+    }
     if (Provider.of<input_number>(context).urvshow.length > 27) {
       fonturv = 5;
     }
@@ -216,53 +220,28 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               color: AppColors().textcolor),
         ),
         Text(
-          "D = b² - 4 × a × c",
+          "Метод решения по формуле Кардано",
           style: TextStyle(
               fontFamily: "Nokora",
-              fontSize: 8.sw,
+              fontSize: 3.sw,
               fontWeight: FontWeight.w200,
               color: AppColors().textcolor),
         ),
         Text(
-          "X = -+√D ÷ 2 * a",
+          "Q = (a² - 3 * b) / 9",
           style: TextStyle(
               fontFamily: "Nokora",
-              fontSize: 8.sw,
+              fontSize: 6.sw,
               fontWeight: FontWeight.w200,
               color: AppColors().textcolor),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              "√D =",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 9.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors().textcolor),
-            ),
-            Container(
-              width: 60.sw,
-              height: 5.1.sh,
-              decoration: BoxDecoration(
-                color: AppColors().white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  Provider.of<input_number>(context).D.toString(),
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                      color: AppColors().textcolor2,
-                      fontSize: 5.3.sw,
-                      fontFamily: "Nokora",
-                      fontWeight: FontWeight.w300),
-                ),
-              ),
-            ),
-          ],
+        Text(
+          "R = (2 * a ³- 9 * a * b + 27 * c) / 54",
+          style: TextStyle(
+              fontFamily: "Nokora",
+              fontSize: 6.sw,
+              fontWeight: FontWeight.w200,
+              color: AppColors().textcolor),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -289,7 +268,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors().textcolor2,
-                      fontSize: 5.3.sw,
+                      fontSize: 5.sw,
                       fontFamily: "Nokora",
                       fontWeight: FontWeight.w300),
                 ),
@@ -318,11 +297,44 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x2.toString(),
+                  (Provider.of<input_number>(context).x2),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors().textcolor2,
-                      fontSize: 5.3.sw,
+                      fontSize: fontx.sw,
+                      fontFamily: "Nokora",
+                      fontWeight: FontWeight.w300),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "X3 =",
+              style: TextStyle(
+                  fontFamily: "Nokora",
+                  fontSize: 9.sw,
+                  fontWeight: FontWeight.w200,
+                  color: AppColors().textcolor),
+            ),
+            Container(
+              width: 60.sw,
+              height: 5.1.sh,
+              decoration: BoxDecoration(
+                color: AppColors().white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: Text(
+                  Provider.of<input_number>(context).x3,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      color: AppColors().textcolor2,
+                      fontSize: fontx.sw,
                       fontFamily: "Nokora",
                       fontWeight: FontWeight.w300),
                 ),

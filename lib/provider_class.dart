@@ -55,6 +55,7 @@ class input_number extends ChangeNotifier {
   bool urv2 = true;
   bool urv3 = false;
   bool urv4 = false;
+
   // переменные
   bool longtap =
       false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
@@ -70,6 +71,17 @@ class input_number extends ChangeNotifier {
       second_anim_screen = false,
       third_anim_screen = false,
       resuilt_anim_screen = false; // БУЛЬКИ ДЛЯ АНИМАЦИЙ
+
+  void zerourv() {
+    D = 0;
+    x1 = 0;
+    x2 = "0";
+    x3 = "0";
+    x4 = 0;
+    kv = 0;
+    kx = 0;
+    notifyListeners();
+  }
 
   void A_trigger() {
     a_trigger = true;
@@ -272,6 +284,7 @@ class input_number extends ChangeNotifier {
     }
     notifyListeners();
   }
+
   // ввод цифр идет при условии что текущая длина символов <6 (минус и запятая не в счет)
   // при вызове onPressed надо передать значение цифры через анонимную функцию
 
@@ -426,14 +439,15 @@ class input_number extends ChangeNotifier {
   }
 
   double x1 = 0;
-  double x2 = 0;
-  double x3 = 0;
+  String x2 = "0";
+  String x3 = "0";
   double x4 = 0;
   int kx = 0;
   int kv = 0;
   String urvshow = "0";
   double D = 0;
   late List<String> x;
+
   void decision_ur() {
     a = double.parse(a_text);
     b = double.parse(b_text);
@@ -454,12 +468,12 @@ class input_number extends ChangeNotifier {
       }
       if (c == 0) {
         x1 = 0;
-        x2 = -b / a;
+        x2 = (-b / a).toString();
       }
       if (d > 0) {
         D = sqrt(d);
-        x1 = (-b + D) / (2 * a);
-        x2 = (-b - D) / (2 * a);
+        x1 = ((-b + D) / (2 * a));
+        x2 = ((-b - D) / (2 * a)).toString();
         kx = 2;
       } else {
         print("NOT XXXXXXXXXXXXX");
@@ -501,16 +515,20 @@ class input_number extends ChangeNotifier {
           d,
         );
       }
+      //print(x1);
+      //print(x2);
+      //print(x3);
     }
     if (urv4 == true) {
+      /*
       d = (b * b) - 4 * a * c;
       D = sqrt(d);
       x1 = (-b + D) / (2 * a);
-      x2 = (-b - D) / (2 * a);
+      x2 = ((-b - D) / (2 * a)).toString();
       if (x1 > 0 && x2 > 0) {
         x1 = sqrt(x1) * 1;
-        x2 = sqrt(x1) * -1;
-        x3 = sqrt(x2) * -1;
+        x2 = (sqrt(x1) * -1);
+        x3 = (sqrt(x2) * -1);
         x4 = sqrt(x2) * 1;
       }
       if (x1 < 0) {
@@ -524,7 +542,9 @@ class input_number extends ChangeNotifier {
         print("нет корней x2");
       }
     }
-    notifyListeners();
+    */
+      notifyListeners();
+    }
   }
 
   void decision_cubic(double a, double b, double c) {
@@ -537,9 +557,9 @@ class input_number extends ChangeNotifier {
     print(S);
     if (S > 0) {
       num f = (1 / 3) * acos(R / (sqrt(Q * Q * Q)));
-      num x1 = -2 * sqrt(Q) * cos(f) - a / 3;
-      num x2 = -2 * sqrt(Q) * cos(f + 2 * pi / 3) - a / 3;
-      num x3 = -2 * sqrt(Q) * cos(f - 2 * pi / 3) - a / 3;
+      x1 = -2 * sqrt(Q) * cos(f) - a / 3;
+      x2 = (-2 * sqrt(Q) * cos(f + 2 * pi / 3) - a / 3).toString();
+      x3 = (-2 * sqrt(Q) * cos(f - 2 * pi / 3) - a / 3).toString();
       print(x1);
       print(x2);
       print(x3);
@@ -552,34 +572,26 @@ class input_number extends ChangeNotifier {
       } else {
         B = 0;
       }
-      num x1 = (A + B) - a / 3;
+      x1 = (A + B) - a / 3;
       num w1 = -(A + B) / 2 * a / 3;
       num w2 = sqrt(3) * (A - B) / 2;
-      String x2 = w1.toString() + " + i *" + w2.toString();
+      String x22 = w1.toString() + " + i * " + w2.toString();
       w1 = (A + B) / 2 * a / 3;
       w2 = sqrt(3) * (A - B) / 2;
-      String x3 = w1.toString() + "+ i *" + w2.toString();
-      if (x2 == x3) {
-        x2 = (-A - a / 3).toString();
+      String x33 = w1.toString() + "+ i * " + w2.toString();
+      if (x22 == x33) {
+        x22 = (-A - a / 3).toString();
         kx = 2;
       } else {
         kx = 3;
       }
-
+      x2 = x22;
+      x3 = x33;
       print(x1);
       print(x2);
       print(x3);
     }
-  }
-
-  void zerourv() {
-    D = 0;
-    x1 = 0;
-    x2 = 0;
-    x3 = 0;
-    x4 = 0;
-    kv = 0;
-    kx = 0;
+    notifyListeners();
   }
 }
 
