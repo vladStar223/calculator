@@ -520,29 +520,26 @@ class input_number extends ChangeNotifier {
       //print(x3);
     }
     if (urv4 == true) {
-      /*
       d = (b * b) - 4 * a * c;
       D = sqrt(d);
       x1 = (-b + D) / (2 * a);
       x2 = ((-b - D) / (2 * a)).toString();
-      if (x1 > 0 && x2 > 0) {
+      if (x1 > 0 && double.parse(x2) > 0) {
         x1 = sqrt(x1) * 1;
-        x2 = (sqrt(x1) * -1);
-        x3 = (sqrt(x2) * -1);
-        x4 = sqrt(x2) * 1;
+        x2 = (sqrt(x1) * -1).toString();
+        x3 = (sqrt(double.parse(x2)) * -1).toString();
+        x4 = sqrt(double.parse(x2)) * 1;
       }
       if (x1 < 0) {
-        x3 = sqrt(x2) * -1;
-        x4 = sqrt(x2) * 1;
+        x3 = sqrt(double.parse(x2)).toString() * -1;
+        x4 = sqrt(double.parse(x2)) * 1;
         print("нет корней x1");
       }
-      if (x2 < 0) {
+      if (double.parse(x2) < 0) {
         x1 = sqrt(x1) * 1;
-        x2 = sqrt(x1) * -1;
+        x2 = (sqrt(x1) * -1).toString();
         print("нет корней x2");
       }
-    }
-    */
       notifyListeners();
     }
   }
