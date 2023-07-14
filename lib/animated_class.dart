@@ -93,6 +93,7 @@ class resuilt_animated_screen extends StatefulWidget {
 }
 
 class resuilt_animated_screenState extends State<resuilt_animated_screen> {
+  //написать чтобы понимало какой из классов ответа вызвать
   @override
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
@@ -103,7 +104,7 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
         opacity: animated.resuilt_anim_screen ? 1 : 0,
         child: Center(
             child:
-                SizedBox(height: 43.sh, width: 95.sw, child: resuilt_urv3())),
+                SizedBox(height: 43.sh, width: 95.sw, child: resuilt_urv4())),
       ),
     );
   }
