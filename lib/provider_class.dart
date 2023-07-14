@@ -475,8 +475,11 @@ class input_number extends ChangeNotifier {
         x1 = ((-b + D) / (2 * a));
         x2 = ((-b - D) / (2 * a)).toString();
         kx = 2;
-      } else {
-        print("NOT XXXXXXXXXXXXX");
+      }
+      if (d == 0) {
+        x1 = (-1 * b) / (2 * a);
+        x1 = sqrt(x1) * 1;
+        x2 = (x1 * -1).toString();
       }
       if (a == 0 && c == 0) {
         x1 = 0;
@@ -520,26 +523,63 @@ class input_number extends ChangeNotifier {
       //print(x3);
     }
     if (urv4 == true) {
+      urvshow = "${a_text} x⁴ ${b_text} x² ${c_text}  = 0";
+      kv = 0;
       d = (b * b) - 4 * a * c;
-      D = sqrt(d);
-      x1 = (-b + D) / (2 * a);
-      x2 = ((-b - D) / (2 * a)).toString();
-      if (x1 > 0 && double.parse(x2) > 0) {
+      if (a == 0) {
+        x1 = -c / b;
         x1 = sqrt(x1) * 1;
         x2 = (sqrt(x1) * -1).toString();
+        kx = 1;
+      }
+      if (b == 0) {
+        x1 = -c / b;
+        x1 = sqrt(x1);
+        x1 = sqrt(x1) * 1;
+        x2 = (sqrt(x1) * -1).toString();
+        kx = 1;
+      }
+      if (c == 0) {}
+      if (d > 0) {
+        D = sqrt(d);
+        x1 = ((-b + D) / (2 * a));
+        x2 = ((-b - D) / (2 * a)).toString();
+        print(x1);
         x3 = (sqrt(double.parse(x2)) * -1).toString();
         x4 = sqrt(double.parse(x2)) * 1;
+        x1 = sqrt(x1) * 1;
+        x2 = (x1 * -1).toString();
       }
-      if (x1 < 0) {
-        x3 = sqrt(double.parse(x2)).toString() * -1;
-        x4 = sqrt(double.parse(x2)) * 1;
-        print("нет корней x1");
+      if (d == 0) {
+        x1 = (-1 * b) / (2 * a);
+        x1 = sqrt(x1) * 1;
+        x2 = (x1 * -1).toString();
       }
-      if (double.parse(x2) < 0) {
+      if (a == 0 && c == 0) {
+        x1 = 0;
         x1 = sqrt(x1) * 1;
         x2 = (sqrt(x1) * -1).toString();
-        print("нет корней x2");
+        kx = 1;
       }
+      if (b == 0 && c == 0) {
+        x1 = 0;
+        kx = 1;
+      }
+      if (a == 0 && b == 0) {
+        kx = 0;
+      } // не рабочие решения
+      if (a == 0 && b == 0 && c == 0) {
+        kx = 0;
+        if (kDebugMode) {
+          print("ошибка");
+        }
+      }
+
+      print(x1);
+      print(x2);
+      print(x3);
+      print(x4);
+
       notifyListeners();
     }
   }

@@ -88,13 +88,27 @@ class _MainState extends State<Main> {
                       scaffoldKey.currentState!.openDrawer();
                     },
                     icon: Icon(MyFlutterApp.menu_circle)),
-                Text(
-                  "Уравнения",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors().white),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Калькулятор",
+                    style: TextStyle(
+                        fontFamily: "Nokora",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w200,
+                        color: AppColors().white),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Уравнения",
+                    style: TextStyle(
+                        fontFamily: "Nokora",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w200,
+                        color: AppColors().white),
+                  ),
                 ),
                 IconButton(
                     color: AppColors().white,

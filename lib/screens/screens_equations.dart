@@ -521,10 +521,10 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                     ),
                     child: Center(
                       child: Text(
-                        "ax⁴+ bx³ + cx² + dx = 0",
+                        "ax⁴ + bx² - c = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 6.sw,
+                            fontSize: 5.sh,
                             fontWeight: FontWeight.w200,
                             color: AppColors().textcolor),
                       ),
@@ -534,14 +534,14 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
               ],
             ),
             SizedBox(
-              height: 0.8.sh,
+              height: 2.sh,
             ),
             Row(
               children: [
                 Text(
                   "a = ",
                   style: TextStyle(
-                      fontSize: 9.sw,
+                      fontSize: 10.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -587,14 +587,14 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
               ],
             ),
             SizedBox(
-              height: 1.sh,
+              height: 3.sh,
             ),
             Row(
               children: [
                 Text(
                   "b = ",
                   style: TextStyle(
-                      fontSize: 9.sw,
+                      fontSize: 10.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -640,14 +640,14 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
               ],
             ),
             SizedBox(
-              height: 1.sh,
+              height: 3.sh,
             ),
             Row(
               children: [
                 Text(
                   "c = ",
                   style: TextStyle(
-                      fontSize: 9.sw,
+                      fontSize: 10.sw,
                       fontFamily: "Nokora",
                       color: AppColors().textcolor),
                 ),
@@ -657,7 +657,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.sw,
+                      width: 53.8.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
                         color: AppColors().white,
@@ -682,59 +682,6 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                           child: Text(
                             textAlign: TextAlign.right,
                             Provider.of<input_number>(context).c_text,
-                            style: TextStyle(
-                                color: AppColors().textcolor2,
-                                fontSize: 5.3.sw,
-                                fontFamily: "Nokora",
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 1.sh,
-            ),
-            Row(
-              children: [
-                Text(
-                  "d = ",
-                  style: TextStyle(
-                      fontSize: 9.sw,
-                      fontFamily: "Nokora",
-                      color: AppColors().textcolor),
-                ),
-                Center(
-                  child: Center(
-                    child: Container(
-                      width: 53.8.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors().white,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                            color: context.read<input_number>().d_trigger
-                                ? context.read<input_number>().color_of_border
-                                : Colors.transparent,
-                            width: 0.5.sw),
-                      ),
-                      child: TextButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ))),
-                        onPressed: () {
-                          context.read<input_number>().D_trigger();
-                        },
-                        child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Text(
-                            textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).d_text,
                             style: TextStyle(
                                 color: AppColors().textcolor2,
                                 fontSize: 5.3.sw,
