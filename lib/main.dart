@@ -129,7 +129,7 @@ class _MainState extends State<Main> {
                   ], //АНИМАЦИИ
                 ),
                 SizedBox(
-                  height: 50.sh,
+                  height: 49.7.sh,
                   width: 100.sw,
                   child: keyboard(),
                 ),
@@ -156,7 +156,7 @@ class _keyboardState extends State<keyboard> {
     return Column(
       children: [
         SizedBox(
-          height: 1.sh,
+          height: 0.7.sh,
         ),
         Row(
           // тут нужна анимация
