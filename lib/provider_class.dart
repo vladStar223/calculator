@@ -185,14 +185,13 @@ class input_number extends ChangeNotifier {
   }
 
   void Resuilt_anim_screen() {
-
-    if (first_anim_screen){
+    if (first_anim_screen) {
       first_resuilt_anim_screen = true;
       first_anim_screen = false;
-    } else if (second_anim_screen){
+    } else if (second_anim_screen) {
       second_resuilt_anim_screen = true;
       second_anim_screen = false;
-    } else if (third_anim_screen){
+    } else if (third_anim_screen) {
       third_resuilt_anim_screen = true;
       third_anim_screen = false;
     }
@@ -206,8 +205,7 @@ class input_number extends ChangeNotifier {
       if (a_trigger) {
         if (enternumber == '0' && a_text == '0') {
           return;
-        }
-        else if (a_text.length == 1 && a_text[0] == '0') {
+        } else if (a_text.length == 1 && a_text[0] == '0') {
           a_text = '+';
         }
         if (a_text.length < 12) {
@@ -217,8 +215,7 @@ class input_number extends ChangeNotifier {
       if (b_trigger) {
         if (enternumber == '0' && a_text == '0') {
           return;
-        }
-        else if (b_text.length == 1 && b_text[0] == '0') {
+        } else if (b_text.length == 1 && b_text[0] == '0') {
           b_text = '+';
         }
         if (b_text.length < 12) {
@@ -228,8 +225,7 @@ class input_number extends ChangeNotifier {
       if (c_trigger) {
         if (enternumber == '0' && c_text == '0') {
           return;
-        }
-        else if (c_text.length == 1 && c_text[0] == '0') {
+        } else if (c_text.length == 1 && c_text[0] == '0') {
           c_text = '+';
         }
         if (c_text.length < 12) {
@@ -239,8 +235,7 @@ class input_number extends ChangeNotifier {
       if (d_trigger) {
         if (enternumber == '0' && d_text == '0') {
           return;
-        }
-        else if (d_text.length == 1 && d_text[0] == '0') {
+        } else if (d_text.length == 1 && d_text[0] == '0') {
           d_text = '+';
         }
         if (d_text.length < 12) {
@@ -248,8 +243,8 @@ class input_number extends ChangeNotifier {
         }
       }
     }
-      notifyListeners();
-    }
+    notifyListeners();
+  }
 
   void Delete_press() {
     if (!enter_block) {
@@ -420,7 +415,8 @@ class input_number extends ChangeNotifier {
   double x4 = 0;
   int kx = 0;
   int kv = 0;
-  String urvshow = "0";
+  String urvshow =
+      "0"; // отвечает за отображение полного уравнения в экране вывода
   double D = 0;
   late List<String> x;
 
