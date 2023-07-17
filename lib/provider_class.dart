@@ -71,6 +71,10 @@ class input_number extends ChangeNotifier {
       second_anim_screen = false,
       third_anim_screen = false,
       resuilt_anim_screen = false; // БУЛЬКИ ДЛЯ АНИМАЦИЙ
+  bool enter_block = false, // variable to block input numbers
+      first_resuilt_anim_screen = false,
+      second_resuilt_anim_screen = false,
+      third_resuilt_anim_screen = false; //variables for anim resuilts
 
   void zerourv() {
     D = 0;
@@ -116,6 +120,10 @@ class input_number extends ChangeNotifier {
   }
 
   void Animated_first_screen() {
+    enter_block = false;
+    first_resuilt_anim_screen = false;
+    second_resuilt_anim_screen = false;
+    third_resuilt_anim_screen = false;
     first_anim_screen = true;
     savemode(0);
     zerourv();
@@ -130,7 +138,11 @@ class input_number extends ChangeNotifier {
   }
 
   void Animated_second_screen() {
+    enter_block = false;
     first_anim_screen = false;
+    first_resuilt_anim_screen = false;
+    second_resuilt_anim_screen = false;
+    third_resuilt_anim_screen = false;
     second_anim_screen = true;
     savemode(1);
     zerourv();
@@ -140,7 +152,11 @@ class input_number extends ChangeNotifier {
   }
 
   void Animated_third_screen() {
+    enter_block = false;
     first_anim_screen = false;
+    first_resuilt_anim_screen = false;
+    second_resuilt_anim_screen = false;
+    third_resuilt_anim_screen = false;
     second_anim_screen = false;
     third_anim_screen = true;
     savemode(2);
@@ -169,168 +185,93 @@ class input_number extends ChangeNotifier {
   }
 
   void Resuilt_anim_screen() {
-    first_anim_screen = false;
-    second_anim_screen = false;
-    third_anim_screen = false;
-    resuilt_anim_screen = true;
-    decision_ur();
-    notifyListeners(); //ФУНКЦИЯ ПРИ НАЖАТИИ НА РАВНО (ДОБАВЬ)
-  }
 
-  void Nums_press(String enternumber) {
-    if (a_trigger) {
-      if (a_text.length == 1 && a_text.indexOf('0') == 0) {
-        a_text = '';
-        if (a_text.length < 10 &&
-            !a_text.contains('.') &&
-            !a_text.contains('-')) {
-          a_text += enternumber;
-        } else if (a_text.length < 11 &&
-            (a_text.contains('.') || a_text.contains('-'))) {
-          a_text += enternumber;
-        } else if (a_text.length < 12 &&
-            (a_text.contains('.') && a_text.contains('-'))) {
-          a_text += enternumber;
-        }
-      } else if (a_text.length < 10 &&
-          !a_text.contains('.') &&
-          !a_text.contains('-')) {
-        a_text += enternumber;
-      } else if (a_text.length < 11 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += enternumber;
-      } else if (a_text.length < 12 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
-        a_text += enternumber;
-      }
+    if (first_anim_screen){
+      first_resuilt_anim_screen = true;
+      first_anim_screen = false;
+    } else if (second_anim_screen){
+      second_resuilt_anim_screen = true;
+      second_anim_screen = false;
+    } else if (third_anim_screen){
+      third_resuilt_anim_screen = true;
+      third_anim_screen = false;
     }
-    if (b_trigger) {
-      if (b_text.length == 1 && b_text.indexOf('0') == 0) {
-        b_text = '';
-        if (b_text.length < 10 &&
-            !b_text.contains('.') &&
-            !b_text.contains('-')) {
-          b_text += enternumber;
-        } else if (b_text.length < 11 &&
-            (b_text.contains('.') || b_text.contains('-'))) {
-          b_text += enternumber;
-        } else if (b_text.length < 12 &&
-            (b_text.contains('.') && b_text.contains('-'))) {
-          b_text += enternumber;
-        }
-      } else if (b_text.length < 10 &&
-          !b_text.contains('.') &&
-          !b_text.contains('-')) {
-        b_text += enternumber;
-      } else if (b_text.length < 11 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += enternumber;
-      } else if (b_text.length < 12 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
-        b_text += enternumber;
-      }
-    }
-    if (c_trigger) {
-      if (c_text.length == 1 && c_text.indexOf('0') == 0) {
-        c_text = '';
-        if (c_text.length < 10 &&
-            !c_text.contains('.') &&
-            !c_text.contains('-')) {
-          c_text += enternumber;
-        } else if (c_text.length < 11 &&
-            (c_text.contains('.') || c_text.contains('-'))) {
-          c_text += enternumber;
-        } else if (c_text.length < 12 &&
-            (c_text.contains('.') && c_text.contains('-'))) {
-          c_text += enternumber;
-        }
-      } else if (c_text.length < 10 &&
-          !c_text.contains('.') &&
-          !c_text.contains('-')) {
-        c_text += enternumber;
-      } else if (c_text.length < 11 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += enternumber;
-      } else if (c_text.length < 12 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
-        c_text += enternumber;
-      }
-    }
-    if (d_trigger) {
-      if (d_text.length == 1 && d_text.indexOf('0') == 0) {
-        d_text = '';
-        if (d_text.length < 10 &&
-            !d_text.contains('.') &&
-            !d_text.contains('-')) {
-          d_text += enternumber;
-        } else if (d_text.length < 11 &&
-            (d_text.contains('.') || d_text.contains('-'))) {
-          d_text += enternumber;
-        } else if (d_text.length < 12 &&
-            (d_text.contains('.') && d_text.contains('-'))) {
-          d_text += enternumber;
-        }
-      } else if (d_text.length < 10 &&
-          !d_text.contains('.') &&
-          !d_text.contains('-')) {
-        d_text += enternumber;
-      } else if (d_text.length < 11 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += enternumber;
-      } else if (d_text.length < 12 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
-        d_text += enternumber;
-      }
-    }
+    enter_block = true;
+    decision_ur();
     notifyListeners();
   }
 
-  // ввод цифр идет при условии что текущая длина символов <6 (минус и запятая не в счет)
-  // при вызове onPressed надо передать значение цифры через анонимную функцию
+  void Nums_press(String enternumber) {
+    if (!enter_block) {
+      if (a_trigger) {
+        if (enternumber == '0' && a_text == '0') {
+          return;
+        }
+        else if (a_text.length == 1 && a_text[0] == '0') {
+          a_text = '+';
+        }
+        if (a_text.length < 12) {
+          a_text += enternumber;
+        }
+      }
+      if (b_trigger) {
+        if (enternumber == '0' && a_text == '0') {
+          return;
+        }
+        else if (b_text.length == 1 && b_text[0] == '0') {
+          b_text = '+';
+        }
+        if (b_text.length < 12) {
+          b_text += enternumber;
+        }
+      }
+      if (c_trigger) {
+        if (enternumber == '0' && c_text == '0') {
+          return;
+        }
+        else if (c_text.length == 1 && c_text[0] == '0') {
+          c_text = '+';
+        }
+        if (c_text.length < 12) {
+          c_text += enternumber;
+        }
+      }
+      if (d_trigger) {
+        if (enternumber == '0' && d_text == '0') {
+          return;
+        }
+        else if (d_text.length == 1 && d_text[0] == '0') {
+          d_text = '+';
+        }
+        if (d_text.length < 12) {
+          d_text += enternumber;
+        }
+      }
+    }
+      notifyListeners();
+    }
 
   void Delete_press() {
-    if (a_trigger) {
-      if (a_text.length > 0) {
-        if (a_text[a_text.length - 1] == '.') {
-          a_text = a_text.substring(0, a_text.length - 1);
-        } else {
-          a_text = a_text.substring(0, a_text.length - 1);
-          if (a_text.isEmpty) {
-            a_text = '0';
-          }
+    if (!enter_block) {
+      if (a_trigger) {
+        a_text = a_text.substring(0, a_text.length - 1);
+        if (a_text == '') {
+          a_text += '0';
         }
-      }
-    } else if (b_trigger) {
-      if (b_text.length > 0) {
-        if (b_text[b_text.length - 1] == '.') {
-          b_text = b_text.substring(0, b_text.length - 1);
-        } else {
-          b_text = b_text.substring(0, b_text.length - 1);
-          if (b_text.isEmpty) {
-            b_text = '0';
-          }
+      } else if (b_trigger) {
+        b_text = b_text.substring(0, b_text.length - 1);
+        if (b_text == '') {
+          b_text += '0';
         }
-      }
-    } else if (c_trigger) {
-      if (c_text.length > 0) {
-        if (c_text[c_text.length - 1] == '.') {
-          c_text = c_text.substring(0, c_text.length - 1);
-        } else {
-          c_text = c_text.substring(0, c_text.length - 1);
-          if (c_text.isEmpty) {
-            c_text = '0';
-          }
+      } else if (c_trigger) {
+        c_text = c_text.substring(0, c_text.length - 1);
+        if (c_text == '') {
+          c_text += '0';
         }
-      }
-    } else if (d_trigger) {
-      if (d_text.length > 0) {
-        if (d_text[d_text.length - 1] == '.') {
-          d_text = d_text.substring(0, d_text.length - 1);
-        } else {
-          d_text = d_text.substring(0, d_text.length - 1);
-          if (d_text.isEmpty) {
-            d_text = '0';
-          }
+      } else if (d_trigger) {
+        d_text = d_text.substring(0, d_text.length - 1);
+        if (d_text == '') {
+          d_text += '0';
         }
       }
     }
@@ -338,102 +279,137 @@ class input_number extends ChangeNotifier {
   }
 
   void Minus_press() {
-    if (a_trigger) {
-      if (a_text == '0') {
-        a_text = '-';
-      } else if (a_text.length < 12 && !a_text.contains('-')) {
-        a_text = '-' + a_text;
-      } else if (a_text.contains('-')) {
-        a_text = a_text.substring(1, a_text.length);
-      }
-      if (a_text == '') {
-        a_text = '0';
-      }
-    } else if (b_trigger) {
-      if (b_text == '0') {
-        b_text = '-';
-      } else if (b_text.length < 12 && !b_text.contains('-')) {
-        b_text = '-' + b_text;
-      } else if (b_text.contains('-')) {
-        b_text = b_text.substring(1, b_text.length);
-      }
-      if (b_text == '') {
-        b_text = '0';
-      }
-    } else if (c_trigger) {
-      if (c_text == '0') {
-        c_text = '-';
-      } else if (c_text.length < 12 && !c_text.contains('-')) {
-        c_text = '-' + c_text;
-      } else if (c_text.contains('-')) {
-        c_text = c_text.substring(1, c_text.length);
-      }
-      if (c_text == '') {
-        c_text = '0';
-      }
-    } else if (d_trigger) {
-      if (d_text == '0') {
-        d_text = '-';
-      } else if (d_text.length < 12 && !d_text.contains('-')) {
-        d_text = '-' + d_text;
-      } else if (d_text.contains('-')) {
-        d_text = d_text.substring(1, d_text.length);
-      }
-      if (d_text == '') {
-        d_text = '0';
+    if (!enter_block) {
+      if (a_trigger) {
+        if (a_text == '0') {
+          a_text = '-';
+        } else if (a_text == '-') {
+          a_text = '+';
+        } else if (a_text == '+') {
+          a_text = '-';
+        } else {
+          if (a_text[0] == '+') {
+            a_text = '-' + (a_text.substring(1, a_text.length));
+          } else if (a_text[0] == '-') {
+            a_text = '+' + (a_text.substring(1, a_text.length));
+          }
+        }
+      } else if (b_trigger) {
+        if (b_text == '0') {
+          b_text = '-';
+        } else if (b_text == '-') {
+          b_text = '+';
+        } else if (b_text == '+') {
+          b_text = '-';
+        } else {
+          if (b_text[0] == '+') {
+            b_text = '-' + (b_text.substring(1, b_text.length));
+          } else if (b_text[0] == '-') {
+            b_text = '+' + (b_text.substring(1, b_text.length));
+          }
+        }
+      } else if (c_trigger) {
+        if (c_text == '0') {
+          c_text = '-';
+        } else if (c_text == '-') {
+          c_text = '+';
+        } else if (c_text == '+') {
+          c_text = '-';
+        } else {
+          if (c_text[0] == '+') {
+            c_text = '-' + (c_text.substring(1, c_text.length));
+          } else if (c_text[0] == '-') {
+            c_text = '+' + (c_text.substring(1, c_text.length));
+          }
+        }
+      } else if (d_trigger) {
+        if (d_text == '0') {
+          d_text = '-';
+        } else if (d_text == '-') {
+          d_text = '+';
+        } else if (d_text == '+') {
+          d_text = '-';
+        } else {
+          if (d_text[0] == '+') {
+            d_text = '-' + (d_text.substring(1, d_text.length));
+          } else if (d_text[0] == '-') {
+            d_text = '+' + (d_text.substring(1, d_text.length));
+          }
+        }
       }
     }
     notifyListeners();
   }
 
   void Comma_press() {
-    if (a_trigger) {
-      if (!a_text.contains('.')) {
-        a_text += '.';
-      }
-    } else if (b_trigger) {
-      if (!b_text.contains('.')) {
-        b_text += '.';
-      }
-    } else if (c_trigger) {
-      if (!c_text.contains('.')) {
-        c_text += '.';
-      }
-    } else if (d_trigger) {
-      if (!d_text.contains('.')) {
-        d_text += '.';
+    if (!enter_block) {
+      if (a_trigger) {
+        if (!a_text.contains('.')) {
+          if (a_text[0] == '-' || a_text[0] == '+') {
+            a_text += '.';
+          } else {
+            a_text = '+' + a_text + '.';
+          }
+        }
+      } else if (b_trigger) {
+        if (!b_text.contains('.')) {
+          if (b_text[0] == '-' || b_text[0] == '+') {
+            b_text += '.';
+          } else {
+            b_text = '+' + b_text + '.';
+          }
+        }
+      } else if (c_trigger) {
+        if (!c_text.contains('.')) {
+          if (c_text[0] == '-' || c_text[0] == '+') {
+            c_text += '.';
+          } else {
+            c_text = '+' + c_text + '.';
+          }
+        }
+      } else if (d_trigger) {
+        if (!d_text.contains('.')) {
+          if (d_text[0] == '-' || d_text[0] == '+') {
+            d_text += '.';
+          } else {
+            d_text = '+' + d_text + '.';
+          }
+        }
       }
     }
     notifyListeners();
   }
 
   void AC_press() {
-    if (longtap == false) {
-      if (a_trigger) {
+    if (!enter_block) {
+      if (longtap == false) {
+        if (a_trigger) {
+          a_text = '0';
+        } else if (b_trigger) {
+          b_text = '0';
+        } else if (c_trigger) {
+          c_text = '0';
+        } else if (d_trigger) {
+          d_text = '0';
+        }
+      } else {
         a_text = '0';
-      } else if (b_trigger) {
         b_text = '0';
-      } else if (c_trigger) {
         c_text = '0';
-      } else if (d_trigger) {
         d_text = '0';
+        longtap = false;
       }
-    } else {
-      a_text = '0';
-      b_text = '0';
-      c_text = '0';
-      d_text = '0';
-      longtap = false;
     }
-
     notifyListeners();
   } // BUTTON OF TOTAL DELETE SELECTED VARIABLE (AC Button)
 
   void setlongtap_ac() {
-    if (longtap == true) {
-      longtap = false;
-    } else {
-      longtap = true;
+    if (!enter_block) {
+      if (longtap == true) {
+        longtap = false;
+      } else {
+        longtap = true;
+      }
     }
     notifyListeners();
   }
