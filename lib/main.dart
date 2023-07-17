@@ -67,15 +67,46 @@ class _MainState extends State<Main> {
       providers: [
         ChangeNotifierProvider(create: (context) => input_number()),
         ChangeNotifierProvider(create: (context) => choose_button()),
+        ChangeNotifierProvider(create: (context) => AppColor()),
       ],
       child: Scaffold(
         drawerEnableOpenDragGesture: false,
         backgroundColor: AppColors().fon,
         key: scaffoldKey,
         drawer: Drawer(
-            child: new DrawerHeader(
-          child: const Text("Заголовок меню"),
-          decoration: BoxDecoration(color: Colors.green),
+            child: DrawerHeader(
+          child: Column(
+            children: [
+              Text(
+                "Калькулятор",
+                style: TextStyle(
+                    fontFamily: "Nokora",
+                    fontSize: 10.sw,
+                    fontWeight: FontWeight.w200,
+                    color: AppColors().buttoncolor1),
+              ),
+              SizedBox(
+                height: 2.5.sh,
+              ),
+              SizedBox(
+                width: 100.sw,
+                child: TextButton(
+                  onPressed: () {
+                    scaffoldKey.currentState!.closeDrawer();
+                    print("ddd");
+                  },
+                  child: Text(
+                    "Вернуться",
+                    style: TextStyle(
+                        fontFamily: "Nokora",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w200,
+                        color: AppColors().buttoncolor1),
+                  ),
+                ),
+              ),
+            ],
+          ),
         )),
         body: Column(
           children: [
