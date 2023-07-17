@@ -103,8 +103,22 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
         duration: const Duration(milliseconds: 250),
         opacity: animated.resuilt_anim_screen ? 1 : 0,
         child: Center(
-            child: SizedBox(
-                height: 43.39.sh, width: 95.sw, child: resuilt_urv4())),
+          child: SizedBox(
+              height: 43.39.sh,
+              width: 95.sw,
+              child: Builder(builder: (context) {
+                /// some operation here ...
+                if (animated.urv2 == true) {
+                  return resuilt();
+                } else {
+                  if (animated.urv3 == true) {
+                    return resuilt_urv3();
+                  } else {
+                    return resuilt_urv4();
+                  }
+                }
+              })),
+        ),
       ),
     );
   }
