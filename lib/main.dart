@@ -145,6 +145,115 @@ class _MainState extends State<Main> {
   }
 }
 
+class inputButton extends StatefulWidget {
+  final Function() onPressed;
+  final int type;
+  final String number;
+  final double font;
+  const inputButton({
+    super.key,
+    required this.type,
+    required this.onPressed,
+    required this.number,
+    this.font = 5.4,
+  });
+  @override
+  State<inputButton> createState() => _inputButtonState();
+}
+
+class _inputButtonState extends State<inputButton> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    if (widget.type == 1) {
+      return Container(
+        height: 9.sh,
+        width: 20.sw,
+        decoration: BoxDecoration(
+          color: AppColors().buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: widget.onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors().buttoncolor2,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Text(
+            textAlign: TextAlign.center,
+            widget.number,
+            style: TextStyle(
+                color: AppColors().textcolor2,
+                fontSize: widget.font.sw,
+                fontFamily: "Nokora"),
+          ),
+        ),
+      );
+    }
+    if (widget.type == 2) {
+      return Container(
+        height: 9.sh,
+        width: 20.sw,
+        decoration: BoxDecoration(
+          color: AppColors().buttoncolor1,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: widget.onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors().buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Center(
+            child: Text(
+              widget.number,
+              style: TextStyle(
+                  color: AppColors().textcolor,
+                  fontSize: widget.font.sw,
+                  fontFamily: "Nokora"),
+            ),
+          ),
+        ),
+      );
+    }
+    if (widget.type == 3) {
+      return Container(
+        height: 9.sh,
+        width: 20.sw,
+        decoration: BoxDecoration(
+          color: AppColors().buttoncolor1,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: () {
+            context.read<input_number>().AC_press();
+          },
+          onLongPress: () {
+            context.read<input_number>().setlongtap_ac();
+            context.read<input_number>().AC_press();
+          },
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors().buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Text(
+            textAlign: TextAlign.center,
+            "AC",
+            style: TextStyle(
+                color: AppColors().textcolor,
+                fontSize: 5.sw,
+                fontFamily: "Nokora"),
+          ),
+        ),
+      );
+    }
+    throw UnimplementedError();
+  }
+}
+
 class keyboard extends StatefulWidget {
   @override
   State<keyboard> createState() => _keyboardState();
@@ -165,116 +274,31 @@ class _keyboardState extends State<keyboard> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor1,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<input_number>().AC_press();
-                },
-                onLongPress: () {
-                  context.read<input_number>().setlongtap_ac();
-                  context.read<input_number>().AC_press();
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "AC",
-                  style: TextStyle(
-                      color: AppColors().textcolor,
-                      fontSize: 5.sw,
-                      fontFamily: "Nokora"),
-                ),
-              ),
+            inputButton(
+              onPressed: () {},
+              type: 3,
+              number: "AC",
             ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor1,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<input_number>().Animated_first_screen();
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "x²",
-                    style: TextStyle(
-                        color: AppColors().textcolor,
-                        fontSize: 5.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Animated_first_screen();
+              },
+              type: 2,
+              number: "x²",
             ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor1,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<input_number>().Animated_second_screen();
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "x³",
-                    style: TextStyle(
-                        color: AppColors().textcolor,
-                        fontSize: 5.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Animated_second_screen();
+              },
+              type: 2,
+              number: "x³",
             ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor1,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<input_number>().Animated_third_screen();
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "x⁴",
-                    style: TextStyle(
-                        color: AppColors().textcolor,
-                        fontSize: 5.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Animated_third_screen();
+              },
+              type: 2,
+              number: "x⁴",
             ),
           ],
         ),
@@ -285,112 +309,33 @@ class _keyboardState extends State<keyboard> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("7");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "7",
-                  style: TextStyle(
-                      color: AppColors().textcolor2,
-                      fontSize: 8.sw,
-                      fontFamily: "Nokora"),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "7",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("8");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "8",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "8",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("9");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "9",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<input_number>().Delete_press();
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "Del",
-                    style: TextStyle(
-                        color: AppColors().textcolor,
-                        fontSize: 5.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
+                type: 1,
+                number: "9",
+                font: 8.0),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Delete_press();
+              },
+              type: 2,
+              number: "Del",
             ),
           ],
         ),
@@ -401,113 +346,34 @@ class _keyboardState extends State<keyboard> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("4");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "4",
-                  style: TextStyle(
-                      color: AppColors().textcolor2,
-                      fontSize: 8.sw,
-                      fontFamily: "Nokora"),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "4",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("5");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "5",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "5",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("6");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "6",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "6",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Minus_press();
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "-",
-                    style: TextStyle(
-                        color: AppColors().textcolor,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
+                type: 2,
+                number: "-",
+                font: 8.0),
           ],
         ),
         SizedBox(
@@ -517,113 +383,34 @@ class _keyboardState extends State<keyboard> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("1");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "1",
-                  style: TextStyle(
-                      color: AppColors().textcolor2,
-                      fontSize: 8.sw,
-                      fontFamily: "Nokora"),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "1",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("2");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "2",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "2",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("3");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "3",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor1,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "3",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("9");
+                  context.read<input_number>().Minus_press();
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "+",
-                    style: TextStyle(
-                        color: AppColors().textcolor,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
+                type: 2,
+                number: "+",
+                font: 8.0),
           ],
         ),
         SizedBox(
@@ -633,113 +420,34 @@ class _keyboardState extends State<keyboard> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+            inputButton(
                 onPressed: () {
-                  context.read<input_number>().AC_press();
+                  context.read<input_number>().Nums_press("e");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "e",
-                  style: TextStyle(
-                      color: AppColors().textcolor2,
-                      fontSize: 8.sw,
-                      fontFamily: "Nokora"),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor2,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "e",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("0");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "0",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor1,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: "0",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
-                  context.read<input_number>().Comma_press();
+                  context.read<input_number>().Nums_press(".");
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor2,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    ".",
-                    style: TextStyle(
-                        color: AppColors().textcolor2,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 9.sh,
-              width: 20.sw,
-              decoration: BoxDecoration(
-                color: AppColors().buttoncolor1,
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
+                type: 1,
+                number: ".",
+                font: 8.0),
+            inputButton(
                 onPressed: () {
                   context.read<input_number>().Resuilt_anim_screen();
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  backgroundColor: AppColors().buttoncolor1,
-                  animationDuration: const Duration(milliseconds: 2500),
-                ),
-                child: Center(
-                  child: Text(
-                    "=",
-                    style: TextStyle(
-                        color: AppColors().textcolor,
-                        fontSize: 8.sw,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-            ),
+                type: 2,
+                number: "=",
+                font: 8.0),
           ],
         ),
       ],
