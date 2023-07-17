@@ -179,159 +179,68 @@ class input_number extends ChangeNotifier {
 
   void Nums_press(String enternumber) {
     if (a_trigger) {
-      if (a_text.length == 1 && a_text.indexOf('0') == 0) {
-        a_text = '';
-        if (a_text.length < 10 &&
-            !a_text.contains('.') &&
-            !a_text.contains('-')) {
-          a_text += enternumber;
-        } else if (a_text.length < 11 &&
-            (a_text.contains('.') || a_text.contains('-'))) {
-          a_text += enternumber;
-        } else if (a_text.length < 12 &&
-            (a_text.contains('.') && a_text.contains('-'))) {
-          a_text += enternumber;
-        }
-      } else if (a_text.length < 10 &&
-          !a_text.contains('.') &&
-          !a_text.contains('-')) {
-        a_text += enternumber;
-      } else if (a_text.length < 11 &&
-          (a_text.contains('.') || a_text.contains('-'))) {
-        a_text += enternumber;
-      } else if (a_text.length < 12 &&
-          (a_text.contains('.') && a_text.contains('-'))) {
+      if (enternumber == '0' && a_text == '0'){
+        return;
+      }
+      else if (a_text.length == 1 && a_text[0] == '0') {
+        a_text = '+';
+      } if (a_text.length < 12){
         a_text += enternumber;
       }
-    }
-    if (b_trigger) {
-      if (b_text.length == 1 && b_text.indexOf('0') == 0) {
-        b_text = '';
-        if (b_text.length < 10 &&
-            !b_text.contains('.') &&
-            !b_text.contains('-')) {
-          b_text += enternumber;
-        } else if (b_text.length < 11 &&
-            (b_text.contains('.') || b_text.contains('-'))) {
-          b_text += enternumber;
-        } else if (b_text.length < 12 &&
-            (b_text.contains('.') && b_text.contains('-'))) {
-          b_text += enternumber;
-        }
-      } else if (b_text.length < 10 &&
-          !b_text.contains('.') &&
-          !b_text.contains('-')) {
-        b_text += enternumber;
-      } else if (b_text.length < 11 &&
-          (b_text.contains('.') || b_text.contains('-'))) {
-        b_text += enternumber;
-      } else if (b_text.length < 12 &&
-          (b_text.contains('.') && b_text.contains('-'))) {
+    }if (b_trigger) {
+      if (enternumber == '0' && a_text == '0'){
+        return;
+      }
+      else if (b_text.length == 1 && b_text[0] == '0') {
+        b_text = '+';
+      } if (b_text.length < 12){
         b_text += enternumber;
       }
-    }
-    if (c_trigger) {
-      if (c_text.length == 1 && c_text.indexOf('0') == 0) {
-        c_text = '';
-        if (c_text.length < 10 &&
-            !c_text.contains('.') &&
-            !c_text.contains('-')) {
-          c_text += enternumber;
-        } else if (c_text.length < 11 &&
-            (c_text.contains('.') || c_text.contains('-'))) {
-          c_text += enternumber;
-        } else if (c_text.length < 12 &&
-            (c_text.contains('.') && c_text.contains('-'))) {
-          c_text += enternumber;
-        }
-      } else if (c_text.length < 10 &&
-          !c_text.contains('.') &&
-          !c_text.contains('-')) {
-        c_text += enternumber;
-      } else if (c_text.length < 11 &&
-          (c_text.contains('.') || c_text.contains('-'))) {
-        c_text += enternumber;
-      } else if (c_text.length < 12 &&
-          (c_text.contains('.') && c_text.contains('-'))) {
+    }if (c_trigger) {
+      if (enternumber == '0' && c_text == '0'){
+        return;
+      }
+      else if (c_text.length == 1 && c_text[0] == '0') {
+        c_text = '+';
+      } if (c_text.length < 12){
         c_text += enternumber;
       }
-    }
-    if (d_trigger) {
-      if (d_text.length == 1 && d_text.indexOf('0') == 0) {
-        d_text = '';
-        if (d_text.length < 10 &&
-            !d_text.contains('.') &&
-            !d_text.contains('-')) {
-          d_text += enternumber;
-        } else if (d_text.length < 11 &&
-            (d_text.contains('.') || d_text.contains('-'))) {
-          d_text += enternumber;
-        } else if (d_text.length < 12 &&
-            (d_text.contains('.') && d_text.contains('-'))) {
-          d_text += enternumber;
-        }
-      } else if (d_text.length < 10 &&
-          !d_text.contains('.') &&
-          !d_text.contains('-')) {
-        d_text += enternumber;
-      } else if (d_text.length < 11 &&
-          (d_text.contains('.') || d_text.contains('-'))) {
-        d_text += enternumber;
-      } else if (d_text.length < 12 &&
-          (d_text.contains('.') && d_text.contains('-'))) {
+    }if (d_trigger) {
+      if (enternumber == '0' && d_text == '0'){
+        return;
+      }
+      else if (d_text.length == 1 && d_text[0] == '0') {
+        d_text = '+';
+      } if (d_text.length < 12){
         d_text += enternumber;
       }
     }
-    notifyListeners();
-  }
+      notifyListeners();
+    }
 
   // ввод цифр идет при условии что текущая длина символов <6 (минус и запятая не в счет)
   // при вызове onPressed надо передать значение цифры через анонимную функцию
 
   void Delete_press() {
     if (a_trigger) {
-      if (a_text.length > 0) {
-        if (a_text[a_text.length - 1] == '.') {
-          a_text = a_text.substring(0, a_text.length - 1);
-        } else {
-          a_text = a_text.substring(0, a_text.length - 1);
-          if (a_text.isEmpty) {
-            a_text = '0';
-          }
+        a_text = a_text.substring(0, a_text.length -1);
+        if (a_text == ''){
+          a_text += '0';
         }
-      }
     } else if (b_trigger) {
-      if (b_text.length > 0) {
-        if (b_text[b_text.length - 1] == '.') {
-          b_text = b_text.substring(0, b_text.length - 1);
-        } else {
-          b_text = b_text.substring(0, b_text.length - 1);
-          if (b_text.isEmpty) {
-            b_text = '0';
-          }
-        }
+      b_text = b_text.substring(0, b_text.length -1);
+      if (b_text == ''){
+        b_text += '0';
       }
     } else if (c_trigger) {
-      if (c_text.length > 0) {
-        if (c_text[c_text.length - 1] == '.') {
-          c_text = c_text.substring(0, c_text.length - 1);
-        } else {
-          c_text = c_text.substring(0, c_text.length - 1);
-          if (c_text.isEmpty) {
-            c_text = '0';
-          }
-        }
+      c_text = c_text.substring(0, c_text.length -1);
+      if (c_text == ''){
+        c_text += '0';
       }
     } else if (d_trigger) {
-      if (d_text.length > 0) {
-        if (d_text[d_text.length - 1] == '.') {
-          d_text = d_text.substring(0, d_text.length - 1);
-        } else {
-          d_text = d_text.substring(0, d_text.length - 1);
-          if (d_text.isEmpty) {
-            d_text = '0';
-          }
-        }
+      d_text = d_text.substring(0, d_text.length -1);
+      if (d_text == ''){
+        d_text += '0';
       }
     }
     notifyListeners();
@@ -341,46 +250,58 @@ class input_number extends ChangeNotifier {
     if (a_trigger) {
       if (a_text == '0') {
         a_text = '-';
-      } else if (a_text.length < 12 && !a_text.contains('-')) {
-        a_text = '-' + a_text;
-      } else if (a_text.contains('-')) {
-        a_text = a_text.substring(1, a_text.length);
-      }
-      if (a_text == '') {
-        a_text = '0';
+      }else if (a_text == '-') {
+        a_text = '+';
+      }else if (a_text == '+'){
+        a_text = '-';
+      }else {
+        if (a_text[0] == '+'){
+          a_text = '-' + (a_text.substring(1,a_text.length));
+        }else  if (a_text[0] == '-'){
+          a_text = '+' + (a_text.substring(1,a_text.length));
+        }
       }
     } else if (b_trigger) {
       if (b_text == '0') {
         b_text = '-';
-      } else if (b_text.length < 12 && !b_text.contains('-')) {
-        b_text = '-' + b_text;
-      } else if (b_text.contains('-')) {
-        b_text = b_text.substring(1, b_text.length);
-      }
-      if (b_text == '') {
-        b_text = '0';
+      }else if (b_text == '-') {
+        b_text = '+';
+      }else if (b_text == '+'){
+        b_text = '-';
+      }else {
+        if (b_text[0] == '+'){
+          b_text = '-' + (b_text.substring(1,b_text.length));
+        }else  if (b_text[0] == '-'){
+          b_text = '+' + (b_text.substring(1,b_text.length));
+        }
       }
     } else if (c_trigger) {
       if (c_text == '0') {
         c_text = '-';
-      } else if (c_text.length < 12 && !c_text.contains('-')) {
-        c_text = '-' + c_text;
-      } else if (c_text.contains('-')) {
-        c_text = c_text.substring(1, c_text.length);
+      }else if (c_text == '-') {
+        c_text = '+';
+      }else if (c_text == '+'){
+        c_text = '-';
+      }else {
+        if (c_text[0] == '+'){
+          c_text = '-' + (c_text.substring(1,c_text.length));
+        }else  if (c_text[0] == '-'){
+          c_text = '+' + (c_text.substring(1,c_text.length));
+        }
       }
-      if (c_text == '') {
-        c_text = '0';
-      }
-    } else if (d_trigger) {
+    } else if (d_trigger){
       if (d_text == '0') {
         d_text = '-';
-      } else if (d_text.length < 12 && !d_text.contains('-')) {
-        d_text = '-' + d_text;
-      } else if (d_text.contains('-')) {
-        d_text = d_text.substring(1, d_text.length);
-      }
-      if (d_text == '') {
-        d_text = '0';
+      }else if (d_text == '-') {
+        d_text = '+';
+      }else if (d_text == '+'){
+        d_text = '-';
+      }else {
+        if (d_text[0] == '+'){
+          d_text = '-' + (d_text.substring(1,d_text.length));
+        }else  if (d_text[0] == '-'){
+          d_text = '+' + (d_text.substring(1,d_text.length));
+        }
       }
     }
     notifyListeners();
@@ -389,19 +310,27 @@ class input_number extends ChangeNotifier {
   void Comma_press() {
     if (a_trigger) {
       if (!a_text.contains('.')) {
-        a_text += '.';
+        if (a_text[0] == '-' || a_text[0] == '+') {
+          a_text += '.';
+        } else {a_text = '+' + a_text + '.';}
       }
     } else if (b_trigger) {
       if (!b_text.contains('.')) {
-        b_text += '.';
+        if (b_text[0] == '-' || b_text[0] == '+') {
+          b_text += '.';
+        } else {b_text = '+' + b_text + '.';}
       }
     } else if (c_trigger) {
       if (!c_text.contains('.')) {
-        c_text += '.';
+        if (c_text[0] == '-' || c_text[0] == '+') {
+          c_text += '.';
+        } else {c_text = '+' + c_text + '.';}
       }
     } else if (d_trigger) {
       if (!d_text.contains('.')) {
-        d_text += '.';
+        if (d_text[0] == '-' || d_text[0] == '+') {
+          d_text += '.';
+        } else {d_text = '+' + d_text + '.';}
       }
     }
     notifyListeners();

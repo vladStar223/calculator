@@ -223,6 +223,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
   }
 }
 
+
 class cubic_equation extends StatefulWidget {
   const cubic_equation({super.key});
 
@@ -488,6 +489,7 @@ class _cubic_equationState extends State<cubic_equation> {
     );
   }
 }
+
 
 class biquadrate_equation extends StatefulWidget {
   const biquadrate_equation({super.key});
