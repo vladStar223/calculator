@@ -126,6 +126,9 @@ class _MainState extends State<Main> {
                     second_animated_screen(),
                     third_animated_screen(),
                     resuilt_animated_screen(),
+                    first_resuilt_animated_screen(),
+                    second_resuilt_animated_screen(),
+                    third_resuilt_animated_screen(),
                   ], //АНИМАЦИИ
                 ),
                 SizedBox(

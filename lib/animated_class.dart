@@ -18,7 +18,6 @@ class first_animated_screen extends StatefulWidget {
   @override
   State<first_animated_screen> createState() => first_animated_screenState();
 }
-
 class first_animated_screenState extends State<first_animated_screen> {
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,6 @@ class second_animated_screen extends StatefulWidget {
   @override
   State<second_animated_screen> createState() => second_animated_screenState();
 }
-
 class second_animated_screenState extends State<second_animated_screen> {
   @override
   Widget build(BuildContext context) {
@@ -60,13 +58,13 @@ class second_animated_screenState extends State<second_animated_screen> {
   }
 } // КЛАСС ДЛЯ УРАВНЕНИЙ Х^3
 
+
 class third_animated_screen extends StatefulWidget {
   const third_animated_screen({super.key});
 
   @override
   State<third_animated_screen> createState() => third_animated_screenState();
 }
-
 class third_animated_screenState extends State<third_animated_screen> {
   @override
   Widget build(BuildContext context) {
@@ -84,6 +82,7 @@ class third_animated_screenState extends State<third_animated_screen> {
   }
 } // КЛАСС ДЛЯ УРАВНЕНИЙ Х^4
 
+
 class resuilt_animated_screen extends StatefulWidget {
   const resuilt_animated_screen({super.key});
 
@@ -91,7 +90,6 @@ class resuilt_animated_screen extends StatefulWidget {
   State<resuilt_animated_screen> createState() =>
       resuilt_animated_screenState();
 }
-
 class resuilt_animated_screenState extends State<resuilt_animated_screen> {
   //написать чтобы понимало какой из классов ответа вызвать
   @override
@@ -109,3 +107,75 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
     );
   }
 }
+
+
+class first_resuilt_animated_screen extends StatefulWidget {
+  const first_resuilt_animated_screen({super.key});
+
+  @override
+  State<first_resuilt_animated_screen> createState() => _first_resuilt_animated_screenState();
+}
+class _first_resuilt_animated_screenState extends State<first_resuilt_animated_screen> {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return IgnorePointer(
+      ignoring: animated.first_resuilt_anim_screen ? false : true,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: animated.first_resuilt_anim_screen ? 1 : 0,
+        child: Center(
+            child: SizedBox(
+                height: 43.5.sh, width: 95.sw, child: resuilt())),
+      ),
+    );
+  }
+}
+
+class second_resuilt_animated_screen extends StatefulWidget {
+  const second_resuilt_animated_screen({super.key});
+
+  @override
+  State<second_resuilt_animated_screen> createState() => _second_resuilt_animated_screenState();
+}
+class _second_resuilt_animated_screenState extends State<second_resuilt_animated_screen> {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return IgnorePointer(
+      ignoring: animated.second_resuilt_anim_screen ? false : true,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: animated.second_resuilt_anim_screen ? 1 : 0,
+        child: Center(
+            child: SizedBox(
+                height: 43.5.sh, width: 95.sw, child: resuilt_urv3())),
+      ),
+    );
+  }
+}
+
+class third_resuilt_animated_screen extends StatefulWidget {
+  const third_resuilt_animated_screen({super.key});
+
+  @override
+  State<third_resuilt_animated_screen> createState() => _third_resuilt_animated_screenState();
+}
+class _third_resuilt_animated_screenState extends State<third_resuilt_animated_screen> {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return IgnorePointer(
+      ignoring: animated.third_resuilt_anim_screen ? false : true,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: animated.third_resuilt_anim_screen ? 1 : 0,
+        child: Center(
+            child: SizedBox(
+                height: 43.5.sh, width: 95.sw, child: resuilt_urv4())),
+      ),
+    );
+  }
+}
+
+
