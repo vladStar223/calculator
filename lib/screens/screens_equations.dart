@@ -72,7 +72,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                       width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().a_trigger
@@ -125,7 +125,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                       width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().b_trigger
@@ -181,7 +181,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
                       width: 53.8.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().c_trigger
@@ -287,7 +287,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().a_trigger
@@ -340,7 +340,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().b_trigger
@@ -396,7 +396,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().c_trigger
@@ -449,7 +449,7 @@ class _cubic_equationState extends State<cubic_equation> {
                       width: 53.8.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().d_trigger
@@ -554,7 +554,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                       width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().a_trigger
@@ -607,7 +607,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                       width: 53.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().b_trigger
@@ -663,7 +663,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                       width: 53.8.sw,
                       height: 5.1.sh,
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                             color: context.read<input_number>().c_trigger
