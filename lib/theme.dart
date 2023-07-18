@@ -25,7 +25,7 @@ class AppColors1 {
   final Color orange = HexColor.fromHex('FD7013'); // значики на кнопке
 }
 
-class AppColors {
+class AppColors44 {
   final Color color = HexColor.fromHex('393E46');
   final Color fon = HexColor.fromHex('242933'); // фон
   final Color white = HexColor.fromHex('EEEEEE'); // меню вывода

@@ -39,6 +39,32 @@ class Main extends StatefulWidget {
 class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
+// TODO: implement build
+// To make this screen full screen.
+// It will hide status bar and notch.
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => input_number()),
+      ChangeNotifierProvider(create: (context) => choose_button()),
+      ChangeNotifierProvider(create: (context) => AppColor()),
+    ], child: screen_normal());
+  }
+}
+
+class screen_normal extends StatefulWidget {
+  @override
+  State<screen_normal> createState() => _screen_normalState();
+}
+
+class _screen_normalState extends State<screen_normal> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    var AppColors = Provider.of<AppColor>(context);
+    const displayName = "displayName";
+    final scaffoldKey = GlobalKey<ScaffoldState>();
     _showDialog(BuildContext context) {
       VoidCallback continueCallBack = () => {
             Navigator.of(context).pop(),
@@ -57,122 +83,110 @@ class _MainState extends State<Main> {
       );
     }
 
-// TODO: implement build
-// To make this screen full screen.
-// It will hide status bar and notch.
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
-    final scaffoldKey = GlobalKey<ScaffoldState>();
-    const displayName = "displayName";
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => input_number()),
-        ChangeNotifierProvider(create: (context) => choose_button()),
-        ChangeNotifierProvider(create: (context) => AppColor()),
-      ],
-      child: Scaffold(
-        drawerEnableOpenDragGesture: false,
-        backgroundColor: AppColors().fon,
-        key: scaffoldKey,
-        drawer: Drawer(
-            child: DrawerHeader(
-          child: Column(
-            children: [
-              Text(
-                "Калькулятор",
-                style: TextStyle(
-                    fontFamily: "Nokora",
-                    fontSize: 10.sw,
-                    fontWeight: FontWeight.w200,
-                    color: AppColors().buttoncolor1),
-              ),
-              SizedBox(
-                height: 2.5.sh,
-              ),
-              SizedBox(
-                width: 100.sw,
-                child: TextButton(
-                  onPressed: () {
-                    scaffoldKey.currentState!.closeDrawer();
-                    print("ddd");
-                  },
-                  child: Text(
-                    "Вернуться",
-                    style: TextStyle(
-                        fontFamily: "Nokora",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w200,
-                        color: AppColors().buttoncolor1),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )),
-        body: Column(
+    return Scaffold(
+      drawerEnableOpenDragGesture: false,
+      backgroundColor: AppColors.fon,
+      key: scaffoldKey,
+      drawer: Drawer(
+          child: DrawerHeader(
+        child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    color: AppColors().white,
-                    onPressed: () {
-                      scaffoldKey.currentState!.openDrawer();
-                    },
-                    icon: Icon(MyFlutterApp.menu_circle)),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Калькулятор",
-                    style: TextStyle(
-                        fontFamily: "Nokora",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w200,
-                        color: AppColors().white),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Уравнения",
-                    style: TextStyle(
-                        fontFamily: "Nokora",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w200,
-                        color: AppColors().white),
-                  ),
-                ),
-                IconButton(
-                    color: AppColors().white,
-                    onPressed: () {
-                      _showDialog(context);
-                    },
-                    icon: Icon(MyFlutterApp.question_circle)),
-              ],
+            Text(
+              "Калькулятор",
+              style: TextStyle(
+                  fontFamily: "Nokora",
+                  fontSize: 10.sw,
+                  fontWeight: FontWeight.w200,
+                  color: AppColors.buttoncolor1),
             ),
-            Column(
-              children: [
-                Stack(
-                  children: [
-                    first_animated_screen(),
-                    second_animated_screen(),
-                    third_animated_screen(),
-                    resuilt_animated_screen(),
-                    first_resuilt_animated_screen(),
-                    second_resuilt_animated_screen(),
-                    third_resuilt_animated_screen(),
-                  ], //АНИМАЦИИ
+            SizedBox(
+              height: 2.5.sh,
+            ),
+            SizedBox(
+              width: 100.sw,
+              child: TextButton(
+                onPressed: () {
+                  scaffoldKey.currentState!.closeDrawer();
+                  print("ddd");
+                },
+                child: Text(
+                  "Вернуться",
+                  style: TextStyle(
+                      fontFamily: "Nokora",
+                      fontSize: 20,
+                      fontWeight: FontWeight.w200,
+                      color: AppColors.buttoncolor1),
                 ),
-                SizedBox(
-                  height: 49.7.sh,
-                  width: 100.sw,
-                  child: keyboard(),
-                ),
-              ],
+              ),
             ),
           ],
         ),
+      )),
+      body: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                  color: AppColors.white,
+                  onPressed: () {
+                    scaffoldKey.currentState!.openDrawer();
+                  },
+                  icon: Icon(MyFlutterApp.menu_circle)),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Калькулятор",
+                  style: TextStyle(
+                      fontFamily: "Nokora",
+                      fontSize: 20,
+                      fontWeight: FontWeight.w200,
+                      color: AppColors.white),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Уравнения",
+                  style: TextStyle(
+                      fontFamily: "Nokora",
+                      fontSize: 20,
+                      fontWeight: FontWeight.w200,
+                      color: AppColors.white),
+                ),
+              ),
+              IconButton(
+                  color: AppColors.white,
+                  onPressed: () {
+                    _showDialog(context);
+                  },
+                  icon: Icon(MyFlutterApp.question_circle)),
+            ],
+          ),
+          Column(
+            children: [
+              Stack(
+                children: [
+                  first_animated_screen(),
+                  second_animated_screen(),
+                  third_animated_screen(),
+                  resuilt_animated_screen(),
+                  first_resuilt_animated_screen(),
+                  second_resuilt_animated_screen(),
+                  third_resuilt_animated_screen(),
+                ], //АНИМАЦИИ
+              ),
+              SizedBox(
+                height: 49.7.sh,
+                width: 100.sw,
+                child: keyboard(),
+              ),
+            ],
+          ),
+        ],
       ),
     );
+    throw UnimplementedError();
   }
 }
 
@@ -196,26 +210,27 @@ class _inputButtonState extends State<inputButton> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    var AppColors = Provider.of<AppColor>(context);
     if (widget.type == 1) {
       return Container(
         height: 9.sh,
         width: 20.sw,
         decoration: BoxDecoration(
-          color: AppColors().buttoncolor2,
+          color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
           onPressed: widget.onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
-            backgroundColor: AppColors().buttoncolor2,
+            backgroundColor: AppColors.buttoncolor2,
             animationDuration: const Duration(milliseconds: 2500),
           ),
           child: Text(
             textAlign: TextAlign.center,
             widget.number,
             style: TextStyle(
-                color: AppColors().textcolor2,
+                color: AppColors.textcolor2,
                 fontSize: widget.font.sw,
                 fontFamily: "Nokora"),
           ),
@@ -227,21 +242,21 @@ class _inputButtonState extends State<inputButton> {
         height: 9.sh,
         width: 20.sw,
         decoration: BoxDecoration(
-          color: AppColors().buttoncolor1,
+          color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
           onPressed: widget.onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
-            backgroundColor: AppColors().buttoncolor1,
+            backgroundColor: AppColors.buttoncolor1,
             animationDuration: const Duration(milliseconds: 2500),
           ),
           child: Center(
             child: Text(
               widget.number,
               style: TextStyle(
-                  color: AppColors().textcolor,
+                  color: AppColors.textcolor,
                   fontSize: widget.font.sw,
                   fontFamily: "Nokora"),
             ),
@@ -254,7 +269,7 @@ class _inputButtonState extends State<inputButton> {
         height: 9.sh,
         width: 20.sw,
         decoration: BoxDecoration(
-          color: AppColors().buttoncolor1,
+          color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
@@ -267,14 +282,14 @@ class _inputButtonState extends State<inputButton> {
           },
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
-            backgroundColor: AppColors().buttoncolor1,
+            backgroundColor: AppColors.buttoncolor1,
             animationDuration: const Duration(milliseconds: 2500),
           ),
           child: Text(
             textAlign: TextAlign.center,
             "AC",
             style: TextStyle(
-                color: AppColors().textcolor,
+                color: AppColors.textcolor,
                 fontSize: 5.sw,
                 fontFamily: "Nokora"),
           ),

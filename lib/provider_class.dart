@@ -11,11 +11,15 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/animated_class.dart';
 
 class choose_button extends ChangeNotifier {
-  Color _color_button1 = AppColors().buttoncolor1;
-  Color _color_button2 = AppColors().white;
-  Color color_button = AppColors().buttoncolor1;
-  Color color_button1 = AppColors().buttoncolor1;
-  Color color_button2 = AppColors().buttoncolor1;
+  static BuildContext? get context => null;
+  var AppColors = Provider.of<AppColor>(context!);
+  /*
+  //Color _color_button1 = AppColors.buttoncolor1;
+  Color _color_button2 = AppColors.white;
+  Color color_button = AppColors.buttoncolor1;
+  Color color_button1 = AppColors.buttoncolor1;
+  Color color_button2 = AppColors.buttoncolor1;
+
   void change_color(int number) {
     if (number == 0) {
       if (color_button == _color_button1) {
@@ -46,6 +50,7 @@ class choose_button extends ChangeNotifier {
     }
     notifyListeners();
   }
+  */
 } //класс который отвечает за  смену цвета в кнопке
 
 class input_number extends ChangeNotifier {
