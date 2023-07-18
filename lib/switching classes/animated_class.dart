@@ -1,8 +1,8 @@
-import 'package:calculator/my_flutter_app_icons.dart';
-import 'package:calculator/provider_class.dart';
+import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
+import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/screens/result.dart';
 import 'package:calculator/screens/screens_equations.dart';
-import 'package:calculator/theme.dart';
+import 'package:calculator/color/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +18,7 @@ class first_animated_screen extends StatefulWidget {
   @override
   State<first_animated_screen> createState() => first_animated_screenState();
 }
+
 class first_animated_screenState extends State<first_animated_screen> {
   @override
   Widget build(BuildContext context) {
@@ -41,6 +42,7 @@ class second_animated_screen extends StatefulWidget {
   @override
   State<second_animated_screen> createState() => second_animated_screenState();
 }
+
 class second_animated_screenState extends State<second_animated_screen> {
   @override
   Widget build(BuildContext context) {
@@ -58,13 +60,13 @@ class second_animated_screenState extends State<second_animated_screen> {
   }
 } // КЛАСС ДЛЯ УРАВНЕНИЙ Х^3
 
-
 class third_animated_screen extends StatefulWidget {
   const third_animated_screen({super.key});
 
   @override
   State<third_animated_screen> createState() => third_animated_screenState();
 }
+
 class third_animated_screenState extends State<third_animated_screen> {
   @override
   Widget build(BuildContext context) {
@@ -82,7 +84,6 @@ class third_animated_screenState extends State<third_animated_screen> {
   }
 } // КЛАСС ДЛЯ УРАВНЕНИЙ Х^4
 
-
 class resuilt_animated_screen extends StatefulWidget {
   const resuilt_animated_screen({super.key});
 
@@ -90,6 +91,7 @@ class resuilt_animated_screen extends StatefulWidget {
   State<resuilt_animated_screen> createState() =>
       resuilt_animated_screenState();
 }
+
 class resuilt_animated_screenState extends State<resuilt_animated_screen> {
   //написать чтобы понимало какой из классов ответа вызвать
   @override
@@ -122,14 +124,16 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
   }
 }
 
-
 class first_resuilt_animated_screen extends StatefulWidget {
   const first_resuilt_animated_screen({super.key});
 
   @override
-  State<first_resuilt_animated_screen> createState() => _first_resuilt_animated_screenState();
+  State<first_resuilt_animated_screen> createState() =>
+      _first_resuilt_animated_screenState();
 }
-class _first_resuilt_animated_screenState extends State<first_resuilt_animated_screen> {
+
+class _first_resuilt_animated_screenState
+    extends State<first_resuilt_animated_screen> {
   @override
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
@@ -139,8 +143,7 @@ class _first_resuilt_animated_screenState extends State<first_resuilt_animated_s
         duration: const Duration(milliseconds: 250),
         opacity: animated.first_resuilt_anim_screen ? 1 : 0,
         child: Center(
-            child: SizedBox(
-                height: 43.5.sh, width: 95.sw, child: resuilt())),
+            child: SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt())),
       ),
     );
   }
@@ -150,9 +153,12 @@ class second_resuilt_animated_screen extends StatefulWidget {
   const second_resuilt_animated_screen({super.key});
 
   @override
-  State<second_resuilt_animated_screen> createState() => _second_resuilt_animated_screenState();
+  State<second_resuilt_animated_screen> createState() =>
+      _second_resuilt_animated_screenState();
 }
-class _second_resuilt_animated_screenState extends State<second_resuilt_animated_screen> {
+
+class _second_resuilt_animated_screenState
+    extends State<second_resuilt_animated_screen> {
   @override
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
@@ -162,8 +168,8 @@ class _second_resuilt_animated_screenState extends State<second_resuilt_animated
         duration: const Duration(milliseconds: 250),
         opacity: animated.second_resuilt_anim_screen ? 1 : 0,
         child: Center(
-            child: SizedBox(
-                height: 43.5.sh, width: 95.sw, child: resuilt_urv3())),
+            child:
+                SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt_urv3())),
       ),
     );
   }
@@ -173,9 +179,12 @@ class third_resuilt_animated_screen extends StatefulWidget {
   const third_resuilt_animated_screen({super.key});
 
   @override
-  State<third_resuilt_animated_screen> createState() => _third_resuilt_animated_screenState();
+  State<third_resuilt_animated_screen> createState() =>
+      _third_resuilt_animated_screenState();
 }
-class _third_resuilt_animated_screenState extends State<third_resuilt_animated_screen> {
+
+class _third_resuilt_animated_screenState
+    extends State<third_resuilt_animated_screen> {
   @override
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
@@ -185,11 +194,9 @@ class _third_resuilt_animated_screenState extends State<third_resuilt_animated_s
         duration: const Duration(milliseconds: 250),
         opacity: animated.third_resuilt_anim_screen ? 1 : 0,
         child: Center(
-            child: SizedBox(
-                height: 43.5.sh, width: 95.sw, child: resuilt_urv4())),
+            child:
+                SizedBox(height: 43.5.sh, width: 95.sw, child: resuilt_urv4())),
       ),
     );
   }
 }
-
-

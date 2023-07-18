@@ -1,15 +1,15 @@
-import 'package:calculator/my_flutter_app_icons.dart';
-import 'package:calculator/provider_class.dart';
-import 'package:calculator/theme.dart';
+import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
+import 'package:calculator/provider/provider_class.dart';
+import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:calculator/animated_class.dart';
+import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'alertDialog_widget.dart';
+import 'dialog/alertDialog_widget.dart';
 
 //начало программы
 void main() {
