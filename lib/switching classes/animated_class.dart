@@ -2,7 +2,7 @@ import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/screens/result.dart';
 import 'package:calculator/screens/screens_equations.dart';
-import 'package:calculator/color/theme.dart';
+import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
