@@ -50,6 +50,7 @@ class AppColor extends ChangeNotifier {
   void Change_color() {
     print("ddd555");
     if (type == 0) {
+      type = 1;
       fon = HexColor.fromHex('242933'); // фон
       white = HexColor.fromHex('EEEEEE');
       output = HexColor.fromHex('EEEEEE'); // меню вывода
@@ -58,8 +59,7 @@ class AppColor extends ChangeNotifier {
       buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
       textcolor = HexColor.fromHex('EEEEEE');
       textcolor2 = HexColor.fromHex('585858');
-    }
-    if (type == 1) {
+    } else {
       type = 0;
       fon = HexColor.fromHex('EEEEEE'); // фон
       output = HexColor.fromHex('EEEEEE');
