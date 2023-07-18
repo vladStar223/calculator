@@ -180,9 +180,6 @@ class _screen_normalState extends State<screen_normal> {
                   second_animated_screen(),
                   third_animated_screen(),
                   resuilt_animated_screen(),
-                  first_resuilt_animated_screen(),
-                  second_resuilt_animated_screen(),
-                  third_resuilt_animated_screen(),
                 ], //АНИМАЦИИ
               ),
               SizedBox(
