@@ -190,16 +190,7 @@ class input_number extends ChangeNotifier {
   }
 
   void Resuilt_anim_screen() {
-    if (first_anim_screen) {
-      first_resuilt_anim_screen = true;
-      first_anim_screen = false;
-    } else if (second_anim_screen) {
-      second_resuilt_anim_screen = true;
-      second_anim_screen = false;
-    } else if (third_anim_screen) {
-      third_resuilt_anim_screen = true;
-      third_anim_screen = false;
-    }
+    resuilt_anim_screen = true;
     enter_block = true;
     decision_ur();
     notifyListeners();
