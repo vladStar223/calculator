@@ -38,6 +38,7 @@ class AppColors44 {
 
 class AppColor extends ChangeNotifier {
   int type = 0;
+  @override
   Color fon = HexColor.fromHex('242933'); // фон
   Color white = HexColor.fromHex('EEEEEE'); // меню вывода
   Color buttoncolor1 = HexColor.fromHex('363E53');
@@ -64,4 +65,6 @@ class AppColor extends ChangeNotifier {
       textcolor2 = HexColor.fromHex('585858');
     }
   }
+
+  notifyListeners();
 }
