@@ -37,19 +37,23 @@ class AppColors44 {
 }
 
 class AppColor extends ChangeNotifier {
-  int type = 0;
+  int type = 1;
   @override
   Color fon = HexColor.fromHex('242933'); // фон
-  Color white = HexColor.fromHex('EEEEEE'); // меню вывода
+  Color white = HexColor.fromHex('EEEEEE');
+  Color output = HexColor.fromHex('EEEEEE'); // меню вывода
+  Color textcolorfortop = HexColor.fromHex('EEEEEE');
   Color buttoncolor1 = HexColor.fromHex('363E53');
   Color buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
   Color textcolor = HexColor.fromHex('EEEEEE');
   Color textcolor2 = HexColor.fromHex('585858');
   void Change_color() {
+    print("ddd555");
     if (type == 0) {
-      type = 1;
       fon = HexColor.fromHex('242933'); // фон
-      white = HexColor.fromHex('EEEEEE'); // меню вывода
+      white = HexColor.fromHex('EEEEEE');
+      output = HexColor.fromHex('EEEEEE'); // меню вывода
+      textcolorfortop = HexColor.fromHex('EEEEEE');
       buttoncolor1 = HexColor.fromHex('363E53');
       buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
       textcolor = HexColor.fromHex('EEEEEE');
@@ -57,14 +61,25 @@ class AppColor extends ChangeNotifier {
     }
     if (type == 1) {
       type = 0;
-      fon = HexColor.fromHex('242933'); // фон
+      fon = HexColor.fromHex('EEEEEE'); // фон
+      output = HexColor.fromHex('EEEEEE');
+      textcolorfortop = HexColor.fromHex('585858'); // меню вывода
+      white = HexColor.fromHex('585858');
+      buttoncolor1 = HexColor.fromHex('73D5DB'); // для  спец кнопок
+      buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
+      textcolor = HexColor.fromHex('0C6EA6');
+      textcolor2 = HexColor.fromHex('585858');
+    }
+    if (type == 2) {
+      fon = HexColor.fromHex('EEEEEE'); // фон
       white = HexColor.fromHex('EEEEEE'); // меню вывода
+      textcolorfortop = HexColor.fromHex('585858');
       buttoncolor1 = HexColor.fromHex('363E53');
-      buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
+      buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
       textcolor = HexColor.fromHex('EEEEEE');
       textcolor2 = HexColor.fromHex('585858');
     }
+    notifyListeners();
   }
-
-  notifyListeners();
 }
+// как его сделать

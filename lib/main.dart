@@ -119,6 +119,22 @@ class _screen_normalState extends State<screen_normal> {
                 ),
               ),
             ),
+            SizedBox(
+              width: 100.sw,
+              child: TextButton(
+                onPressed: () {
+                  AppColors.Change_color();
+                },
+                child: Text(
+                  "Вернуться",
+                  style: TextStyle(
+                      fontFamily: "Nokora",
+                      fontSize: 20,
+                      fontWeight: FontWeight.w200,
+                      color: AppColors.buttoncolor1),
+                ),
+              ),
+            ),
           ],
         ),
       )),
@@ -128,7 +144,7 @@ class _screen_normalState extends State<screen_normal> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                  color: AppColors.white,
+                  color: AppColors.textcolorfortop,
                   onPressed: () {
                     scaffoldKey.currentState!.openDrawer();
                   },
@@ -141,7 +157,7 @@ class _screen_normalState extends State<screen_normal> {
                       fontFamily: "Nokora",
                       fontSize: 20,
                       fontWeight: FontWeight.w200,
-                      color: AppColors.white),
+                      color: AppColors.textcolorfortop),
                 ),
               ),
               TextButton(
@@ -152,11 +168,11 @@ class _screen_normalState extends State<screen_normal> {
                       fontFamily: "Nokora",
                       fontSize: 20,
                       fontWeight: FontWeight.w200,
-                      color: AppColors.white),
+                      color: AppColors.textcolorfortop),
                 ),
               ),
               IconButton(
-                  color: AppColors.white,
+                  color: AppColors.textcolorfortop,
                   onPressed: () {
                     _showDialog(context);
                   },

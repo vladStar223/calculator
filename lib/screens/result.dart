@@ -84,7 +84,7 @@ class _resuiltState extends State<resuilt> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -117,7 +117,7 @@ class _resuiltState extends State<resuilt> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -150,7 +150,7 @@ class _resuiltState extends State<resuilt> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -260,7 +260,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -293,7 +293,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -326,7 +326,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -413,7 +413,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -446,7 +446,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -479,7 +479,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
@@ -512,7 +512,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               width: 60.sw,
               height: 5.1.sh,
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.output,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Align(
