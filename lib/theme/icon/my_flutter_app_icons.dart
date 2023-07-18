@@ -25,6 +25,8 @@ class MyFlutterApp {
   static const _kFontFam = 'MyFlutterApp';
   static const String? _kFontPkg = null;
 
+  static const IconData calculator_icon_icons_com_66651 = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData functions_icon_144317 = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData question_circle = IconData(0xe87d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData menu_circle = IconData(0xe87e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

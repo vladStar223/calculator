@@ -149,28 +149,21 @@ class _screen_normalState extends State<screen_normal> {
                     scaffoldKey.currentState!.openDrawer();
                   },
                   icon: Icon(MyFlutterApp.menu_circle)),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Калькулятор",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.textcolorfortop),
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Уравнения",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.textcolorfortop),
-                ),
-              ),
+              IconButton(
+                  color: AppColors.textcolorfortop,
+                  onPressed: () {
+                    print("dd");
+                  },
+                  icon: Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
+              IconButton(
+                  color: AppColors.textcolorfortop,
+                  onPressed: () {
+                    print("dd");
+                  },
+                  icon: Icon(
+                    MyFlutterApp.functions_icon_144317,
+                    color: AppColors.white,
+                  )),
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {

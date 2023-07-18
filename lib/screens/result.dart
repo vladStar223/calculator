@@ -398,6 +398,16 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               fontWeight: FontWeight.w200,
               color: AppColors.textcolor),
         ),
+        Text(
+          "решается через замену переменной",
+          style: TextStyle(
+              fontFamily: "Nokora", fontSize: 4.sw, color: AppColors.textcolor),
+        ),
+        Text(
+          "t = x²",
+          style: TextStyle(
+              fontFamily: "Nokora", fontSize: 5.sw, color: AppColors.textcolor),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -430,6 +440,9 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               ),
             ),
           ],
+        ),
+        SizedBox(
+          height: 0.5.sh,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -464,6 +477,9 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
             ),
           ],
         ),
+        SizedBox(
+          height: 0.5.sh,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -496,6 +512,9 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               ),
             ),
           ],
+        ),
+        SizedBox(
+          height: 0.5.sh,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
