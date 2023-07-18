@@ -424,12 +424,59 @@ class input_number extends ChangeNotifier {
       "0"; // отвечает за отображение полного уравнения в экране вывода
   double D = 0;
   late List<String> x;
+  void check_int() {
+    if (a_text != "-" && a_text != "+") {
+      a = double.parse(a_text);
+    } else {
+      if (a_text == "-") {
+        a = -1;
+        a_text = "-";
+      }
+      if (a_text == "+") {
+        a = 1;
+        a_text = "-";
+      }
+    }
+    if (b_text != "-" && b_text != "+") {
+      b = double.parse(b_text);
+    } else {
+      if (b_text == "-") {
+        b = -1;
+        b_text = "-1";
+      }
+      if (b_text == "+") {
+        b = 1;
+        b_text = "+1";
+      }
+    }
+    if (c_text != "-" && c_text != "+") {
+      c = double.parse(c_text);
+    } else {
+      if (c_text == "-") {
+        c = -1;
+        c_text = "-1";
+      }
+      if (c_text == "+") {
+        c = 1;
+        c_text = "+1";
+      }
+    }
+    if (d_text != "-" && d_text != "+") {
+      d = double.parse(d_text);
+    } else {
+      if (d_text == "-") {
+        d = -1;
+        d_text = "-1";
+      }
+      if (d_text == "+") {
+        d = 1;
+        d_text = "+1";
+      }
+    }
+  }
 
   void decision_ur() {
-    a = double.parse(a_text);
-    b = double.parse(b_text);
-    c = double.parse(c_text);
-    d = double.parse(d_text);
+    check_int();
     if (urv2 == true) {
       urvshow = "${a_text} x² ${b_text} x ${c_text} = 0";
       kv = 0;
