@@ -174,8 +174,8 @@ class _screen_normalState extends State<screen_normal> {
           ),
           Column(
             children: [
-                  AnimatedScreen(),
-                 // resuilt_animated_screen(), не используется, но может нужно тебе
+              SizedBox(height: 43.39.sh, width: 95.sw, child: AnimatedScreen()),
+              // resuilt_animated_screen(), не используется, но может нужно тебе
               SizedBox(
                 height: 49.7.sh,
                 width: 100.sw,

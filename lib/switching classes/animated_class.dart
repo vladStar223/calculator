@@ -10,7 +10,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/main.dart';
 
-class peter1_PEWEHUE extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное
+class peter1_PEWEHUE
+    extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное
 
 class resuilt_animated_screen extends StatefulWidget {
   const resuilt_animated_screen({super.key});
@@ -113,11 +114,7 @@ class AnimatedScreenItem extends StatelessWidget {
         duration: const Duration(milliseconds: 250),
         opacity: opacity,
         child: Center(
-          child: SizedBox(
-            height: 43.39.sh,
-            width: 95.sw,
-            child: child,
-          ),
+          child: child,
         ),
       ),
     );
