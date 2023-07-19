@@ -174,14 +174,8 @@ class _screen_normalState extends State<screen_normal> {
           ),
           Column(
             children: [
-              Stack(
-                children: [
-                  first_animated_screen(),
-                  second_animated_screen(),
-                  third_animated_screen(),
-                  resuilt_animated_screen(),
-                ], //АНИМАЦИИ
-              ),
+                  AnimatedScreen(),
+                 // resuilt_animated_screen(), не используется, но может нужно тебе
               SizedBox(
                 height: 49.7.sh,
                 width: 100.sw,
@@ -488,7 +482,7 @@ class _keyboardState extends State<keyboard> {
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press(".");
+                  context.read<input_number>().Comma_press();
                 },
                 type: 1,
                 number: ".",
