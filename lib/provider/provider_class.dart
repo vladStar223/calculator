@@ -55,7 +55,7 @@ class choose_button extends ChangeNotifier {
 
 class input_number extends ChangeNotifier {
   @override
-  var color_of_border = Colors.blue; //цвет рамки для полей ввода
+  Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
   bool urv2 = true;
   bool urv3 = false;
@@ -79,12 +79,12 @@ class input_number extends ChangeNotifier {
       third_anim_screen = false,
       resuilt_anim_screen = false, // БУЛЬКИ ДЛЯ АНИМАЦИЙ
 
-      enter_block = false, // запрещает ввод с клавы кода открыто окно результата
+      enter_block =
+          false, // запрещает ввод с клавы кода открыто окно результата
 
       first_resuilt_anim_screen = false,
       second_resuilt_anim_screen = false,
       third_resuilt_anim_screen = false; //variables for anim resuilts
-
 
   void zerourv() {
     D = 0;
@@ -97,33 +97,33 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   }
 
-  void Switch_from_D_to_C(){
+  void Switch_from_D_to_C() {
     if (d_trigger) {
       c_trigger = true;
       d_trigger = false;
     }
- //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
+    //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
   } //часто повторялись, сделал отдельную функцию
 
-  void All_resuilt_bool_to_false(){
+  void All_resuilt_bool_to_false() {
     first_resuilt_anim_screen = false;
     second_resuilt_anim_screen = false;
     third_resuilt_anim_screen = false;
   } //часто повторялись, сделал отдельную функцию
 
-  String Determing_to_true_trigger_start(){
-     if (a_trigger) {
-       return a_text;
-     } else if (b_trigger) {
-       return b_text;
-     } else if (c_trigger) {
-       return c_text;
-     } else if (d_trigger) {
-       return d_text;
-     }
-     return '';
-   } //часто повторялись, сделал отдельную функци
-   
+  String Determing_to_true_trigger_start() {
+    if (a_trigger) {
+      return a_text;
+    } else if (b_trigger) {
+      return b_text;
+    } else if (c_trigger) {
+      return c_text;
+    } else if (d_trigger) {
+      return d_text;
+    }
+    return '';
+  } //часто повторялись, сделал отдельную функци
+
   void Determing_to_true_trigger_end(String text) {
     if (a_trigger) {
       a_text = text;
@@ -135,7 +135,6 @@ class input_number extends ChangeNotifier {
       d_text = text;
     }
   } //часто повторялись, сделал отдельную функци
-
 
   void A_trigger() {
     a_trigger = true;
@@ -168,7 +167,6 @@ class input_number extends ChangeNotifier {
     d_trigger = true;
     notifyListeners();
   }
-
 
   void Animated_first_screen() {
     enter_block = false;
@@ -214,7 +212,6 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   } //переключение на экран ввода х4
 
-
   void savemode(int x) {
     if (x == 0) {
       urv2 = true;
@@ -234,13 +231,12 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   }
 
-
   void Resuilt_anim_screen() {
     enter_block = true;
 
-    if (first_anim_screen){
+    if (first_anim_screen) {
       first_resuilt_anim_screen = true;
-    } else if (second_anim_screen){
+    } else if (second_anim_screen) {
       second_resuilt_anim_screen = true;
     } else if (third_anim_screen) {
       third_resuilt_anim_screen = true;
@@ -250,14 +246,13 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   } //функция  кнопки  '='
 
-
   void Nums_press(String enternumber) {
     if (!enter_block) {
       String text = Determing_to_true_trigger_start();
 
-      if (enternumber == '0' && text == '0'){
+      if (enternumber == '0' && text == '0') {
         return;
-      } else if (text.length == 1 && text[0] == '0'){
+      } else if (text.length == 1 && text[0] == '0') {
         text = '+';
       }
       if (text.length < 12) {
@@ -269,60 +264,59 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   }
 
-  void Delete_press(){
-    if (!enter_block){
+  void Delete_press() {
+    if (!enter_block) {
       String text = Determing_to_true_trigger_start();
 
-      text = text.substring(0,text.length - 1);
-      if (text == ''){
+      text = text.substring(0, text.length - 1);
+      if (text == '') {
         text = '0';
       }
-      
+
       Determing_to_true_trigger_end(text);
     }
     notifyListeners();
   }
 
-  void Minus_press(){
-    if (!enter_block){
-     String text = Determing_to_true_trigger_start();
-     
-     if (text == '0') {
-       text = '-';
-     } else if (text == '-') {
-       text = '+';
-     } else if (text == '+') {
-       text = '-';
-     } else {
-       if (text[0] == '+') {
-         text = '-' + (text.substring(1, text.length));
-       } else if (text[0] == '-') {
-         text = '+' + (text.substring(1, text.length));
-       }
-     }
-     
-     Determing_to_true_trigger_end(text);
+  void Minus_press() {
+    if (!enter_block) {
+      String text = Determing_to_true_trigger_start();
+
+      if (text == '0') {
+        text = '-';
+      } else if (text == '-') {
+        text = '+';
+      } else if (text == '+') {
+        text = '-';
+      } else {
+        if (text[0] == '+') {
+          text = '-' + (text.substring(1, text.length));
+        } else if (text[0] == '-') {
+          text = '+' + (text.substring(1, text.length));
+        }
+      }
+
+      Determing_to_true_trigger_end(text);
     }
     notifyListeners();
   }
 
   void Comma_press() {
     if (!enter_block) {
-     String text = Determing_to_true_trigger_start();
+      String text = Determing_to_true_trigger_start();
 
-     if (!text.contains('.')) {
-       if (text[0] == '-' || text[0] == '+') {
-         text += '.';
-       } else {
-         text = '+' + text + '.';
-       }
-     }
+      if (!text.contains('.')) {
+        if (text[0] == '-' || text[0] == '+') {
+          text += '.';
+        } else {
+          text = '+' + text + '.';
+        }
+      }
 
-    Determing_to_true_trigger_end(text);
+      Determing_to_true_trigger_end(text);
     }
     notifyListeners();
   }
-
 
   void AC_press() {
     if (!enter_block) {
