@@ -1,15 +1,8 @@
-import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/screens/result.dart';
 import 'package:calculator/screens/screens_equations.dart';
-import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:calculator/main.dart';
-
 
 /*
 class peter1_PEWEHUE extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное
@@ -57,6 +50,8 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
 */
 
 class AnimatedScreen extends StatelessWidget {
+  const AnimatedScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final animated = Provider.of<input_number>(context);
@@ -65,17 +60,17 @@ class AnimatedScreen extends StatelessWidget {
         AnimatedScreenItem(
           opacity: animated.active_input_screen[0] ? 1 : 0,
           ignoring: animated.active_input_screen[0] ? false : true,
-          child: quadratic_equation(), //показывает ввод х2 уравнение
+          child: const quadratic_equation(), //показывает ввод х2 уравнение
         ),
         AnimatedScreenItem(
           opacity: animated.active_input_screen[1] ? 1 : 0,
           ignoring: animated.active_input_screen[1] ? false : true,
-          child: cubic_equation(), // показывает ввод х3 уравнение
+          child: const cubic_equation(), // показывает ввод х3 уравнение
         ),
         AnimatedScreenItem(
           opacity: animated.active_input_screen[2] ? 1 : 0,
           ignoring: animated.active_input_screen[2] ? false : true,
-          child: biquadrate_equation(), //показывает ввод х4 уравнение
+          child: const biquadrate_equation(), //показывает ввод х4 уравнение
         ),
         AnimatedScreenItem(
           opacity: animated.active_resuilt_screen[0] ? 1 : 0,
@@ -102,7 +97,8 @@ class AnimatedScreenItem extends StatelessWidget {
   final bool ignoring;
   final Widget child;
 
-  AnimatedScreenItem({
+  const AnimatedScreenItem({
+    super.key,
     required this.opacity,
     required this.ignoring,
     required this.child,
