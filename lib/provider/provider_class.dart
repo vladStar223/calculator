@@ -594,6 +594,14 @@ class input_number extends ChangeNotifier {
   }
 } // класс отвещающий за ввод и обработку
 
+class input_number_calculator extends input_number {
+  @override
+  void AC_press() {
+    // TODO: implement AC_press
+    super.AC_press();
+  }
+}
+
 class change_of_function extends ChangeNotifier {
   // класс отвечает за  измения функционало приложение
   bool calculator = true;
