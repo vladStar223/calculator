@@ -10,79 +10,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/main.dart';
 
-class peter1_PEWEHUE extends ChangeNotifier {}
-
-class first_animated_screen extends StatefulWidget {
-  const first_animated_screen({super.key});
-
-  @override
-  State<first_animated_screen> createState() => first_animated_screenState();
-}
-
-class first_animated_screenState extends State<first_animated_screen> {
-  @override
-  Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
-    return IgnorePointer(
-      ignoring: animated.first_anim_screen ? false : true,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 250),
-        opacity: animated.first_anim_screen ? 1 : 0,
-        child: Center(
-            child: SizedBox(
-                height: 43.39.sh, width: 95.sw, child: quadratic_equation())),
-      ),
-    );
-  }
-} //КЛАСС ДЛЯ УРАВНЕНИЙ Х^2
-
-class second_animated_screen extends StatefulWidget {
-  const second_animated_screen({super.key});
-
-  @override
-  State<second_animated_screen> createState() => second_animated_screenState();
-}
-
-class second_animated_screenState extends State<second_animated_screen> {
-  @override
-  Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
-    return IgnorePointer(
-      ignoring: animated.second_anim_screen ? false : true,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 250),
-        opacity: animated.second_anim_screen ? 1 : 0,
-        child: Center(
-            child: SizedBox(
-                height: 43.46.sh, width: 95.sw, child: cubic_equation())),
-      ),
-    );
-  }
-} // КЛАСС ДЛЯ УРАВНЕНИЙ Х^3
-
-class third_animated_screen extends StatefulWidget {
-  const third_animated_screen({super.key});
-
-  @override
-  State<third_animated_screen> createState() => third_animated_screenState();
-}
-
-class third_animated_screenState extends State<third_animated_screen> {
-  @override
-  Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
-    return IgnorePointer(
-      ignoring: animated.third_anim_screen ? false : true,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 250),
-        opacity: animated.third_anim_screen ? 1 : 0,
-        child: Center(
-            child: SizedBox(
-                height: 43.39.sh, width: 95.sw, child: biquadrate_equation())),
-      ),
-    );
-  }
-} // КЛАСС ДЛЯ УРАВНЕНИЙ Х^4
+class peter1_PEWEHUE
+    extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное
 
 class resuilt_animated_screen extends StatefulWidget {
   const resuilt_animated_screen({super.key});
@@ -90,7 +19,7 @@ class resuilt_animated_screen extends StatefulWidget {
   @override
   State<resuilt_animated_screen> createState() =>
       resuilt_animated_screenState();
-}
+} // не используется
 
 class resuilt_animated_screenState extends State<resuilt_animated_screen> {
   //написать чтобы понимало какой из классов ответа вызвать
@@ -119,6 +48,73 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
                   }
                 }
               })),
+        ),
+      ),
+    );
+  }
+} //не  используется
+
+class AnimatedScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final animated = Provider.of<input_number>(context);
+    return Stack(
+      children: [
+        AnimatedScreenItem(
+          opacity: animated.first_anim_screen ? 1 : 0,
+          ignoring: animated.first_anim_screen ? false : true,
+          child: quadratic_equation(), //показывает ввод х2 уравнение
+        ),
+        AnimatedScreenItem(
+          opacity: animated.second_anim_screen ? 1 : 0,
+          ignoring: animated.second_anim_screen ? false : true,
+          child: cubic_equation(), // показывает ввод х3 уравнение
+        ),
+        AnimatedScreenItem(
+          opacity: animated.third_anim_screen ? 1 : 0,
+          ignoring: animated.third_anim_screen ? false : true,
+          child: biquadrate_equation(), //показывает ввод х4 уравнение
+        ),
+        AnimatedScreenItem(
+          opacity: animated.first_resuilt_anim_screen ? 1 : 0,
+          ignoring: animated.first_resuilt_anim_screen ? false : true,
+          child: resuilt(), //показывает результаты х2 уравнения
+        ),
+        AnimatedScreenItem(
+          opacity: animated.second_resuilt_anim_screen ? 1 : 0,
+          ignoring: animated.second_resuilt_anim_screen ? false : true,
+          child: resuilt_urv3(), //показывает результаты х3 уравнения
+        ),
+        AnimatedScreenItem(
+          opacity: animated.third_resuilt_anim_screen ? 1 : 0,
+          ignoring: animated.third_resuilt_anim_screen ? false : true,
+          child: resuilt_urv4(), //показывает результаты х4 уравнения
+        ),
+      ],
+    );
+  }
+}
+
+class AnimatedScreenItem extends StatelessWidget {
+  final double opacity;
+  final bool ignoring;
+  final Widget child;
+
+  AnimatedScreenItem({
+    required this.opacity,
+    required this.ignoring,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IgnorePointer(
+      ignoring: ignoring,
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 250),
+        opacity: opacity,
+        child: Center(
+          child: child,
         ),
       ),
     );
