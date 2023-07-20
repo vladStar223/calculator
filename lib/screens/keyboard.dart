@@ -304,7 +304,7 @@ class _keyboard_equationState extends State<keyboard_equation> {
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press(".");
+                  context.read<input_number>().Comma_press();
                 },
                 type: 1,
                 number: ".",
@@ -507,7 +507,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press(".");
+                  context.read<input_number>().Comma_press();
                 },
                 type: 1,
                 number: ".",
