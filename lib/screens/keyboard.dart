@@ -117,6 +117,38 @@ class _inputButtonState extends State<inputButton> {
         ),
       );
     }
+    if (widget.type == 4) {
+      return Container(
+        height: 9.sh,
+        width: 20.sw,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor1,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: () {
+            context.read<input_number_calculator>().AC_press();
+          },
+          onLongPress: () {
+            context.read<input_number_calculator>().setlongtap_ac();
+            context.read<input_number_calculator>().AC_press();
+          },
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Text(
+            textAlign: TextAlign.center,
+            "AC",
+            style: TextStyle(
+                color: AppColors.textcolor,
+                fontSize: 5.sw,
+                fontFamily: "Nokora"),
+          ),
+        ),
+      );
+    }
     throw UnimplementedError();
   }
 }
@@ -333,7 +365,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final animation = Provider.of<input_number>(context);
+    final animation = Provider.of<input_number_calculator>(context);
     // используешь это удобно но когда все вместе такое
     // TODO: implement build
     return Column(
@@ -347,12 +379,12 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           children: [
             inputButton(
               onPressed: () {},
-              type: 3,
+              type: 4,
               number: "AC",
             ),
             inputButton(
               onPressed: () {
-                context.read<input_number>().Animated_first_screen();
+                print("процент");
               },
               type: 2,
               number: "%",
@@ -382,28 +414,28 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           children: [
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("7");
+                  context.read<input_number_calculator>().Nums_press("7");
                 },
                 type: 1,
                 number: "7",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("8");
+                  context.read<input_number_calculator>().Nums_press("8");
                 },
                 type: 1,
                 number: "8",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("9");
+                  context.read<input_number_calculator>().Nums_press("9");
                 },
                 type: 1,
                 number: "9",
                 font: 8.0),
             inputButton(
               onPressed: () {
-                context.read<input_number>().Delete_press();
+                context.read<input_number_calculator>().Delete_press();
               },
               type: 2,
               number: "Del",
@@ -419,28 +451,28 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           children: [
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("4");
+                  context.read<input_number_calculator>().Nums_press("4");
                 },
                 type: 1,
                 number: "4",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("5");
+                  context.read<input_number_calculator>().Nums_press("5");
                 },
                 type: 1,
                 number: "5",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("6");
+                  context.read<input_number_calculator>().Nums_press("6");
                 },
                 type: 1,
                 number: "6",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Minus_press();
+                  context.read<input_number_calculator>().Minus_press();
                 },
                 type: 2,
                 number: "-",
@@ -456,28 +488,28 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           children: [
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("1");
+                  context.read<input_number_calculator>().Nums_press("1");
                 },
                 type: 1,
                 number: "1",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("2");
+                  context.read<input_number_calculator>().Nums_press("2");
                 },
                 type: 1,
                 number: "2",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("3");
+                  context.read<input_number_calculator>().Nums_press("3");
                 },
                 type: 1,
                 number: "3",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Minus_press();
+                  context.read<input_number_calculator>().Minus_press();
                 },
                 type: 2,
                 number: "+",
@@ -500,21 +532,21 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("0");
+                  context.read<input_number_calculator>().Nums_press("0");
                 },
                 type: 1,
                 number: "0",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Comma_press();
+                  context.read<input_number_calculator>().Comma_press();
                 },
                 type: 1,
                 number: ".",
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Resuilt_anim_screen();
+                  context.read<input_number_calculator>().Resuilt_anim_screen();
                 },
                 type: 2,
                 number: "=",

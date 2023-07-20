@@ -52,6 +52,7 @@ class _MainState extends State<Main> {
       ChangeNotifierProvider(create: (context) => input_number()),
       ChangeNotifierProvider(create: (context) => change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
+      ChangeNotifierProvider(create: (context) => input_number_calculator()),
     ], child: screen_normal());
   }
 }
