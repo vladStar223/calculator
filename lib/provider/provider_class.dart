@@ -71,6 +71,16 @@ class input_number extends ChangeNotifier {
   List<bool> active_input_screen = [true, false, false];
   List<bool> active_resuilt_screen = [false, false, false];
 
+  /// active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  /// active_input_screen отвечает какой экран ввода открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+  /// active_resuilt_screen отвечает какой экран результата открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+  ///
+  /// text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  ///
+  /// мяу
+  ///
+
+
   void zerourv() {
     D = 0;
     x1 = 0;
