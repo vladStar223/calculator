@@ -65,23 +65,19 @@ class input_number extends ChangeNotifier {
   bool longtap = false;
   bool enter_block = false;
 
-  List<String> text_in_cofficients = ['0','0','0','0'];
-
+  List<String> text_in_cofficients = ['0', '0', '0', '0'];
 
   List<bool> active_coefficient = [true, false, false, false];
   List<bool> active_input_screen = [true, false, false];
   List<bool> active_resuilt_screen = [false, false, false];
 
-
   /// active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
-  /// 
+  ///
   /// active_input_screen отвечает какой экран ввода открыт ( [0] = x2, [1] = x3, [2] = x4 ).
-  /// 
+  ///
   /// active_resuilt_screen отвечает какой экран результата открыт ( [0] = x2, [1] = x3, [2] = x4 ).
   ///
   /// text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
-
-
 
   void zerourv() {
     D = 0;
@@ -94,36 +90,32 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   }
 
-
-  void Switch_from_D_to_C(){
+  void Switch_from_D_to_C() {
     if (active_coefficient[3]) {
       active_coefficient[2] = true;
       active_coefficient[3] = false;
-
     }
     //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
   } //часто повторялись, сделал отдельную функцию
 
-
-  void All_resuilt_bool_to_false(){
+  void All_resuilt_bool_to_false() {
     active_resuilt_screen[0] = false;
     active_resuilt_screen[1] = false;
     active_resuilt_screen[2] = false;
   } //часто повторялись, сделал отдельную функцию
 
-  String Determing_to_true_trigger_start(){
-     if (active_coefficient[0]) {
-       return text_in_cofficients[0];
-     } else if (active_coefficient[1]) {
-       return text_in_cofficients[1];
-     } else if (active_coefficient[2]) {
-       return text_in_cofficients[2];
-     } else if (active_coefficient[3]) {
-       return text_in_cofficients[3];
-     }
-     return '';
-   } //часто повторялись, сделал отдельную функци
-
+  String Determing_to_true_trigger_start() {
+    if (active_coefficient[0]) {
+      return text_in_cofficients[0];
+    } else if (active_coefficient[1]) {
+      return text_in_cofficients[1];
+    } else if (active_coefficient[2]) {
+      return text_in_cofficients[2];
+    } else if (active_coefficient[3]) {
+      return text_in_cofficients[3];
+    }
+    return '';
+  } //часто повторялись, сделал отдельную функци
 
   void Determing_to_true_trigger_end(String text) {
     if (active_coefficient[0]) {
@@ -235,13 +227,12 @@ class input_number extends ChangeNotifier {
   void Resuilt_anim_screen() {
     enter_block = true;
 
-    if (active_input_screen[0]){
+    if (active_input_screen[0]) {
       active_resuilt_screen[0] = true;
-    } else if (active_input_screen[1]){
+    } else if (active_input_screen[1]) {
       active_resuilt_screen[1] = true;
     } else if (active_input_screen[2]) {
       active_resuilt_screen[2] = true;
-
     } // проверка какой именно экран результата открывать
 
     decision_ur();
@@ -267,8 +258,7 @@ class input_number extends ChangeNotifier {
   }
 
   void Delete_press() {
-
-    if (!enter_block){
+    if (!enter_block) {
       String text = Determing_to_true_trigger_start();
 
       text = text.substring(0, text.length - 1);
@@ -419,7 +409,8 @@ class input_number extends ChangeNotifier {
   void decision_ur() {
     check_int();
     if (urv2 == true) {
-      urvshow = "${text_in_cofficients[0]} x² ${text_in_cofficients[1]} x ${text_in_cofficients[2]} = 0";
+      urvshow =
+          "${text_in_cofficients[0]} x² ${text_in_cofficients[1]} x ${text_in_cofficients[2]} = 0";
       kv = 0;
       d = (b * b) - 4 * a * c;
       if (a == 0) {
@@ -466,7 +457,8 @@ class input_number extends ChangeNotifier {
       notifyListeners(); // не рабочие решения
     }
     if (urv3 == true) {
-      urvshow = "${text_in_cofficients[0]} x³ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]} + ${text_in_cofficients[3]} = 0";
+      urvshow =
+          "${text_in_cofficients[0]} x³ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]} + ${text_in_cofficients[3]} = 0";
       if (a != 1) {
         double a1 = b / a;
         double b1 = c / a;
@@ -488,7 +480,8 @@ class input_number extends ChangeNotifier {
       //print(x3);
     }
     if (urv4 == true) {
-      urvshow = "${text_in_cofficients[0]} x⁴ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]}  = 0";
+      urvshow =
+          "${text_in_cofficients[0]} x⁴ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]}  = 0";
       kv = 0;
       d = (b * b) - 4 * a * c;
       if (a == 0) {
@@ -598,10 +591,23 @@ class input_number extends ChangeNotifier {
 } // класс отвещающий за ввод и обработку
 
 class input_number_calculator extends input_number {
+  String count = "0";
   @override
   void AC_press() {
-    // TODO: implement AC_press
-    super.AC_press();
+    count = "0";
+    notifyListeners();
+  }
+
+  @override
+  String Determing_to_true_trigger_start() {
+    return count;
+  }
+
+  @override
+  void Determing_to_true_trigger_end(String text) {
+    // TODO: implement Determing_to_true_trigger_end
+    count = text;
+    notifyListeners();
   }
 }
 

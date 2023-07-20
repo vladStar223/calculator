@@ -23,11 +23,27 @@ class _calculatorState extends State<calculator> {
       children: [
         Expanded(
           child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: 90.sw,
-              height: 0.1.sh,
-              color: AppColors.textcolor,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    textAlign: TextAlign.right,
+                    Provider.of<input_number_calculator>(context).count,
+                    style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 12.sw,
+                        fontFamily: "Nokora",
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
+                Container(
+                  width: 100.sw,
+                  height: 0.1.sh,
+                  color: AppColors.textcolor,
+                ),
+              ],
             ),
           ),
         ),
