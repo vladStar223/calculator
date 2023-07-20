@@ -355,21 +355,21 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 context.read<input_number>().Animated_first_screen();
               },
               type: 2,
-              number: "x²",
+              number: "%",
             ),
             inputButton(
               onPressed: () {
-                context.read<input_number>().Animated_second_screen();
+                print("умножение");
               },
               type: 2,
-              number: "x³",
+              number: "*",
             ),
             inputButton(
               onPressed: () {
-                context.read<input_number>().Animated_third_screen();
+                print("деление");
               },
               type: 2,
-              number: "x⁴",
+              number: "/",
             ),
           ],
         ),
@@ -493,10 +493,10 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           children: [
             inputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("e");
+                  print("big");
                 },
                 type: 1,
-                number: "e",
+                number: "big",
                 font: 8.0),
             inputButton(
                 onPressed: () {

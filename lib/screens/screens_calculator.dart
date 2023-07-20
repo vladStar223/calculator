@@ -19,16 +19,22 @@ class _calculatorState extends State<calculator> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    return Center(
-      child: Text(
-        "ax² + bx - c = 0",
-        style: TextStyle(
-            fontFamily: "Nokora",
-            fontSize: 5.sh,
-            fontWeight: FontWeight.w200,
-            color: AppColors.textcolor),
-      ),
+    return Column(
+      children: [
+        Expanded(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: 90.sw,
+              height: 0.1.sh,
+              color: AppColors.textcolor,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 1.9.sh,
+        )
+      ],
     );
-    throw UnimplementedError();
   }
 }
