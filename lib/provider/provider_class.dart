@@ -55,7 +55,7 @@ class choose_button extends ChangeNotifier {
 
 class input_number extends ChangeNotifier {
   @override
-  var color_of_border = Colors.blue; //цвет рамки для полей ввода
+  Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
 
   bool urv2 = true;
@@ -67,9 +67,11 @@ class input_number extends ChangeNotifier {
 
   List<String> text_in_cofficients = ['0','0','0','0'];
 
+
   List<bool> active_coefficient = [true, false, false, false];
   List<bool> active_input_screen = [true, false, false];
   List<bool> active_resuilt_screen = [false, false, false];
+
 
   /// active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
   /// active_input_screen отвечает какой экран ввода открыт ( [0] = x2, [1] = x3, [2] = x4 ).
@@ -79,7 +81,6 @@ class input_number extends ChangeNotifier {
   ///
   /// мяу
   ///
-
 
   void zerourv() {
     D = 0;
@@ -92,13 +93,16 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   }
 
+
   void Switch_from_D_to_C(){
     if (active_coefficient[3]) {
       active_coefficient[2] = true;
       active_coefficient[3] = false;
+
     }
- //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
+    //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
   } //часто повторялись, сделал отдельную функцию
+
 
   void All_resuilt_bool_to_false(){
     active_resuilt_screen[0] = false;
@@ -119,6 +123,7 @@ class input_number extends ChangeNotifier {
      return '';
    } //часто повторялись, сделал отдельную функци
 
+
   void Determing_to_true_trigger_end(String text) {
     if (active_coefficient[0]) {
       text_in_cofficients[0] = text;
@@ -130,7 +135,6 @@ class input_number extends ChangeNotifier {
       text_in_cofficients[3] = text;
     }
   } //часто повторялись, сделал отдельную функци
-
 
   void A_trigger() {
     active_coefficient[0] = true;
@@ -163,7 +167,6 @@ class input_number extends ChangeNotifier {
     active_coefficient[3] = true;
     notifyListeners();
   }
-
 
   void Animated_first_screen() {
     enter_block = false;
@@ -209,7 +212,6 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   } //переключение на экран ввода х4
 
-
   void savemode(int x) {
     if (x == 0) {
       urv2 = true;
@@ -229,9 +231,9 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   }
 
-
   void Resuilt_anim_screen() {
     enter_block = true;
+
 
     if (active_input_screen[0]){
       active_resuilt_screen[0] = true;
@@ -239,20 +241,20 @@ class input_number extends ChangeNotifier {
       active_resuilt_screen[1] = true;
     } else if (active_input_screen[2]) {
       active_resuilt_screen[2] = true;
+
     } // проверка какой именно экран результата открывать
 
     decision_ur();
     notifyListeners();
   } //функция  кнопки  '='
 
-
   void Nums_press(String enternumber) {
     if (!enter_block) {
       String text = Determing_to_true_trigger_start();
 
-      if (enternumber == '0' && text == '0'){
+      if (enternumber == '0' && text == '0') {
         return;
-      } else if (text.length == 1 && text[0] == '0'){
+      } else if (text.length == 1 && text[0] == '0') {
         text = '+';
       }
       if (text.length < 12) {
@@ -265,59 +267,60 @@ class input_number extends ChangeNotifier {
   }
 
   void Delete_press() {
+
     if (!enter_block){
+
       String text = Determing_to_true_trigger_start();
 
-      text = text.substring(0,text.length - 1);
-      if (text == ''){
+      text = text.substring(0, text.length - 1);
+      if (text == '') {
         text = '0';
       }
-      
+
       Determing_to_true_trigger_end(text);
     }
     notifyListeners();
   }
 
-  void Minus_press(){
-    if (!enter_block){
-     String text = Determing_to_true_trigger_start();
-     
-     if (text == '0') {
-       text = '-';
-     } else if (text == '-') {
-       text = '+';
-     } else if (text == '+') {
-       text = '-';
-     } else {
-       if (text[0] == '+') {
-         text = '-' + (text.substring(1, text.length));
-       } else if (text[0] == '-') {
-         text = '+' + (text.substring(1, text.length));
-       }
-     }
-     
-     Determing_to_true_trigger_end(text);
+  void Minus_press() {
+    if (!enter_block) {
+      String text = Determing_to_true_trigger_start();
+
+      if (text == '0') {
+        text = '-';
+      } else if (text == '-') {
+        text = '+';
+      } else if (text == '+') {
+        text = '-';
+      } else {
+        if (text[0] == '+') {
+          text = '-' + (text.substring(1, text.length));
+        } else if (text[0] == '-') {
+          text = '+' + (text.substring(1, text.length));
+        }
+      }
+
+      Determing_to_true_trigger_end(text);
     }
     notifyListeners();
   }
 
   void Comma_press() {
     if (!enter_block) {
-     String text = Determing_to_true_trigger_start();
+      String text = Determing_to_true_trigger_start();
 
-     if (!text.contains('.')) {
-       if (text[0] == '-' || text[0] == '+') {
-         text += '.';
-       } else {
-         text = '+' + text + '.';
-       }
-     }
+      if (!text.contains('.')) {
+        if (text[0] == '-' || text[0] == '+') {
+          text += '.';
+        } else {
+          text = '+' + text + '.';
+        }
+      }
 
-    Determing_to_true_trigger_end(text);
+      Determing_to_true_trigger_end(text);
     }
     notifyListeners();
   }
-
 
   void AC_press() {
     if (!enter_block) {
@@ -593,8 +596,24 @@ class input_number extends ChangeNotifier {
     }
     notifyListeners();
   }
-}
+} // класс отвещающий за ввод и обработку
 
+class change_of_function extends ChangeNotifier {
+  // класс отвечает за  измения функционало приложение
+  bool calculator = true;
+  bool equation_function = false;
+  void change_state_calculator() {
+    calculator = true;
+    equation_function = false;
+    notifyListeners();
+  }
+
+  void change_state_equation_function() {
+    calculator = false;
+    equation_function = true;
+    notifyListeners();
+  }
+}
 /*class decision_urv extends ChangeNotifier {
 
 }
