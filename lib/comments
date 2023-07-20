@@ -12,3 +12,4 @@
 // Height (without status and toolbar)
     double height3 = height - padding.top - kToolbarHeight;
 // использовать для получения размера экрана
+

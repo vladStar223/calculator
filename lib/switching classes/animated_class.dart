@@ -10,8 +10,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/main.dart';
 
+/*
 class peter1_PEWEHUE extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное
-
 class resuilt_animated_screen extends StatefulWidget {
   const resuilt_animated_screen({super.key});
 
@@ -19,7 +19,6 @@ class resuilt_animated_screen extends StatefulWidget {
   State<resuilt_animated_screen> createState() =>
       resuilt_animated_screenState();
 } // не используется
-
 class resuilt_animated_screenState extends State<resuilt_animated_screen> {
   //написать чтобы понимало какой из классов ответа вызвать
   @override
@@ -52,6 +51,7 @@ class resuilt_animated_screenState extends State<resuilt_animated_screen> {
     );
   }
 } //не  используется
+*/
 
 class AnimatedScreen extends StatelessWidget {
   @override
@@ -60,33 +60,33 @@ class AnimatedScreen extends StatelessWidget {
     return Stack(
       children: [
         AnimatedScreenItem(
-          opacity: animated.first_anim_screen ? 1 : 0,
-          ignoring: animated.first_anim_screen ? false : true,
+          opacity: animated.active_input_screen[0] ? 1 : 0,
+          ignoring: animated.active_input_screen[0] ? false : true,
           child: quadratic_equation(), //показывает ввод х2 уравнение
         ),
         AnimatedScreenItem(
-          opacity: animated.second_anim_screen ? 1 : 0,
-          ignoring: animated.second_anim_screen ? false : true,
+          opacity: animated.active_input_screen[1] ? 1 : 0,
+          ignoring: animated.active_input_screen[1] ? false : true,
           child: cubic_equation(), // показывает ввод х3 уравнение
         ),
         AnimatedScreenItem(
-          opacity: animated.third_anim_screen ? 1 : 0,
-          ignoring: animated.third_anim_screen ? false : true,
+          opacity: animated.active_input_screen[2] ? 1 : 0,
+          ignoring: animated.active_input_screen[2] ? false : true,
           child: biquadrate_equation(), //показывает ввод х4 уравнение
         ),
         AnimatedScreenItem(
-          opacity: animated.first_resuilt_anim_screen ? 1 : 0,
-          ignoring: animated.first_resuilt_anim_screen ? false : true,
+          opacity: animated.active_resuilt_screen[0] ? 1 : 0,
+          ignoring: animated.active_resuilt_screen[0] ? false : true,
           child: resuilt(), //показывает результаты х2 уравнения
         ),
         AnimatedScreenItem(
-          opacity: animated.second_resuilt_anim_screen ? 1 : 0,
-          ignoring: animated.second_resuilt_anim_screen ? false : true,
+          opacity: animated.active_resuilt_screen[1] ? 1 : 0,
+          ignoring: animated.active_resuilt_screen[1] ? false : true,
           child: resuilt_urv3(), //показывает результаты х3 уравнения
         ),
         AnimatedScreenItem(
-          opacity: animated.third_resuilt_anim_screen ? 1 : 0,
-          ignoring: animated.third_resuilt_anim_screen ? false : true,
+          opacity: animated.active_resuilt_screen[2] ? 1 : 0,
+          ignoring: animated.active_resuilt_screen[2] ? false : true,
           child: resuilt_urv4(), //показывает результаты х4 уравнения
         ),
       ],
