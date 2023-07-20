@@ -592,8 +592,24 @@ class input_number extends ChangeNotifier {
     }
     notifyListeners();
   }
-}
+} // класс отвещающий за ввод и обработку
 
+class change_of_function extends ChangeNotifier {
+  // класс отвечает за  измения функционало приложение
+  bool calculator = true;
+  bool equation_function = false;
+  void change_state_calculator() {
+    calculator = true;
+    equation_function = false;
+    notifyListeners();
+  }
+
+  void change_state_equation_function() {
+    calculator = false;
+    equation_function = true;
+    notifyListeners();
+  }
+}
 /*class decision_urv extends ChangeNotifier {
 
 }

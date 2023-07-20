@@ -121,14 +121,15 @@ class _inputButtonState extends State<inputButton> {
   }
 }
 
-class keyboard extends StatefulWidget {
+class keyboard_equation extends StatefulWidget {
   @override
-  State<keyboard> createState() => _keyboardState();
+  State<keyboard_equation> createState() => _keyboard_equationState();
 }
 
-class _keyboardState extends State<keyboard> {
+class _keyboard_equationState extends State<keyboard_equation> {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     final animation = Provider.of<input_number>(context);
     // используешь это удобно но когда все вместе такое
     // TODO: implement build
@@ -319,5 +320,209 @@ class _keyboardState extends State<keyboard> {
         ),
       ],
     );
+    throw UnimplementedError();
+  }
+}
+
+class keyboard_calculator extends StatefulWidget {
+  @override
+  State<keyboard_calculator> createState() => _keyboard_calculatorState();
+}
+
+class _keyboard_calculatorState extends State<keyboard_calculator> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    final animation = Provider.of<input_number>(context);
+    // используешь это удобно но когда все вместе такое
+    // TODO: implement build
+    return Column(
+      children: [
+        SizedBox(
+          height: 0.7.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            inputButton(
+              onPressed: () {},
+              type: 3,
+              number: "AC",
+            ),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Animated_first_screen();
+              },
+              type: 2,
+              number: "x²",
+            ),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Animated_second_screen();
+              },
+              type: 2,
+              number: "x³",
+            ),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Animated_third_screen();
+              },
+              type: 2,
+              number: "x⁴",
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("7");
+                },
+                type: 1,
+                number: "7",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("8");
+                },
+                type: 1,
+                number: "8",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("9");
+                },
+                type: 1,
+                number: "9",
+                font: 8.0),
+            inputButton(
+              onPressed: () {
+                context.read<input_number>().Delete_press();
+              },
+              type: 2,
+              number: "Del",
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("4");
+                },
+                type: 1,
+                number: "4",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("5");
+                },
+                type: 1,
+                number: "5",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("6");
+                },
+                type: 1,
+                number: "6",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Minus_press();
+                },
+                type: 2,
+                number: "-",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("1");
+                },
+                type: 1,
+                number: "1",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("2");
+                },
+                type: 1,
+                number: "2",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("3");
+                },
+                type: 1,
+                number: "3",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Minus_press();
+                },
+                type: 2,
+                number: "+",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("e");
+                },
+                type: 1,
+                number: "e",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press("0");
+                },
+                type: 1,
+                number: "0",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Nums_press(".");
+                },
+                type: 1,
+                number: ".",
+                font: 8.0),
+            inputButton(
+                onPressed: () {
+                  context.read<input_number>().Resuilt_anim_screen();
+                },
+                type: 2,
+                number: "=",
+                font: 8.0),
+          ],
+        ),
+      ],
+    );
+    throw UnimplementedError();
   }
 }

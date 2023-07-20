@@ -1,3 +1,5 @@
+import 'package:calculator/provider/provider_class.dart';
+import 'package:calculator/screens/screens_calculator.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/theme/color/theme.dart';
@@ -10,6 +12,7 @@ import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:calculator/screens/keyboard.dart';
 import 'dialog/alertDialog_widget.dart';
+import 'provider/provider_class.dart';
 
 //начало программы
 void main() {
@@ -47,7 +50,7 @@ class _MainState extends State<Main> {
 
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => input_number()),
-      ChangeNotifierProvider(create: (context) => choose_button()),
+      ChangeNotifierProvider(create: (context) => change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
     ], child: screen_normal());
   }
@@ -63,6 +66,7 @@ class _screen_normalState extends State<screen_normal> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
+    var Change_of_function = Provider.of<change_of_function>(context);
     const displayName = "displayName";
     final scaffoldKey = GlobalKey<ScaffoldState>();
     _showDialog(BuildContext context) {
@@ -152,13 +156,14 @@ class _screen_normalState extends State<screen_normal> {
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
-                    print("dd");
+                    Change_of_function.change_state_calculator();
+                    print(" Change_of_function.change_state_calculator()");
                   },
                   icon: Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
-                    print("dd");
+                    Change_of_function.change_state_equation_function();
                   },
                   icon: Icon(
                     MyFlutterApp.functions_icon_144317,
@@ -172,130 +177,41 @@ class _screen_normalState extends State<screen_normal> {
                   icon: Icon(MyFlutterApp.question_circle)),
             ],
           ),
-          Column(
-            children: [
-              SizedBox(height: 43.39.sh, width: 95.sw, child: AnimatedScreen()),
-              // resuilt_animated_screen(), не используется, но может нужно тебе
-              SizedBox(
-                height: 49.7.sh,
-                width: 100.sw,
-                child: keyboard(),
-              ),
-            ],
-          ),
+          Builder(builder: (context) {
+            // отвечает за провекру что показывать
+            /// some operation here ...
+            print(Change_of_function.calculator);
+            print(Change_of_function.equation_function);
+            if (Change_of_function.calculator == false) {
+              return Column(
+                children: [
+                  SizedBox(
+                      height: 43.39.sh, width: 95.sw, child: AnimatedScreen()),
+                  // resuilt_animated_screen(), не используется, но может нужно тебе
+                  SizedBox(
+                    height: 49.7.sh,
+                    width: 100.sw,
+                    child: keyboard_equation(),
+                  ),
+                ],
+              );
+            } else {
+              return Column(
+                children: [
+                  SizedBox(height: 43.39.sh, width: 95.sw, child: calculator()),
+                  // resuilt_animated_screen(), не используется, но может нужно тебе
+                  SizedBox(
+                    height: 49.7.sh,
+                    width: 100.sw,
+                    child: keyboard_calculator(),
+                  ),
+                ],
+              );
+            }
+          }),
         ],
       ),
     );
-    throw UnimplementedError();
-  }
-}
-
-class inputButton extends StatefulWidget {
-  final Function() onPressed;
-  final int type;
-  final String number;
-  final double font;
-  const inputButton({
-    super.key,
-    required this.type,
-    required this.onPressed,
-    required this.number,
-    this.font = 5.4,
-  });
-  @override
-  State<inputButton> createState() => _inputButtonState();
-}
-
-class _inputButtonState extends State<inputButton> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    var AppColors = Provider.of<AppColor>(context);
-    if (widget.type == 1) {
-      return Container(
-        height: 9.sh,
-        width: 20.sw,
-        decoration: BoxDecoration(
-          color: AppColors.buttoncolor2,
-          shape: BoxShape.circle,
-        ),
-        child: ElevatedButton(
-          onPressed: widget.onPressed,
-          style: ElevatedButton.styleFrom(
-            shape: const CircleBorder(),
-            backgroundColor: AppColors.buttoncolor2,
-            animationDuration: const Duration(milliseconds: 2500),
-          ),
-          child: Text(
-            textAlign: TextAlign.center,
-            widget.number,
-            style: TextStyle(
-                color: AppColors.textcolor2,
-                fontSize: widget.font.sw,
-                fontFamily: "Nokora"),
-          ),
-        ),
-      );
-    }
-    if (widget.type == 2) {
-      return Container(
-        height: 9.sh,
-        width: 20.sw,
-        decoration: BoxDecoration(
-          color: AppColors.buttoncolor1,
-          shape: BoxShape.circle,
-        ),
-        child: ElevatedButton(
-          onPressed: widget.onPressed,
-          style: ElevatedButton.styleFrom(
-            shape: const CircleBorder(),
-            backgroundColor: AppColors.buttoncolor1,
-            animationDuration: const Duration(milliseconds: 2500),
-          ),
-          child: Center(
-            child: Text(
-              widget.number,
-              style: TextStyle(
-                  color: AppColors.textcolor,
-                  fontSize: widget.font.sw,
-                  fontFamily: "Nokora"),
-            ),
-          ),
-        ),
-      );
-    }
-    if (widget.type == 3) {
-      return Container(
-        height: 9.sh,
-        width: 20.sw,
-        decoration: BoxDecoration(
-          color: AppColors.buttoncolor1,
-          shape: BoxShape.circle,
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            context.read<input_number>().AC_press();
-          },
-          onLongPress: () {
-            context.read<input_number>().setlongtap_ac();
-            context.read<input_number>().AC_press();
-          },
-          style: ElevatedButton.styleFrom(
-            shape: const CircleBorder(),
-            backgroundColor: AppColors.buttoncolor1,
-            animationDuration: const Duration(milliseconds: 2500),
-          ),
-          child: Text(
-            textAlign: TextAlign.center,
-            "AC",
-            style: TextStyle(
-                color: AppColors.textcolor,
-                fontSize: 5.sw,
-                fontFamily: "Nokora"),
-          ),
-        ),
-      );
-    }
     throw UnimplementedError();
   }
 }
