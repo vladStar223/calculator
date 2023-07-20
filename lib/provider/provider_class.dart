@@ -57,34 +57,30 @@ class input_number extends ChangeNotifier {
   @override
   Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
+
   bool urv2 = true;
   bool urv3 = false;
   bool urv4 = false;
 
-  // переменные
-  bool longtap =
-      false; // переменная отвечает за AC если она зажата то очищается все ,а не только одно
-  String a_text = '0',
-      b_text = '0',
-      c_text = '0',
-      d_text = '0'; // текст с полей ввода для переменных
+  bool longtap = false;
+  bool enter_block = false;
 
-  bool a_trigger = true,
-      c_trigger = false,
-      b_trigger = false,
-      d_trigger = false, // триггеры коэффицентов
+  List<String> text_in_cofficients = ['0','0','0','0'];
 
-      first_anim_screen = true,
-      second_anim_screen = false,
-      third_anim_screen = false,
-      resuilt_anim_screen = false, // БУЛЬКИ ДЛЯ АНИМАЦИЙ
 
-      enter_block =
-          false, // запрещает ввод с клавы кода открыто окно результата
+  List<bool> active_coefficient = [true, false, false, false];
+  List<bool> active_input_screen = [true, false, false];
+  List<bool> active_resuilt_screen = [false, false, false];
 
-      first_resuilt_anim_screen = false,
-      second_resuilt_anim_screen = false,
-      third_resuilt_anim_screen = false; //variables for anim resuilts
+
+  /// active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  /// active_input_screen отвечает какой экран ввода открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+  /// active_resuilt_screen отвечает какой экран результата открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+  ///
+  /// text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  ///
+  /// мяу
+  ///
 
   void zerourv() {
     D = 0;
@@ -97,83 +93,87 @@ class input_number extends ChangeNotifier {
     notifyListeners();
   }
 
-  void Switch_from_D_to_C() {
-    if (d_trigger) {
-      c_trigger = true;
-      d_trigger = false;
+
+  void Switch_from_D_to_C(){
+    if (active_coefficient[3]) {
+      active_coefficient[2] = true;
+      active_coefficient[3] = false;
+
     }
     //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
   } //часто повторялись, сделал отдельную функцию
 
-  void All_resuilt_bool_to_false() {
-    first_resuilt_anim_screen = false;
-    second_resuilt_anim_screen = false;
-    third_resuilt_anim_screen = false;
+
+  void All_resuilt_bool_to_false(){
+    active_resuilt_screen[0] = false;
+    active_resuilt_screen[1] = false;
+    active_resuilt_screen[2] = false;
   } //часто повторялись, сделал отдельную функцию
 
-  String Determing_to_true_trigger_start() {
-    if (a_trigger) {
-      return a_text;
-    } else if (b_trigger) {
-      return b_text;
-    } else if (c_trigger) {
-      return c_text;
-    } else if (d_trigger) {
-      return d_text;
-    }
-    return '';
-  } //часто повторялись, сделал отдельную функци
+  String Determing_to_true_trigger_start(){
+     if (active_coefficient[0]) {
+       return text_in_cofficients[0];
+     } else if (active_coefficient[1]) {
+       return text_in_cofficients[1];
+     } else if (active_coefficient[2]) {
+       return text_in_cofficients[2];
+     } else if (active_coefficient[3]) {
+       return text_in_cofficients[3];
+     }
+     return '';
+   } //часто повторялись, сделал отдельную функци
+
 
   void Determing_to_true_trigger_end(String text) {
-    if (a_trigger) {
-      a_text = text;
-    } else if (b_trigger) {
-      b_text = text;
-    } else if (c_trigger) {
-      c_text = text;
-    } else if (d_trigger) {
-      d_text = text;
+    if (active_coefficient[0]) {
+      text_in_cofficients[0] = text;
+    } else if (active_coefficient[1]) {
+      text_in_cofficients[1] = text;
+    } else if (active_coefficient[2]) {
+      text_in_cofficients[2] = text;
+    } else if (active_coefficient[3]) {
+      text_in_cofficients[3] = text;
     }
   } //часто повторялись, сделал отдельную функци
 
   void A_trigger() {
-    a_trigger = true;
-    b_trigger = false;
-    c_trigger = false;
-    d_trigger = false;
+    active_coefficient[0] = true;
+    active_coefficient[1] = false;
+    active_coefficient[2] = false;
+    active_coefficient[3] = false;
     notifyListeners();
   }
 
   void B_trigger() {
-    a_trigger = false;
-    b_trigger = true;
-    c_trigger = false;
-    d_trigger = false;
+    active_coefficient[0] = false;
+    active_coefficient[1] = true;
+    active_coefficient[2] = false;
+    active_coefficient[3] = false;
     notifyListeners();
   }
 
   void C_trigger() {
-    a_trigger = false;
-    b_trigger = false;
-    c_trigger = true;
-    d_trigger = false;
+    active_coefficient[0] = false;
+    active_coefficient[1] = false;
+    active_coefficient[2] = true;
+    active_coefficient[3] = false;
     notifyListeners();
   }
 
   void D_trigger() {
-    a_trigger = false;
-    b_trigger = false;
-    c_trigger = false;
-    d_trigger = true;
+    active_coefficient[0] = false;
+    active_coefficient[1] = false;
+    active_coefficient[2] = false;
+    active_coefficient[3] = true;
     notifyListeners();
   }
 
   void Animated_first_screen() {
     enter_block = false;
 
-    first_anim_screen = true;
-    second_anim_screen = false;
-    third_anim_screen = false;
+    active_input_screen[0] = true;
+    active_input_screen[1] = false;
+    active_input_screen[2] = false;
 
     All_resuilt_bool_to_false();
     Switch_from_D_to_C();
@@ -186,9 +186,9 @@ class input_number extends ChangeNotifier {
   void Animated_second_screen() {
     enter_block = false;
 
-    first_anim_screen = false;
-    second_anim_screen = true;
-    third_anim_screen = false;
+    active_input_screen[0] = false;
+    active_input_screen[1] = true;
+    active_input_screen[2] = false;
 
     All_resuilt_bool_to_false();
     savemode(1);
@@ -200,9 +200,9 @@ class input_number extends ChangeNotifier {
   void Animated_third_screen() {
     enter_block = false;
 
-    first_anim_screen = false;
-    second_anim_screen = false;
-    third_anim_screen = true;
+    active_input_screen[0] = false;
+    active_input_screen[1] = false;
+    active_input_screen[2] = true;
 
     All_resuilt_bool_to_false();
     Switch_from_D_to_C();
@@ -234,12 +234,14 @@ class input_number extends ChangeNotifier {
   void Resuilt_anim_screen() {
     enter_block = true;
 
-    if (first_anim_screen) {
-      first_resuilt_anim_screen = true;
-    } else if (second_anim_screen) {
-      second_resuilt_anim_screen = true;
-    } else if (third_anim_screen) {
-      third_resuilt_anim_screen = true;
+
+    if (active_input_screen[0]){
+      active_resuilt_screen[0] = true;
+    } else if (active_input_screen[1]){
+      active_resuilt_screen[1] = true;
+    } else if (active_input_screen[2]) {
+      active_resuilt_screen[2] = true;
+
     } // проверка какой именно экран результата открывать
 
     decision_ur();
@@ -265,7 +267,9 @@ class input_number extends ChangeNotifier {
   }
 
   void Delete_press() {
-    if (!enter_block) {
+
+    if (!enter_block){
+
       String text = Determing_to_true_trigger_start();
 
       text = text.substring(0, text.length - 1);
@@ -321,20 +325,20 @@ class input_number extends ChangeNotifier {
   void AC_press() {
     if (!enter_block) {
       if (longtap == false) {
-        if (a_trigger) {
-          a_text = '0';
-        } else if (b_trigger) {
-          b_text = '0';
-        } else if (c_trigger) {
-          c_text = '0';
-        } else if (d_trigger) {
-          d_text = '0';
+        if (active_coefficient[0]) {
+          text_in_cofficients[0] = '0';
+        } else if (active_coefficient[1]) {
+          text_in_cofficients[1] = '0';
+        } else if (active_coefficient[2]) {
+          text_in_cofficients[2] = '0';
+        } else if (active_coefficient[3]) {
+          text_in_cofficients[3] = '0';
         }
       } else {
-        a_text = '0';
-        b_text = '0';
-        c_text = '0';
-        d_text = '0';
+        text_in_cofficients[0] = '0';
+        text_in_cofficients[1] = '0';
+        text_in_cofficients[2] = '0';
+        text_in_cofficients[3] = '0';
         longtap = false;
       }
     }
@@ -363,52 +367,52 @@ class input_number extends ChangeNotifier {
   double D = 0;
   late List<String> x;
   void check_int() {
-    if (a_text != "-" && a_text != "+") {
-      a = double.parse(a_text);
+    if (text_in_cofficients[0] != "-" && text_in_cofficients[0] != "+") {
+      a = double.parse(text_in_cofficients[0]);
     } else {
-      if (a_text == "-") {
+      if (text_in_cofficients[0] == "-") {
         a = -1;
-        a_text = "-";
+        text_in_cofficients[0] = "-";
       }
-      if (a_text == "+") {
+      if (text_in_cofficients[0] == "+") {
         a = 1;
-        a_text = "-";
+        text_in_cofficients[0] = "-";
       }
     }
-    if (b_text != "-" && b_text != "+") {
-      b = double.parse(b_text);
+    if (text_in_cofficients[1] != "-" && text_in_cofficients[1] != "+") {
+      b = double.parse(text_in_cofficients[1]);
     } else {
-      if (b_text == "-") {
+      if (text_in_cofficients[1] == "-") {
         b = -1;
-        b_text = "-1";
+        text_in_cofficients[1] = "-1";
       }
-      if (b_text == "+") {
+      if (text_in_cofficients[1] == "+") {
         b = 1;
-        b_text = "+1";
+        text_in_cofficients[1] = "+1";
       }
     }
-    if (c_text != "-" && c_text != "+") {
-      c = double.parse(c_text);
+    if (text_in_cofficients[2] != "-" && text_in_cofficients[2] != "+") {
+      c = double.parse(text_in_cofficients[2]);
     } else {
-      if (c_text == "-") {
+      if (text_in_cofficients[2] == "-") {
         c = -1;
-        c_text = "-1";
+        text_in_cofficients[2] = "-1";
       }
-      if (c_text == "+") {
+      if (text_in_cofficients[2] == "+") {
         c = 1;
-        c_text = "+1";
+        text_in_cofficients[2] = "+1";
       }
     }
-    if (d_text != "-" && d_text != "+") {
-      d = double.parse(d_text);
+    if (text_in_cofficients[3] != "-" && text_in_cofficients[3] != "+") {
+      d = double.parse(text_in_cofficients[3]);
     } else {
-      if (d_text == "-") {
+      if (text_in_cofficients[3] == "-") {
         d = -1;
-        d_text = "-1";
+        text_in_cofficients[3] = "-1";
       }
-      if (d_text == "+") {
+      if (text_in_cofficients[3] == "+") {
         d = 1;
-        d_text = "+1";
+        text_in_cofficients[3] = "+1";
       }
     }
   }
@@ -416,7 +420,7 @@ class input_number extends ChangeNotifier {
   void decision_ur() {
     check_int();
     if (urv2 == true) {
-      urvshow = "${a_text} x² ${b_text} x ${c_text} = 0";
+      urvshow = "${text_in_cofficients[0]} x² ${text_in_cofficients[1]} x ${text_in_cofficients[2]} = 0";
       kv = 0;
       d = (b * b) - 4 * a * c;
       if (a == 0) {
@@ -463,7 +467,7 @@ class input_number extends ChangeNotifier {
       notifyListeners(); // не рабочие решения
     }
     if (urv3 == true) {
-      urvshow = "${a_text} x³ ${b_text} x² ${c_text} + ${d_text} = 0";
+      urvshow = "${text_in_cofficients[0]} x³ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]} + ${text_in_cofficients[3]} = 0";
       if (a != 1) {
         double a1 = b / a;
         double b1 = c / a;
@@ -485,7 +489,7 @@ class input_number extends ChangeNotifier {
       //print(x3);
     }
     if (urv4 == true) {
-      urvshow = "${a_text} x⁴ ${b_text} x² ${c_text}  = 0";
+      urvshow = "${text_in_cofficients[0]} x⁴ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]}  = 0";
       kv = 0;
       d = (b * b) - 4 * a * c;
       if (a == 0) {
