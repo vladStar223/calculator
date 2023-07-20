@@ -74,13 +74,14 @@ class input_number extends ChangeNotifier {
 
 
   /// active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  /// 
   /// active_input_screen отвечает какой экран ввода открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+  /// 
   /// active_resuilt_screen отвечает какой экран результата открыт ( [0] = x2, [1] = x3, [2] = x4 ).
   ///
   /// text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
-  ///
-  /// мяу
-  ///
+
+
 
   void zerourv() {
     D = 0;
@@ -234,7 +235,6 @@ class input_number extends ChangeNotifier {
   void Resuilt_anim_screen() {
     enter_block = true;
 
-
     if (active_input_screen[0]){
       active_resuilt_screen[0] = true;
     } else if (active_input_screen[1]){
@@ -269,7 +269,6 @@ class input_number extends ChangeNotifier {
   void Delete_press() {
 
     if (!enter_block){
-
       String text = Determing_to_true_trigger_start();
 
       text = text.substring(0, text.length - 1);
