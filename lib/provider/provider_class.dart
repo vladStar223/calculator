@@ -58,10 +58,11 @@ class input_number extends ChangeNotifier {
   Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
 
-  bool urv2 = true;
-  bool urv3 = false;
-  bool urv4 = false;
-
+  List<bool> urv = [
+    true,
+    false,
+    false,
+  ]; // храняет значение выбора типа уравнений для подсчета
   bool longtap = false;
   bool enter_block = false;
 
@@ -207,19 +208,19 @@ class input_number extends ChangeNotifier {
 
   void savemode(int x) {
     if (x == 0) {
-      urv2 = true;
-      urv3 = false;
-      urv4 = false;
+      urv[0] = true;
+      urv[1] = false;
+      urv[2] = false;
     }
     if (x == 1) {
-      urv3 = true;
-      urv2 = false;
-      urv4 = false;
+      urv[1] = true;
+      urv[2] = false;
+      urv[0] = false;
     }
     if (x == 2) {
-      urv4 = true;
-      urv2 = false;
-      urv3 = false;
+      urv[2] = true;
+      urv[1] = false;
+      urv[0] = false;
     }
     notifyListeners();
   }
@@ -408,7 +409,7 @@ class input_number extends ChangeNotifier {
 
   void decision_ur() {
     check_int();
-    if (urv2 == true) {
+    if (urv[0] == true) {
       urvshow =
           "${text_in_cofficients[0]} x² ${text_in_cofficients[1]} x ${text_in_cofficients[2]} = 0";
       kv = 0;
@@ -456,7 +457,7 @@ class input_number extends ChangeNotifier {
       }
       notifyListeners(); // не рабочие решения
     }
-    if (urv3 == true) {
+    if (urv[1] == true) {
       urvshow =
           "${text_in_cofficients[0]} x³ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]} + ${text_in_cofficients[3]} = 0";
       if (a != 1) {
@@ -479,7 +480,7 @@ class input_number extends ChangeNotifier {
       //print(x2);
       //print(x3);
     }
-    if (urv4 == true) {
+    if (urv[2] == true) {
       urvshow =
           "${text_in_cofficients[0]} x⁴ ${text_in_cofficients[1]} x² ${text_in_cofficients[2]}  = 0";
       kv = 0;
@@ -608,6 +609,46 @@ class input_number_calculator extends input_number {
     // TODO: implement Determing_to_true_trigger_end
     count = text;
     notifyListeners();
+  }
+
+  @override
+  void Minus_press() {
+    // TODO: implement Minus_press
+    String text = Determing_to_true_trigger_start();
+    if (text == '0') {
+      text = '-';
+    } else {
+      if (text.length == 1 && text[0] == '0') {
+        text = '+';
+      }
+      if (text.length < 30 && text[text.length - 1] != "-") {
+        text += "-";
+      }
+    }
+
+    Determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  @override
+  void Comma_press() {
+    // TODO: implement Comma_press
+    String text = Determing_to_true_trigger_start();
+
+    if (text[text.length - 1] != ".") {
+      text = text + '.';
+    }
+
+    Determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void checktrue(text) {
+    int i = 2;
+    bool k = true;
+    while (i < text.length) {
+      i = i + 1;
+    }
   }
 }
 

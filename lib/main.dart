@@ -68,6 +68,7 @@ class _screen_normalState extends State<screen_normal> {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
     var Change_of_function = Provider.of<change_of_function>(context);
+    var type_choose = Provider.of<input_number>(context).urv;
     const displayName = "displayName";
     final scaffoldKey = GlobalKey<ScaffoldState>();
     _showDialog(BuildContext context) {
@@ -78,7 +79,8 @@ class _screen_normalState extends State<screen_normal> {
       BlurryDialog alert = BlurryDialog(
           "Сообщение",
           "Для подробной информации перейдите на  интернет ресурс",
-          continueCallBack);
+          continueCallBack,
+          type_choose);
 
       showDialog(
         context: context,
@@ -158,7 +160,6 @@ class _screen_normalState extends State<screen_normal> {
                   color: AppColors.textcolorfortop,
                   onPressed: () {
                     Change_of_function.change_state_calculator();
-                    print(" Change_of_function.change_state_calculator()");
                   },
                   icon: Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
               IconButton(
@@ -181,8 +182,6 @@ class _screen_normalState extends State<screen_normal> {
           Builder(builder: (context) {
             // отвечает за провекру что показывать
             /// some operation here ...
-            print(Change_of_function.calculator);
-            print(Change_of_function.equation_function);
             if (Change_of_function.calculator == false) {
               return Column(
                 children: [
