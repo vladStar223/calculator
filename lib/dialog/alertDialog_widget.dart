@@ -14,7 +14,7 @@ class BlurryDialog extends StatelessWidget {
 
   BlurryDialog(
       this.title, this.content, this.continueCallBack, this.type_choose);
-  TextStyle textStyle = TextStyle(color: Colors.black);
+  TextStyle textStyle = TextStyle(fontFamily: "Nokora", color: Colors.black);
 
   @override
   Widget build(BuildContext context) {

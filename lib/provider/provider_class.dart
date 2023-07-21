@@ -61,7 +61,7 @@ class input_number extends ChangeNotifier {
   List<bool> urv = [
     true,
     false,
-    false
+    false,
   ]; // храняет значение выбора типа уравнений для подсчета
   bool longtap = false;
   bool enter_block = false;
