@@ -1,7 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:calculator/main.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../provider/provider_class.dart';
 
 class BlurryDialog extends StatelessWidget {
   String title;
@@ -13,6 +16,7 @@ class BlurryDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var color_choose = Provider.of<input_number>(context).urv2;
     return BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
         child: AlertDialog(
@@ -27,7 +31,7 @@ class BlurryDialog extends StatelessWidget {
           actions: <Widget>[
             TextButton(
               child: new Text("Открыть"),
-              onPressed: _launchURL,
+              onPressed: _launchURL(),
             ),
             new TextButton(
               child: Text("Закрыть"),
