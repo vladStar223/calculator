@@ -610,6 +610,46 @@ class input_number_calculator extends input_number {
     count = text;
     notifyListeners();
   }
+
+  @override
+  void Minus_press() {
+    // TODO: implement Minus_press
+    String text = Determing_to_true_trigger_start();
+    if (text == '0') {
+      text = '-';
+    } else {
+      if (text.length == 1 && text[0] == '0') {
+        text = '+';
+      }
+      if (text.length < 30 && text[text.length - 1] != "-") {
+        text += "-";
+      }
+    }
+
+    Determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  @override
+  void Comma_press() {
+    // TODO: implement Comma_press
+    String text = Determing_to_true_trigger_start();
+
+    if (text[text.length - 1] != ".") {
+      text = text + '.';
+    }
+
+    Determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void checktrue(text) {
+    int i = 2;
+    bool k = true;
+    while (i < text.length) {
+      i = i + 1;
+    }
+  }
 }
 
 class change_of_function extends ChangeNotifier {
