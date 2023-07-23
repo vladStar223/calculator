@@ -55,7 +55,6 @@ class choose_button extends ChangeNotifier {
 
 class input_number extends ChangeNotifier {
   @override
-  Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
 
   List<bool> urv = [
@@ -591,55 +590,36 @@ class input_number extends ChangeNotifier {
   }
 } // класс отвещающий за ввод и обработку
 
-class input_number_calculator extends input_number {
+// ignore: camel_case_types
+class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
-  @override
-  void AC_press() {
-    count = "0";
+  String determing_to_true_trigger_start() {
+    return count;
     notifyListeners();
   }
 
-  @override
-  String Determing_to_true_trigger_start() {
-    return count;
-  }
-
-  @override
-  void Determing_to_true_trigger_end(String text) {
+  void determing_to_true_trigger_end(String text) {
     // TODO: implement Determing_to_true_trigger_end
     count = text;
     notifyListeners();
   }
 
   @override
-  void Minus_press() {
+  void minus_press() {
     // TODO: implement Minus_press
-    String text = Determing_to_true_trigger_start();
+    String text = determing_to_true_trigger_start();
     if (text == '0') {
       text = '-';
     } else {
       if (text.length == 1 && text[0] == '0') {
-        text = '+';
+        text = '-';
       }
       if (text.length < 30 && text[text.length - 1] != "-") {
         text += "-";
       }
     }
 
-    Determing_to_true_trigger_end(text);
-    notifyListeners();
-  }
-
-  @override
-  void Comma_press() {
-    // TODO: implement Comma_press
-    String text = Determing_to_true_trigger_start();
-
-    if (text[text.length - 1] != ".") {
-      text = text + '.';
-    }
-
-    Determing_to_true_trigger_end(text);
+    determing_to_true_trigger_end(text);
     notifyListeners();
   }
 
@@ -650,7 +630,165 @@ class input_number_calculator extends input_number {
       i = i + 1;
     }
   }
+
+  @override
+  void nums_press(String enternumber) {
+    // TODO: implement Nums_press
+  }
+  @override
+  void ac_press() {
+    // TODO: implement ac_press
+  }
+  @override
+  void comma_press() {
+    String text = determing_to_true_trigger_start();
+
+    if (text[text.length - 1] != "." &&
+        text[text.length - 1] != "-" &&
+        text[text.length - 1] != "+") {
+      text = text + '.';
+    } // дописать для всех возможны случаев
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+    // TODO: implement comma_press
+  }
+
+  @override
+  void delete_press() {
+    // TODO: implement delete_press
+  }
+
+  @override
+  void resuilt() {
+    // TODO: implement resuilt
+  }
+
+  void setlongtap_ac() {}
 }
+
+interface class Input_number {
+  //List<String> text_in_cofficients = ['0', '0', '0', '0'];
+  //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
+
+  //List<bool> active_coefficient = [true, false, false, false];
+  // active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  String determing_to_true_trigger_start() {
+    return "0";
+  } // функция получение того текста который
+
+  void determing_to_true_trigger_end(
+      String text) {} //функция  отправки  что было введино
+  void nums_press(String enternumber) {}
+  void resuilt() {} //функция  кнопки  '='
+
+  void delete_press() {} // функция удаление символа
+
+  void comma_press() {} // функция запятой в числе
+
+  void ac_press() {} // функция  очистки ввода
+} // отвечает за итерфейс ввода чисел для разных классов
+
+class Change_activ_screen_out_input extends ChangeNotifier {
+  var active_coefficient; //передавать эти значения  через конструктор важно
+  bool enter_block = false; // передавать эти значения через конструктор
+  Change_activ_screen_out_input(this.active_coefficient, this.enter_block);
+  List<bool> active_input_screen = [true, false, false];
+// active_input_screen отвечает какой экран ввода открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+  List<bool> active_resuilt_screen = [false, false, false];
+//active_resuilt_screen отвечает какой экран результата открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+  void Switch_from_D_to_C() {
+    if (active_coefficient[3]) {
+      active_coefficient[2] = true;
+      active_coefficient[3] = false;
+    }
+    //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
+  } //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
+
+  void A_trigger() {
+    active_coefficient[0] = true;
+    active_coefficient[1] = false;
+    active_coefficient[2] = false;
+    active_coefficient[3] = false;
+    notifyListeners();
+  } // переключение на активный ввод
+
+  void B_trigger() {
+    active_coefficient[0] = false;
+    active_coefficient[1] = true;
+    active_coefficient[2] = false;
+    active_coefficient[3] = false;
+    notifyListeners();
+  }
+
+  void C_trigger() {
+    active_coefficient[0] = false;
+    active_coefficient[1] = false;
+    active_coefficient[2] = true;
+    active_coefficient[3] = false;
+    notifyListeners();
+  }
+
+  void D_trigger() {
+    active_coefficient[0] = false;
+    active_coefficient[1] = false;
+    active_coefficient[2] = false;
+    active_coefficient[3] = true;
+    notifyListeners();
+  }
+
+  void All_resuilt_bool_to_false() {
+    active_resuilt_screen[0] = false;
+    active_resuilt_screen[1] = false;
+    active_resuilt_screen[2] = false;
+  } //обновляют значение активных экранов вывода
+
+  void animated_first_screen() {
+    enter_block = false;
+    active_input_screen[0] = true;
+    active_input_screen[1] = false;
+    active_input_screen[2] = false;
+    All_resuilt_bool_to_false();
+    Switch_from_D_to_C();
+    notifyListeners();
+  } //переключение на экран ввода х2
+
+  void animated_second_screen() {
+    enter_block = false;
+    active_input_screen[0] = false;
+    active_input_screen[1] = true;
+    active_input_screen[2] = false;
+    All_resuilt_bool_to_false();
+    notifyListeners();
+  } //переключение на экран ввода х3
+
+  void animated_third_screen() {
+    enter_block = false;
+
+    active_input_screen[0] = false;
+    active_input_screen[1] = false;
+    active_input_screen[2] = true;
+
+    All_resuilt_bool_to_false();
+    Switch_from_D_to_C();
+
+    notifyListeners();
+  } //переключение на экран ввода х4
+
+  void resuilt_anim_screen() {
+    enter_block = true;
+
+    if (active_input_screen[0]) {
+      active_resuilt_screen[0] = true;
+    } else if (active_input_screen[1]) {
+      active_resuilt_screen[1] = true;
+    } else if (active_input_screen[2]) {
+      active_resuilt_screen[2] = true;
+    } // проверка какой именно экран результата открывать
+
+    notifyListeners();
+  } // переключение на нужный экран результата
+} // отвечает за   переключение  активных окнов ввода и вывода
 
 class change_of_function extends ChangeNotifier {
   // класс отвечает за  измения функционало приложение
