@@ -40,6 +40,7 @@ class AppColor extends ChangeNotifier {
   int type = 1;
   @override
   Color color_of_border = Colors.blue; //цвет рамки для полей ввода
+  Color transparent = Colors.transparent; // Нормальное состояние
   Color fon = HexColor.fromHex('242933'); // фон
   Color white = HexColor.fromHex('EEEEEE');
   Color output = HexColor.fromHex('EEEEEE'); // меню вывода
