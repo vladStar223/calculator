@@ -55,7 +55,6 @@ class choose_button extends ChangeNotifier {
 
 class input_number extends ChangeNotifier {
   @override
-  Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
 
   List<bool> urv = [
@@ -591,7 +590,7 @@ class input_number extends ChangeNotifier {
   }
 } // класс отвещающий за ввод и обработку
 
-class input_number_calculator extends input_number {
+class Input_number_calculator extends input_number {
   String count = "0";
   @override
   void AC_press() {
@@ -619,7 +618,7 @@ class input_number_calculator extends input_number {
       text = '-';
     } else {
       if (text.length == 1 && text[0] == '0') {
-        text = '+';
+        text = '-';
       }
       if (text.length < 30 && text[text.length - 1] != "-") {
         text += "-";
@@ -650,6 +649,69 @@ class input_number_calculator extends input_number {
       i = i + 1;
     }
   }
+}
+
+abstract class Input_number extends ChangeNotifier {
+  bool longtap = false;
+  bool enter_block = false;
+  List<String> text_in_cofficients = ['0', '0', '0', '0'];
+  //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
+
+  List<bool> active_coefficient = [true, false, false, false];
+  // active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  String Determing_to_true_trigger_start() {
+    return text_in_cofficients[0];
+  } // функция получение того текста который
+
+  void Determing_to_true_trigger_end(
+      String text) {} //функция  отправки  что было введино
+  void Nums_press(String enternumber) {
+    if (!enter_block) {
+      String text = Determing_to_true_trigger_start();
+      Determing_to_true_trigger_end(text);
+    }
+    notifyListeners();
+  }
+
+  void resuilt() {
+    enter_block = true;
+
+    notifyListeners();
+  } //функция  кнопки  '='
+
+  void delete_press() {
+    if (!enter_block) {
+      String text = Determing_to_true_trigger_start();
+      Determing_to_true_trigger_end(text);
+    }
+    notifyListeners();
+  } // функция удаление символа
+
+  void comma_press() {
+    if (!enter_block) {
+      String text = Determing_to_true_trigger_start();
+      Determing_to_true_trigger_end(text);
+    }
+    notifyListeners();
+  } // функция запятой в числе
+
+  void ac_press() {
+    if (!enter_block) {
+      String text = Determing_to_true_trigger_start();
+      Determing_to_true_trigger_end(text);
+    }
+    notifyListeners();
+  } // функция  очистки ввода
+} // отвечает за итерфейс ввода чисел для разных классов
+
+abstract class Change_active_input_screen extends ChangeNotifier {
+  List<bool> active_input_screen = [true, false, false];
+// active_input_screen отвечает какой экран ввода открыт ( [0] = x2, [1] = x3, [2] = x4 ).
+}
+
+abstract class Change_active_resuilt_screen extends ChangeNotifier {
+  List<bool> active_resuilt_screen = [false, false, false];
+//active_resuilt_screen отвечает какой экран результата открыт ( [0] = x2, [1] = x3, [2] = x4 ).
 }
 
 class change_of_function extends ChangeNotifier {

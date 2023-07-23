@@ -30,7 +30,7 @@ class _calculatorState extends State<calculator> {
                   alignment: Alignment.centerRight,
                   child: Text(
                     textAlign: TextAlign.right,
-                    Provider.of<input_number_calculator>(context).count,
+                    Provider.of<Input_number_calculator>(context).count,
                     style: TextStyle(
                         color: AppColors.white,
                         fontSize: 12.sw,

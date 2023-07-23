@@ -75,8 +75,10 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[0]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[0]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -92,7 +94,8 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            Provider.of<input_number>(context).text_in_cofficients[0],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[0],
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors.textcolor2,
@@ -128,8 +131,10 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[1]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[1]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -146,7 +151,8 @@ class _quadratic_equationState extends State<quadratic_equation> {
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).text_in_cofficients[1],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[1],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
                                 fontSize: 5.3.sw,
@@ -184,8 +190,10 @@ class _quadratic_equationState extends State<quadratic_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[2]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[2]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -202,7 +210,8 @@ class _quadratic_equationState extends State<quadratic_equation> {
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).text_in_cofficients[2],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[2],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
                                 fontSize: 5.3.sw,
@@ -290,8 +299,10 @@ class _cubic_equationState extends State<cubic_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[0]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[0]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -307,7 +318,8 @@ class _cubic_equationState extends State<cubic_equation> {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            Provider.of<input_number>(context).text_in_cofficients[0],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[0],
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors.textcolor2,
@@ -343,8 +355,10 @@ class _cubic_equationState extends State<cubic_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[1]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[1]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -361,7 +375,8 @@ class _cubic_equationState extends State<cubic_equation> {
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).text_in_cofficients[1],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[1],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
                                 fontSize: 5.3.sw,
@@ -399,8 +414,10 @@ class _cubic_equationState extends State<cubic_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[2]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[2]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -417,7 +434,8 @@ class _cubic_equationState extends State<cubic_equation> {
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).text_in_cofficients[2],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[2],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
                                 fontSize: 5.3.sw,
@@ -452,8 +470,10 @@ class _cubic_equationState extends State<cubic_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[3]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[3]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -470,7 +490,8 @@ class _cubic_equationState extends State<cubic_equation> {
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).text_in_cofficients[3],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[3],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
                                 fontSize: 5.3.sw,
@@ -557,8 +578,10 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[0]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[0]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -574,7 +597,8 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            Provider.of<input_number>(context).text_in_cofficients[0],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[0],
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors.textcolor2,
@@ -610,8 +634,10 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[1]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[1]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -628,7 +654,8 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).text_in_cofficients[1],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[1],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
                                 fontSize: 5.3.sw,
@@ -666,8 +693,10 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                            color: context.read<input_number>().active_coefficient[2]
-                                ? context.read<input_number>().color_of_border
+                            color: context
+                                    .read<input_number>()
+                                    .active_coefficient[2]
+                                ? AppColors.color_of_border
                                 : Colors.transparent,
                             width: 0.5.sw),
                       ),
@@ -684,7 +713,8 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
                           alignment: Alignment.bottomRight,
                           child: Text(
                             textAlign: TextAlign.right,
-                            Provider.of<input_number>(context).text_in_cofficients[2],
+                            Provider.of<input_number>(context)
+                                .text_in_cofficients[2],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
                                 fontSize: 5.3.sw,
