@@ -707,13 +707,45 @@ class Change_activ_screen_out_input extends ChangeNotifier {
       active_coefficient[3] = false;
     }
     //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
-  } //часто повторялись, сделал отдельную функцию
+  } //переключает активный коэф с D на C если был переход с ур-ем х3 на остальные ур-я
+
+  void A_trigger() {
+    active_coefficient[0] = true;
+    active_coefficient[1] = false;
+    active_coefficient[2] = false;
+    active_coefficient[3] = false;
+    notifyListeners();
+  } // переключение на активный ввод
+
+  void B_trigger() {
+    active_coefficient[0] = false;
+    active_coefficient[1] = true;
+    active_coefficient[2] = false;
+    active_coefficient[3] = false;
+    notifyListeners();
+  }
+
+  void C_trigger() {
+    active_coefficient[0] = false;
+    active_coefficient[1] = false;
+    active_coefficient[2] = true;
+    active_coefficient[3] = false;
+    notifyListeners();
+  }
+
+  void D_trigger() {
+    active_coefficient[0] = false;
+    active_coefficient[1] = false;
+    active_coefficient[2] = false;
+    active_coefficient[3] = true;
+    notifyListeners();
+  }
 
   void All_resuilt_bool_to_false() {
     active_resuilt_screen[0] = false;
     active_resuilt_screen[1] = false;
     active_resuilt_screen[2] = false;
-  } //часто повторялись, сделал отдельную функцию
+  } //обновляют значение активных экранов вывода
 
   void animated_first_screen() {
     enter_block = false;
