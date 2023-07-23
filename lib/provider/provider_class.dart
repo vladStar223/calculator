@@ -641,7 +641,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   }
   @override
   void comma_press() {
-    String text = Determing_to_true_trigger_start();
+    String text = determing_to_true_trigger_start();
 
     if (text[text.length - 1] != "." &&
         text[text.length - 1] != "-" &&
@@ -649,7 +649,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       text = text + '.';
     } // дописать для всех возможны случаев
 
-    Determing_to_true_trigger_end(text);
+    determing_to_true_trigger_end(text);
     notifyListeners();
     // TODO: implement comma_press
   }
