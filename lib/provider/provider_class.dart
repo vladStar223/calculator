@@ -663,6 +663,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void resuilt() {
     // TODO: implement resuilt
   }
+
+  void setlongtap_ac() {}
 }
 
 interface class Input_number {
