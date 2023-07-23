@@ -667,6 +667,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void setlongtap_ac() {}
 }
 
+// тут написать класс class для ввода цифр для уравний  extends ChangeNotifier implements Input_number
 interface class Input_number {
   //List<String> text_in_cofficients = ['0', '0', '0', '0'];
   //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).

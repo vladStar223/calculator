@@ -102,7 +102,7 @@ class _screen_normalState extends State<screen_normal> {
               "Калькулятор",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 10.sw,
+                  fontSize: 9.sw,
                   fontWeight: FontWeight.w200,
                   color: AppColors.buttoncolor1),
             ),
@@ -116,13 +116,22 @@ class _screen_normalState extends State<screen_normal> {
                   scaffoldKey.currentState!.closeDrawer();
                   print("ddd");
                 },
-                child: Text(
-                  "Вернуться",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.buttoncolor1),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(Icons.exit_to_app, color: AppColors.white),
+                    SizedBox(
+                      width: 10.sw,
+                    ),
+                    Text(
+                      "Вернуться",
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w200,
+                          color: AppColors.white),
+                    ),
+                  ],
                 ),
               ),
             ),
