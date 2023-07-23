@@ -590,30 +590,24 @@ class input_number extends ChangeNotifier {
   }
 } // класс отвещающий за ввод и обработку
 
-class Input_number_calculator extends input_number {
+// ignore: camel_case_types
+class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
-  @override
-  void AC_press() {
-    count = "0";
+  String determing_to_true_trigger_start() {
+    return count;
     notifyListeners();
   }
 
-  @override
-  String Determing_to_true_trigger_start() {
-    return count;
-  }
-
-  @override
-  void Determing_to_true_trigger_end(String text) {
+  void determing_to_true_trigger_end(String text) {
     // TODO: implement Determing_to_true_trigger_end
     count = text;
     notifyListeners();
   }
 
   @override
-  void Minus_press() {
+  void minus_press() {
     // TODO: implement Minus_press
-    String text = Determing_to_true_trigger_start();
+    String text = determing_to_true_trigger_start();
     if (text == '0') {
       text = '-';
     } else {
@@ -625,20 +619,7 @@ class Input_number_calculator extends input_number {
       }
     }
 
-    Determing_to_true_trigger_end(text);
-    notifyListeners();
-  }
-
-  @override
-  void Comma_press() {
-    // TODO: implement Comma_press
-    String text = Determing_to_true_trigger_start();
-
-    if (text[text.length - 1] != ".") {
-      text = text + '.';
-    }
-
-    Determing_to_true_trigger_end(text);
+    determing_to_true_trigger_end(text);
     notifyListeners();
   }
 
@@ -649,48 +630,61 @@ class Input_number_calculator extends input_number {
       i = i + 1;
     }
   }
-}
 
-abstract class Input_number extends ChangeNotifier {
-  bool longtap = false;
-  List<String> text_in_cofficients = ['0', '0', '0', '0'];
-  //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
-
-  List<bool> active_coefficient = [true, false, false, false];
-  // active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
-  String Determing_to_true_trigger_start() {
-    return text_in_cofficients[0];
-  } // функция получение того текста который
-
-  void Determing_to_true_trigger_end(
-      String text) {} //функция  отправки  что было введино
-  void Nums_press(String enternumber) {
-    String text = Determing_to_true_trigger_start();
-    Determing_to_true_trigger_end(text);
-    notifyListeners();
+  @override
+  void nums_press(String enternumber) {
+    // TODO: implement Nums_press
   }
-
-  void resuilt() {
-    notifyListeners();
-  } //функция  кнопки  '='
-
-  void delete_press() {
-    String text = Determing_to_true_trigger_start();
-    Determing_to_true_trigger_end(text);
-    notifyListeners();
-  } // функция удаление символа
-
+  @override
+  void ac_press() {
+    // TODO: implement ac_press
+  }
+  @override
   void comma_press() {
     String text = Determing_to_true_trigger_start();
-    Determing_to_true_trigger_end(text);
-    notifyListeners();
-  } // функция запятой в числе
 
-  void ac_press() {
-    String text = Determing_to_true_trigger_start();
+    if (text[text.length - 1] != "." &&
+        text[text.length - 1] != "-" &&
+        text[text.length - 1] != "+") {
+      text = text + '.';
+    } // дописать для всех возможны случаев
+
     Determing_to_true_trigger_end(text);
     notifyListeners();
-  } // функция  очистки ввода
+    // TODO: implement comma_press
+  }
+
+  @override
+  void delete_press() {
+    // TODO: implement delete_press
+  }
+
+  @override
+  void resuilt() {
+    // TODO: implement resuilt
+  }
+}
+
+interface class Input_number {
+  //List<String> text_in_cofficients = ['0', '0', '0', '0'];
+  //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
+
+  //List<bool> active_coefficient = [true, false, false, false];
+  // active_coefficient отвечает за активный коэффецент, ( [0] = a, [1] = b, [2] = c, [3] = d ).
+  String determing_to_true_trigger_start() {
+    return "0";
+  } // функция получение того текста который
+
+  void determing_to_true_trigger_end(
+      String text) {} //функция  отправки  что было введино
+  void nums_press(String enternumber) {}
+  void resuilt() {} //функция  кнопки  '='
+
+  void delete_press() {} // функция удаление символа
+
+  void comma_press() {} // функция запятой в числе
+
+  void ac_press() {} // функция  очистки ввода
 } // отвечает за итерфейс ввода чисел для разных классов
 
 class Change_activ_screen_out_input extends ChangeNotifier {
