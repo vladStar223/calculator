@@ -612,10 +612,10 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     if (text == '0') {
       text = '-';
     } else {
-      if (text.length == 1 && text[0] == '0') {
-        text = '-';
-      }
-      if (text.length < text_length && text[text.length - 1] != "-") {
+      if (text[text.length - 1] == "+" || text[text.length - 1] == "×") {
+        text = text.substring(0, text.length - 1);
+        text += "-";
+      } else if (text.length < text_length && text[text.length - 1] != "-") {
         text += "-";
       }
     }
@@ -626,13 +626,13 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 
   void plus_press() {
     String text = determing_to_true_trigger_start();
-    if (text == '0') {
+    if (text == '0' || text == "×" || text == "делить") {
       text = '+';
     } else {
-      if (text.length == 1 && text[0] == '0') {
-        text = '+';
-      }
-      if (text.length < text_length && text[text.length - 1] != "+") {
+      if (text[text.length - 1] == "-" || text[text.length - 1] == "×") {
+        text = text.substring(0, text.length - 1);
+        text += "+";
+      } else if (text.length < text_length && text[text.length - 1] != "+") {
         text += "+";
       }
     }
@@ -643,7 +643,10 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 
   void multiplication() {
     String text = determing_to_true_trigger_start();
-    if (text.length < text_length && text[text.length - 1] != "×") {
+    if (text.length < text_length &&
+        text[text.length - 1] != "×" &&
+        text[text.length - 1] != "-" &&
+        text[text.length - 1] != "+") {
       text += "×";
     }
     determing_to_true_trigger_end(text);
