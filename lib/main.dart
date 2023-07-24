@@ -101,6 +101,9 @@ class _screen_normalState extends State<screen_normal> {
             padding: EdgeInsets.zero,
             child: Column(
               children: [
+                SizedBox(
+                  height: 2.sh,
+                ),
                 Text(
                   "Калькулятор",
                   style: TextStyle(
