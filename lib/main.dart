@@ -95,56 +95,115 @@ class _screen_normalState extends State<screen_normal> {
       backgroundColor: AppColors.fon,
       key: scaffoldKey,
       drawer: Drawer(
+          backgroundColor: AppColors.fon,
           child: DrawerHeader(
-        child: Column(
-          children: [
-            Text(
-              "Калькулятор",
-              style: TextStyle(
-                  fontFamily: "Nokora",
-                  fontSize: 10.sw,
-                  fontWeight: FontWeight.w200,
-                  color: AppColors.buttoncolor1),
-            ),
-            SizedBox(
-              height: 2.5.sh,
-            ),
-            SizedBox(
-              width: 100.sw,
-              child: TextButton(
-                onPressed: () {
-                  scaffoldKey.currentState!.closeDrawer();
-                  print("ddd");
-                },
-                child: Text(
-                  "Вернуться",
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.zero,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 2.sh,
+                ),
+                Text(
+                  "Калькулятор",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 20,
+                      fontSize: 9.sw,
                       fontWeight: FontWeight.w200,
-                      color: AppColors.buttoncolor1),
+                      color: AppColors.textcolor),
                 ),
-              ),
-            ),
-            SizedBox(
-              width: 100.sw,
-              child: TextButton(
-                onPressed: () {
-                  AppColors.Change_color();
-                },
-                child: Text(
-                  "Вернуться",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.buttoncolor1),
+                SizedBox(
+                  height: 2.5.sh,
                 ),
-              ),
+                ListTile(
+                    title: Text(
+                      "Вернуться",
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w200,
+                          color: AppColors.textcolor),
+                    ),
+                    leading: Icon(Icons.exit_to_app_outlined,
+                        color: AppColors.textcolor),
+                    onTap: () {
+                      scaffoldKey.currentState!.closeDrawer();
+                    }),
+                if (AppColors.type == 1)
+                  ListTile(
+                      title: Text(
+                        "Сменить тему ",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            fontSize: 20,
+                            fontWeight: FontWeight.w200,
+                            color: AppColors.textcolor),
+                      ),
+                      leading: Icon(MyFlutterApp.wb_sunny,
+                          color: AppColors.textcolor),
+                      onTap: () {
+                        AppColors.Change_color();
+                      }),
+                if (AppColors.type == 0)
+                  ListTile(
+                      title: Text(
+                        "Сменить тему ",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            fontSize: 20,
+                            fontWeight: FontWeight.w200,
+                            color: AppColors.textcolor),
+                      ),
+                      leading: Icon(MyFlutterApp.moon_inv,
+                          color: AppColors.textcolor),
+                      onTap: () {
+                        AppColors.Change_color();
+                      }),
+                ListTile(
+                    title: Text(
+                      "Калькулятор",
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w200,
+                          color: AppColors.textcolor),
+                    ),
+                    leading: Icon(MyFlutterApp.calculator_icon_icons_com_66651,
+                        color: AppColors.textcolor),
+                    onTap: () {
+                      Change_of_function.change_state_calculator();
+                    }),
+                ListTile(
+                    title: Text(
+                      "Функции",
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w200,
+                          color: AppColors.textcolor),
+                    ),
+                    leading: Icon(MyFlutterApp.functions_icon_144317,
+                        color: AppColors.textcolor),
+                    onTap: () {
+                      Change_of_function.change_state_equation_function();
+                    }),
+                ListTile(
+                    title: Text(
+                      "О программе",
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w200,
+                          color: AppColors.textcolor),
+                    ),
+                    leading: Icon(MyFlutterApp.github_circled,
+                        color: AppColors.textcolor),
+                    onTap: () {
+                      print("Пренос в виджет о программе");
+                    }),
+              ],
             ),
-          ],
-        ),
-      )),
+          )),
       body: Column(
         children: [
           Row(

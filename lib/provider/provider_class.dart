@@ -593,6 +593,7 @@ class input_number extends ChangeNotifier {
 // ignore: camel_case_types
 class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
+  int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
     return count;
     notifyListeners();
@@ -611,14 +612,92 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     if (text == '0') {
       text = '-';
     } else {
-      if (text.length == 1 && text[0] == '0') {
-        text = '-';
-      }
-      if (text.length < 30 && text[text.length - 1] != "-") {
+      if (text[text.length - 1] == "+" ||
+          text[text.length - 1] == "×" ||
+          text[text.length - 1] == "÷" ||
+          text[text.length - 1] == "%") {
+        text = text.substring(0, text.length - 1);
+        text += "-";
+      } else if (text.length < text_length && text[text.length - 1] != "-") {
         text += "-";
       }
     }
 
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void plus_press() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0') {
+      text = '+';
+    } else {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "×" ||
+          text[text.length - 1] == "÷" ||
+          text[text.length - 1] == "%") {
+        text = text.substring(0, text.length - 1);
+        text += "+";
+      } else if (text.length < text_length && text[text.length - 1] != "+") {
+        text += "+";
+      }
+    }
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+//÷
+  void multiplication() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0' || text == "-" || text == "+") {
+    } else {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "+" ||
+          text[text.length - 1] == "÷" ||
+          text[text.length - 1] == "%") {
+        text = text.substring(0, text.length - 1);
+        text += "×";
+      } else if (text.length < text_length && text[text.length - 1] != "×") {
+        text += "×";
+      }
+    }
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void division() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0' || text == "-" || text == "+") {
+    } else {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "+" ||
+          text[text.length - 1] == "×" ||
+          text[text.length - 1] == "%") {
+        text = text.substring(0, text.length - 1);
+        text += "÷";
+      } else if (text.length < text_length && text[text.length - 1] != "÷") {
+        text += "÷";
+      }
+    }
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void percent_of_number() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0' || text == "-" || text == "+") {
+    } else {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "+" ||
+          text[text.length - 1] == "×" ||
+          text[text.length - 1] == "÷") {
+        text = text.substring(0, text.length - 1);
+        text += "%";
+      } else if (text.length < text_length && text[text.length - 1] != "%") {
+        text += "%";
+      }
+    }
     determing_to_true_trigger_end(text);
     notifyListeners();
   }
@@ -634,18 +713,37 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   @override
   void nums_press(String enternumber) {
     // TODO: implement Nums_press
+    String text = determing_to_true_trigger_start();
+
+    if (enternumber == '0' && text == '0') {
+      return;
+    } else if (text.length == 1 && text[0] == '0') {
+      text = '+';
+    }
+    if (text.length < text_length) {
+      text += enternumber;
+    }
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
   }
+
   @override
   void ac_press() {
     // TODO: implement ac_press
+    count = "0";
+    notifyListeners();
   }
+
   @override
   void comma_press() {
     String text = determing_to_true_trigger_start();
 
     if (text[text.length - 1] != "." &&
         text[text.length - 1] != "-" &&
-        text[text.length - 1] != "+") {
+        text[text.length - 1] != "+" &&
+        text[text.length - 1] != "×" &&
+        text[text.length - 1] != "деление") {
       text = text + '.';
     } // дописать для всех возможны случаев
 
@@ -657,6 +755,15 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   @override
   void delete_press() {
     // TODO: implement delete_press
+    String text = determing_to_true_trigger_start();
+
+    text = text.substring(0, text.length - 1);
+    if (text == '') {
+      text = '0';
+    }
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
   }
 
   @override
@@ -667,6 +774,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void setlongtap_ac() {}
 }
 
+// тут написать класс class для ввода цифр для уравний  extends ChangeNotifier implements Input_number
 interface class Input_number {
   //List<String> text_in_cofficients = ['0', '0', '0', '0'];
   //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).

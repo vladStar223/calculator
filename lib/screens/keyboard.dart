@@ -384,21 +384,21 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
             ),
             inputButton(
               onPressed: () {
-                print("процент");
+                context.read<Input_number_calculator>().percent_of_number();
               },
               type: 2,
               number: "%",
             ),
             inputButton(
               onPressed: () {
-                print("умножение");
+                context.read<Input_number_calculator>().multiplication();
               },
               type: 2,
               number: "*",
             ),
             inputButton(
               onPressed: () {
-                print("деление");
+                context.read<Input_number_calculator>().division();
               },
               type: 2,
               number: "/",
@@ -509,7 +509,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 font: 8.0),
             inputButton(
                 onPressed: () {
-                  context.read<Input_number_calculator>().minus_press();
+                  context.read<Input_number_calculator>().plus_press();
                 },
                 type: 2,
                 number: "+",
