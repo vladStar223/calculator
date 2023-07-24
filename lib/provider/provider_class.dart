@@ -641,6 +641,15 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+  void multiplication() {
+    String text = determing_to_true_trigger_start();
+    if (text.length < text_length && text[text.length - 1] != "×") {
+      text += "×";
+    }
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
   void checktrue(text) {
     int i = 2;
     bool k = true;
