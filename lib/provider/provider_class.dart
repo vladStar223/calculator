@@ -612,7 +612,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     if (text == '0') {
       text = '-';
     } else {
-      if (text[text.length - 1] == "+" || text[text.length - 1] == "×") {
+      if (text[text.length - 1] == "+" ||
+          text[text.length - 1] == "×" ||
+          text[text.length - 1] == "÷") {
         text = text.substring(0, text.length - 1);
         text += "-";
       } else if (text.length < text_length && text[text.length - 1] != "-") {
@@ -629,7 +631,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     if (text == '0' || text == "×" || text == "делить") {
       text = '+';
     } else {
-      if (text[text.length - 1] == "-" || text[text.length - 1] == "×") {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "×" ||
+          text[text.length - 1] == "÷") {
         text = text.substring(0, text.length - 1);
         text += "+";
       } else if (text.length < text_length && text[text.length - 1] != "+") {
@@ -641,15 +645,35 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+//÷
   void multiplication() {
     String text = determing_to_true_trigger_start();
     if (text == '0' || text == "-" || text == "+") {
     } else {
-      if (text[text.length - 1] == "-" || text[text.length - 1] == "+") {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "+" ||
+          text[text.length - 1] == "÷") {
         text = text.substring(0, text.length - 1);
         text += "×";
       } else if (text.length < text_length && text[text.length - 1] != "×") {
         text += "×";
+      }
+    }
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void division() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0' || text == "-" || text == "+") {
+    } else {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "+" ||
+          text[text.length - 1] == "×") {
+        text = text.substring(0, text.length - 1);
+        text += "÷";
+      } else if (text.length < text_length && text[text.length - 1] != "÷") {
+        text += "÷";
       }
     }
     determing_to_true_trigger_end(text);
@@ -695,7 +719,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 
     if (text[text.length - 1] != "." &&
         text[text.length - 1] != "-" &&
-        text[text.length - 1] != "+") {
+        text[text.length - 1] != "+" &&
+        text[text.length - 1] != "×" &&
+        text[text.length - 1] != "деление") {
       text = text + '.';
     } // дописать для всех возможны случаев
 
@@ -707,6 +733,15 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   @override
   void delete_press() {
     // TODO: implement delete_press
+    String text = determing_to_true_trigger_start();
+
+    text = text.substring(0, text.length - 1);
+    if (text == '') {
+      text = '0';
+    }
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
   }
 
   @override

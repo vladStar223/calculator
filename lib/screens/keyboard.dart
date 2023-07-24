@@ -398,7 +398,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
             ),
             inputButton(
               onPressed: () {
-                print("деление");
+                context.read<Input_number_calculator>().division();
               },
               type: 2,
               number: "/",
