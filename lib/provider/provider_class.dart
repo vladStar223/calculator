@@ -593,6 +593,7 @@ class input_number extends ChangeNotifier {
 // ignore: camel_case_types
 class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
+  int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
     return count;
     notifyListeners();
@@ -614,8 +615,25 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       if (text.length == 1 && text[0] == '0') {
         text = '-';
       }
-      if (text.length < 30 && text[text.length - 1] != "-") {
+      if (text.length < text_length && text[text.length - 1] != "-") {
         text += "-";
+      }
+    }
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void plus_press() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0') {
+      text = '+';
+    } else {
+      if (text.length == 1 && text[0] == '0') {
+        text = '+';
+      }
+      if (text.length < text_length && text[text.length - 1] != "+") {
+        text += "+";
       }
     }
 
@@ -634,11 +652,28 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   @override
   void nums_press(String enternumber) {
     // TODO: implement Nums_press
+    String text = determing_to_true_trigger_start();
+
+    if (enternumber == '0' && text == '0') {
+      return;
+    } else if (text.length == 1 && text[0] == '0') {
+      text = '+';
+    }
+    if (text.length < text_length) {
+      text += enternumber;
+    }
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
   }
+
   @override
   void ac_press() {
     // TODO: implement ac_press
+    count = "0";
+    notifyListeners();
   }
+
   @override
   void comma_press() {
     String text = determing_to_true_trigger_start();

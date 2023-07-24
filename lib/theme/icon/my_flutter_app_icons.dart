@@ -12,6 +12,18 @@
 ///       - asset: fonts/MyFlutterApp.ttf
 ///
 /// 
+/// * Zocial, Copyright (C) 2012 by Sam Collins
+///         Author:    Sam Collins
+///         License:   MIT (http://opensource.org/licenses/mit-license.php)
+///         Homepage:  http://zocial.smcllns.com/
+/// * Iconic, Copyright (C) 2012 by P.J. Onori
+///         Author:    P.J. Onori
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://somerandomdude.com/work/iconic/
+/// * Material Design Icons, Copyright (C) Google, Inc
+///         Author:    Google
+///         License:   Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+///         Homepage:  https://design.google.com/icons/
 /// * Linearicons Free, Copyright (C) Linearicons.com
 ///         Author:    Perxis
 ///         License:   CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
@@ -27,6 +39,9 @@ class MyFlutterApp {
 
   static const IconData calculator_icon_icons_com_66651 = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData functions_icon_144317 = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData github_circled = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData moon_inv = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData wb_sunny = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData question_circle = IconData(0xe87d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData menu_circle = IconData(0xe87e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
