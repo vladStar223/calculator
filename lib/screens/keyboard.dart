@@ -384,7 +384,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
             ),
             inputButton(
               onPressed: () {
-                print("процент");
+                context.read<Input_number_calculator>().percent_of_number();
               },
               type: 2,
               number: "%",
