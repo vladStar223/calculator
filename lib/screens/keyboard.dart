@@ -11,12 +11,12 @@ import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:calculator/main.dart';
 
-class inputButton extends StatefulWidget {
+class InputButton extends StatefulWidget {
   final Function() onPressed;
   final int type;
   final String number;
   final double font;
-  const inputButton({
+  const InputButton({
     super.key,
     required this.type,
     required this.onPressed,
@@ -24,10 +24,10 @@ class inputButton extends StatefulWidget {
     this.font = 5.4,
   });
   @override
-  State<inputButton> createState() => _inputButtonState();
+  State<InputButton> createState() => _InputButtonState();
 }
 
-class _inputButtonState extends State<inputButton> {
+class _InputButtonState extends State<InputButton> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -153,6 +153,21 @@ class _inputButtonState extends State<inputButton> {
   }
 }
 
+class special_InputButton extends StatefulWidget {
+  final Function() onPressed;
+  const special_InputButton({super.key, required this.onPressed});
+  @override
+  State<special_InputButton> createState() => _special_InputButtonState();
+}
+
+class _special_InputButtonState extends State<special_InputButton> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
 class keyboard_equation extends StatefulWidget {
   @override
   State<keyboard_equation> createState() => _keyboard_equationState();
@@ -174,26 +189,26 @@ class _keyboard_equationState extends State<keyboard_equation> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
               onPressed: () {},
               type: 3,
               number: "AC",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<input_number>().Animated_first_screen();
               },
               type: 2,
               number: "x²",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<input_number>().Animated_second_screen();
               },
               type: 2,
               number: "x³",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<input_number>().Animated_third_screen();
               },
@@ -209,28 +224,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("7");
                 },
                 type: 1,
                 number: "7",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("8");
                 },
                 type: 1,
                 number: "8",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("9");
                 },
                 type: 1,
                 number: "9",
                 font: 8.0),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<input_number>().Delete_press();
               },
@@ -246,28 +261,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("4");
                 },
                 type: 1,
                 number: "4",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("5");
                 },
                 type: 1,
                 number: "5",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("6");
                 },
                 type: 1,
                 number: "6",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Minus_press();
                 },
@@ -283,28 +298,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("1");
                 },
                 type: 1,
                 number: "1",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("2");
                 },
                 type: 1,
                 number: "2",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("3");
                 },
                 type: 1,
                 number: "3",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Minus_press();
                 },
@@ -320,28 +335,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("e");
                 },
                 type: 1,
                 number: "e",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("0");
                 },
                 type: 1,
                 number: "0",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Comma_press();
                 },
                 type: 1,
                 number: ".",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Resuilt_anim_screen();
                 },
@@ -377,26 +392,26 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
               onPressed: () {},
               type: 4,
               number: "AC",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<Input_number_calculator>().percent_of_number();
               },
               type: 2,
               number: "%",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<Input_number_calculator>().multiplication();
               },
               type: 2,
               number: "*",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<Input_number_calculator>().division();
               },
@@ -412,28 +427,28 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("7");
                 },
                 type: 1,
                 number: "7",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("8");
                 },
                 type: 1,
                 number: "8",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("9");
                 },
                 type: 1,
                 number: "9",
                 font: 8.0),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<Input_number_calculator>().delete_press();
               },
@@ -449,28 +464,28 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("4");
                 },
                 type: 1,
                 number: "4",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("5");
                 },
                 type: 1,
                 number: "5",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("6");
                 },
                 type: 1,
                 number: "6",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().minus_press();
                 },
@@ -486,28 +501,28 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("1");
                 },
                 type: 1,
                 number: "1",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("2");
                 },
                 type: 1,
                 number: "2",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("3");
                 },
                 type: 1,
                 number: "3",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().plus_press();
                 },
@@ -523,28 +538,28 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   print("big");
                 },
                 type: 1,
                 number: "big",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("0");
                 },
                 type: 1,
                 number: "0",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().comma_press();
                 },
                 type: 1,
                 number: ".",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().resuilt();
                 },
@@ -581,26 +596,26 @@ class _keyboard_calculator_extendedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
               onPressed: () {},
               type: 3,
               number: "AC",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<input_number>().Animated_first_screen();
               },
               type: 2,
               number: "%",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 print("умножение");
               },
               type: 2,
               number: "*",
             ),
-            inputButton(
+            InputButton(
               onPressed: () {
                 print("деление");
               },
@@ -616,28 +631,28 @@ class _keyboard_calculator_extendedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("7");
                 },
                 type: 1,
                 number: "7",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("8");
                 },
                 type: 1,
                 number: "8",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("9");
                 },
                 type: 1,
                 number: "9",
                 font: 8.0),
-            inputButton(
+            InputButton(
               onPressed: () {
                 context.read<input_number>().Delete_press();
               },
@@ -653,28 +668,28 @@ class _keyboard_calculator_extendedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("4");
                 },
                 type: 1,
                 number: "4",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("5");
                 },
                 type: 1,
                 number: "5",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("6");
                 },
                 type: 1,
                 number: "6",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Minus_press();
                 },
@@ -690,28 +705,28 @@ class _keyboard_calculator_extendedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("1");
                 },
                 type: 1,
                 number: "1",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("2");
                 },
                 type: 1,
                 number: "2",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("3");
                 },
                 type: 1,
                 number: "3",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Minus_press();
                 },
@@ -727,28 +742,28 @@ class _keyboard_calculator_extendedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            inputButton(
+            InputButton(
                 onPressed: () {
                   print("big");
                 },
                 type: 1,
                 number: "big",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Nums_press("0");
                 },
                 type: 1,
                 number: "0",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Comma_press();
                 },
                 type: 1,
                 number: ".",
                 font: 8.0),
-            inputButton(
+            InputButton(
                 onPressed: () {
                   context.read<input_number>().Resuilt_anim_screen();
                 },
