@@ -28,6 +28,10 @@
 ///         Author:    Perxis
 ///         License:   CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ///         Homepage:  https://linearicons.com
+/// * MFG Labs, Copyright (C) 2012 by Daniel Bruce
+///         Author:    MFG Labs
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://www.mfglabs.com/
 ///
 import 'package:flutter/widgets.dart';
 
@@ -42,6 +46,12 @@ class MyFlutterApp {
   static const IconData github_circled = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData moon_inv = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData wb_sunny = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData plus_fx7mv1cmdi3i = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData multiplication_tbget5tyleyh = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData minus_uk9l2bpabquc = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData svg_editor_image__1_ = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData desions_ = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData question_circle = IconData(0xe87d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData menu_circle = IconData(0xe87e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData math = IconData(0xf01a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

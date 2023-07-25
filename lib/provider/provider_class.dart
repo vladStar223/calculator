@@ -621,7 +621,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "%") {
         text = text.substring(0, text.length - 1);
         text += "-";
-      } else if (text.length < text_length && text[text.length - 1] != "-") {
+      } else if (text.length < text_length &&
+          text[text.length - 1] != "-" &&
+          text[text.length - 1] != ".") {
         text += "-";
       }
     }
@@ -641,7 +643,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "%") {
         text = text.substring(0, text.length - 1);
         text += "+";
-      } else if (text.length < text_length && text[text.length - 1] != "+") {
+      } else if (text.length < text_length &&
+          text[text.length - 1] != "+" &&
+          text[text.length - 1] != ".") {
         text += "+";
       }
     }
@@ -661,7 +665,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "%") {
         text = text.substring(0, text.length - 1);
         text += "×";
-      } else if (text.length < text_length && text[text.length - 1] != "×") {
+      } else if (text.length < text_length &&
+          text[text.length - 1] != "×" &&
+          text[text.length - 1] != ".") {
         text += "×";
       }
     }
@@ -679,7 +685,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "%") {
         text = text.substring(0, text.length - 1);
         text += "÷";
-      } else if (text.length < text_length && text[text.length - 1] != "÷") {
+      } else if (text.length < text_length &&
+          text[text.length - 1] != "÷" &&
+          text[text.length - 1] != ".") {
         text += "÷";
       }
     }
@@ -697,7 +705,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "÷") {
         text = text.substring(0, text.length - 1);
         text += "%";
-      } else if (text.length < text_length && text[text.length - 1] != "%") {
+      } else if (text.length < text_length &&
+          text[text.length - 1] != "%" &&
+          text[text.length - 1] != ".") {
         text += "%";
       }
     }
