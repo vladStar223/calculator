@@ -10,6 +10,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 
+import 'calcString.dart';
+
 class choose_button extends ChangeNotifier {
   static BuildContext? get context => null;
   var AppColors = Provider.of<AppColor>(context!);
@@ -605,6 +607,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+  /// бла бла бла фунциця [determing_to_true_trigger_end] такая то
   @override
   void minus_press() {
     // TODO: implement Minus_press
@@ -769,6 +772,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   @override
   void resuilt() {
     // TODO: implement resuilt
+    String text = determing_to_true_trigger_start();
+    count = calcString(text).toString();
+    notifyListeners();
   }
 
   void setlongtap_ac() {}
