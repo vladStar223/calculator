@@ -245,24 +245,23 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
             ),
             InputButton(
               onPressed: () {
-                context.read<Input_number_calculator>().percent_of_number();
+                context.read<Input_number_calculator>().delete_press();
               },
               type: 2,
-              number: "%",
+              number: "Del",
             ),
             special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().multiplication();
                 },
-                myIcon: Icon(MyFlutterApp.multiplication_tbget5tyleyh,
-                    color: AppColors.textcolor, size: 9.sw)),
-            InputButton(
-              onPressed: () {
-                context.read<Input_number_calculator>().division();
-              },
-              type: 2,
-              number: "/",
-            ),
+                myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
+                    color: AppColors.textcolor, size: 5.sw)),
+            special_InputButton(
+                onPressed: () {
+                  context.read<Input_number_calculator>().division();
+                },
+                myIcon: Icon(MyFlutterApp.desions_,
+                    color: AppColors.textcolor, size: 5.sw)),
           ],
         ),
         SizedBox(
@@ -293,13 +292,14 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "9",
                 font: 8.0),
-            InputButton(
-              onPressed: () {
-                context.read<Input_number_calculator>().delete_press();
-              },
-              type: 2,
-              number: "Del",
-            ),
+            special_InputButton(
+                onPressed: () {
+                  context.read<Input_number_calculator>().multiplication();
+                },
+                myIcon: Icon(
+                    MyFlutterApp.multiplication_tbget5tyleyh, // знак проценатп
+                    color: AppColors.textcolor,
+                    size: 9.sw)),
           ],
         ),
         SizedBox(
@@ -330,13 +330,13 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "6",
                 font: 8.0),
-            InputButton(
+            special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().minus_press();
                 },
-                type: 2,
-                number: "-",
-                font: 8.0),
+                myIcon: Icon(MyFlutterApp.minus_uk9l2bpabquc, // знак проценатп
+                    color: AppColors.textcolor,
+                    size: 5.sw)),
           ],
         ),
         SizedBox(
@@ -367,13 +367,13 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "3",
                 font: 8.0),
-            InputButton(
+            special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().plus_press();
                 },
-                type: 2,
-                number: "+",
-                font: 8.0),
+                myIcon: Icon(MyFlutterApp.plus_fx7mv1cmdi3i, // знак проценатп
+                    color: AppColors.textcolor,
+                    size: 5.sw)),
           ],
         ),
         SizedBox(
