@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../provider/input_class.dart';
 import '../provider/provider_class.dart';
 import '../theme/color/theme.dart';
 

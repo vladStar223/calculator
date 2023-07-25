@@ -1,3 +1,4 @@
+import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/screens/screens_calculator.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
@@ -53,6 +54,7 @@ class _MainState extends State<Main> {
       ChangeNotifierProvider(create: (context) => change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_number_calculator()),
+      ChangeNotifierProvider(create: (context) => Input_number_equations()),
     ], child: screen_normal());
   }
 }
