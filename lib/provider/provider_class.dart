@@ -12,49 +12,6 @@ import 'package:calculator/switching%20classes/animated_class.dart';
 
 import 'calcString.dart';
 
-class choose_button extends ChangeNotifier {
-  static BuildContext? get context => null;
-  var AppColors = Provider.of<AppColor>(context!);
-  /*
-  //Color _color_button1 = AppColors.buttoncolor1;
-  Color _color_button2 = AppColors.white;
-  Color color_button = AppColors.buttoncolor1;
-  Color color_button1 = AppColors.buttoncolor1;
-  Color color_button2 = AppColors.buttoncolor1;
-
-  void change_color(int number) {
-    if (number == 0) {
-      if (color_button == _color_button1) {
-        color_button = _color_button2;
-        color_button1 = _color_button1;
-        color_button2 = _color_button1;
-      } else {
-        color_button = _color_button1;
-      }
-    }
-    if (number == 1) {
-      if (color_button1 == _color_button1) {
-        color_button1 = _color_button2;
-        color_button = _color_button1;
-        color_button2 = _color_button1;
-      } else {
-        color_button1 = _color_button1;
-      }
-    }
-    if (number == 2) {
-      if (color_button2 == _color_button1) {
-        color_button2 = _color_button2;
-        color_button = _color_button1;
-        color_button1 = _color_button1;
-      } else {
-        color_button2 = _color_button1;
-      }
-    }
-    notifyListeners();
-  }
-  */
-} //класс который отвечает за  смену цвета в кнопке
-
 class input_number extends ChangeNotifier {
   @override
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
@@ -592,7 +549,6 @@ class input_number extends ChangeNotifier {
   }
 } // класс отвещающий за ввод и обработку
 
-// тут написать класс class для ввода цифр для уравний  extends ChangeNotifier implements Input_number
 interface class Input_number {
   //List<String> text_in_cofficients = ['0', '0', '0', '0'];
   //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).
@@ -732,7 +688,3 @@ class change_of_function extends ChangeNotifier {
     notifyListeners();
   }
 }
-/*class decision_urv extends ChangeNotifier {
-
-}
-*/
