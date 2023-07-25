@@ -605,6 +605,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+  /// бла бла бла фунциця [determing_to_true_trigger_end] такая то
   @override
   void minus_press() {
     // TODO: implement Minus_press
