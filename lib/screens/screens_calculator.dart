@@ -9,6 +9,8 @@ import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:calculator/main.dart';
 import 'package:calculator/provider/provider_class.dart';
 
+import '../provider/input_class.dart';
+
 class calculator extends StatefulWidget {
   @override
   State<calculator> createState() => _calculatorState();
