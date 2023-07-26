@@ -44,7 +44,7 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
 // ignore: camel_case_types
 class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
-  String result = "0";
+  String result = "=0";
   bool decide = false;
   int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
@@ -80,6 +80,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -102,6 +103,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -123,6 +125,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       }
     }
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -143,6 +146,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       }
     }
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -163,6 +167,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       }
     }
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -193,6 +198,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -200,13 +206,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void ac_press() {
     // TODO: implement ac_press
     count = "0";
+    result = "=0";
+    decide = false;
     notifyListeners();
   }
 
   @override
   void comma_press() {
     String text = determing_to_true_trigger_start();
-
     if (text[text.length - 1] != "." &&
         text[text.length - 1] != "-" &&
         text[text.length - 1] != "+" &&
@@ -216,6 +223,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     } // дописать для всех возможны случаев
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
     // TODO: implement comma_press
   }
@@ -231,12 +239,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
   void decide_online() {
     String text = determing_to_true_trigger_start();
-
+    decide = true;
+    result = "=" + calcString(check_number(text)).toString();
     determing_to_true_trigger_end(text);
     notifyListeners();
   }
@@ -245,7 +255,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void resuilt() {
     // TODO: implement resuilt
     String text = determing_to_true_trigger_start();
-    count = calcString(text).toString();
+    decide = false;
+    count = result;
     notifyListeners();
   }
 

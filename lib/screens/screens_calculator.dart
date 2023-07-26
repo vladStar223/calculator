@@ -30,15 +30,17 @@ class _calculatorState extends State<calculator> {
       children: [
         Expanded(
           child: Align(
+            alignment: Alignment.bottomRight,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Align(
-                    alignment: Alignment.centerRight,
-                    child: Builder(builder: (context) {
-                      /// some operation here ...
-                      if (Number_calculator.decide == true) {
-                        return Column(
+                Builder(builder: (context) {
+                  /// some operation here ...
+                  if (Number_calculator.decide == true) {
+                    return Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
                               textAlign: TextAlign.right,
@@ -49,6 +51,11 @@ class _calculatorState extends State<calculator> {
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
                             Text(
                               textAlign: TextAlign.right,
                               Number_calculator.result,
@@ -57,11 +64,16 @@ class _calculatorState extends State<calculator> {
                                   fontSize: 10.sw,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
-                            )
+                            ),
                           ],
-                        );
-                      } else {
-                        return Text(
+                        )
+                      ],
+                    );
+                  } else {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
                           textAlign: TextAlign.right,
                           Number_calculator.count,
                           style: TextStyle(
@@ -69,9 +81,11 @@ class _calculatorState extends State<calculator> {
                               fontSize: 12.sw,
                               fontFamily: "Nokora",
                               fontWeight: FontWeight.w300),
-                        );
-                      }
-                    })),
+                        ),
+                      ],
+                    );
+                  }
+                }),
                 Container(
                   width: 100.sw,
                   height: 0.2.sh,
