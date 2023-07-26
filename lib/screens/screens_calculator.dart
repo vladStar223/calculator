@@ -42,28 +42,38 @@ class _calculatorState extends State<calculator> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text(
-                              textAlign: TextAlign.right,
-                              Number_calculator.count,
-                              style: TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: 12.sw,
-                                  fontFamily: "Nokora",
-                                  fontWeight: FontWeight.w300),
+                            Flexible(
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: Text(
+                                  textAlign: TextAlign.right,
+                                  Number_calculator.count,
+                                  style: TextStyle(
+                                      color: AppColors.white,
+                                      fontSize: 12.sw,
+                                      fontFamily: "Nokora",
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text(
-                              textAlign: TextAlign.right,
-                              Number_calculator.result,
-                              style: TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: 10.sw,
-                                  fontFamily: "Nokora",
-                                  fontWeight: FontWeight.w300),
+                            Flexible(
+                              child: FittedBox(
+                                fit: BoxFit.contain,
+                                child: Text(
+                                  textAlign: TextAlign.right,
+                                  Number_calculator.result,
+                                  style: TextStyle(
+                                      color: AppColors.white,
+                                      fontSize: 10.sw,
+                                      fontFamily: "Nokora",
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ),
                             ),
                           ],
                         )
@@ -73,14 +83,19 @@ class _calculatorState extends State<calculator> {
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          textAlign: TextAlign.right,
-                          Number_calculator.count,
-                          style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 12.sw,
-                              fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.contain,
+                            child: Text(
+                              textAlign: TextAlign.right,
+                              Number_calculator.count,
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: 12.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
                         ),
                       ],
                     );
@@ -88,7 +103,7 @@ class _calculatorState extends State<calculator> {
                 }),
                 Container(
                   width: 100.sw,
-                  height: 0.2.sh,
+                  height: 0.3.sh,
                   color: AppColors.textcolor,
                 ),
               ],
