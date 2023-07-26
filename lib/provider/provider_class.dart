@@ -547,7 +547,7 @@ class input_number extends ChangeNotifier {
     }
     notifyListeners();
   }
-} // класс отвещающий за ввод и обработку
+} // класс отвещающий за ввод и обработкуотвечает за итерфейс ввода чисел для разных классов
 
 interface class Input_number {
   //List<String> text_in_cofficients = ['0', '0', '0', '0'];

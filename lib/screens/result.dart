@@ -442,7 +442,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
           ],
         ),
         SizedBox(
-          height: 0.5.sh,
+          height: 0.4.sh,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -478,7 +478,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
           ],
         ),
         SizedBox(
-          height: 0.5.sh,
+          height: 0.4.sh,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -514,7 +514,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
           ],
         ),
         SizedBox(
-          height: 0.5.sh,
+          height: 0.4.sh,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

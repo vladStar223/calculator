@@ -4,6 +4,7 @@ import 'package:petitparser/petitparser.dart';
 Parser buildParser() {
   final builder = ExpressionBuilder();
   builder.group()
+    // ignore: deprecated_member_use
     ..primitive((pattern('+-').optional() &
             digit().plus() &
             (char('.') & digit().plus()).optional() &
