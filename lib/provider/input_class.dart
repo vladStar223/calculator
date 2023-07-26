@@ -44,6 +44,8 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
 // ignore: camel_case_types
 class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
+  String result = "=0";
+  bool decide = false;
   int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
     return count;
@@ -78,6 +80,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -100,6 +103,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -121,6 +125,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       }
     }
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -141,6 +146,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       }
     }
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -161,14 +167,20 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       }
     }
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
-  void checktrue(text) {
-    int i = 2;
-    bool k = true;
-    while (i < text.length) {
-      i = i + 1;
+  // проверка числа на правильность
+  String check_number(text) {
+    if (text[text.length - 1] == "-" ||
+        text[text.length - 1] == "×" ||
+        text[text.length - 1] == "÷" ||
+        text[text.length - 1] == "%" ||
+        text[text.length - 1] == "+") {
+      return text = text.substring(0, text.length - 1);
+    } else {
+      return text;
     }
   }
 
@@ -176,9 +188,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void nums_press(String enternumber) {
     // TODO: implement Nums_press
     String text = determing_to_true_trigger_start();
-
     if (enternumber == '0' && text == '0') {
-      return;
+      text = enternumber;
     } else if (text.length == 1 && text[0] == '0') {
       text = '+';
     }
@@ -187,6 +198,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
   }
 
@@ -194,13 +206,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void ac_press() {
     // TODO: implement ac_press
     count = "0";
+    result = "=0";
+    decide = false;
     notifyListeners();
   }
 
   @override
   void comma_press() {
     String text = determing_to_true_trigger_start();
-
     if (text[text.length - 1] != "." &&
         text[text.length - 1] != "-" &&
         text[text.length - 1] != "+" &&
@@ -210,6 +223,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     } // дописать для всех возможны случаев
 
     determing_to_true_trigger_end(text);
+    decide_online();
     notifyListeners();
     // TODO: implement comma_press
   }
@@ -225,6 +239,16 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     determing_to_true_trigger_end(text);
+    decide_online();
+    notifyListeners();
+  }
+
+  void decide_online() {
+    String text = determing_to_true_trigger_start();
+    decide = true;
+    String text2 = check_number(text);
+    result = "=" + calcString(check_number(text2)).toString();
+    determing_to_true_trigger_end(text);
     notifyListeners();
   }
 
@@ -232,7 +256,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void resuilt() {
     // TODO: implement resuilt
     String text = determing_to_true_trigger_start();
-    count = calcString(text).toString();
+    decide = false;
+    result = result.substring(1);
+    count = result;
     notifyListeners();
   }
 

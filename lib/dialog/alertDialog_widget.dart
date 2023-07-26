@@ -60,6 +60,8 @@ _launchURL(var type_choose) async {
   if (type_choose[2] == true) {
     url = 'https://tutomath.ru/baza-znanij/bikvadratnye-uravneniya.html';
   }
+  //url =
+  'https://skysmart.ru/articles/mathematic/kak-reshat-kvadratnye-uravneniya';
   if (await canLaunchUrl(Uri.parse(url))) {
     await launchUrl(Uri.parse(url));
   } else {
