@@ -1,3 +1,4 @@
+import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,9 @@ import 'package:calculator/main.dart';
 import 'package:calculator/provider/provider_class.dart';
 
 import '../provider/input_class.dart';
+import '../provider/input_class.dart';
+import '../provider/input_class.dart';
+import '../provider/input_class.dart';
 
 class calculator extends StatefulWidget {
   @override
@@ -21,6 +25,7 @@ class _calculatorState extends State<calculator> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
+    var Number_calculator = Provider.of<Input_number_calculator>(context);
     return Column(
       children: [
         Expanded(
@@ -29,20 +34,47 @@ class _calculatorState extends State<calculator> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    textAlign: TextAlign.right,
-                    Provider.of<Input_number_calculator>(context).count,
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 12.sw,
-                        fontFamily: "Nokora",
-                        fontWeight: FontWeight.w300),
-                  ),
-                ),
+                    alignment: Alignment.centerRight,
+                    child: Builder(builder: (context) {
+                      /// some operation here ...
+                      if (Number_calculator.decide == true) {
+                        return Column(
+                          children: [
+                            Text(
+                              textAlign: TextAlign.right,
+                              Number_calculator.count,
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: 12.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                            Text(
+                              textAlign: TextAlign.right,
+                              Number_calculator.result,
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: 10.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            )
+                          ],
+                        );
+                      } else {
+                        return Text(
+                          textAlign: TextAlign.right,
+                          Number_calculator.count,
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontSize: 12.sw,
+                              fontFamily: "Nokora",
+                              fontWeight: FontWeight.w300),
+                        );
+                      }
+                    })),
                 Container(
                   width: 100.sw,
-                  height: 0.1.sh,
+                  height: 0.2.sh,
                   color: AppColors.textcolor,
                 ),
               ],

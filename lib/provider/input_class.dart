@@ -44,6 +44,8 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
 // ignore: camel_case_types
 class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
+  String result = "0";
+  bool decide = false;
   int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
     return count;
@@ -164,11 +166,16 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
-  void checktrue(text) {
-    int i = 2;
-    bool k = true;
-    while (i < text.length) {
-      i = i + 1;
+  // проверка числа на правильность
+  String check_number(text) {
+    if (text[text.length - 1] == "-" ||
+        text[text.length - 1] == "×" ||
+        text[text.length - 1] == "÷" ||
+        text[text.length - 1] == "%" ||
+        text[text.length - 1] == "+") {
+      return text = text.substring(0, text.length - 1);
+    } else {
+      return text;
     }
   }
 
@@ -176,9 +183,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void nums_press(String enternumber) {
     // TODO: implement Nums_press
     String text = determing_to_true_trigger_start();
-
     if (enternumber == '0' && text == '0') {
-      return;
+      text = enternumber;
     } else if (text.length == 1 && text[0] == '0') {
       text = '+';
     }
@@ -223,6 +229,13 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     if (text == '') {
       text = '0';
     }
+
+    determing_to_true_trigger_end(text);
+    notifyListeners();
+  }
+
+  void decide_online() {
+    String text = determing_to_true_trigger_start();
 
     determing_to_true_trigger_end(text);
     notifyListeners();
