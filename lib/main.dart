@@ -286,17 +286,20 @@ class _screen_normalState extends State<screen_normal> {
                 ],
               );
             } else {
-              return Column(
-                children: [
-                  SizedBox(height: 43.39.sh, width: 95.sw, child: calculator()),
-                  // resuilt_animated_screen(), не используется, но может нужно тебе
-                  SizedBox(
-                    height: 49.7.sh,
-                    width: 100.sw,
-                    child: keyboard_calculator(),
-                  ),
-                ],
-              );
+              return Builder(builder: (context) {
+                return Column(
+                  children: [
+                    SizedBox(
+                        height: 43.39.sh, width: 95.sw, child: calculator()),
+                    // resuilt_animated_screen(), не используется, но может нужно тебе
+                    SizedBox(
+                      height: 49.7.sh,
+                      width: 100.sw,
+                      child: keyboard_calculator(),
+                    ),
+                  ],
+                );
+              });
             }
           }),
         ],
