@@ -679,6 +679,7 @@ class Change_of_function extends ChangeNotifier {
   bool equation_function = false;
   void change_state_calculator() {
     calculator = true;
+    calculator_expanded = false;
     equation_function = false;
     notifyListeners();
   } // функция запуска калькулятора
@@ -692,6 +693,7 @@ class Change_of_function extends ChangeNotifier {
 
   void change_state_equation_function() {
     calculator = false;
+    calculator_expanded = false;
     equation_function = true;
     notifyListeners();
   } // функция запуска  решение уравний

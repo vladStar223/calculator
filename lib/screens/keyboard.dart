@@ -713,7 +713,7 @@ class _Keyboard_calculator_expandedState
                 },
                 type: 1,
                 number: "big",
-                font: 5.0),
+                font: 6.0),
             InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("2");
