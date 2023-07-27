@@ -672,7 +672,7 @@ class Change_activ_screen_out_input extends ChangeNotifier {
   } // переключение на нужный экран результата
 } // отвечает за   переключение  активных окнов ввода и вывода
 
-class change_of_function extends ChangeNotifier {
+class Change_of_function extends ChangeNotifier {
   // класс отвечает за  измения функционало приложение
   bool calculator = true;
   bool calculator_expanded = false;
