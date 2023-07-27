@@ -35,6 +35,7 @@ void main() {
   ));
 }
 
+// должно работать
 class Main extends StatefulWidget {
   const Main({super.key});
 
