@@ -54,7 +54,7 @@ class _MainState extends State<Main> {
 
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => input_number()),
-      ChangeNotifierProvider(create: (context) => change_of_function()),
+      ChangeNotifierProvider(create: (context) => Change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_number_calculator()),
       ChangeNotifierProvider(create: (context) => Input_number_equations()),
@@ -74,7 +74,7 @@ class _screen_normalState extends State<screen_normal> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    var changeOfFunction = Provider.of<change_of_function>(context);
+    var changeOfFunction = Provider.of<Change_of_function>(context);
     var typeChoose = Provider.of<input_number>(context).urv;
     const displayName = "displayName";
     final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -288,7 +288,18 @@ class _screen_normalState extends State<screen_normal> {
             } else {
               return Builder(builder: (context) {
                 if (changeOfFunction.calculator_expanded == true) {
-                  return Text("fff");
+                  return Column(
+                    children: [
+                      SizedBox(
+                          height: 30.39.sh, width: 95.sw, child: calculator()),
+                      // resuilt_animated_screen(), не используется, но может нужно тебе
+                      SizedBox(
+                        height: 63.7.sh,
+                        width: 100.sw,
+                        child: Keyboard_calculator_expanded(),
+                      ),
+                    ],
+                  );
                 } else {
                   return Column(
                     children: [

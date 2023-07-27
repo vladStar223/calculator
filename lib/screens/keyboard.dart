@@ -386,7 +386,9 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
           children: [
             InputButton(
                 onPressed: () {
-                  print("big");
+                  context
+                      .read<Change_of_function>()
+                      .change_state_calculator_expanded();
                 },
                 type: 1,
                 number: "big",
@@ -413,6 +415,337 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 number: "=",
                 font: 8.0),
           ],
+        ),
+      ],
+    );
+    throw UnimplementedError();
+  }
+}
+
+class Keyboard_calculator_expanded extends StatefulWidget {
+  @override
+  State<Keyboard_calculator_expanded> createState() =>
+      _Keyboard_calculator_expandedState();
+}
+
+class _Keyboard_calculator_expandedState
+    extends State<Keyboard_calculator_expanded> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    var AppColors = Provider.of<AppColor>(context);
+    return Column(
+      children: [
+        SizedBox(
+          height: 0.7.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("1");
+                },
+                type: 1,
+                number: "2nd",
+                font: 4.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("2");
+                },
+                type: 1,
+                number: "rad",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "sin",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "cos",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "tan",
+                font: 5.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("1");
+                },
+                type: 1,
+                number: "x^y",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("2");
+                },
+                type: 1,
+                number: "lg",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "ln",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "(",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: ")",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("1");
+                },
+                type: 1,
+                number: "sqrt",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("2");
+                },
+                type: 1,
+                number: "AC",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "Del",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "%",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "/",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("1");
+                },
+                type: 1,
+                number: "x!",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("2");
+                },
+                type: 1,
+                number: "7",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "8",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "9",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "*",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("1");
+                },
+                type: 1,
+                number: "1/x",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("2");
+                },
+                type: 1,
+                number: "4",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "5",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "6",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "-",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("1");
+                },
+                type: 1,
+                number: "pi",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("2");
+                },
+                type: 1,
+                number: "1",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "2",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "3",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "+",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
+        ),
+        Row(
+          // тут нужна анимация
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Change_of_function>().change_state_calculator();
+                },
+                type: 1,
+                number: "big",
+                font: 5.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("2");
+                },
+                type: 1,
+                number: "e",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "0",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: ".",
+                font: 8.0),
+            InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().nums_press("3");
+                },
+                type: 1,
+                number: "=",
+                font: 8.0),
+          ],
+        ),
+        SizedBox(
+          height: 1.sh,
         ),
       ],
     );

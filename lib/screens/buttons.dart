@@ -150,6 +150,148 @@ class _InputButtonState extends State<InputButton> {
   }
 }
 
+class InputButton_mini extends StatefulWidget {
+  @override
+  final Function() onPressed;
+  final int type;
+  final String number;
+  final double font;
+  const InputButton_mini({
+    super.key,
+    required this.type,
+    required this.onPressed,
+    required this.number,
+    this.font = 5.4,
+  });
+  State<InputButton_mini> createState() => _InputButton_miniState();
+}
+
+class _InputButton_miniState extends State<InputButton_mini> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    var AppColors = Provider.of<AppColor>(context);
+    if (widget.type == 1) {
+      return Container(
+        height: 8.sh,
+        width: 17.sw,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: widget.onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor2,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Text(
+            textAlign: TextAlign.center,
+            widget.number,
+            style: TextStyle(
+                color: AppColors.textcolor2,
+                fontSize: widget.font.sw,
+                fontFamily: "Nokora"),
+          ),
+        ),
+      );
+    }
+    if (widget.type == 2) {
+      return Container(
+        height: 9.sh,
+        width: 20.sw,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor1,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: widget.onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Center(
+            child: Text(
+              widget.number,
+              style: TextStyle(
+                  color: AppColors.textcolor,
+                  fontSize: widget.font.sw,
+                  fontFamily: "Nokora"),
+            ),
+          ),
+        ),
+      );
+    }
+    if (widget.type == 3) {
+      return Container(
+        height: 9.sh,
+        width: 20.sw,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor1,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: () {
+            context.read<input_number>().AC_press();
+          },
+          onLongPress: () {
+            context.read<input_number>().setlongtap_ac();
+            context.read<input_number>().AC_press();
+          },
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Text(
+            textAlign: TextAlign.center,
+            "AC",
+            style: TextStyle(
+                color: AppColors.textcolor,
+                fontSize: 5.sw,
+                fontFamily: "Nokora"),
+          ),
+        ),
+      );
+    }
+    if (widget.type == 4) {
+      return Container(
+        height: 9.sh,
+        width: 20.sw,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor1,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: () {
+            context.read<Input_number_calculator>().ac_press();
+          },
+          onLongPress: () {
+            context.read<Input_number_calculator>().setlongtap_ac();
+            context.read<Input_number_calculator>().ac_press();
+          },
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: Text(
+            textAlign: TextAlign.center,
+            "AC",
+            style: TextStyle(
+                color: AppColors.textcolor,
+                fontSize: 5.sw,
+                fontFamily: "Nokora"),
+          ),
+        ),
+      );
+    }
+    throw UnimplementedError();
+  }
+}
+
 class special_InputButton extends StatefulWidget {
   final Function() onPressed;
   final Icon myIcon;
