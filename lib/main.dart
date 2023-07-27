@@ -1,5 +1,7 @@
 import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/provider/provider_class.dart';
+import 'package:calculator/screens/dialog/about_program.dart';
+import 'package:calculator/screens/dialog/alertDialog_widget.dart';
 import 'package:calculator/screens/screens_calculator.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/provider/provider_class.dart';
@@ -7,12 +9,12 @@ import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:calculator/screens/keyboard.dart';
-import 'dialog/alertDialog_widget.dart';
 import 'provider/provider_class.dart';
 
 //начало программы
@@ -60,6 +62,8 @@ class _MainState extends State<Main> {
 }
 
 class screen_normal extends StatefulWidget {
+  const screen_normal({super.key});
+
   @override
   State<screen_normal> createState() => _screen_normalState();
 }
@@ -69,10 +73,19 @@ class _screen_normalState extends State<screen_normal> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    var Change_of_function = Provider.of<change_of_function>(context);
-    var type_choose = Provider.of<input_number>(context).urv;
+    var changeOfFunction = Provider.of<change_of_function>(context);
+    var typeChoose = Provider.of<input_number>(context).urv;
     const displayName = "displayName";
     final scaffoldKey = GlobalKey<ScaffoldState>();
+    _getInfo() {
+      PackageInfo.fromPlatform().then((PackageInfo packageInfo) {
+        appName = packageInfo.appName;
+        packageName = packageInfo.packageName;
+        version = packageInfo.version;
+        buildNumber = packageInfo.buildNumber;
+      });
+    } // получает для глобальных переменных значения
+
     _showDialog(BuildContext context) {
       VoidCallback continueCallBack = () => {
             Navigator.of(context).pop(),
@@ -82,15 +95,29 @@ class _screen_normalState extends State<screen_normal> {
           "Сообщение",
           "Для подробной информации перейдите на  интернет ресурс",
           continueCallBack,
-          type_choose);
-
+          typeChoose,
+          changeOfFunction.calculator);
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return alert;
         },
       );
-    }
+    } // открывает диалог в верней панели
+
+    _showDialog1(BuildContext context) {
+      VoidCallback continueCallBack = () => {
+            Navigator.of(context).pop(),
+            // code on continue comes here
+          };
+      About_programm alert = About_programm(continueCallBack);
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        },
+      );
+    } // открывает диалог в меню
 
     return Scaffold(
       drawerEnableOpenDragGesture: false,
@@ -173,7 +200,7 @@ class _screen_normalState extends State<screen_normal> {
                     leading: Icon(MyFlutterApp.calculator_icon_icons_com_66651,
                         color: AppColors.textcolor),
                     onTap: () {
-                      Change_of_function.change_state_calculator();
+                      changeOfFunction.change_state_calculator();
                     }),
                 ListTile(
                     title: Text(
@@ -187,7 +214,7 @@ class _screen_normalState extends State<screen_normal> {
                     leading: Icon(MyFlutterApp.functions_icon_144317,
                         color: AppColors.textcolor),
                     onTap: () {
-                      Change_of_function.change_state_equation_function();
+                      changeOfFunction.change_state_equation_function();
                     }),
                 ListTile(
                     title: Text(
@@ -201,7 +228,8 @@ class _screen_normalState extends State<screen_normal> {
                     leading: Icon(MyFlutterApp.github_circled,
                         color: AppColors.textcolor),
                     onTap: () {
-                      print("Пренос в виджет о программе");
+                      _getInfo();
+                      _showDialog1(context);
                     }),
               ],
             ),
@@ -220,13 +248,13 @@ class _screen_normalState extends State<screen_normal> {
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
-                    Change_of_function.change_state_calculator();
+                    changeOfFunction.change_state_calculator();
                   },
                   icon: Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
-                    Change_of_function.change_state_equation_function();
+                    changeOfFunction.change_state_equation_function();
                   },
                   icon: Icon(
                     MyFlutterApp.functions_icon_144317,
@@ -243,7 +271,7 @@ class _screen_normalState extends State<screen_normal> {
           Builder(builder: (context) {
             // отвечает за провекру что показывать
             /// some operation here ...
-            if (Change_of_function.calculator == false) {
+            if (changeOfFunction.calculator == false) {
               return Column(
                 children: [
                   SizedBox(

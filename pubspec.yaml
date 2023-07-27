@@ -32,6 +32,7 @@ dependencies:
   provider:
   url_launcher:
   petitparser:
+  package_info_plus:
   flutter:
     sdk: flutter
 
