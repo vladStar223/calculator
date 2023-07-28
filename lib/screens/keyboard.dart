@@ -12,6 +12,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:calculator/main.dart';
 
 import '../provider/input_class.dart';
+import '../provider/сhange_of_function.dart';
 import 'buttons.dart';
 
 class keyboard_equation extends StatefulWidget {
