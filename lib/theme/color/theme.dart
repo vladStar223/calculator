@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 extension HexColor on Color {
   /// Строка может иметь формат "aabbcc" или "ffaabbcc" с необязательным префиксом "#".
@@ -17,28 +18,9 @@ extension HexColor on Color {
       '${blue.toRadixString(16).padLeft(2, '0')}';
 }
 
-class AppColors1 {
-  final Color color = HexColor.fromHex('393E46');
-  final Color fon = HexColor.fromHex('393E46'); // фон
-  final Color white = HexColor.fromHex('EEEEEE'); // меню вывода
-  final Color black = HexColor.fromHex('222831'); // кнопки
-  final Color orange = HexColor.fromHex('FD7013'); // значики на кнопке
-}
-
-class AppColors44 {
-  final Color color = HexColor.fromHex('393E46');
-  final Color fon = HexColor.fromHex('242933'); // фон
-  final Color white = HexColor.fromHex('EEEEEE'); // меню вывода
-  final Color buttoncolor1 = HexColor.fromHex('363E53');
-  final Color buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
-  final Color textcolor = HexColor.fromHex('EEEEEE');
-  final Color textcolor2 =
-      HexColor.fromHex('585858'); // цифры // значики на кнопке
-}
-
 class AppColor extends ChangeNotifier {
-  int type = 1;
-  @override
+  static const type_theme_Key = 'type_theme';
+  late int type = 1;
   Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   Color transparent = Colors.transparent; // Нормальное состояние
   Color fon = HexColor.fromHex('242933'); // фон
@@ -49,9 +31,16 @@ class AppColor extends ChangeNotifier {
   Color buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
   Color textcolor = HexColor.fromHex('EEEEEE');
   Color textcolor2 = HexColor.fromHex('585858');
-  void Change_color() {
-    print("ddd555");
-    if (type == 0) {
+  @override
+  Future<void> initType() async {
+    type = (await _getType_theme())!;
+    notifyListeners();
+    print("0");
+  }
+
+  Future<void> Change_color() async {
+    type = (await _getType_theme())!;
+    if (type == 2) {
       type = 1;
       fon = HexColor.fromHex('242933'); // фон
       white = HexColor.fromHex('EEEEEE');
@@ -62,7 +51,7 @@ class AppColor extends ChangeNotifier {
       textcolor = HexColor.fromHex('EEEEEE');
       textcolor2 = HexColor.fromHex('585858');
     } else {
-      type = 0;
+      type = 2;
       fon = HexColor.fromHex('EEEEEE'); // фон
       output = HexColor.fromHex('EEEEEE');
       textcolorfortop = HexColor.fromHex('585858'); // меню вывода
@@ -72,7 +61,7 @@ class AppColor extends ChangeNotifier {
       textcolor = HexColor.fromHex('0C6EA6');
       textcolor2 = HexColor.fromHex('585858');
     }
-    if (type == 2) {
+    if (type == 3) {
       fon = HexColor.fromHex('EEEEEE'); // фон
       white = HexColor.fromHex('EEEEEE'); // меню вывода
       textcolorfortop = HexColor.fromHex('585858');
@@ -82,6 +71,17 @@ class AppColor extends ChangeNotifier {
       textcolor2 = HexColor.fromHex('585858');
     }
     notifyListeners();
+    await _setType_theme();
+  }
+
+  Future _setType_theme() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setInt(type_theme_Key, type);
+  }
+
+  Future<int?> _getType_theme() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(type_theme_Key) ?? 0;
   }
 }
 // как его сделать
