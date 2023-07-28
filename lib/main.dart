@@ -1,3 +1,4 @@
+import 'package:calculator/provider/%D1%81hange_of_function.dart';
 import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
