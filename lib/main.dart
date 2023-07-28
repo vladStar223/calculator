@@ -134,227 +134,230 @@ class _screen_normalState extends State<screen_normal> {
       );
     } // открывает диалог в меню
 
-    return FutureBuilder(
-        future: _future,
-        builder: (context, snapshot) {
-          if (ConnectionState.done != snapshot.connectionState) {
-            // Future hasn't finished yet, return a placeholder
-            return Center(child: Text('Loading'));
-          }
-          return Builder(builder: (context) {
-            if (Provider.of<AppColor>(context).x == true) {
-              Provider.of<AppColor>(context).Change_color();
+    return Builder(builder: (context) {
+      if (Provider.of<AppColor>(context).x == true) {
+        Provider.of<AppColor>(context).Change_color();
+      }
+      return FutureBuilder(
+          future: _future,
+          builder: (context, snapshot) {
+            if (ConnectionState.done != snapshot.connectionState) {
+              // Future hasn't finished yet, return a placeholder
+              return Center(child: Text('Loading'));
             }
-            return Scaffold(
-              drawerEnableOpenDragGesture: false,
-              backgroundColor: AppColors.fon,
-              key: scaffoldKey,
-              drawer: Drawer(
-                  backgroundColor: AppColors.fon,
-                  child: DrawerHeader(
-                    margin: EdgeInsets.zero,
-                    padding: EdgeInsets.zero,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 2.sh,
-                        ),
-                        Text(
-                          "Калькулятор",
-                          style: TextStyle(
-                              fontFamily: "Nokora",
-                              fontSize: 9.sw,
-                              fontWeight: FontWeight.w200,
-                              color: AppColors.textcolor),
-                        ),
-                        SizedBox(
-                          height: 2.5.sh,
-                        ),
-                        ListTile(
-                            title: Text(
-                              "Вернуться",
-                              style: TextStyle(
-                                  fontFamily: "Nokora",
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w200,
-                                  color: AppColors.textcolor),
-                            ),
-                            leading: Icon(Icons.exit_to_app_outlined,
-                                color: AppColors.textcolor),
-                            onTap: () {
-                              scaffoldKey.currentState!.closeDrawer();
-                            }),
-                        if (AppColors.type == 1)
-                          ListTile(
-                              title: Text(
-                                "Сменить тему ",
-                                style: TextStyle(
-                                    fontFamily: "Nokora",
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w200,
-                                    color: AppColors.textcolor),
-                              ),
-                              leading: Icon(MyFlutterApp.wb_sunny,
-                                  color: AppColors.textcolor),
-                              onTap: () {
-                                AppColors.Change_color();
-                              }),
-                        if (AppColors.type == 2)
-                          ListTile(
-                              title: Text(
-                                "Сменить тему ",
-                                style: TextStyle(
-                                    fontFamily: "Nokora",
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w200,
-                                    color: AppColors.textcolor),
-                              ),
-                              leading: Icon(MyFlutterApp.moon_inv,
-                                  color: AppColors.textcolor),
-                              onTap: () {
-                                AppColors.Change_color();
-                              }),
-                        ListTile(
-                            title: Text(
-                              "Калькулятор",
-                              style: TextStyle(
-                                  fontFamily: "Nokora",
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w200,
-                                  color: AppColors.textcolor),
-                            ),
-                            leading: Icon(
-                                MyFlutterApp.calculator_icon_icons_com_66651,
-                                color: AppColors.textcolor),
-                            onTap: () {
-                              changeOfFunction.change_state_calculator();
-                            }),
-                        ListTile(
-                            title: Text(
-                              "Функции",
-                              style: TextStyle(
-                                  fontFamily: "Nokora",
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w200,
-                                  color: AppColors.textcolor),
-                            ),
-                            leading: Icon(MyFlutterApp.functions_icon_144317,
-                                color: AppColors.textcolor),
-                            onTap: () {
-                              changeOfFunction.change_state_equation_function();
-                            }),
-                        ListTile(
-                            title: Text(
-                              "О программе",
-                              style: TextStyle(
-                                  fontFamily: "Nokora",
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w200,
-                                  color: AppColors.textcolor),
-                            ),
-                            leading: Icon(MyFlutterApp.github_circled,
-                                color: AppColors.textcolor),
-                            onTap: () async {
-                              await _getInfo();
-                              _showDialog1(context);
-                            }),
-                      ],
-                    ),
-                  )),
-              body: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                          color: AppColors.textcolorfortop,
-                          onPressed: () {
-                            scaffoldKey.currentState!.openDrawer();
-                          },
-                          icon: Icon(MyFlutterApp.menu_circle)),
-                      IconButton(
-                          color: AppColors.textcolorfortop,
-                          onPressed: () {
-                            changeOfFunction.change_state_calculator();
-                          },
-                          icon: Icon(
-                              MyFlutterApp.calculator_icon_icons_com_66651)),
-                      IconButton(
-                          color: AppColors.textcolorfortop,
-                          onPressed: () {
-                            changeOfFunction.change_state_equation_function();
-                          },
-                          icon: Icon(
-                            MyFlutterApp.functions_icon_144317,
-                            color: AppColors.white,
-                          )),
-                      IconButton(
-                          color: AppColors.textcolorfortop,
-                          onPressed: () {
-                            _showDialog(context);
-                          },
-                          icon: Icon(MyFlutterApp.question_circle)),
-                    ],
-                  ),
-                  Builder(builder: (context) {
-                    // отвечает за провекру что показывать
-                    /// some operation here ...
-                    if (changeOfFunction.calculator == false) {
-                      return Column(
+            return Builder(builder: (context) {
+              return Scaffold(
+                drawerEnableOpenDragGesture: false,
+                backgroundColor: AppColors.fon,
+                key: scaffoldKey,
+                drawer: Drawer(
+                    backgroundColor: AppColors.fon,
+                    child: DrawerHeader(
+                      margin: EdgeInsets.zero,
+                      padding: EdgeInsets.zero,
+                      child: Column(
                         children: [
                           SizedBox(
-                              height: 43.39.sh,
-                              width: 95.sw,
-                              child: AnimatedScreen()),
-                          // resuilt_animated_screen(), не используется, но может нужно тебе
-                          SizedBox(
-                            height: 49.7.sh,
-                            width: 100.sw,
-                            child: keyboard_equation(),
+                            height: 2.sh,
                           ),
+                          Text(
+                            "Калькулятор",
+                            style: TextStyle(
+                                fontFamily: "Nokora",
+                                fontSize: 9.sw,
+                                fontWeight: FontWeight.w200,
+                                color: AppColors.textcolor),
+                          ),
+                          SizedBox(
+                            height: 2.5.sh,
+                          ),
+                          ListTile(
+                              title: Text(
+                                "Вернуться",
+                                style: TextStyle(
+                                    fontFamily: "Nokora",
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w200,
+                                    color: AppColors.textcolor),
+                              ),
+                              leading: Icon(Icons.exit_to_app_outlined,
+                                  color: AppColors.textcolor),
+                              onTap: () {
+                                scaffoldKey.currentState!.closeDrawer();
+                              }),
+                          if (AppColors.type == 1)
+                            ListTile(
+                                title: Text(
+                                  "Сменить тему ",
+                                  style: TextStyle(
+                                      fontFamily: "Nokora",
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w200,
+                                      color: AppColors.textcolor),
+                                ),
+                                leading: Icon(MyFlutterApp.wb_sunny,
+                                    color: AppColors.textcolor),
+                                onTap: () {
+                                  AppColors.Change_color();
+                                }),
+                          if (AppColors.type == 2)
+                            ListTile(
+                                title: Text(
+                                  "Сменить тему ",
+                                  style: TextStyle(
+                                      fontFamily: "Nokora",
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w200,
+                                      color: AppColors.textcolor),
+                                ),
+                                leading: Icon(MyFlutterApp.moon_inv,
+                                    color: AppColors.textcolor),
+                                onTap: () {
+                                  AppColors.Change_color();
+                                }),
+                          ListTile(
+                              title: Text(
+                                "Калькулятор",
+                                style: TextStyle(
+                                    fontFamily: "Nokora",
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w200,
+                                    color: AppColors.textcolor),
+                              ),
+                              leading: Icon(
+                                  MyFlutterApp.calculator_icon_icons_com_66651,
+                                  color: AppColors.textcolor),
+                              onTap: () {
+                                changeOfFunction.change_state_calculator();
+                              }),
+                          ListTile(
+                              title: Text(
+                                "Функции",
+                                style: TextStyle(
+                                    fontFamily: "Nokora",
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w200,
+                                    color: AppColors.textcolor),
+                              ),
+                              leading: Icon(MyFlutterApp.functions_icon_144317,
+                                  color: AppColors.textcolor),
+                              onTap: () {
+                                changeOfFunction
+                                    .change_state_equation_function();
+                              }),
+                          ListTile(
+                              title: Text(
+                                "О программе",
+                                style: TextStyle(
+                                    fontFamily: "Nokora",
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w200,
+                                    color: AppColors.textcolor),
+                              ),
+                              leading: Icon(MyFlutterApp.github_circled,
+                                  color: AppColors.textcolor),
+                              onTap: () async {
+                                await _getInfo();
+                                _showDialog1(context);
+                              }),
                         ],
-                      );
-                    } else {
-                      return Builder(builder: (context) {
-                        if (changeOfFunction.calculator_expanded == true) {
-                          return Column(
-                            children: [
-                              SizedBox(
-                                  height: 30.39.sh,
-                                  width: 95.sw,
-                                  child: calculator()),
-                              // resuilt_animated_screen(), не используется, но может нужно тебе
-                              SizedBox(
-                                height: 63.7.sh,
-                                width: 100.sw,
-                                child: Keyboard_calculator_expanded(),
-                              ),
-                            ],
-                          );
-                        } else {
-                          return Column(
-                            children: [
-                              SizedBox(
-                                  height: 43.39.sh,
-                                  width: 95.sw,
-                                  child: calculator()),
-                              // resuilt_animated_screen(), не используется, но может нужно тебе
-                              SizedBox(
-                                height: 49.7.sh,
-                                width: 100.sw,
-                                child: keyboard_calculator(),
-                              ),
-                            ],
-                          );
-                        }
-                      });
-                    }
-                  }),
-                ],
-              ),
-            );
+                      ),
+                    )),
+                body: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                            color: AppColors.textcolorfortop,
+                            onPressed: () {
+                              scaffoldKey.currentState!.openDrawer();
+                            },
+                            icon: Icon(MyFlutterApp.menu_circle)),
+                        IconButton(
+                            color: AppColors.textcolorfortop,
+                            onPressed: () {
+                              changeOfFunction.change_state_calculator();
+                            },
+                            icon: Icon(
+                                MyFlutterApp.calculator_icon_icons_com_66651)),
+                        IconButton(
+                            color: AppColors.textcolorfortop,
+                            onPressed: () {
+                              changeOfFunction.change_state_equation_function();
+                            },
+                            icon: Icon(
+                              MyFlutterApp.functions_icon_144317,
+                              color: AppColors.white,
+                            )),
+                        IconButton(
+                            color: AppColors.textcolorfortop,
+                            onPressed: () {
+                              _showDialog(context);
+                            },
+                            icon: Icon(MyFlutterApp.question_circle)),
+                      ],
+                    ),
+                    Builder(builder: (context) {
+                      // отвечает за провекру что показывать
+                      /// some operation here ...
+                      if (changeOfFunction.calculator == false) {
+                        return Column(
+                          children: [
+                            SizedBox(
+                                height: 43.39.sh,
+                                width: 95.sw,
+                                child: AnimatedScreen()),
+                            // resuilt_animated_screen(), не используется, но может нужно тебе
+                            SizedBox(
+                              height: 49.7.sh,
+                              width: 100.sw,
+                              child: keyboard_equation(),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return Builder(builder: (context) {
+                          if (changeOfFunction.calculator_expanded == true) {
+                            return Column(
+                              children: [
+                                SizedBox(
+                                    height: 30.39.sh,
+                                    width: 95.sw,
+                                    child: calculator()),
+                                // resuilt_animated_screen(), не используется, но может нужно тебе
+                                SizedBox(
+                                  height: 63.7.sh,
+                                  width: 100.sw,
+                                  child: Keyboard_calculator_expanded(),
+                                ),
+                              ],
+                            );
+                          } else {
+                            return Column(
+                              children: [
+                                SizedBox(
+                                    height: 43.39.sh,
+                                    width: 95.sw,
+                                    child: calculator()),
+                                // resuilt_animated_screen(), не используется, но может нужно тебе
+                                SizedBox(
+                                  height: 49.7.sh,
+                                  width: 100.sw,
+                                  child: keyboard_calculator(),
+                                ),
+                              ],
+                            );
+                          }
+                        });
+                      }
+                    }),
+                  ],
+                ),
+              );
+            });
           });
-        });
+    });
     throw UnimplementedError();
   }
 }
