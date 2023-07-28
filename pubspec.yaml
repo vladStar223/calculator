@@ -33,6 +33,7 @@ dependencies:
   url_launcher:
   petitparser:
   package_info_plus:
+  shared_preferences:
   flutter:
     sdk: flutter
 
