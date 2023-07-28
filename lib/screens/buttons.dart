@@ -199,8 +199,8 @@ class _InputButton_miniState extends State<InputButton_mini> {
     }
     if (widget.type == 2) {
       return Container(
-        height: 9.sh,
-        width: 20.sw,
+        height: 8.sh,
+        width: 17.sw,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -226,8 +226,8 @@ class _InputButton_miniState extends State<InputButton_mini> {
     }
     if (widget.type == 3) {
       return Container(
-        height: 9.sh,
-        width: 20.sw,
+        height: 8.sh,
+        width: 17.sw,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -258,8 +258,8 @@ class _InputButton_miniState extends State<InputButton_mini> {
     }
     if (widget.type == 4) {
       return Container(
-        height: 9.sh,
-        width: 20.sw,
+        height: 8.sh,
+        width: 17.sw,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -292,16 +292,16 @@ class _InputButton_miniState extends State<InputButton_mini> {
   }
 }
 
-class special_InputButton extends StatefulWidget {
+class Special_InputButton extends StatefulWidget {
   final Function() onPressed;
   final Icon myIcon;
-  const special_InputButton(
+  const Special_InputButton(
       {super.key, required this.onPressed, required this.myIcon});
   @override
-  State<special_InputButton> createState() => _special_InputButtonState();
+  State<Special_InputButton> createState() => _Special_InputButtonState();
 }
 
-class _special_InputButtonState extends State<special_InputButton> {
+class _Special_InputButtonState extends State<Special_InputButton> {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
@@ -309,6 +309,46 @@ class _special_InputButtonState extends State<special_InputButton> {
     return Container(
       height: 9.sh,
       width: 20.sw,
+      decoration: BoxDecoration(
+        color: AppColors.buttoncolor1,
+        shape: BoxShape.circle,
+      ),
+      child: ElevatedButton(
+        onPressed: widget.onPressed,
+        style: ElevatedButton.styleFrom(
+          shape: const CircleBorder(),
+          backgroundColor: AppColors.buttoncolor1,
+          animationDuration: const Duration(milliseconds: 2500),
+        ),
+        child: widget.myIcon,
+        //color: AppColors.textcolor,
+        //size: 9.sw,
+      ),
+    );
+    throw UnimplementedError();
+  }
+}
+
+class Special_InputButton_mini extends StatefulWidget {
+  final Function() onPressed;
+  final Icon myIcon;
+
+  const Special_InputButton_mini(
+      {super.key, required this.onPressed, required this.myIcon});
+
+  @override
+  State<Special_InputButton_mini> createState() =>
+      _Special_InputButton_miniState();
+}
+
+class _Special_InputButton_miniState extends State<Special_InputButton_mini> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    var AppColors = Provider.of<AppColor>(context);
+    return Container(
+      height: 8.sh,
+      width: 17.sw,
       decoration: BoxDecoration(
         color: AppColors.buttoncolor1,
         shape: BoxShape.circle,

@@ -252,13 +252,13 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
               type: 2,
               number: "Del",
             ),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().multiplication();
                 },
                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
                     color: AppColors.textcolor, size: 5.sw)),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().division();
                 },
@@ -294,7 +294,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "9",
                 font: 8.0),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().multiplication();
                 },
@@ -332,7 +332,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "6",
                 font: 8.0),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().minus_press();
                 },
@@ -369,7 +369,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "3",
                 font: 8.0),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().plus_press();
                 },
@@ -490,7 +490,7 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
+                  print("степень");
                 },
                 type: 1,
                 number: "x^y",
@@ -511,14 +511,14 @@ class _Keyboard_calculator_expandedState
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("(");
                 },
                 type: 1,
                 number: "(",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press(")");
                 },
                 type: 1,
                 number: ")",
@@ -533,40 +533,28 @@ class _Keyboard_calculator_expandedState
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             InputButton_mini(
-                onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
-                },
-                type: 1,
-                number: "sqrt",
-                font: 5.0),
+                onPressed: () {}, type: 1, number: "Sqrt", font: 5.0),
             InputButton_mini(
-                onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
-                },
-                type: 1,
-                number: "AC",
-                font: 5.0),
+                onPressed: () {}, type: 4, number: "AC", font: 5.0),
             InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("3");
                 },
-                type: 1,
+                type: 2,
                 number: "Del",
                 font: 5.0),
-            InputButton_mini(
+            Special_InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().percent_of_number();
                 },
-                type: 1,
-                number: "%",
-                font: 8.0),
-            InputButton_mini(
+                myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
+                    color: AppColors.textcolor, size: 5.sw)),
+            Special_InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().division();
                 },
-                type: 1,
-                number: "/",
-                font: 8.0),
+                myIcon: Icon(MyFlutterApp.desions_,
+                    color: AppColors.textcolor, size: 4.sw)),
           ],
         ),
         SizedBox(
@@ -582,7 +570,7 @@ class _Keyboard_calculator_expandedState
                 },
                 type: 1,
                 number: "x!",
-                font: 8.0),
+                font: 7.0),
             InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("2");
@@ -604,13 +592,12 @@ class _Keyboard_calculator_expandedState
                 type: 1,
                 number: "9",
                 font: 8.0),
-            InputButton_mini(
+            Special_InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().multiplication();
                 },
-                type: 1,
-                number: "*",
-                font: 8.0),
+                myIcon: Icon(MyFlutterApp.multiplication_tbget5tyleyh,
+                    color: AppColors.textcolor, size: 8.sw)),
           ],
         ),
         SizedBox(
@@ -648,13 +635,12 @@ class _Keyboard_calculator_expandedState
                 type: 1,
                 number: "6",
                 font: 8.0),
-            InputButton_mini(
+            Special_InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().minus_press();
                 },
-                type: 1,
-                number: "-",
-                font: 8.0),
+                myIcon: Icon(MyFlutterApp.minus_uk9l2bpabquc,
+                    color: AppColors.textcolor, size: 5.sw)),
           ],
         ),
         SizedBox(
@@ -666,21 +652,21 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
+                  context.read<Input_number_calculator>().nums_press("3.14");
                 },
                 type: 1,
-                number: "pi",
-                font: 8.0),
+                number: "π",
+                font: 7.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().nums_press("1");
                 },
                 type: 1,
                 number: "1",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("2");
                 },
                 type: 1,
                 number: "2",
@@ -692,13 +678,12 @@ class _Keyboard_calculator_expandedState
                 type: 1,
                 number: "3",
                 font: 8.0),
-            InputButton_mini(
+            Special_InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().plus_press();
                 },
-                type: 1,
-                number: "+",
-                font: 8.0),
+                myIcon: Icon(MyFlutterApp.plus_fx7mv1cmdi3i,
+                    color: AppColors.textcolor, size: 4.sw)),
           ],
         ),
         SizedBox(
@@ -717,7 +702,7 @@ class _Keyboard_calculator_expandedState
                 font: 6.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().nums_press("e");
                 },
                 type: 1,
                 number: "e",
@@ -738,11 +723,11 @@ class _Keyboard_calculator_expandedState
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().resuilt();
                 },
-                type: 1,
+                type: 2,
                 number: "=",
-                font: 8.0),
+                font: 7.5),
           ],
         ),
         SizedBox(
