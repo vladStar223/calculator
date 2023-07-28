@@ -35,41 +35,64 @@ class AppColor extends ChangeNotifier {
   @override
   Future<void> initType() async {
     type = (await _getType_theme())!;
-    notifyListeners();
     print("0");
   }
 
   Future<void> Change_color() async {
     type = (await _getType_theme())!;
-    if (type == 2) {
-      type = 1;
-      fon = HexColor.fromHex('242933'); // фон
-      white = HexColor.fromHex('EEEEEE');
-      output = HexColor.fromHex('EEEEEE'); // меню вывода
-      textcolorfortop = HexColor.fromHex('EEEEEE');
-      buttoncolor1 = HexColor.fromHex('363E53');
-      buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
-      textcolor = HexColor.fromHex('EEEEEE');
-      textcolor2 = HexColor.fromHex('585858');
+    print(x);
+    if (x == true) {
+      if (type == 1) {
+        fon = HexColor.fromHex('242933'); // фон
+        white = HexColor.fromHex('EEEEEE');
+        output = HexColor.fromHex('EEEEEE'); // меню вывода
+        textcolorfortop = HexColor.fromHex('EEEEEE');
+        buttoncolor1 = HexColor.fromHex('363E53');
+        buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
+        textcolor = HexColor.fromHex('EEEEEE');
+        textcolor2 = HexColor.fromHex('585858');
+      } else {
+        fon = HexColor.fromHex('EEEEEE'); // фон
+        output = HexColor.fromHex('EEEEEE');
+        textcolorfortop = HexColor.fromHex('585858'); // меню вывода
+        white = HexColor.fromHex('585858');
+        buttoncolor1 = HexColor.fromHex('73D5DB'); // для  спец кнопок
+        buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
+        textcolor = HexColor.fromHex('0C6EA6');
+        textcolor2 = HexColor.fromHex('585858');
+      }
+      x = false;
     } else {
-      type = 2;
-      fon = HexColor.fromHex('EEEEEE'); // фон
-      output = HexColor.fromHex('EEEEEE');
-      textcolorfortop = HexColor.fromHex('585858'); // меню вывода
-      white = HexColor.fromHex('585858');
-      buttoncolor1 = HexColor.fromHex('73D5DB'); // для  спец кнопок
-      buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
-      textcolor = HexColor.fromHex('0C6EA6');
-      textcolor2 = HexColor.fromHex('585858');
-    }
-    if (type == 3) {
-      fon = HexColor.fromHex('EEEEEE'); // фон
-      white = HexColor.fromHex('EEEEEE'); // меню вывода
-      textcolorfortop = HexColor.fromHex('585858');
-      buttoncolor1 = HexColor.fromHex('363E53');
-      buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
-      textcolor = HexColor.fromHex('EEEEEE');
-      textcolor2 = HexColor.fromHex('585858');
+      if (type == 2) {
+        type = 1;
+        fon = HexColor.fromHex('242933'); // фон
+        white = HexColor.fromHex('EEEEEE');
+        output = HexColor.fromHex('EEEEEE'); // меню вывода
+        textcolorfortop = HexColor.fromHex('EEEEEE');
+        buttoncolor1 = HexColor.fromHex('363E53');
+        buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
+        textcolor = HexColor.fromHex('EEEEEE');
+        textcolor2 = HexColor.fromHex('585858');
+      } else {
+        type = 2;
+        fon = HexColor.fromHex('EEEEEE'); // фон
+        output = HexColor.fromHex('EEEEEE');
+        textcolorfortop = HexColor.fromHex('585858'); // меню вывода
+        white = HexColor.fromHex('585858');
+        buttoncolor1 = HexColor.fromHex('73D5DB'); // для  спец кнопок
+        buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
+        textcolor = HexColor.fromHex('0C6EA6');
+        textcolor2 = HexColor.fromHex('585858');
+      }
+      if (type == 3) {
+        fon = HexColor.fromHex('EEEEEE'); // фон
+        white = HexColor.fromHex('EEEEEE'); // меню вывода
+        textcolorfortop = HexColor.fromHex('585858');
+        buttoncolor1 = HexColor.fromHex('363E53');
+        buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
+        textcolor = HexColor.fromHex('EEEEEE');
+        textcolor2 = HexColor.fromHex('585858');
+      }
     }
     notifyListeners();
     await _setType_theme();

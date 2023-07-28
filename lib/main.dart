@@ -134,18 +134,16 @@ class _screen_normalState extends State<screen_normal> {
       );
     } // открывает диалог в меню
 
-    return Builder(builder: (context) {
-      if (Provider.of<AppColor>(context).x == true) {
-        Provider.of<AppColor>(context).Change_color();
-        Provider.of<AppColor>(context).x = false;
-      }
-
-      return FutureBuilder(
-          future: _future,
-          builder: (context, snapshot) {
-            if (ConnectionState.done != snapshot.connectionState) {
-              // Future hasn't finished yet, return a placeholder
-              return Center(child: Text('Loading'));
+    return FutureBuilder(
+        future: _future,
+        builder: (context, snapshot) {
+          if (ConnectionState.done != snapshot.connectionState) {
+            // Future hasn't finished yet, return a placeholder
+            return Center(child: Text('Loading'));
+          }
+          return Builder(builder: (context) {
+            if (Provider.of<AppColor>(context).x == true) {
+              Provider.of<AppColor>(context).Change_color();
             }
             return Scaffold(
               drawerEnableOpenDragGesture: false,
@@ -356,7 +354,7 @@ class _screen_normalState extends State<screen_normal> {
               ),
             );
           });
-    });
+        });
     throw UnimplementedError();
   }
 }
