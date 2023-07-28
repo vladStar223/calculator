@@ -137,6 +137,7 @@ class _screen_normalState extends State<screen_normal> {
     return Builder(builder: (context) {
       if (Provider.of<AppColor>(context).x == true) {
         Provider.of<AppColor>(context).Change_color();
+        _getInfo();
       }
       return FutureBuilder(
           future: _future,
