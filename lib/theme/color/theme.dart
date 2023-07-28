@@ -21,6 +21,7 @@ extension HexColor on Color {
 class AppColor extends ChangeNotifier {
   static const type_theme_Key = 'type_theme';
   late int type = 1;
+  bool x = true;
   Color color_of_border = Colors.blue; //цвет рамки для полей ввода
   Color transparent = Colors.transparent; // Нормальное состояние
   Color fon = HexColor.fromHex('242933'); // фон
