@@ -252,13 +252,13 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
               type: 2,
               number: "Del",
             ),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().multiplication();
                 },
                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
                     color: AppColors.textcolor, size: 5.sw)),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().division();
                 },
@@ -294,7 +294,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "9",
                 font: 8.0),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().multiplication();
                 },
@@ -332,7 +332,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "6",
                 font: 8.0),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().minus_press();
                 },
@@ -369,7 +369,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 type: 1,
                 number: "3",
                 font: 8.0),
-            special_InputButton(
+            Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().plus_press();
                 },
