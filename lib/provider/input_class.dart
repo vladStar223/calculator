@@ -218,7 +218,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] != "-" &&
         text[text.length - 1] != "+" &&
         text[text.length - 1] != "×" &&
-        text[text.length - 1] != "деление") {
+        text[text.length - 1] != "÷") {
       text = text + '.';
     } // дописать для всех возможны случаев
 
@@ -247,7 +247,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     String text = determing_to_true_trigger_start();
     decide = true;
     String text2 = check_number(text);
-    result = "=" + calcString(check_number(text2)).toString();
+    result = calcString(check_number(text2)).toString();
     determing_to_true_trigger_end(text);
     notifyListeners();
   }
@@ -257,7 +257,6 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     // TODO: implement resuilt
     String text = determing_to_true_trigger_start();
     decide = false;
-    result = result.substring(1);
     count = result;
     notifyListeners();
   }
