@@ -533,7 +533,12 @@ class _Keyboard_calculator_expandedState
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             InputButton_mini(
-                onPressed: () {}, type: 1, number: "Sqrt", font: 5.0),
+                onPressed: () {
+                  context.read<Input_number_calculator>().root();
+                },
+                type: 1,
+                number: "Sqrt",
+                font: 5.0),
             InputButton_mini(
                 onPressed: () {}, type: 4, number: "AC", font: 5.0),
             InputButton_mini(

@@ -222,7 +222,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 //√
   void root() {
     String text = determing_to_true_trigger_start();
-    text = "√" + text;
+    text = text + "√";
     determing_to_true_trigger_end(text);
     decide_online();
     notifyListeners();

@@ -21,6 +21,7 @@ Parser buildParser() {
   builder.group()..postfix(char("!").trim(), (a, op) => factorial_search(a));
   builder.group()..right(char('^').trim(), (a, op, b) => pow(a, b));
   builder.group()
+    ..left(char('√').trim(), (a, op, b) => sqrt(a) * b)
     ..left(char('×').trim(), (a, op, b) => a * b)
     ..left(char('÷').trim(), (a, op, b) => a / b);
   builder.group()
