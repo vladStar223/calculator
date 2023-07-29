@@ -538,7 +538,7 @@ class _Keyboard_calculator_expandedState
                 onPressed: () {}, type: 4, number: "AC", font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().delete_press();
                 },
                 type: 2,
                 number: "Del",
@@ -573,21 +573,21 @@ class _Keyboard_calculator_expandedState
                 font: 7.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().nums_press("7");
                 },
                 type: 1,
                 number: "7",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("8");
                 },
                 type: 1,
                 number: "8",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("9");
                 },
                 type: 1,
                 number: "9",
@@ -616,21 +616,21 @@ class _Keyboard_calculator_expandedState
                 font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().nums_press("4");
                 },
                 type: 1,
                 number: "4",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("5");
                 },
                 type: 1,
                 number: "5",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("6");
                 },
                 type: 1,
                 number: "6",
@@ -709,14 +709,14 @@ class _Keyboard_calculator_expandedState
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("0");
                 },
                 type: 1,
                 number: "0",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().comma_press();
                 },
                 type: 1,
                 number: ".",
