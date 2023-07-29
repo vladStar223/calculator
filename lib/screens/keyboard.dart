@@ -490,7 +490,7 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  print("степень");
+                  context.read<Input_number_calculator>().degree();
                 },
                 type: 1,
                 number: "x^y",
@@ -609,7 +609,7 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
+                  context.read<Input_number_calculator>().minus_degree();
                 },
                 type: 1,
                 number: "1/x",

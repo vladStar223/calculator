@@ -236,7 +236,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void nums_press(String enternumber) {
     // TODO: implement Nums_press
     String text = determing_to_true_trigger_start();
-    if (enternumber == '0' && text == '0') {
+    if (enternumber == '0' && text == '0' || enternumber == "(") {
       text = enternumber;
     } else if (text.length == 1 && text[0] == '0') {
       text = '+';
