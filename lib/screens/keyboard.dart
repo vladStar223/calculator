@@ -11,6 +11,7 @@ import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:calculator/main.dart';
 
+import '../provider/decision_urv.dart';
 import '../provider/input_class.dart';
 import '../provider/сhange_of_function.dart';
 import 'buttons.dart';
@@ -24,7 +25,8 @@ class _keyboard_equationState extends State<keyboard_equation> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final animation = Provider.of<input_number>(context);
+    final animation = Provider.of<Input_number_equations>(context);
+    final equations = Provider.of<Input_number_equations>(context);
     // используешь это удобно но когда все вместе такое
     // TODO: implement build
     return Column(
@@ -43,21 +45,21 @@ class _keyboard_equationState extends State<keyboard_equation> {
             ),
             InputButton(
               onPressed: () {
-                context.read<input_number>().Animated_first_screen();
+                equations.animated_first_screen();
               },
               type: 2,
               number: "x²",
             ),
             InputButton(
               onPressed: () {
-                context.read<input_number>().Animated_second_screen();
+                equations.animated_second_screen();
               },
               type: 2,
               number: "x³",
             ),
             InputButton(
               onPressed: () {
-                context.read<input_number>().Animated_third_screen();
+                equations.animated_third_screen();
               },
               type: 2,
               number: "x⁴",
@@ -73,28 +75,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           children: [
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("7");
+                  equations.nums_press("7");
                 },
                 type: 1,
                 number: "7",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("8");
+                  equations.nums_press("8");
                 },
                 type: 1,
                 number: "8",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("9");
+                  equations.nums_press("9");
                 },
                 type: 1,
                 number: "9",
                 font: 8.0),
             InputButton(
               onPressed: () {
-                context.read<input_number>().Delete_press();
+                equations.delete_press();
               },
               type: 2,
               number: "Del",
@@ -110,28 +112,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           children: [
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("4");
+                  equations.nums_press("4");
                 },
                 type: 1,
                 number: "4",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("5");
+                  equations.nums_press("5");
                 },
                 type: 1,
                 number: "5",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("6");
+                  equations.nums_press("6");
                 },
                 type: 1,
                 number: "6",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Minus_press();
+                  equations.minus_press();
                 },
                 type: 2,
                 number: "-",
@@ -147,28 +149,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           children: [
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("1");
+                  equations.nums_press("1");
                 },
                 type: 1,
                 number: "1",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("2");
+                  equations.nums_press("2");
                 },
                 type: 1,
                 number: "2",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("3");
+                  equations.nums_press("3");
                 },
                 type: 1,
                 number: "3",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Minus_press();
+                  equations.minus_press();
                 },
                 type: 2,
                 number: "+",
@@ -184,28 +186,28 @@ class _keyboard_equationState extends State<keyboard_equation> {
           children: [
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("e");
+                  equations.nums_press("e");
                 },
                 type: 1,
                 number: "e",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Nums_press("0");
+                  equations.nums_press("0");
                 },
                 type: 1,
                 number: "0",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Comma_press();
+                  equations.comma_press();
                 },
                 type: 1,
                 number: ".",
                 font: 8.0),
             InputButton(
                 onPressed: () {
-                  context.read<input_number>().Resuilt_anim_screen();
+                  equations.resuilt();
                 },
                 type: 2,
                 number: "=",
