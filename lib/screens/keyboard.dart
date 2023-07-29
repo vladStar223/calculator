@@ -532,13 +532,16 @@ class _Keyboard_calculator_expandedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            InputButton_mini(
+            Special_InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().root();
                 },
-                type: 1,
-                number: "Sqrt",
-                font: 5.0),
+                type: 2,
+                myIcon: Icon(
+                  MyFlutterApp.math,
+                  color: AppColors.textcolor2,
+                  size: 6.sw,
+                )),
             InputButton_mini(
                 onPressed: () {}, type: 4, number: "AC", font: 5.0),
             InputButton_mini(

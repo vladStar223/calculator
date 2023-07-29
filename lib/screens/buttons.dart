@@ -295,8 +295,11 @@ class _InputButton_miniState extends State<InputButton_mini> {
 class Special_InputButton extends StatefulWidget {
   final Function() onPressed;
   final Icon myIcon;
-  const Special_InputButton(
-      {super.key, required this.onPressed, required this.myIcon});
+  const Special_InputButton({
+    super.key,
+    required this.onPressed,
+    required this.myIcon,
+  });
   @override
   State<Special_InputButton> createState() => _Special_InputButtonState();
 }
@@ -332,9 +335,12 @@ class _Special_InputButtonState extends State<Special_InputButton> {
 class Special_InputButton_mini extends StatefulWidget {
   final Function() onPressed;
   final Icon myIcon;
-
+  final int type;
   const Special_InputButton_mini(
-      {super.key, required this.onPressed, required this.myIcon});
+      {super.key,
+      required this.onPressed,
+      required this.myIcon,
+      this.type = 1});
 
   @override
   State<Special_InputButton_mini> createState() =>
@@ -346,25 +352,46 @@ class _Special_InputButton_miniState extends State<Special_InputButton_mini> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    return Container(
-      height: 8.sh,
-      width: 17.sw,
-      decoration: BoxDecoration(
-        color: AppColors.buttoncolor1,
-        shape: BoxShape.circle,
-      ),
-      child: ElevatedButton(
-        onPressed: widget.onPressed,
-        style: ElevatedButton.styleFrom(
-          shape: const CircleBorder(),
-          backgroundColor: AppColors.buttoncolor1,
-          animationDuration: const Duration(milliseconds: 2500),
+    if (widget.type == 1) {
+      return Container(
+        height: 8.sh,
+        width: 17.sw,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor1,
+          shape: BoxShape.circle,
         ),
-        child: widget.myIcon,
-        //color: AppColors.textcolor,
-        //size: 9.sw,
-      ),
-    );
+        child: ElevatedButton(
+          onPressed: widget.onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: widget.myIcon,
+          //color: AppColors.textcolor,
+          //size: 9.sw,
+        ),
+      );
+    }
+    if (widget.type == 2) {
+      return Container(
+        height: 8.sh,
+        width: 17.sw,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+            onPressed: widget.onPressed,
+            style: ElevatedButton.styleFrom(
+              shape: const CircleBorder(),
+              backgroundColor: AppColors.buttoncolor2,
+              animationDuration: const Duration(milliseconds: 2500),
+            ),
+            child: widget.myIcon),
+      );
+    }
+
     throw UnimplementedError();
   }
 }
