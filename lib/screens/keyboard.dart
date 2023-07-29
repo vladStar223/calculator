@@ -490,7 +490,7 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  print("степень");
+                  context.read<Input_number_calculator>().degree();
                 },
                 type: 1,
                 number: "x^y",
@@ -532,13 +532,21 @@ class _Keyboard_calculator_expandedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            InputButton_mini(
-                onPressed: () {}, type: 1, number: "Sqrt", font: 5.0),
+            Special_InputButton_mini(
+                onPressed: () {
+                  context.read<Input_number_calculator>().root();
+                },
+                type: 2,
+                myIcon: Icon(
+                  MyFlutterApp.math,
+                  color: AppColors.textcolor2,
+                  size: 6.sw,
+                )),
             InputButton_mini(
                 onPressed: () {}, type: 4, number: "AC", font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().delete_press();
                 },
                 type: 2,
                 number: "Del",
@@ -566,28 +574,28 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
+                  context.read<Input_number_calculator>().factorial();
                 },
                 type: 1,
                 number: "x!",
                 font: 7.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().nums_press("7");
                 },
                 type: 1,
                 number: "7",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("8");
                 },
                 type: 1,
                 number: "8",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("9");
                 },
                 type: 1,
                 number: "9",
@@ -609,28 +617,28 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
+                  context.read<Input_number_calculator>().minus_degree();
                 },
                 type: 1,
                 number: "1/x",
                 font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().nums_press("4");
                 },
                 type: 1,
                 number: "4",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("5");
                 },
                 type: 1,
                 number: "5",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("6");
                 },
                 type: 1,
                 number: "6",
@@ -709,14 +717,14 @@ class _Keyboard_calculator_expandedState
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().nums_press("0");
                 },
                 type: 1,
                 number: "0",
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().comma_press();
                 },
                 type: 1,
                 number: ".",
