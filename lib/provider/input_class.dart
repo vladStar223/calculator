@@ -194,7 +194,22 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       text = '+';
     }
     if (text.length < text_length) {
-      text += enternumber;
+      if (enternumber == "(") {
+        if (text[text.length - 1] == "1" ||
+            text[text.length - 1] == "2" ||
+            text[text.length - 1] == "3" ||
+            text[text.length - 1] == "4" ||
+            text[text.length - 1] == "5" ||
+            text[text.length - 1] == "6" ||
+            text[text.length - 1] == "7" ||
+            text[text.length - 1] == "8" ||
+            text[text.length - 1] == "9" ||
+            text[text.length - 1] == "0") {
+          text = "$text×$enternumber";
+        }
+      } else {
+        text += enternumber;
+      }
     }
 
     determing_to_true_trigger_end(text);
