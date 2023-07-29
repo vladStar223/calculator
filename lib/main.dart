@@ -1,4 +1,5 @@
 import 'package:calculator/provider/%D1%81hange_of_function.dart';
+import 'package:calculator/provider/decision_urv.dart';
 import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
@@ -55,11 +56,11 @@ class _MainState extends State<Main> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     final scaffoldKey = GlobalKey<ScaffoldState>();
     return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (context) => input_number()),
       ChangeNotifierProvider(create: (context) => Change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_number_calculator()),
       ChangeNotifierProvider(create: (context) => Input_number_equations()),
+      ChangeNotifierProvider(create: (context) => decision_urv()),
     ], child: screen_normal());
   }
 }
@@ -89,7 +90,8 @@ class _screen_normalState extends State<screen_normal> {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
     var changeOfFunction = Provider.of<Change_of_function>(context);
-    var typeChoose = Provider.of<input_number>(context).urv;
+    var typeChoose =
+        Provider.of<Input_number_equations>(context).active_resuilt_screen;
     const displayName = "displayName";
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     _getInfo() {

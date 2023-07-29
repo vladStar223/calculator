@@ -11,10 +11,16 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 
 class decision_urv extends ChangeNotifier {
-  var text_in_cofficients;
   var urv;
-  decision_urv(this.text_in_cofficients,
-      this.urv); // передает необходимые данные для решения  значение коэфицентов и состояние какое уравнение считать
+  late List<String> text_in_cofficients;
+  void get_urv_and_text_in_cofficients(var a, List<String> b) {
+    urv = a;
+    print(b);
+    text_in_cofficients = b;
+    decision_ur();
+  }
+
+  // передает необходимые данные для решения  значение коэфицентов и состояние какое уравнение считать
   double x1 = 0;
   String x2 = "0.0";
   String x3 = "0.0";

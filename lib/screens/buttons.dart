@@ -92,11 +92,11 @@ class _InputButtonState extends State<InputButton> {
         ),
         child: ElevatedButton(
           onPressed: () {
-            context.read<input_number>().AC_press();
+            context.read<Input_number_equations>().ac_press();
           },
           onLongPress: () {
-            context.read<input_number>().setlongtap_ac();
-            context.read<input_number>().AC_press();
+            context.read<Input_number_equations>().setlongtap_ac();
+            context.read<Input_number_equations>().ac_press();
           },
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
@@ -234,11 +234,11 @@ class _InputButton_miniState extends State<InputButton_mini> {
         ),
         child: ElevatedButton(
           onPressed: () {
-            context.read<input_number>().AC_press();
+            context.read<Input_number_equations>().ac_press();
           },
           onLongPress: () {
-            context.read<input_number>().setlongtap_ac();
-            context.read<input_number>().AC_press();
+            context.read<Input_number_equations>().setlongtap_ac();
+            context.read<Input_number_equations>().ac_press();
           },
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),

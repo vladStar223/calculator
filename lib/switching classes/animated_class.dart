@@ -4,6 +4,9 @@ import 'package:calculator/screens/screens_equations.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../provider/decision_urv.dart';
+import '../provider/input_class.dart';
+
 /*
 class peter1_PEWEHUE extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное
 
@@ -54,7 +57,8 @@ class AnimatedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final animated = Provider.of<input_number>(context);
+    final animated = Provider.of<Input_number_equations>(context);
+
     return Stack(
       children: [
         AnimatedScreenItem(

@@ -8,22 +8,26 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:calculator/provider/provider_class.dart';
 
+import '../provider/decision_urv.dart';
+import '../provider/input_class.dart';
+
 class resuilt extends StatefulWidget {
   @override
   State<resuilt> createState() => _resuiltState();
 }
 
-//Provider.of<input_number>(context).a_text
+//decision.a_text
 
 class _resuiltState extends State<resuilt> {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
+    var decision = Provider.of<decision_urv>(context);
     var fonturv = 7;
-    if (Provider.of<input_number>(context).urvshow.length > 27) {
+    if (decision.urvshow.length > 27) {
       fonturv = 5;
     }
-    if (Provider.of<input_number>(context).urvshow.length > 35) {
+    if (decision.urvshow.length > 35) {
       fonturv = 4;
     }
     return Container(
@@ -46,7 +50,7 @@ class _resuiltState extends State<resuilt> {
           height: 1.sh,
         ),
         Text(
-          Provider.of<input_number>(context).urvshow,
+          Provider.of<decision_urv>(context).urvshow,
           style: TextStyle(
               fontFamily: "Nokora",
               fontSize: fonturv.sw,
@@ -90,7 +94,7 @@ class _resuiltState extends State<resuilt> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).D.toString(),
+                  decision.D.toString(),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -123,7 +127,7 @@ class _resuiltState extends State<resuilt> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x1.toString(),
+                  decision.x1.toString(),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -156,7 +160,7 @@ class _resuiltState extends State<resuilt> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x2.toString(),
+                  decision.x2.toString(),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -182,16 +186,17 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
+    var decision = Provider.of<decision_urv>(context);
     // TODO: implement build
     var fonturv = 7;
     var fontx = 5;
-    if (Provider.of<input_number>(context).x2.length > 17) {
+    if (decision.x2.length > 17) {
       fontx = 3;
     }
-    if (Provider.of<input_number>(context).urvshow.length > 27) {
+    if (decision.urvshow.length > 27) {
       fonturv = 5;
     }
-    if (Provider.of<input_number>(context).urvshow.length > 35) {
+    if (decision.urvshow.length > 35) {
       fonturv = 4;
     }
     return Container(
@@ -214,7 +219,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
           height: 1.sh,
         ),
         Text(
-          Provider.of<input_number>(context).urvshow,
+          decision.urvshow,
           style: TextStyle(
               fontFamily: "Nokora",
               fontSize: fonturv.sw,
@@ -266,7 +271,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x1.toString(),
+                  decision.x1.toString(),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -299,7 +304,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  (Provider.of<input_number>(context).x2),
+                  decision.x2,
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -332,7 +337,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x3,
+                  decision.x3,
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -360,15 +365,16 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
+    var decision = Provider.of<decision_urv>(context);
     var fonturv = 7;
     var fontx = 5;
-    if (Provider.of<input_number>(context).x2.length > 17) {
+    if (decision.x2.length > 17) {
       fontx = 3;
     }
-    if (Provider.of<input_number>(context).urvshow.length > 27) {
+    if (decision.urvshow.length > 27) {
       fonturv = 5;
     }
-    if (Provider.of<input_number>(context).urvshow.length > 35) {
+    if (decision.urvshow.length > 35) {
       fonturv = 4;
     }
     return Container(
@@ -391,7 +397,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
           height: 1.sh,
         ),
         Text(
-          Provider.of<input_number>(context).urvshow,
+          decision.urvshow,
           style: TextStyle(
               fontFamily: "Nokora",
               fontSize: fonturv.sw,
@@ -429,7 +435,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x1.toString(),
+                  decision.x1.toString(),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -465,7 +471,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  (Provider.of<input_number>(context).x2),
+                  (decision.x2),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -501,7 +507,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x3,
+                  decision.x3,
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
@@ -537,7 +543,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Text(
-                  Provider.of<input_number>(context).x4.toString(),
+                  decision.x4.toString(),
                   textAlign: TextAlign.right,
                   style: TextStyle(
                       color: AppColors.textcolor2,
