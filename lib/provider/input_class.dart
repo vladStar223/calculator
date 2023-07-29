@@ -69,7 +69,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       if (text[text.length - 1] == "+" ||
           text[text.length - 1] == "×" ||
           text[text.length - 1] == "÷" ||
-          text[text.length - 1] == "%") {
+          text[text.length - 1] == "%" ||
+          text[text.length - 1] == "^") {
         text = text.substring(0, text.length - 1);
         text += "-";
       } else if (text.length < text_length &&
@@ -92,7 +93,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       if (text[text.length - 1] == "-" ||
           text[text.length - 1] == "×" ||
           text[text.length - 1] == "÷" ||
-          text[text.length - 1] == "%") {
+          text[text.length - 1] == "%" ||
+          text[text.length - 1] == "^") {
         text = text.substring(0, text.length - 1);
         text += "+";
       } else if (text.length < text_length &&
@@ -115,7 +117,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       if (text[text.length - 1] == "-" ||
           text[text.length - 1] == "+" ||
           text[text.length - 1] == "÷" ||
-          text[text.length - 1] == "%") {
+          text[text.length - 1] == "%" ||
+          text[text.length - 1] == "^") {
         text = text.substring(0, text.length - 1);
         text += "×";
       } else if (text.length < text_length &&
@@ -136,7 +139,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       if (text[text.length - 1] == "-" ||
           text[text.length - 1] == "+" ||
           text[text.length - 1] == "×" ||
-          text[text.length - 1] == "%") {
+          text[text.length - 1] == "%" ||
+          text[text.length - 1] == "^") {
         text = text.substring(0, text.length - 1);
         text += "÷";
       } else if (text.length < text_length &&
@@ -164,6 +168,50 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] != "%" &&
           text[text.length - 1] != ".") {
         text += "%";
+      }
+    }
+    determing_to_true_trigger_end(text);
+    decide_online();
+    notifyListeners();
+  }
+
+  void degree() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0' || text == "-" || text == "+") {
+    } else {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "+" ||
+          text[text.length - 1] == "÷" ||
+          text[text.length - 1] == "%" ||
+          text[text.length - 1] == "×") {
+        text = text.substring(0, text.length - 1);
+        text += "^";
+      } else if (text.length < text_length &&
+          text[text.length - 1] != "^" &&
+          text[text.length - 1] != ".") {
+        text += "^";
+      }
+    }
+    determing_to_true_trigger_end(text);
+    decide_online();
+    notifyListeners();
+  }
+
+  void minus_degree() {
+    String text = determing_to_true_trigger_start();
+    if (text == '0' || text == "-" || text == "+") {
+    } else {
+      if (text[text.length - 1] == "-" ||
+          text[text.length - 1] == "+" ||
+          text[text.length - 1] == "÷" ||
+          text[text.length - 1] == "%" ||
+          text[text.length - 1] == "×") {
+        text = text.substring(0, text.length - 1);
+        text += "^(-1)";
+      } else if (text.length < text_length &&
+          text[text.length - 1] != "^" &&
+          text[text.length - 1] != ".") {
+        text += "^(-1)";
       }
     }
     determing_to_true_trigger_end(text);
@@ -221,7 +269,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void ac_press() {
     // TODO: implement ac_press
     count = "0";
-    result = "=0";
+    result = "0";
     decide = false;
     notifyListeners();
   }
@@ -233,7 +281,8 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] != "-" &&
         text[text.length - 1] != "+" &&
         text[text.length - 1] != "×" &&
-        text[text.length - 1] != "÷") {
+        text[text.length - 1] != "÷" &&
+        text[text.length - 1] != "^") {
       text = text + '.';
     } // дописать для всех возможны случаев
 
