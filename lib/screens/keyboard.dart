@@ -566,7 +566,7 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
+                  context.read<Input_number_calculator>().factorial();
                 },
                 type: 1,
                 number: "x!",

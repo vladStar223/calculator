@@ -219,6 +219,23 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+//√
+  void root() {
+    String text = determing_to_true_trigger_start();
+    text = "√" + text;
+    determing_to_true_trigger_end(text);
+    decide_online();
+    notifyListeners();
+  }
+
+  void factorial() {
+    String text = determing_to_true_trigger_start();
+    text = text + "!";
+    determing_to_true_trigger_end(text);
+    decide_online();
+    notifyListeners();
+  }
+
   // проверка числа на правильность
   String check_number(text) {
     if (text[text.length - 1] == "-" ||
