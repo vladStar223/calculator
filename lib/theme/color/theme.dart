@@ -41,6 +41,9 @@ class AppColor extends ChangeNotifier {
   Future<void> Change_color() async {
     type = (await _getType_theme())!;
     print(x);
+    if (type == 0) {
+      type = 1;
+    }
     if (x == true) {
       if (type == 1) {
         fon = HexColor.fromHex('242933'); // фон
