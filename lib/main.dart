@@ -60,7 +60,16 @@ class _MainState extends State<Main> {
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_number_calculator()),
       ChangeNotifierProvider(create: (context) => Input_number_equations()),
-      ChangeNotifierProvider(create: (context) => decision_urv()),
+      ChangeNotifierProxyProvider<Input_number_equations, Decision_urv>(
+        // first, create the _proxy_ object, the one that you'll use in your UI
+        // at this point, you will have access to the previously provided objects
+        create: (context) => Decision_urv(
+            Provider.of<Input_number_equations>(context, listen: false)),
+        update: (context, Input_number_equations inputNumberEquations,
+            decisionUrv) {
+          return Decision_urv(inputNumberEquations);
+        },
+      ),
     ], child: screen_normal());
   }
 }

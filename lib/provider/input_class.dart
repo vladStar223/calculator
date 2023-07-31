@@ -30,7 +30,7 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
   @override
   void ac_press() {
     // TODO: implement ac_press
-    if (!enter_block) {
+    if (!enter_block && decision_eql != true) {
       if (longtap == false) {
         if (active_coefficient[0]) {
           text_in_cofficients[0] = '0';
@@ -48,13 +48,13 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
         text_in_cofficients[3] = '0';
         longtap = false;
       }
+      notifyListeners();
     }
-    notifyListeners();
   }
   // BUTTON OF TOTAL DELETE SELECTED VARIABLE (AC Button)
 
   void minus_press() {
-    if (!enter_block) {
+    if (!enter_block && decision_eql != true) {
       String text = determing_to_true_trigger_start();
 
       if (text == '0') {
@@ -72,13 +72,13 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
       }
 
       determing_to_true_trigger_end(text);
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   @override
   void comma_press() {
-    if (!enter_block) {
+    if (!enter_block && decision_eql != true) {
       String text = determing_to_true_trigger_start();
 
       if (!text.contains('.')) {
@@ -90,14 +90,15 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
       }
 
       determing_to_true_trigger_end(text);
+      notifyListeners();
     }
-    notifyListeners();
+
     // TODO: implement comma_press
   }
 
   @override
   void delete_press() {
-    if (!enter_block) {
+    if (!enter_block && decision_eql != true) {
       String text = determing_to_true_trigger_start();
 
       text = text.substring(0, text.length - 1);
@@ -143,7 +144,7 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
 
   @override
   void nums_press(String enternumber) {
-    if (!enter_block) {
+    if (!enter_block && decision_eql != true) {
       String text = determing_to_true_trigger_start();
 
       if (enternumber == '0' && text == '0') {
@@ -154,17 +155,20 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
       if (text.length < 12) {
         text += enternumber;
       }
-
       determing_to_true_trigger_end(text);
+      notifyListeners();
     }
-    notifyListeners();
+
     // TODO: implement nums_press
   }
 
   @override
   void resuilt() {
-    enter_block = true;
-
+    if (decision_eql == false) {
+      enter_block = true;
+      decision_eql = true;
+      notifyListeners();
+    }
     if (active_input_screen[0]) {
       active_resuilt_screen[0] = true;
     } else if (active_input_screen[1]) {
@@ -173,8 +177,7 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
       active_resuilt_screen[2] = true;
     }
     // проверка какой именно экран результата открывать
-    decision_eql = true;
-    notifyListeners();
+
     // TODO: implement resuilt
   }
 
@@ -185,8 +188,8 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
       } else {
         longtap = true;
       }
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   void Switch_from_D_to_C() {

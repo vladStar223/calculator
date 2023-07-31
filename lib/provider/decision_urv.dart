@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/foundation.dart';
@@ -10,14 +11,16 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 
-class decision_urv extends ChangeNotifier {
-  var urv;
+class Decision_urv extends ChangeNotifier {
+  late final Input_number_equations input_number_Equations;
   late List<String> text_in_cofficients;
-  void get_urv_and_text_in_cofficients(var a, List<String> b) {
-    urv = a;
-    print(b);
-    text_in_cofficients = b;
-    decision_ur();
+  late var urv;
+  Decision_urv(this.input_number_Equations);
+  get sys_v async {
+    text_in_cofficients = input_number_Equations.text_in_cofficients;
+    urv = input_number_Equations.active_resuilt_screen;
+    print(text_in_cofficients);
+    print(urv);
   }
 
   // передает необходимые данные для решения  значение коэфицентов и состояние какое уравнение считать
@@ -32,7 +35,7 @@ class decision_urv extends ChangeNotifier {
   double D = 0;
   late List<String> x;
   double a = 0.0, b = 0.0, c = 0.0, d = 0.0;
-  void check_int() {
+  Future<void> check_int() async {
     if (text_in_cofficients[0] != "-" && text_in_cofficients[0] != "+") {
       a = double.parse(text_in_cofficients[0]);
     } else {
@@ -83,8 +86,8 @@ class decision_urv extends ChangeNotifier {
     }
   }
 
-  void decision_ur() {
-    check_int();
+  Future<void> decision_ur() async {
+    await check_int();
     if (urv[0] == true) {
       urvshow =
           "${text_in_cofficients[0]} x² ${text_in_cofficients[1]} x ${text_in_cofficients[2]} = 0";
