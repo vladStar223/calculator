@@ -22,7 +22,7 @@ class _resuiltState extends State<resuilt> {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
-    var decision = Provider.of<decision_urv>(context);
+    var decision = Provider.of<Decision_urv>(context);
     var fonturv = 7;
     if (decision.urvshow.length > 27) {
       fonturv = 5;
@@ -50,7 +50,7 @@ class _resuiltState extends State<resuilt> {
           height: 1.sh,
         ),
         Text(
-          Provider.of<decision_urv>(context).urvshow,
+          Provider.of<Decision_urv>(context).urvshow,
           style: TextStyle(
               fontFamily: "Nokora",
               fontSize: fonturv.sw,
@@ -186,7 +186,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
-    var decision = Provider.of<decision_urv>(context);
+    var decision = Provider.of<Decision_urv>(context);
     // TODO: implement build
     var fonturv = 7;
     var fontx = 5;
@@ -365,7 +365,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    var decision = Provider.of<decision_urv>(context);
+    var decision = Provider.of<Decision_urv>(context);
     var fonturv = 7;
     var fontx = 5;
     if (decision.x2.length > 17) {

@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/foundation.dart';
@@ -10,9 +11,12 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 
-class decision_urv extends ChangeNotifier {
+class Decision_urv extends ChangeNotifier {
   var urv;
   late List<String> text_in_cofficients;
+
+  Decision_urv(this.input_number_equations);
+
   void get_urv_and_text_in_cofficients(var a, List<String> b) {
     urv = a;
     print(b);
@@ -20,6 +24,7 @@ class decision_urv extends ChangeNotifier {
     decision_ur();
   }
 
+  final Input_number_equations input_number_equations;
   // передает необходимые данные для решения  значение коэфицентов и состояние какое уравнение считать
   double x1 = 0;
   String x2 = "0.0";
