@@ -73,7 +73,6 @@ class AppColor extends ChangeNotifier {
         buttoncolor2 = HexColor.fromHex('CBCBCB'); //цифры // кнопки
         textcolor = HexColor.fromHex('EEEEEE');
         textcolor2 = HexColor.fromHex('585858');
-        notifyListeners();
       } else {
         type = 2;
         fon = HexColor.fromHex('EEEEEE'); // фон
@@ -84,7 +83,6 @@ class AppColor extends ChangeNotifier {
         buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
         textcolor = HexColor.fromHex('0C6EA6');
         textcolor2 = HexColor.fromHex('585858');
-        notifyListeners();
       }
       if (type == 3) {
         fon = HexColor.fromHex('EEEEEE'); // фон
@@ -94,10 +92,9 @@ class AppColor extends ChangeNotifier {
         buttoncolor2 = HexColor.fromHex('E1E1E1'); //цифры // кнопки
         textcolor = HexColor.fromHex('EEEEEE');
         textcolor2 = HexColor.fromHex('585858');
-        notifyListeners();
       }
     }
-
+    notifyListeners();
     await _setType_theme();
   }
 
