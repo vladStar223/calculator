@@ -63,13 +63,12 @@ class _MainState extends State<Main> {
       ChangeNotifierProxyProvider<Input_number_equations, Decision_urv>(
         // first, create the _proxy_ object, the one that you'll use in your UI
         // at this point, you will have access to the previously provided objects
-        create: (BuildContext context) => Decision_urv(
+        create: (context) => Decision_urv(
             Provider.of<Input_number_equations>(context, listen: false)),
-        // next, define a function to be called on `update`. It will return the same type
-        // as the create method.
-        update: (context, Input_number_equations input_number_equations,
-                decision_urv) =>
-            Decision_urv(input_number_equations),
+        update: (context, Input_number_equations inputNumberEquations,
+            decisionUrv) {
+          return Decision_urv(inputNumberEquations);
+        },
       ),
     ], child: screen_normal());
   }

@@ -206,8 +206,13 @@ class _keyboard_equationState extends State<keyboard_equation> {
                 number: ".",
                 font: 8.0),
             InputButton(
-                onPressed: () {
+                onPressed: () async {
                   equations.resuilt();
+
+                  await Provider.of<Decision_urv>(context, listen: false).sys_v;
+
+                  await Provider.of<Decision_urv>(context, listen: false)
+                      .decision_ur();
                 },
                 type: 2,
                 number: "=",
