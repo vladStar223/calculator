@@ -288,7 +288,7 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
 // ignore: camel_case_types
 class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
-  String result = "=0";
+  String result = "0";
   bool decide = false;
   int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
@@ -466,9 +466,236 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 //√
   void root() {
     String text = determing_to_true_trigger_start();
-    text += "√";
+    if (text[text.length - 1] == "1" ||
+        text[text.length - 1] == "2" ||
+        text[text.length - 1] == "3" ||
+        text[text.length - 1] == "4" ||
+        text[text.length - 1] == "5" ||
+        text[text.length - 1] == "6" ||
+        text[text.length - 1] == "7" ||
+        text[text.length - 1] == "8" ||
+        text[text.length - 1] == "9") {
+      text = text + "×" + "√";
+    } else {
+      text = "√";
+    }
+
+    //
     determing_to_true_trigger_end(text);
+    check_number(text);
     decide_online();
+    notifyListeners();
+  }
+
+  void log() {
+    String text = determing_to_true_trigger_start();
+    if (text[text.length - 1] == "1" ||
+        text[text.length - 1] == "2" ||
+        text[text.length - 1] == "3" ||
+        text[text.length - 1] == "4" ||
+        text[text.length - 1] == "5" ||
+        text[text.length - 1] == "6" ||
+        text[text.length - 1] == "7" ||
+        text[text.length - 1] == "8" ||
+        text[text.length - 1] == "9") {
+      text = text + "×" + "lg";
+    } else {
+      if (text != "0") {
+        text += "lg";
+      } else {
+        text = "lg";
+      }
+    }
+
+    //
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    notifyListeners();
+  }
+
+  void ln() {
+    String text = determing_to_true_trigger_start();
+    if (text[text.length - 1] == "1" ||
+        text[text.length - 1] == "2" ||
+        text[text.length - 1] == "3" ||
+        text[text.length - 1] == "4" ||
+        text[text.length - 1] == "5" ||
+        text[text.length - 1] == "6" ||
+        text[text.length - 1] == "7" ||
+        text[text.length - 1] == "8" ||
+        text[text.length - 1] == "9") {
+      text = text + "×" + "ln";
+    } else {
+      if (text != "0") {
+        text += "ln";
+      } else {
+        text = "ln";
+      }
+    }
+
+    //
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    notifyListeners();
+  }
+
+  bool arc = false;
+  bool deg = true;
+  void set_arc() {
+    if (arc == true) {
+      arc = false;
+    } else {
+      arc = true;
+    }
+    notifyListeners();
+  }
+
+  set_deg_rad() {
+    if (deg == true) {
+      deg = false;
+    } else {
+      deg = true;
+    }
+    notifyListeners();
+  }
+
+  void sin() {
+    String text = determing_to_true_trigger_start();
+    if (arc == false) {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "sin";
+      } else {
+        if (text != "0") {
+          text += "sin";
+        } else {
+          text = "sin";
+        }
+      }
+
+      //
+    } else {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "arcsin";
+      } else {
+        if (text != "0") {
+          text += "arcsin";
+        } else {
+          text = "arcsin";
+        }
+      }
+    }
+
+    get_rad_deg(deg);
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    notifyListeners();
+  }
+
+  void cos() {
+    String text = determing_to_true_trigger_start();
+    if (arc == false) {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "cos";
+      } else {
+        if (text != "0") {
+          text += "cos";
+        } else {
+          text = "cos";
+        }
+      }
+    } else {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "arccos";
+      } else {
+        if (text != "0") {
+          text += "arccos";
+        } else {
+          text = "arccos";
+        }
+      }
+    }
+
+    get_rad_deg(deg);
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    notifyListeners();
+  }
+
+  void tan() {
+    String text = determing_to_true_trigger_start();
+    if (arc == false) {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "tan";
+      } else {
+        if (text != "0") {
+          text += "tan";
+        } else {
+          text = "tan";
+        }
+      }
+    } else {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "arctan";
+      } else {
+        if (text != "0") {
+          text += "arctan";
+        } else {
+          text = "arctan";
+        }
+      }
+    }
+
+    get_rad_deg(deg);
+    determing_to_true_trigger_end(text);
+    check_number(text);
     notifyListeners();
   }
 
@@ -486,8 +713,22 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] == "×" ||
         text[text.length - 1] == "÷" ||
         text[text.length - 1] == "%" ||
-        text[text.length - 1] == "+") {
-      return text = text.substring(0, text.length - 1);
+        text[text.length - 1] == "+" ||
+        text[text.length - 1] == "√") {
+      if (text.length == 1 ||
+          text[text.length - 1] == "lg" ||
+          text[text.length - 1] == "ln" ||
+          text[text.length - 1] == "sin" ||
+          text[text.length - 1] == "cos" ||
+          text[text.length - 1] == "tan" ||
+          text[text.length - 1] == "arcsin" ||
+          text[text.length - 1] == "arccos" ||
+          text[text.length - 1] == "arctan") {
+        return "0";
+        print("dd");
+      } else {
+        return text = text.substring(0, text.length - 1);
+      }
     } else {
       return text;
     }
@@ -497,27 +738,36 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void nums_press(String enternumber) {
     // TODO: implement Nums_press
     String text = determing_to_true_trigger_start();
-    if (enternumber == '0' && text == '0' || enternumber == "(") {
+    if (enternumber == '0' && text == '0') {
       text = enternumber;
     } else if (text.length == 1 && text[0] == '0') {
-      text = '+';
-    }
-    if (text.length < text_length) {
-      if (enternumber == "(") {
-        if (text[text.length - 1] == "1" ||
-            text[text.length - 1] == "2" ||
-            text[text.length - 1] == "3" ||
-            text[text.length - 1] == "4" ||
-            text[text.length - 1] == "5" ||
-            text[text.length - 1] == "6" ||
-            text[text.length - 1] == "7" ||
-            text[text.length - 1] == "8" ||
-            text[text.length - 1] == "9" ||
-            text[text.length - 1] == "0") {
-          text = "$text×$enternumber";
+      text = enternumber;
+    } else {
+      if (text.length < text_length) {
+        if (enternumber == "(") {
+          if (text[text.length - 1] == "1" ||
+              text[text.length - 1] == "2" ||
+              text[text.length - 1] == "3" ||
+              text[text.length - 1] == "4" ||
+              text[text.length - 1] == "5" ||
+              text[text.length - 1] == "6" ||
+              text[text.length - 1] == "7" ||
+              text[text.length - 1] == "8" ||
+              text[text.length - 1] == "9" ||
+              text[text.length - 1] == "0") {
+            text = "$text×$enternumber";
+          } else if (text[text.length - 1] == "+" ||
+              text[text.length - 1] == "-" ||
+              text[text.length - 1] == "×" ||
+              text[text.length - 1] == "÷" ||
+              text[text.length - 1] == "%" ||
+              text[text.length - 1] == "^" ||
+              text[text.length - 1] == "√") {
+            text += enternumber;
+          }
+        } else {
+          text += enternumber;
         }
-      } else {
-        text += enternumber;
       }
     }
 
