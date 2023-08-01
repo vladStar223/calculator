@@ -16,7 +16,10 @@ Parser buildParser() {
         .map(num.tryParse))
     ..wrapper(
         char('(').trim(), char(')').trim(), (left, value, right) => value);
-  builder.group()..prefix(string("lg").trim(), (op, a) => log10(a));
+  builder.group()
+    ..prefix(string("ln").trim(), (op, a) => log(a))
+    ..prefix(string("lg").trim(), (op, a) => log10(a));
+  builder.group()..prefix(string("sin").trim(), (op, a) => sin_1(a));
   builder.group()
     ..prefix(char('√').trim(), (op, a) => sqrt(a))
     ..prefix(char('-').trim(), (op, a) => -a);
@@ -55,4 +58,32 @@ dynamic factorial_search(dynamic a) {
       return n * factorial_search(n - 1);
     }
   }
+}
+
+var rad_deg = true;
+void get_rad_deg(var x) {
+  rad_deg = x;
+}
+
+dynamic sin_1(dynamic a) {
+  var n = a;
+  var t1;
+  if (rad_deg = true) {
+    var angle = Angle.fromDegrees(n);
+    t1 = angle.sin();
+    if (n == 0) {
+      t1 = sin0;
+    } else if (n == 30) {
+      t1 = sin30;
+    } else if (n == 45) {
+      t1 = sin45;
+    } else if (n == 90) {
+      t1 = sin90;
+    } else if (n == 180) {
+      t1 = 0;
+    }
+  } else {
+    t1 = sin(a);
+  }
+  return t1;
 }

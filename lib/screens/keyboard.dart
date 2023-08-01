@@ -511,7 +511,7 @@ class _Keyboard_calculator_expandedState
                 font: 8.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().ln();
                 },
                 type: 1,
                 number: "ln",
