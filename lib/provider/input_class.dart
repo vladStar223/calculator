@@ -288,7 +288,7 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
 // ignore: camel_case_types
 class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
-  String result = "=0";
+  String result = "0";
   bool decide = false;
   int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
@@ -466,11 +466,53 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 //√
   void root() {
     String text = determing_to_true_trigger_start();
-    text += "√";
+    if (text[text.length - 1] == "1" ||
+        text[text.length - 1] == "2" ||
+        text[text.length - 1] == "3" ||
+        text[text.length - 1] == "4" ||
+        text[text.length - 1] == "5" ||
+        text[text.length - 1] == "6" ||
+        text[text.length - 1] == "7" ||
+        text[text.length - 1] == "8" ||
+        text[text.length - 1] == "9") {
+      text = text + "×" + "√";
+    } else {
+      text = "√";
+    }
+
+    //
     determing_to_true_trigger_end(text);
+    check_number(text);
     decide_online();
     notifyListeners();
   }
+
+  void log() {
+    String text = determing_to_true_trigger_start();
+    if (text[text.length - 1] == "1" ||
+        text[text.length - 1] == "2" ||
+        text[text.length - 1] == "3" ||
+        text[text.length - 1] == "4" ||
+        text[text.length - 1] == "5" ||
+        text[text.length - 1] == "6" ||
+        text[text.length - 1] == "7" ||
+        text[text.length - 1] == "8" ||
+        text[text.length - 1] == "9") {
+      text = text + "×" + "lg(";
+    } else {
+      text = "lg(";
+    }
+
+    //
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    decide_online();
+    notifyListeners();
+  }
+
+  void sin() {}
+  void cos() {}
+  void tan() {}
 
   void factorial() {
     String text = determing_to_true_trigger_start();
@@ -486,8 +528,13 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] == "×" ||
         text[text.length - 1] == "÷" ||
         text[text.length - 1] == "%" ||
-        text[text.length - 1] == "+") {
-      return text = text.substring(0, text.length - 1);
+        text[text.length - 1] == "+" ||
+        text[text.length - 1] == "√") {
+      if (text.length == 1) {
+        return "0";
+      } else {
+        return text = text.substring(0, text.length - 1);
+      }
     } else {
       return text;
     }
@@ -497,10 +544,10 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   void nums_press(String enternumber) {
     // TODO: implement Nums_press
     String text = determing_to_true_trigger_start();
-    if (enternumber == '0' && text == '0' || enternumber == "(") {
+    if (enternumber == '0' && text == '0') {
       text = enternumber;
     } else if (text.length == 1 && text[0] == '0') {
-      text = '+';
+      text = enternumber;
     }
     if (text.length < text_length) {
       if (enternumber == "(") {
@@ -515,6 +562,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
             text[text.length - 1] == "9" ||
             text[text.length - 1] == "0") {
           text = "$text×$enternumber";
+        } else if (text[text.length - 1] == "+" ||
+            text[text.length - 1] == "-" ||
+            text[text.length - 1] == "×" ||
+            text[text.length - 1] == "÷" ||
+            text[text.length - 1] == "%" ||
+            text[text.length - 1] == "^" ||
+            text[text.length - 1] == "√") {
+          text += enternumber;
         }
       } else {
         text += enternumber;

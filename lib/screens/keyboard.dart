@@ -467,21 +467,21 @@ class _Keyboard_calculator_expandedState
                 font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().sin();
                 },
                 type: 1,
                 number: "sin",
                 font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().cos();
                 },
                 type: 1,
                 number: "cos",
                 font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3");
+                  context.read<Input_number_calculator>().tan();
                 },
                 type: 1,
                 number: "tan",
@@ -504,7 +504,7 @@ class _Keyboard_calculator_expandedState
                 font: 5.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().log();
                 },
                 type: 1,
                 number: "lg",
