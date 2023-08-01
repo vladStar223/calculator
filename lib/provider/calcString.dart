@@ -19,7 +19,10 @@ Parser buildParser() {
   builder.group()
     ..prefix(string("ln").trim(), (op, a) => log(a))
     ..prefix(string("lg").trim(), (op, a) => log10(a));
-  builder.group()..prefix(string("sin").trim(), (op, a) => sin_1(a));
+  builder.group()
+    ..prefix(string("tan").trim(), (op, a) => tan_1(a))
+    ..prefix(string("cos").trim(), (op, a) => cos_1(a))
+    ..prefix(string("sin").trim(), (op, a) => sin_1(a));
   builder.group()
     ..prefix(char('√').trim(), (op, a) => sqrt(a))
     ..prefix(char('-').trim(), (op, a) => -a);
@@ -63,12 +66,14 @@ dynamic factorial_search(dynamic a) {
 var rad_deg = true;
 void get_rad_deg(var x) {
   rad_deg = x;
+  print(rad_deg);
 }
 
 dynamic sin_1(dynamic a) {
   var n = a;
   var t1;
-  if (rad_deg = true) {
+
+  if (rad_deg == true) {
     if (n == 0) {
       t1 = sin0;
     } else if (n == 30) {
@@ -92,7 +97,7 @@ dynamic sin_1(dynamic a) {
 dynamic cos_1(dynamic a) {
   var n = a;
   var t1;
-  if (rad_deg = true) {
+  if (rad_deg == true) {
     if (n == 0) {
       t1 = cos0;
     } else if (n == 30) {
@@ -116,7 +121,7 @@ dynamic cos_1(dynamic a) {
 dynamic tan_1(dynamic a) {
   var n = a;
   var t1;
-  if (rad_deg = true) {
+  if (rad_deg == true) {
     if (n == 0) {
       t1 = tan0;
     } else if (n == 30) {
@@ -125,7 +130,9 @@ dynamic tan_1(dynamic a) {
       t1 = tan60;
     } else {
       var angle = Angle.fromDegrees(n);
+
       t1 = angle.tan();
+      print(t1);
     }
   } else {
     t1 = tan(a);

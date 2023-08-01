@@ -453,14 +453,14 @@ class _Keyboard_calculator_expandedState
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("1");
+                  context.read<Input_number_calculator>().set_arc();
                 },
                 type: 1,
                 number: "2nd",
                 font: 4.0),
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("2");
+                  context.read<Input_number_calculator>().set_deg_rad();
                 },
                 type: 1,
                 number: "rad",

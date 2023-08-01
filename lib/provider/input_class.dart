@@ -547,6 +547,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     } else {
       arc = true;
     }
+    notifyListeners();
   }
 
   set_deg_rad() {
@@ -555,11 +556,12 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     } else {
       deg = true;
     }
+    notifyListeners();
   }
 
   void sin() {
+    String text = determing_to_true_trigger_start();
     if (arc == false) {
-      String text = determing_to_true_trigger_start();
       if (text[text.length - 1] == "1" ||
           text[text.length - 1] == "2" ||
           text[text.length - 1] == "3" ||
@@ -579,11 +581,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       }
 
       //
-      determing_to_true_trigger_end(text);
-      check_number(text);
-      notifyListeners();
     } else {
-      String text = determing_to_true_trigger_start();
       if (text[text.length - 1] == "1" ||
           text[text.length - 1] == "2" ||
           text[text.length - 1] == "3" ||
@@ -602,11 +600,104 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         }
       }
     }
+
     get_rad_deg(deg);
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    notifyListeners();
   }
 
-  void cos() {}
-  void tan() {}
+  void cos() {
+    String text = determing_to_true_trigger_start();
+    if (arc == false) {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "cos";
+      } else {
+        if (text != "0") {
+          text += "cos";
+        } else {
+          text = "cos";
+        }
+      }
+    } else {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "arccos";
+      } else {
+        if (text != "0") {
+          text += "arccos";
+        } else {
+          text = "arccos";
+        }
+      }
+    }
+
+    get_rad_deg(deg);
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    notifyListeners();
+  }
+
+  void tan() {
+    String text = determing_to_true_trigger_start();
+    if (arc == false) {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "tan";
+      } else {
+        if (text != "0") {
+          text += "tan";
+        } else {
+          text = "tan";
+        }
+      }
+    } else {
+      if (text[text.length - 1] == "1" ||
+          text[text.length - 1] == "2" ||
+          text[text.length - 1] == "3" ||
+          text[text.length - 1] == "4" ||
+          text[text.length - 1] == "5" ||
+          text[text.length - 1] == "6" ||
+          text[text.length - 1] == "7" ||
+          text[text.length - 1] == "8" ||
+          text[text.length - 1] == "9") {
+        text = text + "×" + "arctan";
+      } else {
+        if (text != "0") {
+          text += "arctan";
+        } else {
+          text = "arctan";
+        }
+      }
+    }
+
+    get_rad_deg(deg);
+    determing_to_true_trigger_end(text);
+    check_number(text);
+    notifyListeners();
+  }
 
   void factorial() {
     String text = determing_to_true_trigger_start();
