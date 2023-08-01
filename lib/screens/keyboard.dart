@@ -463,7 +463,7 @@ class _Keyboard_calculator_expandedState
                   context.read<Input_number_calculator>().set_deg_rad();
                 },
                 type: 1,
-                number: "rad",
+                number: "deg",
                 font: 5.0),
             InputButton_mini(
                 onPressed: () {
