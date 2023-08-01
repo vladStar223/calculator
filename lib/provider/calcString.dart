@@ -16,10 +16,11 @@ Parser buildParser() {
     ..wrapper(
         char('(').trim(), char(')').trim(), (left, value, right) => value);
   builder.group()
+    ..prefix(pattern("lg").trim(), (op, a) => log(a))
     ..prefix(char('√').trim(), (op, a) => sqrt(a))
     ..prefix(char('-').trim(), (op, a) => -a);
-  builder.group()..postfix(char("!").trim(), (a, op) => factorial_search(a));
-  builder.group()..right(char('^').trim(), (a, op, b) => pow(a, b));
+  builder.group().postfix(char("!").trim(), (a, op) => factorial_search(a));
+  builder.group().right(char('^').trim(), (a, op, b) => pow(a, b));
   builder.group()
     ..left(char('√').trim(), (a, op, b) => sqrt(a) * b)
     ..left(char('×').trim(), (a, op, b) => a * b)

@@ -498,15 +498,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] == "7" ||
         text[text.length - 1] == "8" ||
         text[text.length - 1] == "9") {
-      text = text + "×" + "lg(";
+      text = text + "×" + "lg";
     } else {
-      text = "lg(";
+      text = "lg";
     }
 
     //
     determing_to_true_trigger_end(text);
     check_number(text);
-    decide_online();
     notifyListeners();
   }
 
@@ -530,8 +529,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] == "%" ||
         text[text.length - 1] == "+" ||
         text[text.length - 1] == "√") {
-      if (text.length == 1) {
+      if (text.length == 1 || text[text.length - 1] == "lg") {
         return "0";
+        print("dd");
       } else {
         return text = text.substring(0, text.length - 1);
       }
