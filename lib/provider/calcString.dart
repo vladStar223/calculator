@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:petitparser/petitparser.dart';
+import 'package:advance_math/advance_math.dart';
 
 Parser buildParser() {
   final builder = ExpressionBuilder();
@@ -15,8 +16,8 @@ Parser buildParser() {
         .map(num.tryParse))
     ..wrapper(
         char('(').trim(), char(')').trim(), (left, value, right) => value);
+  builder.group()..prefix(string("lg").trim(), (op, a) => log10(a));
   builder.group()
-    ..prefix(pattern("lg").trim(), (op, a) => log(a))
     ..prefix(char('√').trim(), (op, a) => sqrt(a))
     ..prefix(char('-').trim(), (op, a) => -a);
   builder.group().postfix(char("!").trim(), (a, op) => factorial_search(a));
