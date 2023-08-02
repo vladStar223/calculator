@@ -19,8 +19,6 @@ class Decision_urv extends ChangeNotifier {
   get sys_v async {
     text_in_cofficients = input_number_Equations.text_in_cofficients;
     urv = input_number_Equations.active_resuilt_screen;
-    print(text_in_cofficients);
-    print(urv);
   }
 
   // передает необходимые данные для решения  значение коэфицентов и состояние какое уравнение считать

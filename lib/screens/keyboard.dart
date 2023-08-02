@@ -208,11 +208,8 @@ class _keyboard_equationState extends State<keyboard_equation> {
             InputButton(
                 onPressed: () async {
                   equations.resuilt();
-
                   await Provider.of<Decision_urv>(context, listen: false).sys_v;
-
-                  await Provider.of<Decision_urv>(context, listen: false)
-                      .decision_ur();
+                  equations.result_ac = true;
                 },
                 type: 2,
                 number: "=",

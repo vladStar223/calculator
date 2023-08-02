@@ -47,7 +47,7 @@ Parser buildParser() {
   return builder.build().end();
 }
 
-double calcString(String text) {
+dynamic calcString(String text) {
   final parser = buildParser();
   final input = text;
   try {
@@ -59,7 +59,7 @@ double calcString(String text) {
     }
   } catch (e) {
     print("Возникло исключение $e");
-    return 0;
+    return "ошибка";
   }
 }
 
