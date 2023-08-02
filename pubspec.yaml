@@ -35,6 +35,8 @@ dependencies:
   package_info_plus:
   shared_preferences:
   advance_math:
+  angles:
+  eval_ex:
   flutter:
     sdk: flutter
 

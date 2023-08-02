@@ -594,9 +594,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "arcsin";
       } else {
         if (text != "0") {
-          text += "arcsin";
+          text += "arcsin0.";
         } else {
-          text = "arcsin";
+          text = "arcsin0.";
         }
       }
     }
@@ -637,12 +637,12 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "7" ||
           text[text.length - 1] == "8" ||
           text[text.length - 1] == "9") {
-        text = text + "×" + "arccos";
+        text = text + "×" + "arccos0.";
       } else {
         if (text != "0") {
-          text += "arccos";
+          text += "arccos0.";
         } else {
-          text = "arccos";
+          text = "arccos0.";
         }
       }
     }
@@ -683,12 +683,12 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "7" ||
           text[text.length - 1] == "8" ||
           text[text.length - 1] == "9") {
-        text = text + "×" + "arctan";
+        text = text + "×" + "arctan0.";
       } else {
         if (text != "0") {
-          text += "arctan";
+          text += "arctan0.";
         } else {
-          text = "arctan";
+          text = "arctan0.";
         }
       }
     }
