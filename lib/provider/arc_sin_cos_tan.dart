@@ -9,23 +9,28 @@ class Decide_angel_arc {
     var t1 = a;
     dynamic x = Angle.asin(n);
     x = x.toString();
-    //x = x.substring(0, x.length - 1);
+    x = x.substring(0, x.length - 1);
     t1 = double.parse(x);
     return t1;
   }
 
   dynamic arccos_1(dynamic a) {
-    var n = a;
-    var t1;
-    //t1 = Angle.acos(n);
+    double n = a;
+    var t1 = a;
+    dynamic x = Angle.acos(n);
+    x = x.toString();
+    x = x.substring(0, x.length - 1);
+    t1 = double.parse(x);
     return t1;
   }
 
   dynamic arctan_1(dynamic a) {
-    var n = a;
-    var t1;
-    //t1 = Angle.atan(n);
-    t1 = tan(a);
+    double n = a;
+    var t1 = a;
+    dynamic x = Angle.atan(n);
+    x = x.toString();
+    x = x.substring(0, x.length - 1);
+    t1 = double.parse(x);
     return t1;
   }
 }
