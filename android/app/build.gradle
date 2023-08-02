@@ -30,7 +30,7 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 android {
-    namespace "com.newsystem.calculator"
+    namespace "com.example.calculator"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
