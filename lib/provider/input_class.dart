@@ -162,20 +162,26 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
     // TODO: implement nums_press
   }
 
+  bool result_ac = false;
   @override
   void resuilt() {
-    if (decision_eql == false) {
-      enter_block = true;
-      decision_eql = true;
-      notifyListeners();
+    if (result_ac == false) {
+      if (decision_eql == false) {
+        enter_block = true;
+        decision_eql = true;
+        if (active_input_screen[0]) {
+          active_resuilt_screen[0] = true;
+        } else if (active_input_screen[1]) {
+          active_resuilt_screen[1] = true;
+        } else if (active_input_screen[2]) {
+          active_resuilt_screen[2] = true;
+        }
+        notifyListeners();
+      }
+    } else {
+      print("двойное нажатие");
     }
-    if (active_input_screen[0]) {
-      active_resuilt_screen[0] = true;
-    } else if (active_input_screen[1]) {
-      active_resuilt_screen[1] = true;
-    } else if (active_input_screen[2]) {
-      active_resuilt_screen[2] = true;
-    }
+
     // проверка какой именно экран результата открывать
 
     // TODO: implement resuilt
@@ -233,6 +239,7 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
   }
 
   void All_resuilt_bool_to_false() {
+    result_ac = false;
     active_resuilt_screen[0] = false;
     active_resuilt_screen[1] = false;
     active_resuilt_screen[2] = false;
@@ -271,17 +278,17 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
   } //переключение на экран ввода х4
 
   void resuilt_anim_screen() {
-    enter_block = true;
-
-    if (active_input_screen[0]) {
-      active_resuilt_screen[0] = true;
-    } else if (active_input_screen[1]) {
-      active_resuilt_screen[1] = true;
-    } else if (active_input_screen[2]) {
-      active_resuilt_screen[2] = true;
-    } // проверка какой именно экран результата открывать
-
-    notifyListeners();
+    if (enter_block == false) {
+      if (active_input_screen[0]) {
+        active_resuilt_screen[0] = true;
+      } else if (active_input_screen[1]) {
+        active_resuilt_screen[1] = true;
+      } else if (active_input_screen[2]) {
+        active_resuilt_screen[2] = true;
+      } // проверка какой именно экран результата открывать
+      enter_block = true;
+      notifyListeners();
+    }
   } // переключение на нужный экран результата
 }
 
@@ -477,7 +484,11 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] == "9") {
       text = text + "×" + "√";
     } else {
-      text = "√";
+      if (text != "0") {
+        text += "√";
+      } else {
+        text = "√";
+      }
     }
 
     //
@@ -594,9 +605,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "arcsin";
       } else {
         if (text != "0") {
-          text += "arcsin";
+          text += "arcsin0.";
         } else {
-          text = "arcsin";
+          text = "arcsin0.";
         }
       }
     }
@@ -637,12 +648,12 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "7" ||
           text[text.length - 1] == "8" ||
           text[text.length - 1] == "9") {
-        text = text + "×" + "arccos";
+        text = text + "×" + "arccos0.";
       } else {
         if (text != "0") {
-          text += "arccos";
+          text += "arccos0.";
         } else {
-          text = "arccos";
+          text = "arccos0.";
         }
       }
     }
@@ -683,12 +694,12 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "7" ||
           text[text.length - 1] == "8" ||
           text[text.length - 1] == "9") {
-        text = text + "×" + "arctan";
+        text = text + "×" + "arctan0.";
       } else {
         if (text != "0") {
-          text += "arctan";
+          text += "arctan0.";
         } else {
-          text = "arctan";
+          text = "arctan0.";
         }
       }
     }

@@ -208,11 +208,8 @@ class _keyboard_equationState extends State<keyboard_equation> {
             InputButton(
                 onPressed: () async {
                   equations.resuilt();
-
                   await Provider.of<Decision_urv>(context, listen: false).sys_v;
-
-                  await Provider.of<Decision_urv>(context, listen: false)
-                      .decision_ur();
+                  equations.result_ac = true;
                 },
                 type: 2,
                 number: "=",
@@ -451,41 +448,101 @@ class _Keyboard_calculator_expandedState
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            InputButton_mini(
-                onPressed: () {
-                  context.read<Input_number_calculator>().set_arc();
-                },
-                type: 1,
-                number: "2nd",
-                font: 4.0),
-            InputButton_mini(
-                onPressed: () {
-                  context.read<Input_number_calculator>().set_deg_rad();
-                },
-                type: 1,
-                number: "deg",
-                font: 5.0),
-            InputButton_mini(
-                onPressed: () {
-                  context.read<Input_number_calculator>().sin();
-                },
-                type: 1,
-                number: "sin",
-                font: 5.0),
-            InputButton_mini(
-                onPressed: () {
-                  context.read<Input_number_calculator>().cos();
-                },
-                type: 1,
-                number: "cos",
-                font: 5.0),
-            InputButton_mini(
-                onPressed: () {
-                  context.read<Input_number_calculator>().tan();
-                },
-                type: 1,
-                number: "tan",
-                font: 5.0),
+            Builder(builder: (context) {
+              if (Provider.of<Input_number_calculator>(context).arc == true) {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().set_arc();
+                    },
+                    type: 1,
+                    number: "2nd¯¹",
+                    font: 3);
+              } else {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().set_arc();
+                    },
+                    type: 1,
+                    number: "2nd",
+                    font: 4.0);
+              }
+            }),
+            Builder(builder: (context) {
+              if (Provider.of<Input_number_calculator>(context).deg == true) {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().set_deg_rad();
+                    },
+                    type: 1,
+                    number: "deg",
+                    font: 5.0);
+              } else {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().set_deg_rad();
+                    },
+                    type: 1,
+                    number: "rad",
+                    font: 5.0);
+              }
+            }),
+            Builder(builder: (context) {
+              if (Provider.of<Input_number_calculator>(context).arc == false) {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().sin();
+                    },
+                    type: 1,
+                    number: "sin",
+                    font: 5.0);
+              } else {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().sin();
+                    },
+                    type: 1,
+                    number: "sin¯¹",
+                    font: 3);
+              }
+            }),
+            Builder(builder: (context) {
+              if (Provider.of<Input_number_calculator>(context).arc == false) {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().cos();
+                    },
+                    type: 1,
+                    number: "cos",
+                    font: 5.0);
+              } else {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().cos();
+                    },
+                    type: 1,
+                    number: "cos¯¹",
+                    font: 3);
+              }
+            }),
+            Builder(builder: (context) {
+              if (Provider.of<Input_number_calculator>(context).arc == false) {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().tan();
+                    },
+                    type: 1,
+                    number: "tan",
+                    font: 5.0);
+              } else {
+                return InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().tan();
+                    },
+                    type: 1,
+                    number: "tan¯¹",
+                    font: 3);
+              }
+            }),
           ],
         ),
         SizedBox(
@@ -713,8 +770,8 @@ class _Keyboard_calculator_expandedState
                   context.read<Change_of_function>().change_state_calculator();
                 },
                 type: 1,
-                number: "big",
-                font: 6.0),
+                number: "less",
+                font: 5),
             InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("e");

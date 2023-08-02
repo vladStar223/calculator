@@ -1,9 +1,14 @@
 import 'dart:math';
-import 'package:petitparser/petitparser.dart';
 import 'package:advance_math/advance_math.dart';
+import 'package:calculator/provider/arc_sin_cos_tan.dart';
+import 'package:calculator/provider/sin_cos_tan.dart';
+import 'package:calculator/screens/result.dart';
+import 'package:petitparser/petitparser.dart';
 
 Parser buildParser() {
   final builder = ExpressionBuilder();
+  final decide = Decide_angel();
+  final decide_arc = Decide_angel_arc();
   builder.group()
     // ignore: deprecated_member_use
     ..primitive((pattern('+-').optional() &
@@ -20,13 +25,17 @@ Parser buildParser() {
     ..prefix(string("ln").trim(), (op, a) => log(a))
     ..prefix(string("lg").trim(), (op, a) => log10(a));
   builder.group()
-    ..prefix(string("tan").trim(), (op, a) => tan_1(a))
-    ..prefix(string("cos").trim(), (op, a) => cos_1(a))
-    ..prefix(string("sin").trim(), (op, a) => sin_1(a));
+    ..prefix(string("tan").trim(), (op, a) => decide.tan_1(a))
+    ..prefix(string("cos").trim(), (op, a) => decide.cos_1(a))
+    ..prefix(string("sin").trim(), (op, a) => decide.sin_1(a));
+  builder.group()
+    ..prefix(string("arctan").trim(), (op, a) => decide_arc.arctan_1(a))
+    ..prefix(string("arccos").trim(), (op, a) => decide_arc.arccos_1(a))
+    ..prefix(string("arcsin").trim(), (op, a) => decide_arc.arcsin_1(a));
   builder.group()
     ..prefix(char('√').trim(), (op, a) => sqrt(a))
     ..prefix(char('-').trim(), (op, a) => -a);
-  builder.group().postfix(char("!").trim(), (a, op) => factorial_search(a));
+  builder.group()..postfix(char("!").trim(), (a, op) => factorial_search(a));
   builder.group().right(char('^').trim(), (a, op, b) => pow(a, b));
   builder.group()
     ..left(char('√').trim(), (a, op, b) => sqrt(a) * b)
@@ -38,14 +47,20 @@ Parser buildParser() {
   return builder.build().end();
 }
 
-double calcString(String text) {
+dynamic calcString(String text) {
   final parser = buildParser();
   final input = text;
-  final result = parser.parse(input);
-  if (result.isSuccess)
-    return result.value.toDouble();
-  else
-    return double.parse(text);
+  try {
+    final result = parser.parse(input);
+    if (result.isSuccess) {
+      return result.value.toDouble();
+    } else {
+      return double.parse(text);
+    }
+  } catch (e) {
+    print("Возникло исключение $e");
+    return "ошибка";
+  }
 }
 
 dynamic factorial_search(dynamic a) {
@@ -67,75 +82,4 @@ var rad_deg = true;
 void get_rad_deg(var x) {
   rad_deg = x;
   print(rad_deg);
-}
-
-dynamic sin_1(dynamic a) {
-  var n = a;
-  var t1;
-
-  if (rad_deg == true) {
-    if (n == 0) {
-      t1 = sin0;
-    } else if (n == 30) {
-      t1 = sin30;
-    } else if (n == 45) {
-      t1 = sin45;
-    } else if (n == 90) {
-      t1 = sin90;
-    } else if (n == 180) {
-      t1 = 0;
-    } else {
-      var angle = Angle.fromDegrees(n);
-      t1 = angle.sin();
-    }
-  } else {
-    t1 = sin(a);
-  }
-  return t1;
-}
-
-dynamic cos_1(dynamic a) {
-  var n = a;
-  var t1;
-  if (rad_deg == true) {
-    if (n == 0) {
-      t1 = cos0;
-    } else if (n == 30) {
-      t1 = cos30;
-    } else if (n == 45) {
-      t1 = cos45;
-    } else if (n == 90) {
-      t1 = cos90;
-    } else if (n == 180) {
-      t1 = -1;
-    } else {
-      var angle = Angle.fromDegrees(n);
-      t1 = angle.cos();
-    }
-  } else {
-    t1 = cos(a);
-  }
-  return t1;
-}
-
-dynamic tan_1(dynamic a) {
-  var n = a;
-  var t1;
-  if (rad_deg == true) {
-    if (n == 0) {
-      t1 = tan0;
-    } else if (n == 30) {
-      t1 = tan30;
-    } else if (n == 60) {
-      t1 = tan60;
-    } else {
-      var angle = Angle.fromDegrees(n);
-
-      t1 = angle.tan();
-      print(t1);
-    }
-  } else {
-    t1 = tan(a);
-  }
-  return t1;
 }

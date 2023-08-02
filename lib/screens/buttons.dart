@@ -156,12 +156,16 @@ class InputButton_mini extends StatefulWidget {
   final int type;
   final String number;
   final double font;
+  final bool arc;
+  final bool deg;
   const InputButton_mini({
     super.key,
     required this.type,
     required this.onPressed,
     required this.number,
     this.font = 5.4,
+    this.arc = false,
+    this.deg = true,
   });
   State<InputButton_mini> createState() => _InputButton_miniState();
 }
