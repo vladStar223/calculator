@@ -484,7 +484,11 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text[text.length - 1] == "9") {
       text = text + "×" + "√";
     } else {
-      text = "√";
+      if (text != "0") {
+        text += "√";
+      } else {
+        text = "√";
+      }
     }
 
     //

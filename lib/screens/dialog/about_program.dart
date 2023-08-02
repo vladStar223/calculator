@@ -38,7 +38,7 @@ class _About_programmState extends State<About_programm> {
         ),
       ),
       content: Container(
-        height: 7.sh,
+        height: 10.8.sh,
         child: Column(
           children: [
             Row(
@@ -64,6 +64,23 @@ class _About_programmState extends State<About_programm> {
                 Text(
                   version,
                   style: textStyle2,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 2,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Иконки : ",
+                  style: textStyle2,
+                ),
+                Text(
+                  "https://ru.freepik.com/icon",
+                  style: TextStyle(
+                      fontFamily: "Nokora", color: Colors.black, fontSize: 15),
                 ),
               ],
             ),
