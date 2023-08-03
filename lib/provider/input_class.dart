@@ -407,11 +407,18 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 
   void percent_of_number() {
     String text = determing_to_true_trigger_start();
-    if (text == '0' || text == "-" || text == "+") {
+    if (text == "0" || text == "-" || text == "+") {
+      decide = true;
+      String text2 = check_number(text);
+      result = calcString(check_number(text2)).toString();
+      result = (double.parse(result) / 100).toString();
+      text = result;
     } else {
       if (text[text.length - 1] == "-" ||
           text[text.length - 1] == "+" ||
           text[text.length - 1] == "×" ||
+          text[text.length - 1] == "%" ||
+          text[text.length - 1] == "^" ||
           text[text.length - 1] == "÷") {
         text = text.substring(0, text.length - 1);
         text += "%";
@@ -420,9 +427,9 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] != ".") {
         text += "%";
       }
+      decide_online();
     }
     determing_to_true_trigger_end(text);
-    decide_online();
     notifyListeners();
   }
 

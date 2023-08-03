@@ -44,150 +44,211 @@ class _resuiltState extends State<resuilt> {
               Provider.of<Input_number_equations>(context).decision_eql = false;
             }
 
-            return Container(
-              decoration: BoxDecoration(
-                color: AppColors.buttoncolor1,
-                borderRadius: BorderRadius.circular(45),
-              ),
-              child: Column(children: [
-                Center(
-                  child: Text(
-                    "Решение",
-                    style: TextStyle(
-                        fontFamily: "Nokora",
-                        fontSize: 9.sw,
-                        fontWeight: FontWeight.w200,
-                        color: AppColors.textcolor),
+            return Builder(builder: (context) {
+              if (Provider.of<Decision_urv>(context).bex == true) {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.buttoncolor1,
+                    borderRadius: BorderRadius.circular(45),
                   ),
-                ),
-                SizedBox(
-                  height: 1.sh,
-                ),
-                Text(
-                  Provider.of<Decision_urv>(context).urvshow,
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: fonturv.sw,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.textcolor),
-                ),
-                Text(
-                  "D = b² - 4 × a × c",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 8.sw,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.textcolor),
-                ),
-                Text(
-                  "X = -+√D ÷ 2 * a",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 8.sw,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.textcolor),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+                  child: Column(children: [
+                    Center(
+                      child: Text(
+                        "Решение",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            fontSize: 9.sw,
+                            fontWeight: FontWeight.w200,
+                            color: AppColors.textcolor),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 1.sh,
+                    ),
                     Text(
-                      "√D =",
+                      Provider.of<Decision_urv>(context).urvshow,
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: fonturv.sw,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
-                    Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors.output,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          decision.D.toString(),
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                              color: AppColors.textcolor2,
-                              fontSize: 5.3.sw,
-                              fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
                     Text(
-                      "X1 =",
+                      "D = b² - 4 × a × c",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: 8.sw,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
-                    Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors.output,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          decision.x1.toString(),
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                              color: AppColors.textcolor2,
-                              fontSize: 5.3.sw,
-                              fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
                     Text(
-                      "X2 =",
+                      "X = -+√D ÷ 2 * a",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: 8.sw,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
-                    Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors.output,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          decision.x2.toString(),
-                          textAlign: TextAlign.right,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "√D =",
                           style: TextStyle(
-                              color: AppColors.textcolor2,
-                              fontSize: 5.3.sw,
                               fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
+                              fontSize: 9.sw,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors.textcolor),
                         ),
+                        Container(
+                          width: 60.sw,
+                          height: 5.1.sh,
+                          decoration: BoxDecoration(
+                            color: AppColors.output,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              decision.D.toString(),
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors.textcolor2,
+                                  fontSize: 5.3.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "X1 =",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 9.sw,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors.textcolor),
+                        ),
+                        Container(
+                          width: 60.sw,
+                          height: 5.1.sh,
+                          decoration: BoxDecoration(
+                            color: AppColors.output,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              decision.x1.toString(),
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors.textcolor2,
+                                  fontSize: 5.3.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "X2 =",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 9.sw,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors.textcolor),
+                        ),
+                        Container(
+                          width: 60.sw,
+                          height: 5.1.sh,
+                          decoration: BoxDecoration(
+                            color: AppColors.output,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              decision.x2.toString(),
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors.textcolor2,
+                                  fontSize: 5.3.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ]),
+                );
+              } else {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.buttoncolor1,
+                    borderRadius: BorderRadius.circular(45),
+                  ),
+                  child: Column(children: [
+                    Center(
+                      child: Text(
+                        "Решение",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            fontSize: 9.sw,
+                            fontWeight: FontWeight.w200,
+                            color: AppColors.textcolor),
                       ),
                     ),
-                  ],
-                ),
-              ]),
-            );
+                    SizedBox(
+                      height: 1.sh,
+                    ),
+                    Text(
+                      decision.urvshow,
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: fonturv.sw,
+                          fontWeight: FontWeight.w200,
+                          color: AppColors.textcolor),
+                    ),
+                    SizedBox(
+                      height: 1.sh,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Нет корней",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 10.sw,
+                              color: AppColors.textcolor),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Перепроверьте коэффициенты",
+                              style: TextStyle(
+                                  fontFamily: "Nokora",
+                                  fontSize: 6.sw,
+                                  color: AppColors.textcolor),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ]),
+                );
+              }
+            });
           });
         });
   }
@@ -424,190 +485,255 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
               Provider.of<Input_number_equations>(context).decision_eql = false;
             }
 
-            return Container(
-              decoration: BoxDecoration(
-                color: AppColors.buttoncolor1,
-                borderRadius: BorderRadius.circular(45),
-              ),
-              child: Column(children: [
-                Center(
-                  child: Text(
-                    "Решение",
-                    style: TextStyle(
-                        fontFamily: "Nokora",
-                        fontSize: 9.sw,
-                        fontWeight: FontWeight.w200,
-                        color: AppColors.textcolor),
+            return Builder(builder: (context) {
+              if (Provider.of<Decision_urv>(context).bex == true) {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.buttoncolor1,
+                    borderRadius: BorderRadius.circular(45),
                   ),
-                ),
-                SizedBox(
-                  height: 1.sh,
-                ),
-                Text(
-                  decision.urvshow,
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: fonturv.sw,
-                      fontWeight: FontWeight.w200,
-                      color: AppColors.textcolor),
-                ),
-                Text(
-                  "решается через замену переменной",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 4.sw,
-                      color: AppColors.textcolor),
-                ),
-                Text(
-                  "t = x²",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 5.sw,
-                      color: AppColors.textcolor),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+                  child: Column(children: [
+                    Center(
+                      child: Text(
+                        "Решение",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            fontSize: 9.sw,
+                            fontWeight: FontWeight.w200,
+                            color: AppColors.textcolor),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 1.sh,
+                    ),
                     Text(
-                      "X1 =",
+                      decision.urvshow,
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: fonturv.sw,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
-                    Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors.output,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          decision.x1.toString(),
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                              color: AppColors.textcolor2,
-                              fontSize: fontx.sw,
-                              fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 0.4.sh,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
                     Text(
-                      "X2 =",
+                      "решается через замену переменной",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: 4.sw,
+                          color: AppColors.textcolor),
+                    ),
+                    Text(
+                      "t = x²",
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: 5.sw,
+                          color: AppColors.textcolor),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "X1 =",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 9.sw,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors.textcolor),
+                        ),
+                        Container(
+                          width: 60.sw,
+                          height: 5.1.sh,
+                          decoration: BoxDecoration(
+                            color: AppColors.output,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              decision.x1.toString(),
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors.textcolor2,
+                                  fontSize: fontx.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 0.4.sh,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "X2 =",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 9.sw,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors.textcolor),
+                        ),
+                        Container(
+                          width: 60.sw,
+                          height: 5.1.sh,
+                          decoration: BoxDecoration(
+                            color: AppColors.output,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              (decision.x2),
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors.textcolor2,
+                                  fontSize: fontx.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 0.4.sh,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "X3 =",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 9.sw,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors.textcolor),
+                        ),
+                        Container(
+                          width: 60.sw,
+                          height: 5.1.sh,
+                          decoration: BoxDecoration(
+                            color: AppColors.output,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              decision.x3,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors.textcolor2,
+                                  fontSize: fontx.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 0.4.sh,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "X4 =",
+                          style: TextStyle(
+                              fontFamily: "Nokora",
+                              fontSize: 9.sw,
+                              fontWeight: FontWeight.w200,
+                              color: AppColors.textcolor),
+                        ),
+                        Container(
+                          width: 60.sw,
+                          height: 5.1.sh,
+                          decoration: BoxDecoration(
+                            color: AppColors.output,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              decision.x4.toString(),
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  color: AppColors.textcolor2,
+                                  fontSize: fontx.sw,
+                                  fontFamily: "Nokora",
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ]),
+                );
+              } else {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.buttoncolor1,
+                    borderRadius: BorderRadius.circular(45),
+                  ),
+                  child: Column(children: [
+                    Center(
+                      child: Text(
+                        "Решение",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            fontSize: 9.sw,
+                            fontWeight: FontWeight.w200,
+                            color: AppColors.textcolor),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 1.sh,
+                    ),
+                    Text(
+                      decision.urvshow,
+                      style: TextStyle(
+                          fontFamily: "Nokora",
+                          fontSize: fonturv.sw,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
-                    Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors.output,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          (decision.x2),
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                              color: AppColors.textcolor2,
-                              fontSize: fontx.sw,
-                              fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 0.4.sh,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
                     Text(
-                      "X3 =",
+                      "решается через замену переменной",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
-                          fontWeight: FontWeight.w200,
+                          fontSize: 4.sw,
                           color: AppColors.textcolor),
                     ),
-                    Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors.output,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          decision.x3,
-                          textAlign: TextAlign.right,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Нет корней",
                           style: TextStyle(
-                              color: AppColors.textcolor2,
-                              fontSize: fontx.sw,
                               fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
+                              fontSize: 10.sw,
+                              color: AppColors.textcolor),
                         ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 0.4.sh,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      "X4 =",
-                      style: TextStyle(
-                          fontFamily: "Nokora",
-                          fontSize: 9.sw,
-                          fontWeight: FontWeight.w200,
-                          color: AppColors.textcolor),
-                    ),
-                    Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
-                      decoration: BoxDecoration(
-                        color: AppColors.output,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          decision.x4.toString(),
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                              color: AppColors.textcolor2,
-                              fontSize: fontx.sw,
-                              fontFamily: "Nokora",
-                              fontWeight: FontWeight.w300),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Перепроверьте коэффициенты",
+                              style: TextStyle(
+                                  fontFamily: "Nokora",
+                                  fontSize: 6.sw,
+                                  color: AppColors.textcolor),
+                            ),
+                          ],
                         ),
-                      ),
+                      ],
                     ),
-                  ],
-                ),
-              ]),
-            );
+                  ]),
+                );
+              }
+            });
           });
         });
 
