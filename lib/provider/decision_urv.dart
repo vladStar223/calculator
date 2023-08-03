@@ -26,6 +26,7 @@ class Decision_urv extends ChangeNotifier {
   String x2 = "0.0";
   String x3 = "0.0";
   double x4 = 0;
+  bool bex = true;
   int kx = 0;
   int kv = 0;
   String urvshow =
@@ -155,6 +156,9 @@ class Decision_urv extends ChangeNotifier {
       x1 = sqrt(x1) * 1;
       x2 = (x1 * -1).toString();
     }
+    if (d < 0) {
+      bex = false;
+    }
     if (a == 0 && c == 0) {
       x1 = 0;
       x1 = sqrt(x1) * 1;
@@ -167,9 +171,11 @@ class Decision_urv extends ChangeNotifier {
     }
     if (a == 0 && b == 0) {
       kx = 0;
+      bex = false;
     } // не рабочие решения
     if (a == 0 && b == 0 && c == 0) {
       kx = 0;
+      bex = false;
       if (kDebugMode) {
         print("ошибка");
       }
@@ -253,6 +259,9 @@ class Decision_urv extends ChangeNotifier {
       x1 = sqrt(x1) * 1;
       x2 = (x1 * -1).toString();
     }
+    if (d < 0) {
+      bex = false;
+    }
     if (a == 0 && c == 0) {
       x1 = 0;
       kx = 1;
@@ -263,9 +272,11 @@ class Decision_urv extends ChangeNotifier {
     }
     if (a == 0 && b == 0) {
       kx = 0;
+      bex = false;
     } // не рабочие решения
     if (a == 0 && b == 0 && c == 0) {
       kx = 0;
+      bex = false;
       if (kDebugMode) {
         print("ошибка");
       }
