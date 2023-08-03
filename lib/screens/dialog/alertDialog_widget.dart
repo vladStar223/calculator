@@ -58,7 +58,7 @@ class BlurryDialog extends StatelessWidget {
               ),
             ),
             content: Container(
-              height: 7.sh,
+              height: 7.2.sh,
               child: Column(
                 children: [
                   Row(
