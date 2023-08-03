@@ -27,6 +27,7 @@ void main() {
     create: (BuildContext context) {},
     child: ResponsiveApp(
       builder: (context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
 // код для создание переключения между монолитными виджетами
 // дальше   инцилизируется библиотеки для передачи данных
 

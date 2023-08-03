@@ -72,11 +72,19 @@ class BlurryDialog extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "Кнопка для увеличение количества функций",
+                        "Big для увеличение количества функций",
                         style: textStyle,
                       ),
                     ],
                   ),
+                  Row(
+                    children: [
+                      Text(
+                        "less для уменьшение количества функций",
+                        style: textStyle,
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
