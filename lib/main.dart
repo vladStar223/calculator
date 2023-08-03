@@ -213,7 +213,7 @@ class _screen_normalState extends State<screen_normal> {
                                 onTap: () {
                                   AppColors.Change_color();
                                 }),
-                          if (AppColors.type == 2)
+                          if (AppColors.type == 0)
                             ListTile(
                                 title: Text(
                                   "Сменить тему ",

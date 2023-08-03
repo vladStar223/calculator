@@ -41,9 +41,6 @@ class AppColor extends ChangeNotifier {
   Future<void> Change_color() async {
     type = (await _getType_theme())!;
     print(x);
-    if (type == 0) {
-      type = 1;
-    }
     if (x == true) {
       if (type == 1) {
         fon = HexColor.fromHex('242933'); // фон
@@ -66,7 +63,7 @@ class AppColor extends ChangeNotifier {
       }
       x = false;
     } else {
-      if (type == 2) {
+      if (type == 0) {
         type = 1;
         fon = HexColor.fromHex('242933'); // фон
         white = HexColor.fromHex('EEEEEE');
@@ -77,7 +74,7 @@ class AppColor extends ChangeNotifier {
         textcolor = HexColor.fromHex('EEEEEE');
         textcolor2 = HexColor.fromHex('585858');
       } else {
-        type = 2;
+        type = 0;
         fon = HexColor.fromHex('EEEEEE'); // фон
         output = HexColor.fromHex('EEEEEE');
         textcolorfortop = HexColor.fromHex('585858'); // меню вывода
@@ -97,8 +94,8 @@ class AppColor extends ChangeNotifier {
         textcolor2 = HexColor.fromHex('585858');
       }
     }
-    notifyListeners();
     await _setType_theme();
+    notifyListeners();
   }
 
   Future _setType_theme() async {
