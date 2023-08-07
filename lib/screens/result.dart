@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:calculator/provider/provider_class.dart';
-
+import 'package:sizer/sizer.dart';
 import '../provider/decision_urv.dart';
 import '../provider/input_class.dart';
 
@@ -32,9 +30,9 @@ class _resuiltState extends State<resuilt> {
     }
     return FutureBuilder(
         future: Provider.of<Decision_urv>(context).sys_v,
-        builder: (context, snapshot) {
-          if (ConnectionState.done != snapshot.connectionState) {
-            // Future hasn't finished yet, return a placeholder
+        builder: (context, snaphot) {
+          if (ConnectionState.done != snaphot.connectionState) {
+            // Future hasn't finihed yet, return a placeholder
             return Center(child: Text('Loading'));
           }
           return Builder(builder: (context) {
@@ -57,19 +55,19 @@ class _resuiltState extends State<resuilt> {
                         "Решение",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 9.sw,
+                            fontSize: 9.w,
                             fontWeight: FontWeight.w200,
                             color: AppColors.textcolor),
                       ),
                     ),
                     SizedBox(
-                      height: 1.sh,
+                      height: 1.h,
                     ),
                     Text(
                       Provider.of<Decision_urv>(context).urvshow,
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: fonturv.sw,
+                          fontSize: fonturv.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
@@ -77,7 +75,7 @@ class _resuiltState extends State<resuilt> {
                       "D = b² - 4 × a × c",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 8.sw,
+                          fontSize: 8.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
@@ -85,7 +83,7 @@ class _resuiltState extends State<resuilt> {
                       "X = -+√D ÷ 2 * a",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 8.sw,
+                          fontSize: 8.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
@@ -96,13 +94,13 @@ class _resuiltState extends State<resuilt> {
                           "√D =",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 9.sw,
+                              fontSize: 9.w,
                               fontWeight: FontWeight.w200,
                               color: AppColors.textcolor),
                         ),
                         Container(
-                          width: 60.sw,
-                          height: 5.1.sh,
+                          width: 60.w,
+                          height: 5.1.h,
                           decoration: BoxDecoration(
                             color: AppColors.output,
                             borderRadius: BorderRadius.circular(10),
@@ -114,7 +112,7 @@ class _resuiltState extends State<resuilt> {
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: AppColors.textcolor2,
-                                  fontSize: 5.3.sw,
+                                  fontSize: 5.3.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -129,13 +127,13 @@ class _resuiltState extends State<resuilt> {
                           "X1 =",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 9.sw,
+                              fontSize: 9.w,
                               fontWeight: FontWeight.w200,
                               color: AppColors.textcolor),
                         ),
                         Container(
-                          width: 60.sw,
-                          height: 5.1.sh,
+                          width: 60.w,
+                          height: 5.1.h,
                           decoration: BoxDecoration(
                             color: AppColors.output,
                             borderRadius: BorderRadius.circular(10),
@@ -147,7 +145,7 @@ class _resuiltState extends State<resuilt> {
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: AppColors.textcolor2,
-                                  fontSize: 5.3.sw,
+                                  fontSize: 5.3.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -162,13 +160,13 @@ class _resuiltState extends State<resuilt> {
                           "X2 =",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 9.sw,
+                              fontSize: 9.w,
                               fontWeight: FontWeight.w200,
                               color: AppColors.textcolor),
                         ),
                         Container(
-                          width: 60.sw,
-                          height: 5.1.sh,
+                          width: 60.w,
+                          height: 5.1.h,
                           decoration: BoxDecoration(
                             color: AppColors.output,
                             borderRadius: BorderRadius.circular(10),
@@ -180,7 +178,7 @@ class _resuiltState extends State<resuilt> {
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: AppColors.textcolor2,
-                                  fontSize: 5.3.sw,
+                                  fontSize: 5.3.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -202,24 +200,24 @@ class _resuiltState extends State<resuilt> {
                         "Решение",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 9.sw,
+                            fontSize: 9.w,
                             fontWeight: FontWeight.w200,
                             color: AppColors.textcolor),
                       ),
                     ),
                     SizedBox(
-                      height: 1.sh,
+                      height: 1.h,
                     ),
                     Text(
                       decision.urvshow,
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: fonturv.sw,
+                          fontSize: fonturv.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
                     SizedBox(
-                      height: 1.sh,
+                      height: 1.h,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -228,7 +226,7 @@ class _resuiltState extends State<resuilt> {
                           "Нет корней",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 10.sw,
+                              fontSize: 10.w,
                               color: AppColors.textcolor),
                         ),
                         Row(
@@ -238,7 +236,7 @@ class _resuiltState extends State<resuilt> {
                               "Перепроверьте коэффициенты",
                               style: TextStyle(
                                   fontFamily: "Nokora",
-                                  fontSize: 6.sw,
+                                  fontSize: 6.w,
                                   color: AppColors.textcolor),
                             ),
                           ],
@@ -278,9 +276,9 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
     }
     return FutureBuilder(
         future: Provider.of<Decision_urv>(context).sys_v,
-        builder: (context, snapshot) {
-          if (ConnectionState.done != snapshot.connectionState) {
-            // Future hasn't finished yet, return a placeholder
+        builder: (context, snaphot) {
+          if (ConnectionState.done != snaphot.connectionState) {
+            // Future hasn't finihed yet, return a placeholder
             return Center(child: Text('Loading'));
           }
           return Builder(builder: (context) {
@@ -301,19 +299,19 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                     "Решение",
                     style: TextStyle(
                         fontFamily: "Nokora",
-                        fontSize: 9.sw,
+                        fontSize: 9.w,
                         fontWeight: FontWeight.w200,
                         color: AppColors.textcolor),
                   ),
                 ),
                 SizedBox(
-                  height: 1.sh,
+                  height: 1.h,
                 ),
                 Text(
                   decision.urvshow,
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: fonturv.sw,
+                      fontSize: fonturv.w,
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
@@ -321,7 +319,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                   "Метод решения по формуле Кардано",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 3.sw,
+                      fontSize: 3.w,
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
@@ -329,7 +327,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                   "Q = (a² - 3 * b) / 9",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 6.sw,
+                      fontSize: 6.w,
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
@@ -337,7 +335,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                   "R = (2 * a ³- 9 * a * b + 27 * c) / 54",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 6.sw,
+                      fontSize: 6.w,
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
@@ -348,13 +346,13 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                       "X1 =",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: 9.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
                     Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
+                      width: 60.w,
+                      height: 5.1.h,
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -366,7 +364,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                           textAlign: TextAlign.right,
                           style: TextStyle(
                               color: AppColors.textcolor2,
-                              fontSize: 5.sw,
+                              fontSize: 5.w,
                               fontFamily: "Nokora",
                               fontWeight: FontWeight.w300),
                         ),
@@ -381,13 +379,13 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                       "X2 =",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: 9.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
                     Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
+                      width: 60.w,
+                      height: 5.1.h,
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -399,7 +397,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                           textAlign: TextAlign.right,
                           style: TextStyle(
                               color: AppColors.textcolor2,
-                              fontSize: fontx.sw,
+                              fontSize: fontx.w,
                               fontFamily: "Nokora",
                               fontWeight: FontWeight.w300),
                         ),
@@ -414,13 +412,13 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                       "X3 =",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 9.sw,
+                          fontSize: 9.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
                     Container(
-                      width: 60.sw,
-                      height: 5.1.sh,
+                      width: 60.w,
+                      height: 5.1.h,
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -432,7 +430,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
                           textAlign: TextAlign.right,
                           style: TextStyle(
                               color: AppColors.textcolor2,
-                              fontSize: fontx.sw,
+                              fontSize: fontx.w,
                               fontFamily: "Nokora",
                               fontWeight: FontWeight.w300),
                         ),
@@ -473,9 +471,9 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
     }
     return FutureBuilder(
         future: Provider.of<Decision_urv>(context).sys_v,
-        builder: (context, snapshot) {
-          if (ConnectionState.done != snapshot.connectionState) {
-            // Future hasn't finished yet, return a placeholder
+        builder: (context, snaphot) {
+          if (ConnectionState.done != snaphot.connectionState) {
+            // Future hasn't finihed yet, return a placeholder
             return Center(child: Text('Loading'));
           }
           return Builder(builder: (context) {
@@ -498,19 +496,19 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                         "Решение",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 9.sw,
+                            fontSize: 9.w,
                             fontWeight: FontWeight.w200,
                             color: AppColors.textcolor),
                       ),
                     ),
                     SizedBox(
-                      height: 1.sh,
+                      height: 1.h,
                     ),
                     Text(
                       decision.urvshow,
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: fonturv.sw,
+                          fontSize: fonturv.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
@@ -518,14 +516,14 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                       "решается через замену переменной",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 4.sw,
+                          fontSize: 4.w,
                           color: AppColors.textcolor),
                     ),
                     Text(
                       "t = x²",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 5.sw,
+                          fontSize: 5.w,
                           color: AppColors.textcolor),
                     ),
                     Row(
@@ -535,13 +533,13 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                           "X1 =",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 9.sw,
+                              fontSize: 9.w,
                               fontWeight: FontWeight.w200,
                               color: AppColors.textcolor),
                         ),
                         Container(
-                          width: 60.sw,
-                          height: 5.1.sh,
+                          width: 60.w,
+                          height: 5.1.h,
                           decoration: BoxDecoration(
                             color: AppColors.output,
                             borderRadius: BorderRadius.circular(10),
@@ -553,7 +551,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: AppColors.textcolor2,
-                                  fontSize: fontx.sw,
+                                  fontSize: fontx.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -562,7 +560,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                       ],
                     ),
                     SizedBox(
-                      height: 0.4.sh,
+                      height: 0.4.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -571,13 +569,13 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                           "X2 =",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 9.sw,
+                              fontSize: 9.w,
                               fontWeight: FontWeight.w200,
                               color: AppColors.textcolor),
                         ),
                         Container(
-                          width: 60.sw,
-                          height: 5.1.sh,
+                          width: 60.w,
+                          height: 5.1.h,
                           decoration: BoxDecoration(
                             color: AppColors.output,
                             borderRadius: BorderRadius.circular(10),
@@ -589,7 +587,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: AppColors.textcolor2,
-                                  fontSize: fontx.sw,
+                                  fontSize: fontx.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -598,7 +596,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                       ],
                     ),
                     SizedBox(
-                      height: 0.4.sh,
+                      height: 0.4.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -607,13 +605,13 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                           "X3 =",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 9.sw,
+                              fontSize: 9.w,
                               fontWeight: FontWeight.w200,
                               color: AppColors.textcolor),
                         ),
                         Container(
-                          width: 60.sw,
-                          height: 5.1.sh,
+                          width: 60.w,
+                          height: 5.1.h,
                           decoration: BoxDecoration(
                             color: AppColors.output,
                             borderRadius: BorderRadius.circular(10),
@@ -625,7 +623,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: AppColors.textcolor2,
-                                  fontSize: fontx.sw,
+                                  fontSize: fontx.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -634,7 +632,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                       ],
                     ),
                     SizedBox(
-                      height: 0.4.sh,
+                      height: 0.4.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -643,13 +641,13 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                           "X4 =",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 9.sw,
+                              fontSize: 9.w,
                               fontWeight: FontWeight.w200,
                               color: AppColors.textcolor),
                         ),
                         Container(
-                          width: 60.sw,
-                          height: 5.1.sh,
+                          width: 60.w,
+                          height: 5.1.h,
                           decoration: BoxDecoration(
                             color: AppColors.output,
                             borderRadius: BorderRadius.circular(10),
@@ -661,7 +659,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                   color: AppColors.textcolor2,
-                                  fontSize: fontx.sw,
+                                  fontSize: fontx.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -683,19 +681,19 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                         "Решение",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 9.sw,
+                            fontSize: 9.w,
                             fontWeight: FontWeight.w200,
                             color: AppColors.textcolor),
                       ),
                     ),
                     SizedBox(
-                      height: 1.sh,
+                      height: 1.h,
                     ),
                     Text(
                       decision.urvshow,
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: fonturv.sw,
+                          fontSize: fonturv.w,
                           fontWeight: FontWeight.w200,
                           color: AppColors.textcolor),
                     ),
@@ -703,7 +701,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                       "решается через замену переменной",
                       style: TextStyle(
                           fontFamily: "Nokora",
-                          fontSize: 4.sw,
+                          fontSize: 4.w,
                           color: AppColors.textcolor),
                     ),
                     Column(
@@ -713,7 +711,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                           "Нет корней",
                           style: TextStyle(
                               fontFamily: "Nokora",
-                              fontSize: 10.sw,
+                              fontSize: 10.w,
                               color: AppColors.textcolor),
                         ),
                         Row(
@@ -723,7 +721,7 @@ class _resuilt_urv4State extends State<resuilt_urv4> {
                               "Перепроверьте коэффициенты",
                               style: TextStyle(
                                   fontFamily: "Nokora",
-                                  fontSize: 6.sw,
+                                  fontSize: 6.w,
                                   color: AppColors.textcolor),
                             ),
                           ],

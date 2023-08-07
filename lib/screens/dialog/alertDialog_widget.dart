@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:calculator/main.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlurryDialog extends StatelessWidget {
@@ -58,7 +58,7 @@ class BlurryDialog extends StatelessWidget {
               ),
             ),
             content: Container(
-              height: 7.2.sh,
+              height: 8.6.h,
               child: Column(
                 children: [
                   Row(

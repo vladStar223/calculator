@@ -28,15 +28,15 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  responsive_builder:
+
   provider:
   url_launcher:
   petitparser:
   package_info_plus:
   shared_preferences:
   advance_math:
-
   angles:
+  sizer: ^2.0.15
 
   eval_ex:
   flutter:
