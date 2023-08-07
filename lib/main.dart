@@ -5,6 +5,7 @@ import 'package:calculator/screens/buttons.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
 import 'package:calculator/screens/keyboard.dart';
+import 'package:calculator/screens/menu.dart';
 import 'package:calculator/screens/screens_calculator.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:calculator/theme/color/theme.dart';
@@ -299,7 +300,7 @@ class View_editer extends StatelessWidget {
                   leading: Icon(MyFlutterApp.functions_icon_144317,
                       color: AppColors.textcolor),
                   onTap: () {
-                    changeOfFunction.change_state_equation_function();
+                    changeOfFunction.change_state_menu();
                   }),
               ListTile(
                   title: Text(
@@ -337,7 +338,7 @@ class View_editer extends StatelessWidget {
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
-                    changeOfFunction.change_state_equation_function();
+                    changeOfFunction.change_state_menu();
                   },
                   icon: Icon(
                     MyFlutterApp.functions_icon_144317,
@@ -690,19 +691,8 @@ class View_editer extends StatelessWidget {
                 ],
               );
             } else {
-              if (changeOfFunction.equation_function == true) {
-                return Column(
-                  children: [
-                    SizedBox(
-                        height: 43.39.h, width: 95.w, child: AnimatedScreen()),
-                    // resuilt_animated_screen(), не используется, но может нужно тебе
-                    SizedBox(
-                      height: 49.7.h,
-                      width: 100.w,
-                      child: keyboard_equation(),
-                    ),
-                  ],
-                );
+              if (changeOfFunction.menu == true) {
+                return SizedBox(height: 93.h, width: 100.w, child: Menu());
               } else {
                 return Builder(builder: (context) {
                   if (changeOfFunction.calculator_expanded == true) {
