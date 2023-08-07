@@ -599,7 +599,7 @@ class View_editer extends StatelessWidget {
                           // тут нужна анимация
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
