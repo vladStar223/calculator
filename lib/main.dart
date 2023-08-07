@@ -466,12 +466,12 @@ class View_editer extends StatelessWidget {
                           // тут нужна анимация
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            InputButton(
+                            Sta_inputButton(
                               onPressed: () {},
                               type: 4,
                               number: "AC",
                             ),
-                            InputButton(
+                            Sta_inputButton(
                               onPressed: () {
                                 context
                                     .read<Input_number_calculator>()
@@ -480,22 +480,22 @@ class View_editer extends StatelessWidget {
                               type: 2,
                               number: "Del",
                             ),
-                            Special_InputButton(
+                            Sta_special_InputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
-                                      .multiplication();
+                                      .percent_of_number();
                                 },
                                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
-                                    color: AppColors.textcolor, size: 5.w)),
-                            Special_InputButton(
+                                    color: AppColors.textcolor, size: 25)),
+                            Sta_special_InputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
                                       .division();
                                 },
                                 myIcon: Icon(MyFlutterApp.desions_,
-                                    color: AppColors.textcolor, size: 5)),
+                                    color: AppColors.textcolor, size: 25)),
                           ],
                         ),
                         SizedBox(
@@ -505,7 +505,7 @@ class View_editer extends StatelessWidget {
                           // тут нужна анимация
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -514,7 +514,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "7",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -523,7 +523,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "8",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -532,7 +532,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "9",
                                 font: 8.0),
-                            Special_InputButton(
+                            Sta_special_InputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -542,7 +542,7 @@ class View_editer extends StatelessWidget {
                                     MyFlutterApp
                                         .multiplication_tbget5tyleyh, // знак проценатп
                                     color: AppColors.textcolor,
-                                    size: 9.w)),
+                                    size: 40)),
                           ],
                         ),
                         SizedBox(
@@ -552,7 +552,7 @@ class View_editer extends StatelessWidget {
                           // тут нужна анимация
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -561,7 +561,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "4",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -570,7 +570,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "5",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -579,7 +579,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "6",
                                 font: 8.0),
-                            Special_InputButton(
+                            Sta_special_InputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -589,7 +589,7 @@ class View_editer extends StatelessWidget {
                                     MyFlutterApp
                                         .minus_uk9l2bpabquc, // знак проценатп
                                     color: AppColors.textcolor,
-                                    size: 5.w)),
+                                    size: 25)),
                           ],
                         ),
                         SizedBox(
@@ -608,7 +608,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "1",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -617,7 +617,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "2",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -626,7 +626,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "3",
                                 font: 8.0),
-                            Special_InputButton(
+                            Sta_special_InputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -636,7 +636,7 @@ class View_editer extends StatelessWidget {
                                     MyFlutterApp
                                         .plus_fx7mv1cmdi3i, // знак проценатп
                                     color: AppColors.textcolor,
-                                    size: 5.w)),
+                                    size: 25)),
                           ],
                         ),
                         SizedBox(
@@ -646,7 +646,7 @@ class View_editer extends StatelessWidget {
                           // тут нужна анимация
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Change_of_function>()
@@ -655,7 +655,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "big",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -664,7 +664,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: "0",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -673,7 +673,7 @@ class View_editer extends StatelessWidget {
                                 type: 1,
                                 number: ".",
                                 font: 8.0),
-                            InputButton(
+                            Sta_inputButton(
                                 onPressed: () {
                                   context
                                       .read<Input_number_calculator>()
@@ -690,7 +690,7 @@ class View_editer extends StatelessWidget {
                 ],
               );
             } else {
-              if (changeOfFunction.calculator == false) {
+              if (changeOfFunction.equation_function == true) {
                 return Column(
                   children: [
                     SizedBox(

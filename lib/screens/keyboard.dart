@@ -256,7 +256,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
             ),
             Special_InputButton(
                 onPressed: () {
-                  context.read<Input_number_calculator>().multiplication();
+                  context.read<Input_number_calculator>().percent_of_number();
                 },
                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
                     color: AppColors.textcolor, size: 5.w)),
