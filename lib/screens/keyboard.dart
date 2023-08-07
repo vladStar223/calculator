@@ -6,11 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:calculator/switching%20classes/animated_class.dart';
+import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:calculator/main.dart';
-
 import '../provider/decision_urv.dart';
 import '../provider/input_class.dart';
 import '../provider/сhange_of_function.dart';
@@ -32,7 +30,7 @@ class _keyboard_equationState extends State<keyboard_equation> {
     return Column(
       children: [
         SizedBox(
-          height: 0.7.sh,
+          height: 0.7.h,
         ),
         Row(
           // тут нужна анимация
@@ -67,7 +65,7 @@ class _keyboard_equationState extends State<keyboard_equation> {
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -104,7 +102,7 @@ class _keyboard_equationState extends State<keyboard_equation> {
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -141,7 +139,7 @@ class _keyboard_equationState extends State<keyboard_equation> {
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -178,7 +176,7 @@ class _keyboard_equationState extends State<keyboard_equation> {
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -238,7 +236,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
     return Column(
       children: [
         SizedBox(
-          height: 0.7.sh,
+          height: 0.7.h,
         ),
         Row(
           // тут нужна анимация
@@ -261,17 +259,17 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                   context.read<Input_number_calculator>().multiplication();
                 },
                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
-                    color: AppColors.textcolor, size: 5.sw)),
+                    color: AppColors.textcolor, size: 5.w)),
             Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().division();
                 },
                 myIcon: Icon(MyFlutterApp.desions_,
-                    color: AppColors.textcolor, size: 5.sw)),
+                    color: AppColors.textcolor, size: 5.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -305,11 +303,11 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 myIcon: Icon(
                     MyFlutterApp.multiplication_tbget5tyleyh, // знак проценатп
                     color: AppColors.textcolor,
-                    size: 9.sw)),
+                    size: 9.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -342,11 +340,11 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 },
                 myIcon: Icon(MyFlutterApp.minus_uk9l2bpabquc, // знак проценатп
                     color: AppColors.textcolor,
-                    size: 5.sw)),
+                    size: 5.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -379,11 +377,11 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
                 },
                 myIcon: Icon(MyFlutterApp.plus_fx7mv1cmdi3i, // знак проценатп
                     color: AppColors.textcolor,
-                    size: 5.sw)),
+                    size: 5.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -442,7 +440,7 @@ class _Keyboard_calculator_expandedState
     return Column(
       children: [
         SizedBox(
-          height: 0.7.sh,
+          height: 0.7.h,
         ),
         Row(
           // тут нужна анимация
@@ -546,7 +544,7 @@ class _Keyboard_calculator_expandedState
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -590,7 +588,7 @@ class _Keyboard_calculator_expandedState
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -604,7 +602,7 @@ class _Keyboard_calculator_expandedState
                 myIcon: Icon(
                   MyFlutterApp.math,
                   color: AppColors.textcolor2,
-                  size: 6.sw,
+                  size: 6.w,
                 )),
             InputButton_mini(
                 onPressed: () {}, type: 4, number: "AC", font: 5.0),
@@ -620,17 +618,17 @@ class _Keyboard_calculator_expandedState
                   context.read<Input_number_calculator>().percent_of_number();
                 },
                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
-                    color: AppColors.textcolor, size: 5.sw)),
+                    color: AppColors.textcolor, size: 5.w)),
             Special_InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().division();
                 },
                 myIcon: Icon(MyFlutterApp.desions_,
-                    color: AppColors.textcolor, size: 4.sw)),
+                    color: AppColors.textcolor, size: 4.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -669,11 +667,11 @@ class _Keyboard_calculator_expandedState
                   context.read<Input_number_calculator>().multiplication();
                 },
                 myIcon: Icon(MyFlutterApp.multiplication_tbget5tyleyh,
-                    color: AppColors.textcolor, size: 8.sw)),
+                    color: AppColors.textcolor, size: 8.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -712,11 +710,11 @@ class _Keyboard_calculator_expandedState
                   context.read<Input_number_calculator>().minus_press();
                 },
                 myIcon: Icon(MyFlutterApp.minus_uk9l2bpabquc,
-                    color: AppColors.textcolor, size: 5.sw)),
+                    color: AppColors.textcolor, size: 5.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -755,11 +753,11 @@ class _Keyboard_calculator_expandedState
                   context.read<Input_number_calculator>().plus_press();
                 },
                 myIcon: Icon(MyFlutterApp.plus_fx7mv1cmdi3i,
-                    color: AppColors.textcolor, size: 4.sw)),
+                    color: AppColors.textcolor, size: 4.w)),
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
         Row(
           // тут нужна анимация
@@ -803,7 +801,7 @@ class _Keyboard_calculator_expandedState
           ],
         ),
         SizedBox(
-          height: 1.sh,
+          height: 1.h,
         ),
       ],
     );

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 @override
@@ -38,7 +38,7 @@ class _About_programmState extends State<About_programm> {
         ),
       ),
       content: Container(
-        height: 10.8.sh,
+        height: 10.8.h,
         child: Column(
           children: [
             Row(

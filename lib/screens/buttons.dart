@@ -2,7 +2,7 @@ import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:sizer/sizer.dart';
 
 import '../provider/input_class.dart';
 import '../provider/provider_class.dart';
@@ -31,8 +31,8 @@ class _InputButtonState extends State<InputButton> {
     var AppColors = Provider.of<AppColor>(context);
     if (widget.type == 1) {
       return Container(
-        height: 9.sh,
-        width: 20.sw,
+        height: 9.h,
+        width: 20.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -49,7 +49,7 @@ class _InputButtonState extends State<InputButton> {
             widget.number,
             style: TextStyle(
                 color: AppColors.textcolor2,
-                fontSize: widget.font.sw,
+                fontSize: widget.font.w,
                 fontFamily: "Nokora"),
           ),
         ),
@@ -57,8 +57,8 @@ class _InputButtonState extends State<InputButton> {
     }
     if (widget.type == 2) {
       return Container(
-        height: 9.sh,
-        width: 20.sw,
+        height: 9.h,
+        width: 20.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -75,7 +75,7 @@ class _InputButtonState extends State<InputButton> {
               widget.number,
               style: TextStyle(
                   color: AppColors.textcolor,
-                  fontSize: widget.font.sw,
+                  fontSize: widget.font.w,
                   fontFamily: "Nokora"),
             ),
           ),
@@ -84,8 +84,8 @@ class _InputButtonState extends State<InputButton> {
     }
     if (widget.type == 3) {
       return Container(
-        height: 9.sh,
-        width: 20.sw,
+        height: 9.h,
+        width: 20.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -108,7 +108,7 @@ class _InputButtonState extends State<InputButton> {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.sw,
+                fontSize: 5.w,
                 fontFamily: "Nokora"),
           ),
         ),
@@ -116,8 +116,8 @@ class _InputButtonState extends State<InputButton> {
     }
     if (widget.type == 4) {
       return Container(
-        height: 9.sh,
-        width: 20.sw,
+        height: 9.h,
+        width: 20.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -140,7 +140,7 @@ class _InputButtonState extends State<InputButton> {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.sw,
+                fontSize: 5.w,
                 fontFamily: "Nokora"),
           ),
         ),
@@ -177,8 +177,8 @@ class _InputButton_miniState extends State<InputButton_mini> {
     var AppColors = Provider.of<AppColor>(context);
     if (widget.type == 1) {
       return Container(
-        height: 8.sh,
-        width: 17.sw,
+        height: 8.h,
+        width: 17.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -195,7 +195,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
             widget.number,
             style: TextStyle(
                 color: AppColors.textcolor2,
-                fontSize: widget.font.sw,
+                fontSize: widget.font.w,
                 fontFamily: "Nokora"),
           ),
         ),
@@ -203,8 +203,8 @@ class _InputButton_miniState extends State<InputButton_mini> {
     }
     if (widget.type == 2) {
       return Container(
-        height: 8.sh,
-        width: 17.sw,
+        height: 8.h,
+        width: 17.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -221,7 +221,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
               widget.number,
               style: TextStyle(
                   color: AppColors.textcolor,
-                  fontSize: widget.font.sw,
+                  fontSize: widget.font.w,
                   fontFamily: "Nokora"),
             ),
           ),
@@ -230,8 +230,8 @@ class _InputButton_miniState extends State<InputButton_mini> {
     }
     if (widget.type == 3) {
       return Container(
-        height: 8.sh,
-        width: 17.sw,
+        height: 8.h,
+        width: 17.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -254,7 +254,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.sw,
+                fontSize: 5.w,
                 fontFamily: "Nokora"),
           ),
         ),
@@ -262,8 +262,8 @@ class _InputButton_miniState extends State<InputButton_mini> {
     }
     if (widget.type == 4) {
       return Container(
-        height: 8.sh,
-        width: 17.sw,
+        height: 8.h,
+        width: 17.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -286,7 +286,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.sw,
+                fontSize: 5.w,
                 fontFamily: "Nokora"),
           ),
         ),
@@ -314,8 +314,8 @@ class _Special_InputButtonState extends State<Special_InputButton> {
     var AppColors = Provider.of<AppColor>(context);
     // TODO: implement build
     return Container(
-      height: 9.sh,
-      width: 20.sw,
+      height: 9.h,
+      width: 20.w,
       decoration: BoxDecoration(
         color: AppColors.buttoncolor1,
         shape: BoxShape.circle,
@@ -329,7 +329,7 @@ class _Special_InputButtonState extends State<Special_InputButton> {
         ),
         child: widget.myIcon,
         //color: AppColors.textcolor,
-        //size: 9.sw,
+        //size: 9.w,
       ),
     );
     throw UnimplementedError();
@@ -358,8 +358,8 @@ class _Special_InputButton_miniState extends State<Special_InputButton_mini> {
     var AppColors = Provider.of<AppColor>(context);
     if (widget.type == 1) {
       return Container(
-        height: 8.sh,
-        width: 17.sw,
+        height: 8.h,
+        width: 17.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -373,14 +373,14 @@ class _Special_InputButton_miniState extends State<Special_InputButton_mini> {
           ),
           child: widget.myIcon,
           //color: AppColors.textcolor,
-          //size: 9.sw,
+          //size: 9.w,
         ),
       );
     }
     if (widget.type == 2) {
       return Container(
-        height: 8.sh,
-        width: 17.sw,
+        height: 8.h,
+        width: 17.w,
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,

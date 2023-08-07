@@ -5,15 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:calculator/switching%20classes/animated_class.dart';
-import 'package:calculator/main.dart';
-import 'package:calculator/provider/provider_class.dart';
-
-import '../provider/input_class.dart';
-import '../provider/input_class.dart';
-import '../provider/input_class.dart';
-import '../provider/input_class.dart';
+import 'package:sizer/sizer.dart';
 
 class calculator extends StatefulWidget {
   @override
@@ -50,7 +42,7 @@ class _calculatorState extends State<calculator> {
                                   Number_calculator.count,
                                   style: TextStyle(
                                       color: AppColors.white,
-                                      fontSize: 12.sw,
+                                      fontSize: 12.w,
                                       fontFamily: "Nokora",
                                       fontWeight: FontWeight.w300),
                                 ),
@@ -69,7 +61,7 @@ class _calculatorState extends State<calculator> {
                                   Number_calculator.result,
                                   style: TextStyle(
                                       color: AppColors.white,
-                                      fontSize: 10.sw,
+                                      fontSize: 10.w,
                                       fontFamily: "Nokora",
                                       fontWeight: FontWeight.w300),
                                 ),
@@ -91,7 +83,7 @@ class _calculatorState extends State<calculator> {
                               Number_calculator.count,
                               style: TextStyle(
                                   color: AppColors.white,
-                                  fontSize: 12.sw,
+                                  fontSize: 12.w,
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -102,8 +94,8 @@ class _calculatorState extends State<calculator> {
                   }
                 }),
                 Container(
-                  width: 100.sw,
-                  height: 0.3.sh,
+                  width: 100.w,
+                  height: 0.3.h,
                   color: AppColors.textcolor,
                 ),
               ],
@@ -111,7 +103,7 @@ class _calculatorState extends State<calculator> {
           ),
         ),
         SizedBox(
-          height: 1.9.sh,
+          height: 1.9.h,
         )
       ],
     );
