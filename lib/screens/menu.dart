@@ -10,7 +10,7 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    const double textSize = 22;
+    const double textSize = 15;
     const double space = 15;
     return Scaffold(
       drawerEnableOpenDragGesture: false,
@@ -19,1004 +19,316 @@ class Menu extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         scrollDirection: Axis.vertical,
         children: [
+          SizedBox(
+            height: 4.h,
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: space),
                 child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
             ],
           ),
+          SizedBox(
+            height: 3.h,
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: space),
                 child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
             ],
           ),
+          SizedBox(
+            height: 3.h,
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: space),
                 child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
             ],
           ),
+          SizedBox(
+            height: 3.h,
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: space),
                 child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
               Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
                 padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
+                child: Container(
+                  width: 22.w,
+                  height: 10.h,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.textcolor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20), // <-- Radius
+                        ),
+                      ),
+                      child: Text(
+                        "555",
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 4.w,
+                            fontFamily: "Nokora",
+                            fontWeight: FontWeight.w300),
+                      )),
+                ),
               ),
             ],
           ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                    width: 15.w,
-                    height: 20,
-                    color: AppColors.color_of_border,
-                    child: const Text(
-                      "Alice",
-                      style: TextStyle(fontSize: textSize),
-                    )),
-              ),
-              Padding(
-                child: Text("Bob", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Sam", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-              Padding(
-                child: Text("Kate", style: TextStyle(fontSize: textSize)),
-                padding: EdgeInsets.symmetric(horizontal: space),
-              ),
-            ],
+          SizedBox(
+            height: 3.h,
           ),
         ],
       ),
