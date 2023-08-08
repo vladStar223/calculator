@@ -356,6 +356,7 @@ class View_editer extends StatelessWidget {
             // отвечает за провекру что показывать
             /// some operation here ...
             if (changeOfFunction.sta_calculator == true) {
+              changeOfFunction.calculator = true;
               return Column(
                 children: [
                   SizedBox(
@@ -692,37 +693,40 @@ class View_editer extends StatelessWidget {
               );
             } else {
               if (changeOfFunction.menu == true) {
-                return SizedBox(height: 93.h, width: 100.w, child: Menu());
+                return AnimatedContainer(
+                    duration: Duration(seconds: 100),
+                    child: SizedBox(height: 93.h, width: 100.w, child: Menu()));
               } else {
-                return Builder(builder: (context) {
-                  if (changeOfFunction.calculator_expanded == true) {
-                    return Column(
-                      children: [
-                        SizedBox(
-                            height: 30.39.h, width: 100.w, child: calculator()),
-                        // resuilt_animated_screen(), не используется, но может нужно тебе
-                        SizedBox(
-                          height: 63.7.h,
-                          width: 100.w,
-                          child: Keyboard_calculator_expanded(),
-                        ),
-                      ],
-                    );
-                  } else {
-                    return Column(
-                      children: [
-                        SizedBox(
-                            height: 43.39.h, width: 100.w, child: calculator()),
-                        // resuilt_animated_screen(), не используется, но может нужно тебе
-                        SizedBox(
+                return Column(
+                  children: [
+                    AnimatedCrossFade(
+                      firstChild: SizedBox(
+                          height: 43.39.h, width: 100.w, child: calculator()),
+                      secondChild: SizedBox(
+                          height: 30.39.h, width: 100.w, child: calculator()),
+                      crossFadeState: changeOfFunction.calculator
+                          ? CrossFadeState.showFirst
+                          : CrossFadeState.showSecond,
+                      duration: const Duration(seconds: 50),
+                    ),
+                    AnimatedCrossFade(
+                        firstChild: SizedBox(
                           height: 49.7.h,
                           width: 100.w,
                           child: keyboard_calculator(),
                         ),
-                      ],
-                    );
-                  }
-                });
+                        secondChild: SizedBox(
+                          height: 63.7.h,
+                          width: 100.w,
+                          child: Keyboard_calculator_expanded(),
+                        ),
+                        crossFadeState: changeOfFunction.calculator
+                            ? CrossFadeState.showFirst
+                            : CrossFadeState.showSecond,
+                        duration: const Duration(seconds: 50)),
+                    // resuilt_animated_screen(), не используется, но может нужно тебе
+                  ],
+                );
               }
             }
           }),

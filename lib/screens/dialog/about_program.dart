@@ -14,19 +14,16 @@ late String packageName;
 late String version;
 late String buildNumber;
 
-class About_programm extends StatefulWidget {
+class About_programm extends StatelessWidget {
   VoidCallback continueCallBack;
 
   About_programm(this.continueCallBack);
 
-  @override
-  State<About_programm> createState() => _About_programmState();
-}
-
-class _About_programmState extends State<About_programm> {
   TextStyle textStyle = TextStyle(fontFamily: "Nokora", color: Colors.black);
+
   TextStyle textStyle2 =
       TextStyle(fontFamily: "Nokora", color: Colors.black, fontSize: 20);
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

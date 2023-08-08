@@ -7,12 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-class calculator extends StatefulWidget {
-  @override
-  State<calculator> createState() => _calculatorState();
-}
-
-class _calculatorState extends State<calculator> {
+class calculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

@@ -9,14 +9,7 @@ import 'package:sizer/sizer.dart';
 import '../provider/decision_urv.dart';
 import '../provider/input_class.dart';
 
-class resuilt extends StatefulWidget {
-  @override
-  State<resuilt> createState() => _resuiltState();
-}
-
-//decision.a_text
-
-class _resuiltState extends State<resuilt> {
+class resuilt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
@@ -244,12 +237,7 @@ class _resuiltState extends State<resuilt> {
   }
 }
 
-class resuilt_urv3 extends StatefulWidget {
-  @override
-  State<resuilt_urv3> createState() => _resuilt_urv3State();
-}
-
-class _resuilt_urv3State extends State<resuilt_urv3> {
+class resuilt_urv3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
@@ -431,12 +419,7 @@ class _resuilt_urv3State extends State<resuilt_urv3> {
   }
 }
 
-class resuilt_urv4 extends StatefulWidget {
-  @override
-  State<resuilt_urv4> createState() => _resuilt_urv4State();
-}
-
-class _resuilt_urv4State extends State<resuilt_urv4> {
+class resuilt_urv4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

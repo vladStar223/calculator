@@ -336,3 +336,12 @@ class Menu extends StatelessWidget {
     throw UnimplementedError();
   }
 }
+
+class equations extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+
+    throw UnimplementedError();
+  }
+}

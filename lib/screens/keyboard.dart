@@ -14,12 +14,7 @@ import '../provider/input_class.dart';
 import '../provider/сhange_of_function.dart';
 import 'buttons.dart';
 
-class keyboard_equation extends StatefulWidget {
-  @override
-  State<keyboard_equation> createState() => _keyboard_equationState();
-}
-
-class _keyboard_equationState extends State<keyboard_equation> {
+class keyboard_equation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -220,12 +215,7 @@ class _keyboard_equationState extends State<keyboard_equation> {
   }
 }
 
-class keyboard_calculator extends StatefulWidget {
-  @override
-  State<keyboard_calculator> createState() => _keyboard_calculatorState();
-}
-
-class _keyboard_calculatorState extends State<keyboard_calculator> {
+class keyboard_calculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -425,14 +415,7 @@ class _keyboard_calculatorState extends State<keyboard_calculator> {
   }
 }
 
-class Keyboard_calculator_expanded extends StatefulWidget {
-  @override
-  State<Keyboard_calculator_expanded> createState() =>
-      _Keyboard_calculator_expandedState();
-}
-
-class _Keyboard_calculator_expandedState
-    extends State<Keyboard_calculator_expanded> {
+class Keyboard_calculator_expanded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
