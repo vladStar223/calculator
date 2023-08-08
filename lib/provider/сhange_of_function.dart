@@ -16,7 +16,7 @@ class Change_of_function extends ChangeNotifier {
   } // функция запуска калькулятора
 
   void change_state_calculator_expanded() {
-    calculator = true;
+    calculator = false;
     menu = false;
     calculator_expanded = true;
     sta_calculator = false;

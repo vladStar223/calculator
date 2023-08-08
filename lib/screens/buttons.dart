@@ -8,7 +8,7 @@ import '../provider/input_class.dart';
 import '../provider/provider_class.dart';
 import '../theme/color/theme.dart';
 
-class InputButton extends StatefulWidget {
+class InputButton extends StatelessWidget {
   final Function() onPressed;
   final int type;
   final String number;
@@ -21,15 +21,10 @@ class InputButton extends StatefulWidget {
     this.font = 5.4,
   });
   @override
-  State<InputButton> createState() => _InputButtonState();
-}
-
-class _InputButtonState extends State<InputButton> {
-  @override
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    if (widget.type == 1) {
+    if (type == 1) {
       return Container(
         height: 9.h,
         width: 20.w,
@@ -38,7 +33,7 @@ class _InputButtonState extends State<InputButton> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-          onPressed: widget.onPressed,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
             backgroundColor: AppColors.buttoncolor2,
@@ -46,16 +41,16 @@ class _InputButtonState extends State<InputButton> {
           ),
           child: Text(
             textAlign: TextAlign.center,
-            widget.number,
+            number,
             style: TextStyle(
                 color: AppColors.textcolor2,
-                fontSize: widget.font.w,
+                fontSize: font.w,
                 fontFamily: "Nokora"),
           ),
         ),
       );
     }
-    if (widget.type == 2) {
+    if (type == 2) {
       return Container(
         height: 9.h,
         width: 20.w,
@@ -64,7 +59,7 @@ class _InputButtonState extends State<InputButton> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-          onPressed: widget.onPressed,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
             backgroundColor: AppColors.buttoncolor1,
@@ -72,17 +67,17 @@ class _InputButtonState extends State<InputButton> {
           ),
           child: Center(
             child: Text(
-              widget.number,
+              number,
               style: TextStyle(
                   color: AppColors.textcolor,
-                  fontSize: widget.font.w,
+                  fontSize: font.w,
                   fontFamily: "Nokora"),
             ),
           ),
         ),
       );
     }
-    if (widget.type == 3) {
+    if (type == 3) {
       return Container(
         height: 9.h,
         width: 20.w,
@@ -114,7 +109,7 @@ class _InputButtonState extends State<InputButton> {
         ),
       );
     }
-    if (widget.type == 4) {
+    if (type == 4) {
       return Container(
         height: 9.h,
         width: 20.w,
@@ -150,7 +145,7 @@ class _InputButtonState extends State<InputButton> {
   }
 }
 
-class Sta_inputButton extends StatefulWidget {
+class Sta_inputButton extends StatelessWidget {
   final Function() onPressed;
   final int type;
   final String number;
@@ -162,11 +157,6 @@ class Sta_inputButton extends StatefulWidget {
     required this.number,
     this.font = 5.4,
   });
-  @override
-  State<Sta_inputButton> createState() => _Sta_inputButtonState();
-}
-
-class _Sta_inputButtonState extends State<Sta_inputButton> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -186,7 +176,7 @@ class _Sta_inputButtonState extends State<Sta_inputButton> {
 // использовать для получения размера экрана
 
     var AppColors = Provider.of<AppColor>(context);
-    if (widget.type == 1) {
+    if (type == 1) {
       return Container(
         height: height * 9,
         width: width * 20,
@@ -195,7 +185,7 @@ class _Sta_inputButtonState extends State<Sta_inputButton> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-          onPressed: widget.onPressed,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
             backgroundColor: AppColors.buttoncolor2,
@@ -203,16 +193,16 @@ class _Sta_inputButtonState extends State<Sta_inputButton> {
           ),
           child: Text(
             textAlign: TextAlign.center,
-            widget.number,
+            number,
             style: TextStyle(
                 color: AppColors.textcolor2,
-                fontSize: widget.font * width,
+                fontSize: font * width,
                 fontFamily: "Nokora"),
           ),
         ),
       );
     }
-    if (widget.type == 2) {
+    if (type == 2) {
       return Container(
         height: height * 9,
         width: width * 20,
@@ -221,7 +211,7 @@ class _Sta_inputButtonState extends State<Sta_inputButton> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-          onPressed: widget.onPressed,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
             backgroundColor: AppColors.buttoncolor1,
@@ -229,17 +219,17 @@ class _Sta_inputButtonState extends State<Sta_inputButton> {
           ),
           child: Center(
             child: Text(
-              widget.number,
+              number,
               style: TextStyle(
                   color: AppColors.textcolor,
-                  fontSize: widget.font * width,
+                  fontSize: font * width,
                   fontFamily: "Nokora"),
             ),
           ),
         ),
       );
     }
-    if (widget.type == 3) {
+    if (type == 3) {
       return Container(
         height: height * 9,
         width: width * 20,
@@ -271,7 +261,7 @@ class _Sta_inputButtonState extends State<Sta_inputButton> {
         ),
       );
     }
-    if (widget.type == 4) {
+    if (type == 4) {
       return Container(
         height: height * 9,
         width: width * 20,
@@ -307,7 +297,7 @@ class _Sta_inputButtonState extends State<Sta_inputButton> {
   }
 }
 
-class Sta_special_InputButton extends StatefulWidget {
+class Sta_special_InputButton extends StatelessWidget {
   final Function() onPressed;
   final Icon myIcon;
   const Sta_special_InputButton({
@@ -315,12 +305,6 @@ class Sta_special_InputButton extends StatefulWidget {
     required this.onPressed,
     required this.myIcon,
   });
-  @override
-  State<Sta_special_InputButton> createState() =>
-      _Sta_special_InputButtonState();
-}
-
-class _Sta_special_InputButtonState extends State<Sta_special_InputButton> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -336,13 +320,13 @@ class _Sta_special_InputButtonState extends State<Sta_special_InputButton> {
         shape: BoxShape.circle,
       ),
       child: ElevatedButton(
-        onPressed: widget.onPressed,
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: AppColors.buttoncolor1,
           animationDuration: const Duration(milliseconds: 2500),
         ),
-        child: widget.myIcon,
+        child: myIcon,
         //color: AppColors.textcolor,
         //size: 9.w,
       ),
@@ -351,7 +335,7 @@ class _Sta_special_InputButtonState extends State<Sta_special_InputButton> {
   }
 }
 
-class InputButton_mini extends StatefulWidget {
+class InputButton_mini extends StatelessWidget {
   @override
   final Function() onPressed;
   final int type;
@@ -368,15 +352,11 @@ class InputButton_mini extends StatefulWidget {
     this.arc = false,
     this.deg = true,
   });
-  State<InputButton_mini> createState() => _InputButton_miniState();
-}
-
-class _InputButton_miniState extends State<InputButton_mini> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    if (widget.type == 1) {
+    if (type == 1) {
       return Container(
         height: 8.h,
         width: 17.w,
@@ -385,7 +365,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-          onPressed: widget.onPressed,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
             backgroundColor: AppColors.buttoncolor2,
@@ -393,16 +373,16 @@ class _InputButton_miniState extends State<InputButton_mini> {
           ),
           child: Text(
             textAlign: TextAlign.center,
-            widget.number,
+            number,
             style: TextStyle(
                 color: AppColors.textcolor2,
-                fontSize: widget.font.w,
+                fontSize: font.w,
                 fontFamily: "Nokora"),
           ),
         ),
       );
     }
-    if (widget.type == 2) {
+    if (type == 2) {
       return Container(
         height: 8.h,
         width: 17.w,
@@ -411,7 +391,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-          onPressed: widget.onPressed,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
             backgroundColor: AppColors.buttoncolor1,
@@ -419,17 +399,17 @@ class _InputButton_miniState extends State<InputButton_mini> {
           ),
           child: Center(
             child: Text(
-              widget.number,
+              number,
               style: TextStyle(
                   color: AppColors.textcolor,
-                  fontSize: widget.font.w,
+                  fontSize: font.w,
                   fontFamily: "Nokora"),
             ),
           ),
         ),
       );
     }
-    if (widget.type == 3) {
+    if (type == 3) {
       return Container(
         height: 8.h,
         width: 17.w,
@@ -461,7 +441,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
         ),
       );
     }
-    if (widget.type == 4) {
+    if (type == 4) {
       return Container(
         height: 8.h,
         width: 17.w,
@@ -497,7 +477,7 @@ class _InputButton_miniState extends State<InputButton_mini> {
   }
 }
 
-class Special_InputButton extends StatefulWidget {
+class Special_InputButton extends StatelessWidget {
   final Function() onPressed;
   final Icon myIcon;
   const Special_InputButton({
@@ -505,11 +485,6 @@ class Special_InputButton extends StatefulWidget {
     required this.onPressed,
     required this.myIcon,
   });
-  @override
-  State<Special_InputButton> createState() => _Special_InputButtonState();
-}
-
-class _Special_InputButtonState extends State<Special_InputButton> {
   @override
   Widget build(BuildContext context) {
     var AppColors = Provider.of<AppColor>(context);
@@ -522,13 +497,13 @@ class _Special_InputButtonState extends State<Special_InputButton> {
         shape: BoxShape.circle,
       ),
       child: ElevatedButton(
-        onPressed: widget.onPressed,
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           backgroundColor: AppColors.buttoncolor1,
           animationDuration: const Duration(milliseconds: 2500),
         ),
-        child: widget.myIcon,
+        child: myIcon,
         //color: AppColors.textcolor,
         //size: 9.w,
       ),
@@ -537,7 +512,7 @@ class _Special_InputButtonState extends State<Special_InputButton> {
   }
 }
 
-class Special_InputButton_mini extends StatefulWidget {
+class Special_InputButton_mini extends StatelessWidget {
   final Function() onPressed;
   final Icon myIcon;
   final int type;
@@ -548,16 +523,10 @@ class Special_InputButton_mini extends StatefulWidget {
       this.type = 1});
 
   @override
-  State<Special_InputButton_mini> createState() =>
-      _Special_InputButton_miniState();
-}
-
-class _Special_InputButton_miniState extends State<Special_InputButton_mini> {
-  @override
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    if (widget.type == 1) {
+    if (type == 1) {
       return Container(
         height: 8.h,
         width: 17.w,
@@ -566,19 +535,19 @@ class _Special_InputButton_miniState extends State<Special_InputButton_mini> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-          onPressed: widget.onPressed,
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: const CircleBorder(),
             backgroundColor: AppColors.buttoncolor1,
             animationDuration: const Duration(milliseconds: 2500),
           ),
-          child: widget.myIcon,
+          child: myIcon,
           //color: AppColors.textcolor,
           //size: 9.w,
         ),
       );
     }
-    if (widget.type == 2) {
+    if (type == 2) {
       return Container(
         height: 8.h,
         width: 17.w,
@@ -587,13 +556,13 @@ class _Special_InputButton_miniState extends State<Special_InputButton_mini> {
           shape: BoxShape.circle,
         ),
         child: ElevatedButton(
-            onPressed: widget.onPressed,
+            onPressed: onPressed,
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
               backgroundColor: AppColors.buttoncolor2,
               animationDuration: const Duration(milliseconds: 2500),
             ),
-            child: widget.myIcon),
+            child: myIcon),
       );
     }
 
