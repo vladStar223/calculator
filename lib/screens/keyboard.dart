@@ -1,14 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
-import 'package:calculator/provider/provider_class.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:calculator/main.dart';
 import '../provider/decision_urv.dart';
 import '../provider/input_class.dart';
 import '../provider/сhange_of_function.dart';
@@ -448,7 +443,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
                     Provider.of<Input_number_calculator>(context).arc
                         ? CrossFadeState.showFirst
                         : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 350)),
+                duration: Duration(milliseconds: 300)),
             AnimatedCrossFade(
                 firstChild: InputButton_mini(
                     onPressed: () {
@@ -468,7 +463,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
                     Provider.of<Input_number_calculator>(context).deg
                         ? CrossFadeState.showFirst
                         : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 350)),
+                duration: Duration(milliseconds: 300)),
             AnimatedCrossFade(
               firstChild: InputButton_mini(
                   onPressed: () {
@@ -487,7 +482,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
               crossFadeState: Provider.of<Input_number_calculator>(context).arc
                   ? CrossFadeState.showFirst
                   : CrossFadeState.showSecond,
-              duration: Duration(milliseconds: 360),
+              duration: Duration(milliseconds: 300),
             ),
             AnimatedCrossFade(
                 firstChild: InputButton_mini(
@@ -509,7 +504,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
                     Provider.of<Input_number_calculator>(context).arc
                         ? CrossFadeState.showFirst
                         : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 360)),
+                duration: Duration(milliseconds: 300)),
             AnimatedCrossFade(
                 firstChild: InputButton_mini(
                     onPressed: () {
@@ -529,7 +524,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
                     Provider.of<Input_number_calculator>(context).arc
                         ? CrossFadeState.showFirst
                         : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 360)),
+                duration: Duration(milliseconds: 300)),
           ],
         ),
         SizedBox(
