@@ -17,94 +17,120 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
-    const double textSize = 15;
-    const double space = 15;
+    var Change_fun = Provider.of<Change_of_function>(context);
     return Scaffold(
       drawerEnableOpenDragGesture: false,
       backgroundColor: AppColors.fon,
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        scrollDirection: Axis.vertical,
-        children: [
-          SizedBox(
-            height: 4.h,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                  width: 22.w,
-                  height: 10.h,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.textcolor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20), // <-- Radius
-                        ),
-                      ),
-                      child: Text(
-                        "555",
-                        style: TextStyle(
-                            color: AppColors.textcolor2,
-                            fontSize: 4.w,
-                            fontFamily: "Nokora",
-                            fontWeight: FontWeight.w300),
-                      )),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                  width: 22.w,
-                  height: 10.h,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.textcolor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20), // <-- Radius
-                        ),
-                      ),
-                      child: Text(
-                        "555",
-                        style: TextStyle(
-                            color: AppColors.textcolor2,
-                            fontSize: 4.w,
-                            fontFamily: "Nokora",
-                            fontWeight: FontWeight.w300),
-                      )),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: space),
-                child: Container(
-                  width: 22.w,
-                  height: 10.h,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.textcolor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20), // <-- Radius
-                        ),
-                      ),
-                      child: Text(
-                        "555",
-                        style: TextStyle(
-                            color: AppColors.textcolor2,
-                            fontSize: 4.w,
-                            fontFamily: "Nokora",
-                            fontWeight: FontWeight.w300),
-                      )),
-                ),
-              ),
-            ],
-          ),
-        ],
+      body: AnimatedContainer(
+        duration: Duration(seconds: 10),
+        child: Builder(builder: (context) {
+          if (Change_fun.equation_function == true) {
+            return Equations();
+          } else if (Change_fun.menu == true) {
+            return SizedBox(height: 93.h, width: 100.w, child: Menu_choose());
+          } else if (Change_fun.currency_convert == true) {
+            return Center(child: Text("В разработке"));
+          } else {
+            return Calculators();
+          }
+        }),
       ),
+    );
+    throw UnimplementedError();
+  }
+}
+
+class Menu_choose extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    var AppColors = Provider.of<AppColor>(context);
+    var Change_fun = Provider.of<Change_of_function>(context);
+    const double textSize = 15;
+    const double space = 15;
+    return ListView(
+      padding: const EdgeInsets.all(20),
+      scrollDirection: Axis.vertical,
+      children: [
+        SizedBox(
+          height: 4.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: space),
+              child: Container(
+                width: 22.w,
+                height: 10.h,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Change_fun.change_state_equation_function();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.buttoncolor1,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20), // <-- Radius
+                      ),
+                    ),
+                    child: Text(
+                      "ax² - bx",
+                      style: TextStyle(
+                          color: AppColors.white,
+                          fontSize: 4.w,
+                          fontFamily: "Nokora",
+                          fontWeight: FontWeight.w300),
+                    )),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: space),
+              child: Container(
+                width: 22.w,
+                height: 10.h,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.buttoncolor1,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20), // <-- Radius
+                      ),
+                    ),
+                    child: Text(
+                      "S",
+                      style: TextStyle(
+                          color: AppColors.white,
+                          fontSize: 4.w,
+                          fontFamily: "Nokora",
+                          fontWeight: FontWeight.w300),
+                    )),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: space),
+              child: Container(
+                width: 22.w,
+                height: 10.h,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Change_fun.change_state_currency_convert();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.buttoncolor1,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20), // <-- Radius
+                      ),
+                    ),
+                    child: Icon(
+                      MyFlutterApp.currency_exchange_3845944,
+                      color: AppColors.white,
+                      size: 10.w,
+                    )),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
     throw UnimplementedError();
   }
@@ -116,7 +142,7 @@ class Equations extends StatelessWidget {
     // TODO: implement build
     return Column(
       children: [
-        SizedBox(height: 43.39.h, width: 95.w, child: AnimatedScreen()),
+        SizedBox(height: 43.30.h, width: 95.w, child: AnimatedScreen()),
         // resuilt_animated_screen(), не используется, но может нужно тебе
         SizedBox(
           height: 49.7.h,
@@ -142,6 +168,7 @@ class Calculators extends StatelessWidget {
       // отвечает за провекру что показывать
       /// some operation here ...
       if (changeOfFunction.sta_calculator == true) {
+        changeOfFunction.sta_calculator = false;
         changeOfFunction.calculator = true;
         return Column(
           children: [
@@ -468,42 +495,36 @@ class Calculators extends StatelessWidget {
           ],
         );
       } else {
-        if (changeOfFunction.menu == true) {
-          return AnimatedContainer(
-              duration: Duration(seconds: 100),
-              child: SizedBox(height: 93.h, width: 100.w, child: Menu()));
-        } else {
-          return Column(
-            children: [
-              AnimatedCrossFade(
+        return Column(
+          children: [
+            AnimatedCrossFade(
+              firstChild:
+                  SizedBox(height: 43.39.h, width: 100.w, child: calculator()),
+              secondChild:
+                  SizedBox(height: 30.39.h, width: 100.w, child: calculator()),
+              crossFadeState: changeOfFunction.calculator
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: const Duration(seconds: 50),
+            ),
+            AnimatedCrossFade(
                 firstChild: SizedBox(
-                    height: 43.39.h, width: 100.w, child: calculator()),
+                  height: 49.7.h,
+                  width: 100.w,
+                  child: keyboard_calculator(),
+                ),
                 secondChild: SizedBox(
-                    height: 30.39.h, width: 100.w, child: calculator()),
+                  height: 63.7.h,
+                  width: 100.w,
+                  child: Keyboard_calculator_expanded(),
+                ),
                 crossFadeState: changeOfFunction.calculator
                     ? CrossFadeState.showFirst
                     : CrossFadeState.showSecond,
-                duration: const Duration(seconds: 50),
-              ),
-              AnimatedCrossFade(
-                  firstChild: SizedBox(
-                    height: 49.7.h,
-                    width: 100.w,
-                    child: keyboard_calculator(),
-                  ),
-                  secondChild: SizedBox(
-                    height: 63.7.h,
-                    width: 100.w,
-                    child: Keyboard_calculator_expanded(),
-                  ),
-                  crossFadeState: changeOfFunction.calculator
-                      ? CrossFadeState.showFirst
-                      : CrossFadeState.showSecond,
-                  duration: const Duration(seconds: 50)),
-              // resuilt_animated_screen(), не используется, но может нужно тебе
-            ],
-          );
-        }
+                duration: const Duration(seconds: 50)),
+            // resuilt_animated_screen(), не используется, но может нужно тебе
+          ],
+        );
       }
     });
     throw UnimplementedError();
