@@ -367,16 +367,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     String text = determing_to_true_trigger_start();
     if (text == '0') {
       text = 'π';
-      bepi = false;
     } else {
       if (text.length < text_length &&
           text[text.length - 1] != "π" &&
           text[text.length - 1] != ".") {
         text += "π";
-        bepi = true;
       }
     }
-
+    bepi = true;
     determing_to_true_trigger_end(text);
     decide_online();
     notifyListeners();
@@ -808,13 +806,18 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   String checkpi(text) {
     int i = 1;
     var x = "";
-    while (text.length > i) {
-      if (text[text.length - i] == "π") {
-        x = text.substring(0, text.length - i);
-        x = x + pi.toString();
-      }
-      i = i + 1;
+    if (text[0] == "π") {
+      x = text.replaceAll("π", pi.toString());
       print(x);
+    } else {
+      while (text.length > i) {
+        if (text[text.length - i] == "π") {
+          x = text.substring(0, text.length - i);
+          x = x + pi.toString();
+          print(x);
+        }
+        i = i + 1;
+      }
     }
     return x;
   }
@@ -943,7 +946,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     } else {
       text2 = check_number(text);
     }
-    result = calcString(check_number(text2)).toString();
+    result = calcString(text2).toString();
     determing_to_true_trigger_end(text);
     notifyListeners();
   }
@@ -953,6 +956,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     // TODO: implement resuilt
     String text = determing_to_true_trigger_start();
     decide = false;
+    bepi = false;
     count = result;
     notifyListeners();
   }

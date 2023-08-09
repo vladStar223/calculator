@@ -20,8 +20,6 @@ Parser buildParser() {
     ..wrapper(
         char('(').trim(), char(')').trim(), (left, value, right) => value);
   builder.group()
-    ..postfix(string("π").trim(), (a, op) => pi * a)
-    ..prefix(string("π").trim(), (op, a) => pi * a)
     ..prefix(string("ln").trim(), (op, a) => log(a))
     ..prefix(string("lg").trim(), (op, a) => log10(a));
   builder.group()
