@@ -167,8 +167,6 @@ class Calculators extends StatelessWidget {
     // отвечает за провекру что показывать
     /// some operation here ...
     if (changeOfFunction.sta_calculator == true) {
-      changeOfFunction.sta_calculator = false;
-      changeOfFunction.calculator = true;
       return Column(
         children: [
           SizedBox(
@@ -269,7 +267,7 @@ class Calculators extends StatelessWidget {
             width: width,
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 1,
                 ),
                 Row(
@@ -304,8 +302,8 @@ class Calculators extends StatelessWidget {
                             color: AppColors.textcolor, size: 25)),
                   ],
                 ),
-                SizedBox(
-                  height: 1.h,
+                const SizedBox(
+                  height: 10,
                 ),
                 Row(
                   // тут нужна анимация
@@ -351,8 +349,8 @@ class Calculators extends StatelessWidget {
                             size: 40)),
                   ],
                 ),
-                SizedBox(
-                  height: 1.h,
+                const SizedBox(
+                  height: 10,
                 ),
                 Row(
                   // тут нужна анимация
@@ -395,8 +393,8 @@ class Calculators extends StatelessWidget {
                             size: 25)),
                   ],
                 ),
-                SizedBox(
-                  height: 1.h,
+                const SizedBox(
+                  height: 10,
                 ),
                 Row(
                   // тут нужна анимация
@@ -439,8 +437,8 @@ class Calculators extends StatelessWidget {
                             size: 25)),
                   ],
                 ),
-                SizedBox(
-                  height: 1.h,
+                const SizedBox(
+                  height: 10,
                 ),
                 Row(
                   // тут нужна анимация
@@ -448,6 +446,9 @@ class Calculators extends StatelessWidget {
                   children: [
                     Sta_inputButton(
                         onPressed: () {
+                          context
+                              .read<Change_of_function>()
+                              .change_state_calculator();
                           context
                               .read<Change_of_function>()
                               .change_state_calculator_expanded();
