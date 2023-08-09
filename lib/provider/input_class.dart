@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:calculator/provider/provider_class.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
@@ -360,6 +362,26 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+  void pi_press() {
+    // TODO: implement Minus_press
+    String text = determing_to_true_trigger_start();
+    if (text == '0') {
+      text = 'π';
+      bepi = false;
+    } else {
+      if (text.length < text_length &&
+          text[text.length - 1] != "π" &&
+          text[text.length - 1] != ".") {
+        text += "π";
+        bepi = true;
+      }
+    }
+
+    determing_to_true_trigger_end(text);
+    decide_online();
+    notifyListeners();
+  }
+
 //÷
   void multiplication() {
     String text = determing_to_true_trigger_start();
@@ -519,7 +541,11 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       text = text + "×" + "lg";
     } else {
       if (text != "0") {
-        text += "lg";
+        if (text.length < text_length &&
+            text[text.length - 1] != "g" &&
+            text[text.length - 2] != "l") {
+          text += "lg";
+        }
       } else {
         text = "lg";
       }
@@ -545,7 +571,11 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
       text = text + "×" + "ln";
     } else {
       if (text != "0") {
-        text += "ln";
+        if (text.length < text_length &&
+            text[text.length - 1] != "n" &&
+            text[text.length - 2] != "l") {
+          text += "ln";
+        }
       } else {
         text = "ln";
       }
@@ -592,7 +622,12 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "sin";
       } else {
         if (text != "0") {
-          text += "sin";
+          if (text.length < text_length &&
+              text[text.length - 1] != "n" &&
+              text[text.length - 2] != "i" &&
+              text[text.length - 3] != "s") {
+            text += "sin";
+          }
         } else {
           text = "sin";
         }
@@ -612,9 +647,19 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "arcsin";
       } else {
         if (text != "0") {
-          text += "arcsin0.";
+          if (text.length < text_length &&
+              text[text.length - 1] != "." &&
+              text[text.length - 2] != "0" &&
+              text[text.length - 3] != "n" &&
+              text[text.length - 4] != "i" &&
+              text[text.length - 5] != "s" &&
+              text[text.length - 6] != "c" &&
+              text[text.length - 7] != "r" &&
+              text[text.length - 8] != "a") {
+            text += "arccos0.";
+          }
         } else {
-          text = "arcsin0.";
+          text = "arccos0.";
         }
       }
     }
@@ -640,7 +685,12 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "cos";
       } else {
         if (text != "0") {
-          text += "cos";
+          if (text.length < text_length &&
+              text[text.length - 1] != "s" &&
+              text[text.length - 2] != "o" &&
+              text[text.length - 3] != "c") {
+            text += "cos";
+          }
         } else {
           text = "cos";
         }
@@ -658,7 +708,17 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "arccos0.";
       } else {
         if (text != "0") {
-          text += "arccos0.";
+          if (text.length < text_length &&
+              text[text.length - 1] != "." &&
+              text[text.length - 2] != "0" &&
+              text[text.length - 3] != "s" &&
+              text[text.length - 4] != "o" &&
+              text[text.length - 5] != "c" &&
+              text[text.length - 6] != "c" &&
+              text[text.length - 7] != "r" &&
+              text[text.length - 8] != "a") {
+            text += "arccos0.";
+          }
         } else {
           text = "arccos0.";
         }
@@ -686,7 +746,16 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "tan";
       } else {
         if (text != "0") {
-          text += "tan";
+          if (text != "0") {
+            if (text.length < text_length &&
+                text[text.length - 1] != "n" &&
+                text[text.length - 2] != "a" &&
+                text[text.length - 3] != "t") {
+              text += "tan";
+            }
+          } else {
+            text = "tan";
+          }
         } else {
           text = "tan";
         }
@@ -704,7 +773,17 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "arctan0.";
       } else {
         if (text != "0") {
-          text += "arctan0.";
+          if (text.length < text_length &&
+              text[text.length - 1] != "." &&
+              text[text.length - 2] != "0" &&
+              text[text.length - 3] != "n" &&
+              text[text.length - 4] != "a" &&
+              text[text.length - 5] != "t" &&
+              text[text.length - 6] != "c" &&
+              text[text.length - 7] != "r" &&
+              text[text.length - 8] != "a") {
+            text += "arctan0.";
+          }
         } else {
           text = "arctan0.";
         }
@@ -725,6 +804,21 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+  bool bepi = false;
+  String checkpi(text) {
+    int i = 1;
+    var x = "";
+    while (text.length > i) {
+      if (text[text.length - i] == "π") {
+        x = text.substring(0, text.length - i);
+        x = x + pi.toString();
+      }
+      i = i + 1;
+      print(x);
+    }
+    return x;
+  }
+
   // проверка числа на правильность
   String check_number(text) {
     if (text[text.length - 1] == "-" ||
@@ -743,12 +837,15 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "arccos" ||
           text[text.length - 1] == "arctan") {
         return "0";
-        print("dd");
       } else {
         return text = text.substring(0, text.length - 1);
       }
     } else {
-      return text;
+      if (text[text.length - 1] == "π" && text.length == 1) {
+        return pi.toString();
+      } else {
+        return text;
+      }
     }
   }
 
@@ -838,8 +935,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
 
   void decide_online() {
     String text = determing_to_true_trigger_start();
+    String text2;
     decide = true;
-    String text2 = check_number(text);
+    if (bepi == true) {
+      text2 = checkpi(text);
+      bepi = false;
+    } else {
+      text2 = check_number(text);
+    }
     result = calcString(check_number(text2)).toString();
     determing_to_true_trigger_end(text);
     notifyListeners();

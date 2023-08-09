@@ -429,101 +429,107 @@ class Keyboard_calculator_expanded extends StatelessWidget {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Builder(builder: (context) {
-              if (Provider.of<Input_number_calculator>(context).arc == true) {
-                return InputButton_mini(
+            AnimatedCrossFade(
+                firstChild: InputButton_mini(
                     onPressed: () {
                       context.read<Input_number_calculator>().set_arc();
                     },
                     type: 1,
                     number: "2nd¯¹",
-                    font: 3);
-              } else {
-                return InputButton_mini(
+                    font: 3),
+                secondChild: InputButton_mini(
                     onPressed: () {
                       context.read<Input_number_calculator>().set_arc();
                     },
                     type: 1,
                     number: "2nd",
-                    font: 4.0);
-              }
-            }),
-            Builder(builder: (context) {
-              if (Provider.of<Input_number_calculator>(context).deg == true) {
-                return InputButton_mini(
+                    font: 4.0),
+                crossFadeState:
+                    Provider.of<Input_number_calculator>(context).arc
+                        ? CrossFadeState.showFirst
+                        : CrossFadeState.showSecond,
+                duration: Duration(milliseconds: 350)),
+            AnimatedCrossFade(
+                firstChild: InputButton_mini(
                     onPressed: () {
                       context.read<Input_number_calculator>().set_deg_rad();
                     },
                     type: 1,
                     number: "deg",
-                    font: 5.0);
-              } else {
-                return InputButton_mini(
+                    font: 5.0),
+                secondChild: InputButton_mini(
                     onPressed: () {
                       context.read<Input_number_calculator>().set_deg_rad();
                     },
                     type: 1,
                     number: "rad",
-                    font: 5.0);
-              }
-            }),
-            Builder(builder: (context) {
-              if (Provider.of<Input_number_calculator>(context).arc == false) {
-                return InputButton_mini(
+                    font: 5.0),
+                crossFadeState:
+                    Provider.of<Input_number_calculator>(context).deg
+                        ? CrossFadeState.showFirst
+                        : CrossFadeState.showSecond,
+                duration: Duration(milliseconds: 350)),
+            AnimatedCrossFade(
+              firstChild: InputButton_mini(
+                  onPressed: () {
+                    context.read<Input_number_calculator>().sin();
+                  },
+                  type: 1,
+                  number: "sin¯¹",
+                  font: 3.4),
+              secondChild: InputButton_mini(
+                  onPressed: () {
+                    context.read<Input_number_calculator>().sin();
+                  },
+                  type: 1,
+                  number: "sin",
+                  font: 5),
+              crossFadeState: Provider.of<Input_number_calculator>(context).arc
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: Duration(milliseconds: 360),
+            ),
+            AnimatedCrossFade(
+                firstChild: InputButton_mini(
                     onPressed: () {
-                      context.read<Input_number_calculator>().sin();
+                      context.read<Input_number_calculator>().cos();
                     },
+                    //"cos¯¹",
                     type: 1,
-                    number: "sin",
-                    font: 5.0);
-              } else {
-                return InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().sin();
-                    },
-                    type: 1,
-                    number: "sin¯¹",
-                    font: 3);
-              }
-            }),
-            Builder(builder: (context) {
-              if (Provider.of<Input_number_calculator>(context).arc == false) {
-                return InputButton_mini(
+                    number: "cos¯¹",
+                    font: 3.4),
+                secondChild: InputButton_mini(
                     onPressed: () {
                       context.read<Input_number_calculator>().cos();
                     },
                     type: 1,
                     number: "cos",
-                    font: 5.0);
-              } else {
-                return InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().cos();
-                    },
-                    type: 1,
-                    number: "cos¯¹",
-                    font: 3);
-              }
-            }),
-            Builder(builder: (context) {
-              if (Provider.of<Input_number_calculator>(context).arc == false) {
-                return InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().tan();
-                    },
-                    type: 1,
-                    number: "tan",
-                    font: 5.0);
-              } else {
-                return InputButton_mini(
+                    font: 5.0),
+                crossFadeState:
+                    Provider.of<Input_number_calculator>(context).arc
+                        ? CrossFadeState.showFirst
+                        : CrossFadeState.showSecond,
+                duration: Duration(milliseconds: 360)),
+            AnimatedCrossFade(
+                firstChild: InputButton_mini(
                     onPressed: () {
                       context.read<Input_number_calculator>().tan();
                     },
                     type: 1,
                     number: "tan¯¹",
-                    font: 3);
-              }
-            }),
+                    font: 3.4),
+                secondChild: InputButton_mini(
+                    onPressed: () {
+                      context.read<Input_number_calculator>().tan();
+                    },
+                    type: 1,
+                    number: "tan",
+                    font: 5.0),
+                crossFadeState:
+                    Provider.of<Input_number_calculator>(context).arc
+                        ? CrossFadeState.showFirst
+                        : CrossFadeState.showSecond,
+                duration: Duration(milliseconds: 360)),
           ],
         ),
         SizedBox(
@@ -705,7 +711,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Input_number_calculator>().nums_press("3.14");
+                  context.read<Input_number_calculator>().pi_press();
                 },
                 type: 1,
                 number: "π",
