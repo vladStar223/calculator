@@ -1,13 +1,9 @@
+import 'package:calculator/Screens/menu.dart';
 import 'package:calculator/provider/%D1%81hange_of_function.dart';
 import 'package:calculator/provider/decision_urv.dart';
 import 'package:calculator/provider/input_class.dart';
-import 'package:calculator/screens/buttons.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
-import 'package:calculator/screens/keyboard.dart';
-import 'package:calculator/screens/menu.dart';
-import 'package:calculator/screens/screens_calculator.dart';
-import 'package:calculator/switching%20classes/animated_class.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
@@ -315,7 +311,7 @@ class View_editer extends StatelessWidget {
                   icon: Icon(MyFlutterApp.question_circle)),
             ],
           ),
-          Calculators(),
+          Flexible(child: Menu())
         ],
       ),
     );
