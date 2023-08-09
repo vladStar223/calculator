@@ -10,6 +10,7 @@ class Change_of_function extends ChangeNotifier {
   bool currency_convert = false;
   void change_state_calculator() {
     calculator = true;
+    sta_calculator = false;
     calculator_expanded = false;
     equation_function = false;
     currency_convert = false;
