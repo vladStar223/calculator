@@ -1,8 +1,6 @@
-import 'dart:math';
 import 'package:advance_math/advance_math.dart';
 import 'package:calculator/provider/arc_sin_cos_tan.dart';
 import 'package:calculator/provider/sin_cos_tan.dart';
-import 'package:calculator/screens/result.dart';
 import 'package:petitparser/petitparser.dart';
 
 Parser buildParser() {
@@ -22,6 +20,8 @@ Parser buildParser() {
     ..wrapper(
         char('(').trim(), char(')').trim(), (left, value, right) => value);
   builder.group()
+    ..postfix(string("π").trim(), (a, op) => pi * a)
+    ..prefix(string("π").trim(), (op, a) => pi * a)
     ..prefix(string("ln").trim(), (op, a) => log(a))
     ..prefix(string("lg").trim(), (op, a) => log10(a));
   builder.group()
