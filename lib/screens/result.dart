@@ -260,7 +260,6 @@ class resuilt_urv3 extends StatelessWidget {
         Provider.of<Decision_urv>(context).decision_ur();
         Provider.of<Input_number_equations>(context).decision_eql = false;
       }
-
       return Container(
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,

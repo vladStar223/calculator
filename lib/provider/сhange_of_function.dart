@@ -8,13 +8,10 @@ class Change_of_function extends ChangeNotifier {
   bool equation_function = false;
   bool menu = false;
   bool currency_convert = false;
+  bool logarithm = false;
   void change_state_calculator() {
+    change_false();
     calculator = true;
-    sta_calculator = false;
-    calculator_expanded = false;
-    equation_function = false;
-    currency_convert = false;
-    menu = false;
     notifyListeners();
   } // функция запуска калькулятора
 
@@ -24,11 +21,17 @@ class Change_of_function extends ChangeNotifier {
     notifyListeners();
   } // функция запуска увеличенного калькулятора
 
-  void change_state_menu() {
+  void change_false() {
     calculator = false;
     calculator_expanded = false;
     equation_function = false;
     currency_convert = false;
+    logarithm = false;
+    menu = false;
+  }
+
+  void change_state_menu() {
+    change_false();
     menu = true;
     notifyListeners();
   }
@@ -44,4 +47,10 @@ class Change_of_function extends ChangeNotifier {
     equation_function = true;
     notifyListeners();
   } // функция запуска  решение уравний
+
+  void change_state_logarithm() {
+    menu = false;
+    logarithm = true;
+    notifyListeners();
+  }
 }

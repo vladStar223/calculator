@@ -59,39 +59,42 @@ class AnimatedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final animated = Provider.of<Input_number_equations>(context);
 
-    return Stack(
-      children: [
-        AnimatedScreenItem(
-          opacity: animated.active_input_screen[0] ? 1 : 0,
-          ignoring: animated.active_input_screen[0] ? false : true,
-          child: const quadratic_equation(), //показывает ввод х2 уравнение
-        ),
-        AnimatedScreenItem(
-          opacity: animated.active_input_screen[1] ? 1 : 0,
-          ignoring: animated.active_input_screen[1] ? false : true,
-          child: const cubic_equation(), // показывает ввод х3 уравнение
-        ),
-        AnimatedScreenItem(
-          opacity: animated.active_input_screen[2] ? 1 : 0,
-          ignoring: animated.active_input_screen[2] ? false : true,
-          child: const biquadrate_equation(), //показывает ввод х4 уравнение
-        ),
-        AnimatedScreenItem(
-          opacity: animated.active_resuilt_screen[0] ? 1 : 0,
-          ignoring: animated.active_resuilt_screen[0] ? false : true,
-          child: resuilt(), //показывает результаты х2 уравнения
-        ),
-        AnimatedScreenItem(
-          opacity: animated.active_resuilt_screen[1] ? 1 : 0,
-          ignoring: animated.active_resuilt_screen[1] ? false : true,
-          child: resuilt_urv3(), //показывает результаты х3 уравнения
-        ),
-        AnimatedScreenItem(
-          opacity: animated.active_resuilt_screen[2] ? 1 : 0,
-          ignoring: animated.active_resuilt_screen[2] ? false : true,
-          child: resuilt_urv4(), //показывает результаты х4 уравнения
-        ),
-      ],
+    return AnimatedContainer(
+      duration: const Duration(seconds: 100),
+      child: Stack(
+        children: [
+          AnimatedScreenItem(
+            opacity: animated.active_input_screen[0] ? 1 : 0,
+            ignoring: animated.active_input_screen[0] ? false : true,
+            child: const quadratic_equation(), //показывает ввод х2 уравнение
+          ),
+          AnimatedScreenItem(
+            opacity: animated.active_input_screen[1] ? 1 : 0,
+            ignoring: animated.active_input_screen[1] ? false : true,
+            child: const cubic_equation(), // показывает ввод х3 уравнение
+          ),
+          AnimatedScreenItem(
+            opacity: animated.active_input_screen[2] ? 1 : 0,
+            ignoring: animated.active_input_screen[2] ? false : true,
+            child: const biquadrate_equation(), //показывает ввод х4 уравнение
+          ),
+          AnimatedScreenItem(
+            opacity: animated.active_resuilt_screen[0] ? 1 : 0,
+            ignoring: animated.active_resuilt_screen[0] ? false : true,
+            child: resuilt(), //показывает результаты х2 уравнения
+          ),
+          AnimatedScreenItem(
+            opacity: animated.active_resuilt_screen[1] ? 1 : 0,
+            ignoring: animated.active_resuilt_screen[1] ? false : true,
+            child: resuilt_urv3(), //показывает результаты х3 уравнения
+          ),
+          AnimatedScreenItem(
+            opacity: animated.active_resuilt_screen[2] ? 1 : 0,
+            ignoring: animated.active_resuilt_screen[2] ? false : true,
+            child: resuilt_urv4(), //показывает результаты х4 уравнения
+          ),
+        ],
+      ),
     );
   }
 }

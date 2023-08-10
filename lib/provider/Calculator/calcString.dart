@@ -1,6 +1,6 @@
 import 'package:advance_math/advance_math.dart';
-import 'package:calculator/provider/arc_sin_cos_tan.dart';
-import 'package:calculator/provider/sin_cos_tan.dart';
+import 'package:calculator/provider/Calculator/arc_sin_cos_tan.dart';
+import 'package:calculator/provider/Calculator/sin_cos_tan.dart';
 import 'package:petitparser/petitparser.dart';
 
 Parser buildParser() {
@@ -56,10 +56,20 @@ dynamic calcString(String text) {
     } else {
       return double.parse(text);
     }
+  } on OverflowException catch (e) {
+    print(e.value);
+    return e.toString();
   } catch (e) {
     print("Возникло исключение $e");
     return "ошибка";
   }
+}
+
+class OverflowException implements Exception {
+  int value;
+  OverflowException(this.value);
+  @override
+  String toString() => "∞";
 }
 
 dynamic factorial_search(dynamic a) {
@@ -67,7 +77,7 @@ dynamic factorial_search(dynamic a) {
   var i = 1;
   var f = 1;
   if (n > 64) {
-    throw "переполнение типа";
+    throw OverflowException(n);
   } else {
     if (n < 2) {
       return i;

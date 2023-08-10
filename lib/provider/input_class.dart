@@ -4,7 +4,7 @@ import 'package:calculator/provider/provider_class.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 
-import 'calcString.dart';
+import 'Calculator/calcString.dart';
 import 'decision_urv.dart';
 
 class Input_number_equations extends ChangeNotifier implements Input_number {
@@ -954,13 +954,11 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     String text2;
     decide = true;
     text2 = checkpi(text);
-    if (text2 == "ошибка так невозможно") {
-      result = text2;
-    } else {
-      text2 = check_number(text2);
-      result = calcString(text2).toString();
+    text2 = check_number(text2);
+    result = calcString(text2).toString();
+    if (result == "Infinity") {
+      result = "На ноль делить нельзя";
     }
-
     determing_to_true_trigger_end(text);
     notifyListeners();
   }
