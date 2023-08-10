@@ -866,6 +866,14 @@ class keyboard_logarithm extends StatelessWidget {
                 onPressed: () {
                   input_class.ac_press();
                 },
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(AppColors.buttoncolor1),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  )),
+                ),
                 child: Center(
                   child: Text(
                     "AC",
@@ -887,6 +895,14 @@ class keyboard_logarithm extends StatelessWidget {
                 onPressed: () {
                   input_class.delete_press();
                 },
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(AppColors.buttoncolor1),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  )),
+                ),
                 child: Center(
                   child: Text(
                     "Del",
