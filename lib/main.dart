@@ -1,5 +1,6 @@
 import 'package:calculator/Screens/menu.dart';
 import 'package:calculator/provider/%D1%81hange_of_function.dart';
+import 'package:calculator/provider/Logarith/input_number_log.dart';
 import 'package:calculator/provider/decision_urv.dart';
 import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
@@ -53,6 +54,7 @@ class _MainState extends State<Main> {
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => Change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
+      ChangeNotifierProvider(create: (context) => Input_log()),
       ChangeNotifierProvider(create: (context) => Input_number_calculator()),
       ChangeNotifierProvider(create: (context) => Input_number_equations()),
       ChangeNotifierProxyProvider<Input_number_equations, Decision_urv>(
