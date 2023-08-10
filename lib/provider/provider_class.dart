@@ -1,16 +1,3 @@
-import 'dart:math';
-
-import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
-import 'package:calculator/theme/color/theme.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
-import 'package:calculator/switching%20classes/animated_class.dart';
-
-import 'Calculator/calcString.dart';
-
 interface class Input_number {
   //List<String> text_in_cofficients = ['0', '0', '0', '0'];
   //text_in_cofficients это переменные текста коэффецентов, бывшие a_text, b_text... ( [0] = a, [1] = b, [2] = c, [3] = d ).

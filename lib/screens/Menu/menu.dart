@@ -1,17 +1,16 @@
+import 'package:calculator/Screens/Calculator_ui/screens_calculator.dart';
+import 'package:calculator/Screens/Equations_ui/switching%20classes/animated_class.dart';
+import 'package:calculator/Screens/buttons.dart';
+import 'package:calculator/Screens/keyboard.dart';
 import 'package:calculator/Screens/logarithm/screens_logarith.dart';
-import 'package:calculator/screens/screens_calculator.dart';
+import 'package:calculator/provider/%D1%81hange_of_function.dart';
+import 'package:calculator/provider/input_class.dart';
+import 'package:calculator/theme/color/theme.dart';
+import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-
-import '../provider/input_class.dart';
-import '../provider/сhange_of_function.dart';
-import '../switching classes/animated_class.dart';
-import '../theme/color/theme.dart';
-import '../theme/icon/my_flutter_app_icons.dart';
-import 'buttons.dart';
-import 'keyboard.dart';
 
 class Menu extends StatelessWidget {
   @override
