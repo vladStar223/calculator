@@ -924,7 +924,6 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     } // дописать для всех возможны случаев
 
     determing_to_true_trigger_end(text);
-    decide_online();
     notifyListeners();
     // TODO: implement comma_press
   }
