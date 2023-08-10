@@ -806,20 +806,37 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   String checkpi(text) {
     int i = 1;
     var x = "";
-    if (text[0] == "π") {
-      x = text.replaceAll("π", pi.toString());
-      print(x);
-    } else {
-      while (text.length > i) {
-        if (text[text.length - i] == "π") {
-          x = text.substring(0, text.length - i);
-          x = x + pi.toString();
+    try {
+      if (bepi == true) {
+        if (text[0] == "π") {
+          x = text.replaceAll("π", pi.toString());
           print(x);
         }
-        i = i + 1;
+        while (text.length > i) {
+          if (text[text.length - i] == "π") {
+            if (text[text.length - i - 1] == "1" ||
+                text[text.length - i - 1] == "2" ||
+                text[text.length - i - 1] == "3" ||
+                text[text.length - i - 1] == "4" ||
+                text[text.length - i - 1] == "5" ||
+                text[text.length - i - 1] == "6" ||
+                text[text.length - i - 1] == "7" ||
+                text[text.length - i - 1] == "8" ||
+                text[text.length - i - 1] == "9") {
+              x = text.replaceAll("π", "×" + pi.toString());
+            } else {
+              x = text.replaceAll("π", pi.toString());
+            }
+          }
+          i = i + 1;
+        }
+        return x;
+      } else {
+        return text;
       }
+    } catch (e) {
+      return "ошибка так невозможно";
     }
-    return x;
   }
 
   // проверка числа на правильность
@@ -844,11 +861,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         return text = text.substring(0, text.length - 1);
       }
     } else {
-      if (text[text.length - 1] == "π" && text.length == 1) {
-        return pi.toString();
-      } else {
-        return text;
-      }
+      return text;
     }
   }
 
@@ -940,13 +953,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     String text = determing_to_true_trigger_start();
     String text2;
     decide = true;
-    if (bepi == true) {
-      text2 = checkpi(text);
-      bepi = false;
+    text2 = checkpi(text);
+    if (text2 == "ошибка так невозможно") {
+      result = text2;
     } else {
-      text2 = check_number(text);
+      text2 = check_number(text2);
+      result = calcString(text2).toString();
     }
-    result = calcString(text2).toString();
+
     determing_to_true_trigger_end(text);
     notifyListeners();
   }

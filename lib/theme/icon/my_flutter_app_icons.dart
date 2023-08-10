@@ -51,6 +51,7 @@ class MyFlutterApp {
   static const IconData minus_uk9l2bpabquc = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData svg_editor_image__1_ = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData desions_ = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData currency_exchange_3845944 = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData question_circle = IconData(0xe87d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData menu_circle = IconData(0xe87e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData math = IconData(0xf01a, fontFamily: _kFontFam, fontPackage: _kFontPkg);

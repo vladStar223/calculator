@@ -7,27 +7,35 @@ class Change_of_function extends ChangeNotifier {
   bool calculator_expanded = false;
   bool equation_function = false;
   bool menu = false;
+  bool currency_convert = false;
   void change_state_calculator() {
     calculator = true;
-    calculator_expanded = false;
     sta_calculator = false;
+    calculator_expanded = false;
+    equation_function = false;
+    currency_convert = false;
     menu = false;
     notifyListeners();
   } // функция запуска калькулятора
 
   void change_state_calculator_expanded() {
     calculator = false;
-    menu = false;
     calculator_expanded = true;
-    sta_calculator = false;
     notifyListeners();
   } // функция запуска увеличенного калькулятора
 
   void change_state_menu() {
     calculator = false;
     calculator_expanded = false;
-    sta_calculator = false;
+    equation_function = false;
+    currency_convert = false;
     menu = true;
+    notifyListeners();
+  }
+
+  void change_state_currency_convert() {
+    menu = false;
+    currency_convert = true;
     notifyListeners();
   }
 
