@@ -1,3 +1,4 @@
+import 'package:calculator/Screens/logarithm/screens_logarith.dart';
 import 'package:calculator/screens/screens_calculator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,8 @@ class Menu extends StatelessWidget {
             return SizedBox(height: 93.h, width: 100.w, child: Menu_choose());
           } else if (Change_fun.currency_convert == true) {
             return Center(child: Text("В разработке"));
+          } else if (Change_fun.logarithm == true) {
+            return SizedBox(height: 93.h, width: 100.w, child: Logarith());
           } else {
             return Calculators();
           }
@@ -89,7 +92,9 @@ class Menu_choose extends StatelessWidget {
                 width: 22.w,
                 height: 10.h,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Change_fun.change_state_logarithm();
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.buttoncolor1,
                       shape: RoundedRectangleBorder(
@@ -97,7 +102,7 @@ class Menu_choose extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      "S",
+                      "log",
                       style: TextStyle(
                           color: AppColors.white,
                           fontSize: 4.w,

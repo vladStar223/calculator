@@ -11,6 +11,7 @@ class Change_of_function extends ChangeNotifier {
   bool logarithm = false;
   void change_state_calculator() {
     change_false();
+    sta_calculator = false;
     calculator = true;
     notifyListeners();
   } // функция запуска калькулятора
