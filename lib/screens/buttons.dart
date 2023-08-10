@@ -473,6 +473,117 @@ class InputButton_mini extends StatelessWidget {
         ),
       );
     }
+    if (type == 5) {
+      return Container(
+        height: 8.h,
+        width: 17.w,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor2,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: AnimatedCrossFade(
+              firstChild: Text(
+                number + "¯¹",
+                style: TextStyle(
+                    color: AppColors.textcolor2,
+                    fontSize: 3.w,
+                    fontFamily: "Nokora"),
+              ),
+              secondChild: Text(
+                number,
+                style: TextStyle(
+                    color: AppColors.textcolor2,
+                    fontSize: 4.w,
+                    fontFamily: "Nokora"),
+              ),
+              crossFadeState: Provider.of<Input_number_calculator>(context).arc
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: Duration(milliseconds: 300)),
+        ),
+      );
+    }
+    if (type == 7) {
+      return Container(
+        height: 8.h,
+        width: 17.w,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor2,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: AnimatedCrossFade(
+              firstChild: Text(
+                number + "¯¹",
+                style: TextStyle(
+                    color: AppColors.textcolor2,
+                    fontSize: 3.4.w,
+                    fontFamily: "Nokora"),
+              ),
+              secondChild: Text(
+                number,
+                style: TextStyle(
+                    color: AppColors.textcolor2,
+                    fontSize: 5.w,
+                    fontFamily: "Nokora"),
+              ),
+              crossFadeState: Provider.of<Input_number_calculator>(context).arc
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: Duration(milliseconds: 300)),
+        ),
+      );
+    }
+    if (type == 6) {
+      return Container(
+        height: 8.h,
+        width: 17.w,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor2,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: AnimatedCrossFade(
+              firstChild: Text(
+                "deg",
+                style: TextStyle(
+                    color: AppColors.textcolor2,
+                    fontSize: 5.w,
+                    fontFamily: "Nokora"),
+              ),
+              secondChild: Text(
+                "rad",
+                style: TextStyle(
+                    color: AppColors.textcolor2,
+                    fontSize: 5.w,
+                    fontFamily: "Nokora"),
+              ),
+              crossFadeState: Provider.of<Input_number_calculator>(context).deg
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+              duration: Duration(milliseconds: 250)),
+        ),
+      );
+    }
     throw UnimplementedError();
   }
 }

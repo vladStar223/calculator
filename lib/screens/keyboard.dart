@@ -418,113 +418,42 @@ class Keyboard_calculator_expanded extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 0.7.h,
+          height: 0.2.h,
         ),
         Row(
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            AnimatedCrossFade(
-                firstChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().set_arc();
-                    },
-                    type: 1,
-                    number: "2nd¯¹",
-                    font: 3),
-                secondChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().set_arc();
-                    },
-                    type: 1,
-                    number: "2nd",
-                    font: 4.0),
-                crossFadeState:
-                    Provider.of<Input_number_calculator>(context).arc
-                        ? CrossFadeState.showFirst
-                        : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 300)),
-            AnimatedCrossFade(
-                firstChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().set_deg_rad();
-                    },
-                    type: 1,
-                    number: "deg",
-                    font: 5.0),
-                secondChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().set_deg_rad();
-                    },
-                    type: 1,
-                    number: "rad",
-                    font: 5.0),
-                crossFadeState:
-                    Provider.of<Input_number_calculator>(context).deg
-                        ? CrossFadeState.showFirst
-                        : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 300)),
-            AnimatedCrossFade(
-              firstChild: InputButton_mini(
-                  onPressed: () {
-                    context.read<Input_number_calculator>().sin();
-                  },
-                  type: 1,
-                  number: "sin¯¹",
-                  font: 3.4),
-              secondChild: InputButton_mini(
-                  onPressed: () {
-                    context.read<Input_number_calculator>().sin();
-                  },
-                  type: 1,
-                  number: "sin",
-                  font: 5),
-              crossFadeState: Provider.of<Input_number_calculator>(context).arc
-                  ? CrossFadeState.showFirst
-                  : CrossFadeState.showSecond,
-              duration: Duration(milliseconds: 300),
-            ),
-            AnimatedCrossFade(
-                firstChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().cos();
-                    },
-                    //"cos¯¹",
-                    type: 1,
-                    number: "cos¯¹",
-                    font: 3.4),
-                secondChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().cos();
-                    },
-                    type: 1,
-                    number: "cos",
-                    font: 5.0),
-                crossFadeState:
-                    Provider.of<Input_number_calculator>(context).arc
-                        ? CrossFadeState.showFirst
-                        : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 300)),
-            AnimatedCrossFade(
-                firstChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().tan();
-                    },
-                    type: 1,
-                    number: "tan¯¹",
-                    font: 3.4),
-                secondChild: InputButton_mini(
-                    onPressed: () {
-                      context.read<Input_number_calculator>().tan();
-                    },
-                    type: 1,
-                    number: "tan",
-                    font: 5.0),
-                crossFadeState:
-                    Provider.of<Input_number_calculator>(context).arc
-                        ? CrossFadeState.showFirst
-                        : CrossFadeState.showSecond,
-                duration: Duration(milliseconds: 300)),
+            InputButton_mini(
+                type: 5,
+                onPressed: () {
+                  context.read<Input_number_calculator>().set_arc();
+                },
+                number: "2nd"),
+            InputButton_mini(
+                type: 6,
+                onPressed: () {
+                  context.read<Input_number_calculator>().set_deg_rad();
+                },
+                number: "2nd"),
+            InputButton_mini(
+                type: 7,
+                onPressed: () {
+                  context.read<Input_number_calculator>().sin();
+                },
+                number: "sin"),
+            InputButton_mini(
+                type: 7,
+                onPressed: () {
+                  context.read<Input_number_calculator>().cos();
+                },
+                number: "cos"),
+            InputButton_mini(
+                type: 7,
+                onPressed: () {
+                  context.read<Input_number_calculator>().tan();
+                },
+                number: "tan"),
           ],
         ),
         SizedBox(
@@ -572,7 +501,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: 0.7.h,
         ),
         Row(
           // тут нужна анимация

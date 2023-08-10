@@ -2,10 +2,8 @@ import 'dart:math';
 
 import 'package:calculator/provider/provider_class.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
 
 import 'Calculator/calcString.dart';
-import 'decision_urv.dart';
 
 class Input_number_equations extends ChangeNotifier implements Input_number {
   bool enter_block = false;
@@ -141,7 +139,6 @@ class Input_number_equations extends ChangeNotifier implements Input_number {
     }
     return '';
     // TODO: implement determing_to_true_trigger_start
-    throw UnimplementedError();
   }
 
   @override
@@ -302,7 +299,6 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   int text_length = 40; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
     return count;
-    notifyListeners();
   }
 
   void determing_to_true_trigger_end(String text) {
@@ -312,7 +308,6 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   }
 
   /// бла бла бла фунциця [determing_to_true_trigger_end] такая то
-  @override
   void minus_press() {
     // TODO: implement Minus_press
     String text = determing_to_true_trigger_start();
