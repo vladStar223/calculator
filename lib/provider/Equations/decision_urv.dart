@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:calculator/switching%20classes/animated_class.dart';
 
 class Decision_urv extends ChangeNotifier {
   late final Input_number_equations input_number_Equations;

@@ -1,15 +1,10 @@
-import 'package:calculator/provider/decision_urv.dart';
-import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/theme/color/theme.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:calculator/main.dart';
-import 'package:calculator/provider/provider_class.dart';
 import 'package:sizer/sizer.dart';
 
-import '../provider/input_class.dart';
+import '../../provider/input_class.dart';
 
 class quadratic_equation extends StatefulWidget {
   const quadratic_equation({super.key});

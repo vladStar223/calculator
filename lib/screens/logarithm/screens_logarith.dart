@@ -49,7 +49,7 @@ class Logarith extends StatelessWidget {
                 width: 45.w,
                 height: 7.5.h,
                 decoration: BoxDecoration(
-                  color: AppColors.output,
+                  color: AppColors.buttoncolor1,
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                       color: Number.active_coefficient[1]
@@ -73,7 +73,7 @@ class Logarith extends StatelessWidget {
                       Number.text_in_cofficients[1],
                       textAlign: TextAlign.right,
                       style: TextStyle(
-                          color: AppColors.textcolor2,
+                          color: AppColors.white,
                           fontSize: 5.3.w,
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
@@ -92,11 +92,11 @@ class Logarith extends StatelessWidget {
                 width: 20.w,
                 height: 6.h,
                 decoration: BoxDecoration(
-                  color: AppColors.output,
+                  color: AppColors.buttoncolor1,
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                       color: Number.active_coefficient[0]
-                          ? AppColors.color_of_border
+                          ? AppColors.output
                           : Colors.transparent,
                       width: 0.8.w),
                 ),
@@ -115,7 +115,7 @@ class Logarith extends StatelessWidget {
                       Number.text_in_cofficients[0],
                       textAlign: TextAlign.right,
                       style: TextStyle(
-                          color: AppColors.textcolor2,
+                          color: AppColors.white,
                           fontSize: 5.3.w,
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),

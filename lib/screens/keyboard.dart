@@ -5,7 +5,7 @@ import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import '../provider/decision_urv.dart';
+import '../provider/Equations/decision_urv.dart';
 import '../provider/input_class.dart';
 import '../provider/сhange_of_function.dart';
 import 'buttons.dart';
