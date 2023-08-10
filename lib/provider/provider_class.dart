@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:calculator/switching%20classes/animated_class.dart';
 
-import 'calcString.dart';
+import 'Calculator/calcString.dart';
 
 interface class Input_number {
   //List<String> text_in_cofficients = ['0', '0', '0', '0'];

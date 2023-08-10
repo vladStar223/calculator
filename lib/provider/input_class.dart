@@ -4,7 +4,7 @@ import 'package:calculator/provider/provider_class.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 
-import 'calcString.dart';
+import 'Calculator/calcString.dart';
 import 'decision_urv.dart';
 
 class Input_number_equations extends ChangeNotifier implements Input_number {

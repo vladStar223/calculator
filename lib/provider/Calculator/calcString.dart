@@ -1,6 +1,6 @@
 import 'package:advance_math/advance_math.dart';
-import 'package:calculator/provider/arc_sin_cos_tan.dart';
-import 'package:calculator/provider/sin_cos_tan.dart';
+import 'package:calculator/provider/Calculator/arc_sin_cos_tan.dart';
+import 'package:calculator/provider/Calculator/sin_cos_tan.dart';
 import 'package:petitparser/petitparser.dart';
 
 Parser buildParser() {
