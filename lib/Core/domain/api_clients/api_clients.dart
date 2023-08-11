@@ -5,9 +5,11 @@ import '../entity/post.dart';
 
 class ApiClient {
   final client = HttpClient();
-  Future<List<Post>> getPost() async {
-    final json = await get('https://www.cbr-xml-daily.ru/daily_json.js');
-    final posts = json.map((e) => Post.fromJson(e as Map<String, dynamic>));
+  Future<dynamic> getPost() async {
+    final json = await get('https://www.cbr-xml-daily.ru/daily_json.js')
+        as List<dynamic>;
+    final dynamic posts =
+        json.map((e) => Post.fromJson(e as Map<String, dynamic>));
     return posts;
   }
 

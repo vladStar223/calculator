@@ -49,7 +49,7 @@ class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     var x233 = ApiClient();
     var g = x233.getPost();
-    print(g);
+    print(g.toString());
 // TODO: implement build
 // To make this screen full screen.
 // It will hide status bar and notch.

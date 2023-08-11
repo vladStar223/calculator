@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'valute.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class Valute {
   String ID;
   String NumCode;
