@@ -3,14 +3,15 @@ import 'package:calculator/Screens/Equations_ui/switching%20classes/animated_cla
 import 'package:calculator/Screens/buttons.dart';
 import 'package:calculator/Screens/keyboard.dart';
 import 'package:calculator/Screens/logarithm/screens_logarith.dart';
-import 'package:calculator/provider/%D1%81hange_of_function.dart';
-import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../Core/provider/input_class.dart';
+import '../../Core/provider/сhange_of_function.dart';
 
 class Menu extends StatelessWidget {
   @override

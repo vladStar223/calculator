@@ -1,13 +1,13 @@
-import 'package:calculator/provider/Logarith/input_number_log.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import '../provider/Equations/decision_urv.dart';
-import '../provider/input_class.dart';
-import '../provider/сhange_of_function.dart';
+import '../Core/provider/Equations/decision_urv.dart';
+import '../Core/provider/Logarith/input_number_log.dart';
+import '../Core/provider/input_class.dart';
+import '../Core/provider/сhange_of_function.dart';
 import 'buttons.dart';
 
 class keyboard_equation extends StatelessWidget {

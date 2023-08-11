@@ -1,3 +1,4 @@
+import 'package:calculator/Core/domain/api_clients/api_clients.dart';
 import 'package:calculator/Screens/Menu/menu.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
@@ -46,6 +47,8 @@ class Main extends StatefulWidget {
 class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
+    var x233 = ApiClient();
+    x233.getPost();
 // TODO: implement build
 // To make this screen full screen.
 // It will hide status bar and notch.
