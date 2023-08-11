@@ -1,8 +1,4 @@
 import 'package:calculator/Screens/Menu/menu.dart';
-import 'package:calculator/provider/%D1%81hange_of_function.dart';
-import 'package:calculator/provider/Logarith/input_number_log.dart';
-import 'package:calculator/provider/Equations/decision_urv.dart';
-import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
 import 'package:calculator/theme/color/theme.dart';
@@ -12,6 +8,10 @@ import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'Core/provider/Equations/decision_urv.dart';
+import 'Core/provider/Logarith/input_number_log.dart';
+import 'Core/provider/input_class.dart';
+import 'Core/provider/сhange_of_function.dart';
 
 //начало программы
 void main() {
