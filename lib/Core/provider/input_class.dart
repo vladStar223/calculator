@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:calculator/provider/provider_class.dart';
+import 'package:calculator/Core/provider/provider_class.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'Calculator/calcString.dart';

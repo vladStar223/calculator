@@ -1,4 +1,3 @@
-import 'package:calculator/provider/input_class.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../Core/provider/input_class.dart';
 
 class calculator extends StatelessWidget {
   @override

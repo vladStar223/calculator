@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../provider/input_class.dart';
-import '../provider/provider_class.dart';
+import '../Core/provider/input_class.dart';
 import '../theme/color/theme.dart';
 
 class InputButton extends StatelessWidget {

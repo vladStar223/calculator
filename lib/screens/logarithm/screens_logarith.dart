@@ -1,10 +1,10 @@
 import 'package:calculator/Screens/keyboard.dart';
-import 'package:calculator/provider/Logarith/input_number_log.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../Core/provider/Logarith/input_number_log.dart';
 import '../../theme/color/theme.dart';
 
 class Logarith extends StatelessWidget {

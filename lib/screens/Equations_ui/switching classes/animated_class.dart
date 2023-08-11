@@ -1,8 +1,9 @@
 import 'package:calculator/Screens/Equations_ui/result.dart';
 import 'package:calculator/Screens/Equations_ui/screens_equations.dart';
-import 'package:calculator/provider/input_class.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../../Core/provider/input_class.dart';
 
 /*
 class peter1_PEWEHUE extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное

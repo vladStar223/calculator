@@ -1,13 +1,9 @@
 import 'dart:math';
 
-import 'package:calculator/provider/input_class.dart';
-import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
-import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
+
+import '../input_class.dart';
 
 class Decision_urv extends ChangeNotifier {
   late final Input_number_equations input_number_Equations;

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../provider/input_class.dart';
+import '../../Core/provider/input_class.dart';
 
 class quadratic_equation extends StatefulWidget {
   const quadratic_equation({super.key});
