@@ -48,7 +48,8 @@ class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     var x233 = ApiClient();
-    x233.getPost();
+    var g = x233.getPost();
+    print(g);
 // TODO: implement build
 // To make this screen full screen.
 // It will hide status bar and notch.

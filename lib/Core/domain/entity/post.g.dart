@@ -7,15 +7,15 @@ part of 'post.dart';
 // **************************************************************************
 
 Post _$PostFromJson(Map<String, dynamic> json) => Post(
-      json['userId'] as int,
-      json['id'] as int,
-      json['title'] as String,
-      json['body'] as String,
+      json['Date'] as String,
+      json['PreviousDate'] as String,
+      json['Timestamp'] as String,
+      json['Valute'] as Map<String, dynamic>,
     );
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
-      'userId': instance.userID,
-      'id': instance.id,
-      'title': instance.title,
-      'body': instance.body,
+      'Date': instance.Date,
+      'PreviousDate': instance.PreviousDate,
+      'Timestamp': instance.Timestamp,
+      'Valute': instance.valute,
     };

@@ -1,15 +1,15 @@
+import 'package:calculator/Core/domain/entity/valute.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'post.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class Post {
-  @JsonKey(name: 'userId')
-  final int userID;
-  final int id;
-  final String title;
-  final String body;
-
-  Post(this.userID, this.id, this.title, this.body);
+  String Date;
+  String PreviousDate;
+  String Timestamp;
+  @JsonKey(name: 'Valute')
+  Map<String, dynamic> valute;
+  Post(this.Date, this.PreviousDate, this.Timestamp, this.valute);
   factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
   Map<String, dynamic> toJson() => _$PostToJson(this);
 }
