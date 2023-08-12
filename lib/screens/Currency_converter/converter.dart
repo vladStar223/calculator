@@ -19,21 +19,18 @@ class _Currency_converState extends State<Currency_conver> {
     var _future;
     var x;
     x = ApiClient();
-    _future = x.fetchPost();
-    final _valutes = <Valute>[];
-    @override
-    void initState() {
-      x = ApiClient();
-      _future = x.fetchPost();
-      super.initState();
-    }
-
+    //_future = x.fetchPost();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Fetch Data Example'),
+      body: Column(
+        children: [
+          Row(),
+        ],
       ),
-      body: Center(
-        child: FutureBuilder<Post>(
+    );
+  }
+}
+/*
+ child: FutureBuilder<Post>(
           future: _future,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
@@ -47,7 +44,4 @@ class _Currency_converState extends State<Currency_conver> {
             return const CircularProgressIndicator();
           },
         ),
-      ),
-    );
-  }
-}
+ */
