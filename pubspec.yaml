@@ -46,6 +46,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   json_annotation:
+  http: ^1.1.0
 
 flutter_launcher_icons:
   android: "launcher_icon"

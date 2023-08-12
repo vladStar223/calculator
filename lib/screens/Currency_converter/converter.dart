@@ -1,0 +1,47 @@
+import 'dart:convert';
+
+import 'package:calculator/Core/domain/entity/post.dart';
+import 'package:calculator/Core/domain/entity/valute.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../../Core/domain/api_clients/api_clients.dart';
+
+class Currency_conver extends StatefulWidget {
+  @override
+  State<Currency_conver> createState() => _Currency_converState();
+}
+
+class _Currency_converState extends State<Currency_conver> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build\
+    var _future;
+    var x;
+    x = ApiClient();
+    //_future = x.fetchPost();
+    return Scaffold(
+      body: Column(
+        children: [
+          Row(),
+        ],
+      ),
+    );
+  }
+}
+/*
+ child: FutureBuilder<Post>(
+          future: _future,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              _valutes.addAll(snapshot.data!.valute.values.toList());
+              return Text(_valutes[42].Name);
+            } else if (snapshot.hasError) {
+              return Text('${snapshot.error}');
+            }
+
+            // By default, show a loading spinner.
+            return const CircularProgressIndicator();
+          },
+        ),
+ */
