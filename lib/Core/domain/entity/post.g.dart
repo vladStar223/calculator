@@ -9,6 +9,7 @@ part of 'post.dart';
 Post _$PostFromJson(Map<String, dynamic> json) => Post(
       json['Date'] as String,
       json['PreviousDate'] as String,
+      json['PreviousURL'] as String,
       json['Timestamp'] as String,
       json['Valute'] as Map<String, dynamic>,
     );
@@ -16,6 +17,7 @@ Post _$PostFromJson(Map<String, dynamic> json) => Post(
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
       'Date': instance.Date,
       'PreviousDate': instance.PreviousDate,
+      'PreviousURL': instance.PreviousURL,
       'Timestamp': instance.Timestamp,
       'Valute': instance.valute,
     };
