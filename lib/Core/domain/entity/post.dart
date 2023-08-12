@@ -9,7 +9,7 @@ class Post {
   String PreviousURL;
   String Timestamp;
   @JsonKey(name: 'Valute')
-  Map<String, dynamic> valute;
+  Map<String, Valute> valute;
   Post(this.Date, this.PreviousDate, this.PreviousURL, this.Timestamp,
       this.valute);
   factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);

@@ -11,7 +11,9 @@ Post _$PostFromJson(Map<String, dynamic> json) => Post(
       json['PreviousDate'] as String,
       json['PreviousURL'] as String,
       json['Timestamp'] as String,
-      json['Valute'] as Map<String, dynamic>,
+      (json['Valute'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(k, Valute.fromJson(e as Map<String, dynamic>)),
+      ),
     );
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
@@ -19,5 +21,5 @@ Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
       'PreviousDate': instance.PreviousDate,
       'PreviousURL': instance.PreviousURL,
       'Timestamp': instance.Timestamp,
-      'Valute': instance.valute,
+      'Valute': instance.valute.map((k, e) => MapEntry(k, e.toJson())),
     };

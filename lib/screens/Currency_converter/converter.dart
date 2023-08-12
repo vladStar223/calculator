@@ -20,6 +20,7 @@ class _Currency_converState extends State<Currency_conver> {
     var x;
     x = ApiClient();
     _future = x.fetchPost();
+    final _valutes = <Valute>[];
     @override
     void initState() {
       x = ApiClient();
@@ -36,7 +37,8 @@ class _Currency_converState extends State<Currency_conver> {
           future: _future,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return Text(snapshot.data!.Date);
+              _valutes.addAll(snapshot.data!.valute.values.toList());
+              return Text(_valutes[42].Name);
             } else if (snapshot.hasError) {
               return Text('${snapshot.error}');
             }

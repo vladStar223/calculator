@@ -12,6 +12,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../Core/provider/input_class.dart';
 import '../../Core/provider/сhange_of_function.dart';
+import '../Currency_converter/converter.dart';
 
 class Menu extends StatelessWidget {
   @override
@@ -30,7 +31,7 @@ class Menu extends StatelessWidget {
           } else if (Change_fun.menu == true) {
             return SizedBox(height: 93.h, width: 100.w, child: Menu_choose());
           } else if (Change_fun.currency_convert == true) {
-            return Center(child: Text("В разработке"));
+            return Center(child: Currency_conver());
           } else if (Change_fun.logarithm == true) {
             return SizedBox(height: 93.h, width: 100.w, child: Logarith());
           } else {
