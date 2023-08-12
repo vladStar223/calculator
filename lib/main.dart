@@ -14,6 +14,7 @@ import 'Core/domain/entity/post.dart';
 import 'Core/provider/Equations/decision_urv.dart';
 import 'Core/provider/Logarith/input_number_log.dart';
 import 'Core/provider/input_class.dart';
+import 'Core/provider/provider_domain/get_data.dart';
 import 'Core/provider/сhange_of_function.dart';
 
 //начало программы
@@ -58,6 +59,7 @@ class _MainState extends State<Main> {
       ChangeNotifierProvider(create: (context) => Change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_log()),
+      ChangeNotifierProvider(create: (context) => Get_data()),
       ChangeNotifierProvider(create: (context) => Input_number_calculator()),
       ChangeNotifierProvider(create: (context) => Input_number_equations()),
       ChangeNotifierProxyProvider<Input_number_equations, Decision_urv>(
