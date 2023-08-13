@@ -1,6 +1,6 @@
 import 'package:calculator/Core/domain/api_clients/api_clients.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
+import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
 import 'package:calculator/Screens/Menu/menu.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
