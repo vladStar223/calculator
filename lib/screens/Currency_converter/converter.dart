@@ -25,60 +25,66 @@ class _Currency_converState extends State<Currency_conver> {
     // TODO: implement build\
     var AppColors = Provider.of<AppColor>(context);
     var data = Provider.of<Get_data>(context);
-    data.getValutes_from_Post();
-    return Scaffold(
-      backgroundColor: AppColors.fon,
-      body: Column(
-        children: [
-          SizedBox(
-            height: 1.h,
-          ),
-          Row(
+
+    return Builder(
+      builder: (context) {
+        data.getValutes_from_Post();
+
+        return Scaffold(
+          backgroundColor: AppColors.fon,
+          body: Column(
             children: [
-              Container(
-                height: 4.h,
-                width: 100.w,
-                child: ListTile(
-                  title: Text(
-                    textAlign: TextAlign.center,
-                    data.state_data,
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 5.w,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "Nokora"),
-                  ),
-                  trailing: IconButton(
-                    onPressed: () {
-                      if (data.get_data == true) {
-                        data.get_post();
-                      } else {
-                        print("данные получены");
-                      }
-                    },
-                    tooltip: 'Обновить валюты',
-                    splashRadius: 30,
-                    splashColor: Colors.black12,
-                    style: IconButton.styleFrom(
-                        animationDuration: const Duration(seconds: 100)),
-                    icon: Icon(
-                      Icons.browser_updated,
-                      color: AppColors.white,
+              SizedBox(
+                height: 1.h,
+              ),
+              Row(
+                children: [
+                  Container(
+                    height: 4.h,
+                    width: 100.w,
+                    child: ListTile(
+                      title: Text(
+                        textAlign: TextAlign.center,
+                        data.state_data,
+                        style: TextStyle(
+                            color: AppColors.white,
+                            fontSize: 5.w,
+                            fontWeight: FontWeight.w100,
+                            fontFamily: "Nokora"),
+                      ),
+                      trailing: IconButton(
+                        onPressed: () {
+                          if (data.get_data == true) {
+                            data.get_post();
+                          } else {
+                            print("данные получены");
+                          }
+                        },
+                        tooltip: 'Обновить валюты',
+                        splashRadius: 30,
+                        splashColor: Colors.black12,
+                        style: IconButton.styleFrom(
+                            animationDuration: const Duration(seconds: 100)),
+                        icon: Icon(
+                          Icons.browser_updated,
+                          color: AppColors.white,
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Input_out_valute(),
+              SizedBox(
+                height: 10.h,
               ),
             ],
           ),
-          SizedBox(
-            height: 5.h,
-          ),
-          Input_out_valute(),
-          SizedBox(
-            height: 10.h,
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
@@ -104,7 +110,6 @@ class Input_out_valute extends StatelessWidget {
       );
     } // открывает диалог в меню
 
-    data.getValutes_from_Post();
     return Column(children: [
       Container(
         height: 6.h,

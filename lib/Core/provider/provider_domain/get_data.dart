@@ -53,7 +53,7 @@ class Get_data extends ChangeNotifier {
           (get_v.valute.values as Iterable<Valute>).toList(growable: false));
     }
     getName_code_from_Valute();
-    notifyListeners();
+
     //return prefs.getInt(save_valute_Key) ?? 0;
   }
 
@@ -68,7 +68,7 @@ class Get_data extends ChangeNotifier {
       name_code.addAll(
           (get_v.valute.keys as Iterable<String>).toList(growable: false));
     }
-
+    notifyListeners();
     //return prefs.getInt(save_valute_Key) ?? 0;
   }
   //отвечает за получение название кодов валют
