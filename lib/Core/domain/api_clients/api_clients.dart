@@ -5,11 +5,25 @@ import '../entity/post.dart';
 import 'package:http/http.dart' as http;
 
 class ApiClient {
-  Future<Post> fetchPost() async {
-    final response =
-        await http.get(Uri.parse('https://www.cbr-xml-daily.ru/daily_json.js'));
-    dynamic post = Post.fromJson(jsonDecode(response.body));
-    return post;
+  Future<dynamic> fetchPost() async {
+    try {
+      final response = await http
+          .get(Uri.parse('https://www.cbr-xml-daily.ru/daily_json.js'));
+      print(response.statusCode);
+      if (response.statusCode == 200) {
+        // If the server did return a 200 OK response,
+        // then parse the JSON.
+        print(response.statusCode);
+        return Post.fromJson(jsonDecode(response.body));
+      } else {
+        // If the server did not return a 200 OK response,
+        // then throw an exception.
+        return "Данные не получены";
+        throw Exception('Failed to load album');
+      }
+    } catch (e) {
+      return "Данные не получены";
+    }
   }
   /*
   final client = HttpClient();
