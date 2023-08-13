@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:calculator/Core/domain/entity/post.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
+import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/get_data.dart';
 import 'package:calculator/Screens/dialog/choose_valute.dart';
 import 'package:calculator/Screens/keyboard.dart';
@@ -26,66 +26,68 @@ class _Currency_converState extends State<Currency_conver> {
     var AppColors = Provider.of<AppColor>(context);
     var data = Provider.of<Get_data>(context);
 
-    return Builder(
-      builder: (context) {
-        data.getValutes_from_Post();
-
-        return Scaffold(
-          backgroundColor: AppColors.fon,
-          body: Column(
-            children: [
-              SizedBox(
-                height: 1.h,
-              ),
-              Row(
-                children: [
-                  Container(
-                    height: 4.h,
-                    width: 100.w,
-                    child: ListTile(
-                      title: Text(
-                        textAlign: TextAlign.center,
-                        data.state_data,
-                        style: TextStyle(
+    return FutureBuilder(
+        future: data.getValutes_from_Post(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData != true) {
+            // Future hasn't finished yet, return a placeholder
+            return const CircularProgressIndicator();
+          }
+          return Scaffold(
+            backgroundColor: AppColors.fon,
+            body: Column(
+              children: [
+                SizedBox(
+                  height: 1.h,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      height: 4.h,
+                      width: 100.w,
+                      child: ListTile(
+                        title: Text(
+                          textAlign: TextAlign.center,
+                          data.state_data,
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontSize: 5.w,
+                              fontWeight: FontWeight.w100,
+                              fontFamily: "Nokora"),
+                        ),
+                        trailing: IconButton(
+                          onPressed: () {
+                            if (data.get_data == true) {
+                              data.get_post();
+                            } else {
+                              print("данные получены");
+                            }
+                          },
+                          tooltip: 'Обновить валюты',
+                          splashRadius: 30,
+                          splashColor: Colors.black12,
+                          style: IconButton.styleFrom(
+                              animationDuration: const Duration(seconds: 100)),
+                          icon: Icon(
+                            Icons.browser_updated,
                             color: AppColors.white,
-                            fontSize: 5.w,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "Nokora"),
-                      ),
-                      trailing: IconButton(
-                        onPressed: () {
-                          if (data.get_data == true) {
-                            data.get_post();
-                          } else {
-                            print("данные получены");
-                          }
-                        },
-                        tooltip: 'Обновить валюты',
-                        splashRadius: 30,
-                        splashColor: Colors.black12,
-                        style: IconButton.styleFrom(
-                            animationDuration: const Duration(seconds: 100)),
-                        icon: Icon(
-                          Icons.browser_updated,
-                          color: AppColors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 5.h,
-              ),
-              Input_out_valute(),
-              SizedBox(
-                height: 10.h,
-              ),
-            ],
-          ),
-        );
-      },
-    );
+                  ],
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Input_out_valute(),
+                SizedBox(
+                  height: 10.h,
+                ),
+              ],
+            ),
+          );
+        });
   }
 }
 
@@ -111,6 +113,65 @@ class Input_out_valute extends StatelessWidget {
     } // открывает диалог в меню
 
     return Column(children: [
+      Container(
+        height: 6.h,
+        width: 95.w,
+        decoration: BoxDecoration(
+          color: AppColors.output,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: ListTile(
+            title: Row(
+              children: [
+                SizedBox(
+                  height: 6.h,
+                  width: 30.w,
+                  child: TextButton(
+                    onPressed: () {
+                      _showDialog_choose(context);
+                      print("валюта");
+                    },
+                    child: Text(
+                      textAlign: TextAlign.right,
+                      data.name_code[0].toString(),
+                      style: TextStyle(
+                          color: AppColors.textcolor2,
+                          fontSize: 8.w,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "Nokora"),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 6.h,
+                  width: 23.w,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        data.valutes[0].Name,
+                        style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 2.w,
+                            fontWeight: FontWeight.w100,
+                            fontFamily: "Nokora"),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            trailing: Container(
+              height: 6.h,
+              width: 30.w,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  valute.valute_cofficients[0],
+                ),
+              ),
+            )),
+      ),
       Container(
         height: 6.h,
         width: 95.w,
@@ -161,28 +222,39 @@ class Input_out_valute extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: ListTile(
-          title: Text(
-            textAlign: TextAlign.start,
-            "USA",
-            style: TextStyle(
-                color: AppColors.textcolor2,
-                fontSize: 8.w,
-                fontWeight: FontWeight.w100,
-                fontFamily: "Nokora"),
-          ),
-          trailing: IconButton(
-            onPressed: () {},
-            tooltip: 'Обновить валюты',
-            splashRadius: 30,
-            splashColor: Colors.black,
-            style: IconButton.styleFrom(
-                animationDuration: const Duration(seconds: 100)),
-            icon: Icon(
-              Icons.browser_updated,
-              color: AppColors.fon,
+            title: Row(
+              children: [
+                Container(
+                  height: 6.h,
+                  width: 30.w,
+                  child: TextButton(
+                    onPressed: () {
+                      _showDialog_choose(context);
+                      print("валюта");
+                    },
+                    child: Text(
+                      textAlign: TextAlign.right,
+                      data.name_code[0].toString(),
+                      style: TextStyle(
+                          color: AppColors.textcolor2,
+                          fontSize: 8.w,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "Nokora"),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ),
+            trailing: Container(
+              height: 6.h,
+              width: 30.w,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  valute.valute_cofficients[0],
+                ),
+              ),
+            )),
       ),
       Container(
         height: 6.h,
@@ -192,59 +264,39 @@ class Input_out_valute extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: ListTile(
-          title: Text(
-            textAlign: TextAlign.start,
-            "USA",
-            style: TextStyle(
-                color: AppColors.textcolor2,
-                fontSize: 8.w,
-                fontWeight: FontWeight.w100,
-                fontFamily: "Nokora"),
-          ),
-          trailing: IconButton(
-            onPressed: () {},
-            tooltip: 'Обновить валюты',
-            splashRadius: 30,
-            splashColor: Colors.black,
-            style: IconButton.styleFrom(
-                animationDuration: const Duration(seconds: 100)),
-            icon: Icon(
-              Icons.browser_updated,
-              color: AppColors.fon,
+            title: Row(
+              children: [
+                Container(
+                  height: 6.h,
+                  width: 30.w,
+                  child: TextButton(
+                    onPressed: () {
+                      _showDialog_choose(context);
+                      print("валюта");
+                    },
+                    child: Text(
+                      textAlign: TextAlign.right,
+                      data.name_code[0].toString(),
+                      style: TextStyle(
+                          color: AppColors.textcolor2,
+                          fontSize: 8.w,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "Nokora"),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ),
-      ),
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-          title: Text(
-            textAlign: TextAlign.start,
-            "USA",
-            style: TextStyle(
-                color: AppColors.textcolor2,
-                fontSize: 8.w,
-                fontWeight: FontWeight.w100,
-                fontFamily: "Nokora"),
-          ),
-          trailing: IconButton(
-            onPressed: () {},
-            tooltip: 'Обновить валюты',
-            splashRadius: 30,
-            splashColor: Colors.black,
-            style: IconButton.styleFrom(
-                animationDuration: const Duration(seconds: 100)),
-            icon: Icon(
-              Icons.browser_updated,
-              color: AppColors.fon,
-            ),
-          ),
-        ),
+            trailing: Container(
+              height: 6.h,
+              width: 30.w,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  valute.valute_cofficients[0],
+                ),
+              ),
+            )),
       ),
     ]);
     throw UnimplementedError();
