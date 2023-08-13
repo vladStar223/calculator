@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:calculator/Core/domain/entity/post.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
 import 'package:calculator/Core/provider/provider_domain/get_data.dart';
+import 'package:calculator/Screens/dialog/choose_valute.dart';
 import 'package:calculator/Screens/keyboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -85,6 +86,21 @@ class Input_out_valute extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
+    var data = Provider.of<Get_data>(context);
+    _showDialog_choose(BuildContext context) {
+      VoidCallback continueCallBack = () => {
+            Navigator.of(context).pop(),
+            // code on continue comes here
+          };
+      Choose_valute alert = Choose_valute(continueCallBack);
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        },
+      );
+    } // открывает диалог в меню
+
     return Column(children: [
       Container(
         height: 6.h,
@@ -94,14 +110,28 @@ class Input_out_valute extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: ListTile(
-          title: Text(
-            textAlign: TextAlign.start,
-            "USA",
-            style: TextStyle(
-                color: AppColors.textcolor2,
-                fontSize: 8.w,
-                fontWeight: FontWeight.w100,
-                fontFamily: "Nokora"),
+          title: Row(
+            children: [
+              Container(
+                height: 6.h,
+                width: 30.w,
+                child: TextButton(
+                  onPressed: () {
+                    _showDialog_choose(context);
+                    print("валюта");
+                  },
+                  child: Text(
+                    textAlign: TextAlign.right,
+                    data.name_code[0].toString(),
+                    style: TextStyle(
+                        color: AppColors.textcolor2,
+                        fontSize: 8.w,
+                        fontWeight: FontWeight.w100,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+            ],
           ),
           trailing: IconButton(
             onPressed: () {},
