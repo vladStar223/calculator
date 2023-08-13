@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:calculator/Core/domain/entity/post.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
+import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/get_data.dart';
 import 'package:calculator/Screens/dialog/choose_valute.dart';
 import 'package:calculator/Screens/keyboard.dart';
@@ -24,6 +25,7 @@ class _Currency_converState extends State<Currency_conver> {
     // TODO: implement build\
     var AppColors = Provider.of<AppColor>(context);
     var data = Provider.of<Get_data>(context);
+    data.getValutes_from_Post();
     return Scaffold(
       backgroundColor: AppColors.fon,
       body: Column(
@@ -87,6 +89,7 @@ class Input_out_valute extends StatelessWidget {
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
     var data = Provider.of<Get_data>(context);
+    var valute = Provider.of<Decide_valute>(context);
     _showDialog_choose(BuildContext context) {
       VoidCallback continueCallBack = () => {
             Navigator.of(context).pop(),
@@ -101,6 +104,7 @@ class Input_out_valute extends StatelessWidget {
       );
     } // открывает диалог в меню
 
+    data.getValutes_from_Post();
     return Column(children: [
       Container(
         height: 6.h,
@@ -110,42 +114,39 @@ class Input_out_valute extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: ListTile(
-          title: Row(
-            children: [
-              Container(
-                height: 6.h,
-                width: 30.w,
-                child: TextButton(
-                  onPressed: () {
-                    _showDialog_choose(context);
-                    print("валюта");
-                  },
-                  child: Text(
-                    textAlign: TextAlign.right,
-                    data.name_code[0].toString(),
-                    style: TextStyle(
-                        color: AppColors.textcolor2,
-                        fontSize: 8.w,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "Nokora"),
+            title: Row(
+              children: [
+                Container(
+                  height: 6.h,
+                  width: 30.w,
+                  child: TextButton(
+                    onPressed: () {
+                      _showDialog_choose(context);
+                      print("валюта");
+                    },
+                    child: Text(
+                      textAlign: TextAlign.right,
+                      data.name_code[0].toString(),
+                      style: TextStyle(
+                          color: AppColors.textcolor2,
+                          fontSize: 8.w,
+                          fontWeight: FontWeight.w100,
+                          fontFamily: "Nokora"),
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          trailing: IconButton(
-            onPressed: () {},
-            tooltip: 'Обновить валюты',
-            splashRadius: 30,
-            splashColor: Colors.black,
-            style: IconButton.styleFrom(
-                animationDuration: const Duration(seconds: 100)),
-            icon: Icon(
-              Icons.browser_updated,
-              color: AppColors.fon,
+              ],
             ),
-          ),
-        ),
+            trailing: Container(
+              height: 6.h,
+              width: 30.w,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  valute.valute_cofficients[0],
+                ),
+              ),
+            )),
       ),
       Container(
         height: 6.h,
