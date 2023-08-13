@@ -10,7 +10,7 @@ import '../../domain/entity/valute.dart';
 class Get_data extends ChangeNotifier {
   static const save_valute_Key = 'save_post';
   bool get_data = true;
-  String state_data = "Состояние";
+  String state_data = "Информация о данных";
   var valutes = <Valute>[];
   var name_code = [];
   var x = ApiClient();
@@ -53,6 +53,7 @@ class Get_data extends ChangeNotifier {
           (get_v.valute.values as Iterable<Valute>).toList(growable: false));
     }
     getName_code_from_Valute();
+    notifyListeners();
     //return prefs.getInt(save_valute_Key) ?? 0;
   }
 
