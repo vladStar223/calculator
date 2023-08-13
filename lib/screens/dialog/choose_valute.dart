@@ -16,7 +16,7 @@ class Choose_valute extends StatelessWidget {
 
   TextStyle textStyle2 =
       TextStyle(fontFamily: "Nokora", color: Colors.black, fontSize: 20);
-
+  late List<Icon> icon_Country;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -63,7 +63,7 @@ class Choose_valute extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 5.5.h,
+              height: 6.h,
               width: 75.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
