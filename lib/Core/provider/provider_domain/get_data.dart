@@ -12,6 +12,7 @@ class Get_data extends ChangeNotifier {
   bool get_data = true;
   String state_data = "Информация о данных";
   var valutes = <Valute>[];
+  var rub = Valute("0001", '+7', 'RUB', 1, 'Российский рубль', 1, 1);
   var name_code = [];
   var x = ApiClient();
   List<Valute> get valute => List.unmodifiable(valutes);
@@ -24,8 +25,10 @@ class Get_data extends ChangeNotifier {
       name_code.clear();
       valutes.addAll((valuteResponse.valute.values as Iterable<Valute>)
           .toList(growable: false));
+      valutes.insert(27, rub);
       name_code.addAll((valuteResponse.valute.keys as Iterable<String>)
           .toList(growable: false));
+      name_code.insert(27, "RUB");
       get_data = false;
       state_data = "Данные получены";
       _setPost(valuteResponse);
@@ -53,6 +56,7 @@ class Get_data extends ChangeNotifier {
       final get_v = Post.fromJson(json.decode(get_valutes));
       valutes.addAll(
           (get_v.valute.values as Iterable<Valute>).toList(growable: false));
+      valutes.insert(27, rub);
     }
     getName_code_from_Valute();
     return '1';
@@ -70,6 +74,7 @@ class Get_data extends ChangeNotifier {
       final get_v = Post.fromJson(json.decode(get_valutes));
       name_code.addAll(
           (get_v.valute.keys as Iterable<String>).toList(growable: false));
+      name_code.insert(27, "RUB");
     }
     notifyListeners();
     //return prefs.getInt(save_valute_Key) ?? 0;

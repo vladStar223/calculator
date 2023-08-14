@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 
 class Decide_valute extends ChangeNotifier implements Input_number {
   List<String> valute_cofficients = [
-    "0",
-    "0",
-    "0",
-    "0",
+    "1",
+    "1",
+    "1",
+    "1",
   ];
   late List<Valute> valute;
   late List<int> index;
@@ -29,48 +29,77 @@ class Decide_valute extends ChangeNotifier implements Input_number {
 
   void set_type_one() {
     set_false();
+    valute_cofficients[0] = '0';
     type_valute[0] = true;
     notifyListeners();
   }
 
   void set_type_two() {
     set_false();
+    valute_cofficients[1] = '0';
     type_valute[1] = true;
     notifyListeners();
   }
 
   void set_type_three() {
     set_false();
+    valute_cofficients[2] = '0';
     type_valute[2] = true;
     notifyListeners();
   }
 
   void set_type_four() {
     set_false();
+    valute_cofficients[3] = '0';
     type_valute[3] = true;
     notifyListeners();
   }
 
-  double get_RUB(int x_v) {
-    print(valute[index[x_v]].Name);
-    double x = valute[index[x_v]].Value.toDouble() *
-        double.parse(valute_cofficients[x_v]);
+  double get_RUB(int xV, int xType) {
+    double x;
+    print(valute[index[xV]].Name);
+    print(valute[index[xType]].Name);
+    if (valute[index[xType]].Nominal == 100) {
+      x = (valute[index[xType]].Value.toDouble() / 100) *
+          double.parse(valute_cofficients[xType]);
+    } else {
+      x = valute[index[xType]].Value.toDouble() *
+          double.parse(valute_cofficients[xType]);
+    }
     // функция переводит от числа в массиве в рубли
-    print(x);
+    x = x / valute[index[xV]].Value.toDouble();
     return x;
-    print(valute[14].Name);
-    x = x / valute[14].Value.toDouble();
-    print(x);
+  }
+
+  void currency_translator() {
+    if (type_valute[0]) {
+      valute_cofficients[1] = (get_RUB(1, 0)).toString();
+      valute_cofficients[2] = (get_RUB(2, 0)).toString();
+      valute_cofficients[3] = (get_RUB(3, 0)).toString();
+    } else if (type_valute[1]) {
+      valute_cofficients[0] = (get_RUB(0, 1)).toString();
+      valute_cofficients[2] = (get_RUB(2, 1)).toString();
+      valute_cofficients[3] = (get_RUB(3, 1)).toString();
+    } else if (type_valute[2]) {
+      valute_cofficients[0] = (get_RUB(0, 2)).toString();
+      valute_cofficients[1] = (get_RUB(1, 2)).toString();
+      valute_cofficients[3] = (get_RUB(3, 2)).toString();
+    } else if (type_valute[3]) {
+      valute_cofficients[0] = (get_RUB(0, 3)).toString();
+      valute_cofficients[1] = (get_RUB(1, 3)).toString();
+      valute_cofficients[2] = (get_RUB(2, 3)).toString();
+    }
+    notifyListeners();
   }
 
   String text = '0';
 
   @override
   void ac_press() {
-    valute_cofficients[0] = '0';
-    valute_cofficients[1] = '0';
-    valute_cofficients[2] = '0';
-    valute_cofficients[3] = '0';
+    valute_cofficients[0] = '1';
+    valute_cofficients[1] = '1';
+    valute_cofficients[2] = '1';
+    valute_cofficients[3] = '1';
     notifyListeners();
     // TODO: implement ac_press
   }
@@ -152,6 +181,7 @@ class Decide_valute extends ChangeNotifier implements Input_number {
 
   @override
   void resuilt() {
+    currency_translator();
     //valute_cofficients[0] = 0.toString();
     //valute_cofficients[1] = 0.toString();
     //valute_cofficients[2] = 0.toString();
