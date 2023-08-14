@@ -50,33 +50,36 @@ class _Choose_valuteState extends State<Choose_valute> {
                         filled: true),
                   ),
                 ),
-                Container(
-                  height: 47.h,
-                  width: 75.w,
-                  child: ListView.builder(
-                      padding: const EdgeInsets.all(8),
-                      itemCount: widget.valutes.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                            padding: EdgeInsets.symmetric(vertical: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                TextButton(
-                                  onPressed: () {
-                                    widget.dataSet.set_valute(index);
-                                    setState(() {});
-                                  },
-                                  child: Text(widget.valutes[index].Name,
-                                      style: TextStyle(
-                                          fontFamily: "Nokora",
-                                          color: widget.AppColors.textcolor2,
-                                          fontWeight: FontWeight.w300,
-                                          fontSize: 20.sp)),
-                                )
-                              ],
-                            ));
-                      }),
+                AnimatedContainer(
+                  duration: Duration(seconds: 5),
+                  child: Container(
+                    height: 47.h,
+                    width: 75.w,
+                    child: ListView.builder(
+                        padding: const EdgeInsets.all(8),
+                        itemCount: widget.valutes.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  TextButton(
+                                    onPressed: () {
+                                      widget.dataSet.set_valute(index);
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text(widget.valutes[index].Name,
+                                        style: TextStyle(
+                                            fontFamily: "Nokora",
+                                            color: widget.AppColors.textcolor2,
+                                            fontWeight: FontWeight.w300,
+                                            fontSize: 20.sp)),
+                                  )
+                                ],
+                              ));
+                        }),
+                  ),
                 ),
               ],
             ),
