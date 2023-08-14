@@ -124,6 +124,8 @@ class Input_out_valute extends StatelessWidget {
                           builder: (context) {
                             return Choose_valute(
                               dataSet: provider,
+                              valutes: data.valutes,
+                              AppColors: AppColors,
                             );
                           });
                     },
@@ -183,13 +185,6 @@ class Input_out_valute extends StatelessWidget {
                   width: 30.w,
                   child: TextButton(
                     onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                            );
-                          });
                       print("валюта");
                     },
                     child: Text(
@@ -231,13 +226,6 @@ class Input_out_valute extends StatelessWidget {
                   width: 30.w,
                   child: TextButton(
                     onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                            );
-                          });
                       print("валюта");
                     },
                     child: Text(
@@ -279,13 +267,6 @@ class Input_out_valute extends StatelessWidget {
                   width: 30.w,
                   child: TextButton(
                     onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                            );
-                          });
                       print("валюта");
                     },
                     child: Text(

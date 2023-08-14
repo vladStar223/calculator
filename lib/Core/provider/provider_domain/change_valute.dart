@@ -37,19 +37,16 @@ class Change_valute extends ChangeNotifier {
   void set_valute(int x) {
     if (type_valute[0] == true) {
       index[0] = x;
-      notifyListeners();
     }
     if (type_valute[1] == true) {
       index[1] = x;
-      notifyListeners();
     }
     if (type_valute[2] == true) {
       index[2] = x;
-      notifyListeners();
     }
     if (type_valute[3] == true) {
-      notifyListeners();
       index[3] = x;
     }
+    notifyListeners();
   }
 }

@@ -6,12 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../Core/domain/entity/valute.dart';
 import '../../theme/color/theme.dart';
 
 class Choose_valute extends StatefulWidget {
   final Change_valute dataSet;
-
-  const Choose_valute({super.key, required this.dataSet});
+  final List<Valute> valutes;
+  final AppColor AppColors;
+  const Choose_valute(
+      {required this.dataSet, required this.valutes, required this.AppColors});
 
   @override
   State<Choose_valute> createState() => _Choose_valuteState();
@@ -19,83 +22,101 @@ class Choose_valute extends StatefulWidget {
 
 class _Choose_valuteState extends State<Choose_valute> {
   TextStyle textStyle = TextStyle(fontFamily: "Nokora", color: Colors.black);
-
-  TextStyle textStyle2 =
-      TextStyle(fontFamily: "Nokora", color: Colors.black, fontSize: 20);
-
   late List<Icon> icon_Country;
   //print
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      insetPadding: EdgeInsets.zero,
-      title: Center(
-          child: Text(
-        "Выбор валюты",
-        style: textStyle,
-      )),
-      content: Container(
-        height: 50.h,
-        width: 75.w,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(
-          Radius.circular(50.0),
-        )),
-        child: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Введите название валюты",
-                  filled: true),
+    return Center(
+      child: SingleChildScrollView(
+        child: AlertDialog(
+          insetPadding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(35.0))),
+          title: Center(
+              child: Text(
+            "Выбор валюты",
+            style: TextStyle(fontFamily: "Nokora", color: Colors.black),
+          )),
+          content: Container(
+            height: 53.h,
+            width: 75.w,
+            child: Column(
+              children: [
+                const Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Введите название валюты",
+                        filled: true),
+                  ),
+                ),
+                Container(
+                  height: 47.h,
+                  width: 75.w,
+                  child: ListView.builder(
+                      padding: const EdgeInsets.all(8),
+                      itemCount: widget.valutes.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                TextButton(
+                                  onPressed: () {
+                                    widget.dataSet.set_valute(index);
+                                    setState(() {});
+                                  },
+                                  child: Text(widget.valutes[index].Name,
+                                      style: TextStyle(
+                                          fontFamily: "Nokora",
+                                          color: widget.AppColors.textcolor2,
+                                          fontWeight: FontWeight.w300,
+                                          fontSize: 20.sp)),
+                                )
+                              ],
+                            ));
+                      }),
+                ),
+              ],
             ),
-            Container(
-              height: 10.h,
-              width: 75.w,
-              child: ListView(
-                padding: const EdgeInsets.all(8),
-                children: [
-                  Text(widget.dataSet.index[0].toString(),
-                      style: TextStyle(fontSize: 10)),
-                  Text("Alice", style: TextStyle(fontSize: 10)),
-                  Text("Bob", style: TextStyle(fontSize: 10)),
-                  Text("Sam", style: TextStyle(fontSize: 10)),
-                  Text("Kate", style: TextStyle(fontSize: 10)),
-                ],
-              ),
+          ),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 6.h,
+                  width: 75.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                    Radius.circular(70.0),
+                  )),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.black12,
+                    ),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      "Закрыть",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 6.w,
+                          fontFamily: "Nokora"),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ),
+              ],
             ),
+            SizedBox(
+              height: 2.h,
+            )
           ],
         ),
       ),
-      actions: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 6.h,
-              width: 75.w,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                Radius.circular(70.0),
-              )),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.black12,
-                ),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  "Закрыть",
-                  style: TextStyle(
-                      color: Colors.black, fontSize: 6.w, fontFamily: "Nokora"),
-                ),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
