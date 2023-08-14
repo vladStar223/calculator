@@ -51,6 +51,18 @@ class Decide_valute extends ChangeNotifier implements Input_number {
     notifyListeners();
   }
 
+  double get_RUB(int x_v) {
+    print(valute[index[x_v]].Name);
+    double x = valute[index[x_v]].Value.toDouble() *
+        double.parse(valute_cofficients[x_v]);
+    // функция переводит от числа в массиве в рубли
+    print(x);
+    return x;
+    print(valute[14].Name);
+    x = x / valute[14].Value.toDouble();
+    print(x);
+  }
+
   String text = '0';
 
   @override
