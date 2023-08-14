@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:calculator/Core/domain/entity/post.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
+import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/get_data.dart';
 import 'package:calculator/Screens/dialog/choose_valute.dart';
@@ -98,19 +99,8 @@ class Input_out_valute extends StatelessWidget {
     var AppColors = Provider.of<AppColor>(context);
     var data = Provider.of<Get_data>(context);
     var valute = Provider.of<Decide_valute>(context);
-    _showDialog_choose(BuildContext context) {
-      VoidCallback continueCallBack = () => {
-            Navigator.of(context).pop(),
-            // code on continue comes here
-          };
-      Choose_valute alert = Choose_valute(continueCallBack);
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alert;
-        },
-      );
-    } // открывает диалог в меню
+    final provider = Provider.of<Change_valute>(context);
+    // открывает диалог в меню
 
     return Column(children: [
       Container(
@@ -128,8 +118,14 @@ class Input_out_valute extends StatelessWidget {
                   width: 30.w,
                   child: TextButton(
                     onPressed: () {
-                      _showDialog_choose(context);
                       print("валюта");
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Choose_valute(
+                              dataSet: provider,
+                            );
+                          });
                     },
                     child: Text(
                       textAlign: TextAlign.right,
@@ -187,7 +183,13 @@ class Input_out_valute extends StatelessWidget {
                   width: 30.w,
                   child: TextButton(
                     onPressed: () {
-                      _showDialog_choose(context);
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Choose_valute(
+                              dataSet: provider,
+                            );
+                          });
                       print("валюта");
                     },
                     child: Text(
@@ -229,7 +231,13 @@ class Input_out_valute extends StatelessWidget {
                   width: 30.w,
                   child: TextButton(
                     onPressed: () {
-                      _showDialog_choose(context);
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Choose_valute(
+                              dataSet: provider,
+                            );
+                          });
                       print("валюта");
                     },
                     child: Text(
@@ -271,7 +279,13 @@ class Input_out_valute extends StatelessWidget {
                   width: 30.w,
                   child: TextButton(
                     onPressed: () {
-                      _showDialog_choose(context);
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Choose_valute(
+                              dataSet: provider,
+                            );
+                          });
                       print("валюта");
                     },
                     child: Text(
