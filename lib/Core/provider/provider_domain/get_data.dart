@@ -20,8 +20,8 @@ class Get_data extends ChangeNotifier {
     if (valuteResponse == "Данные не получены") {
       state_data = "Данные не получены";
     } else {
-      valutes = [];
-      name_code = [];
+      valutes.clear();
+      name_code.clear();
       valutes.addAll((valuteResponse.valute.values as Iterable<Valute>)
           .toList(growable: false));
       name_code.addAll((valuteResponse.valute.keys as Iterable<String>)
@@ -42,18 +42,21 @@ class Get_data extends ChangeNotifier {
     prefs.setString(save_valute_Key, set_valutes);
   }
 
-  Future<void> getValutes_from_Post() async {
+  Future<String> getValutes_from_Post() async {
     final prefs = await SharedPreferences.getInstance();
     final get_valutes = prefs.getString(save_valute_Key);
+    valutes.clear();
+    name_code.clear();
     if (get_valutes == null)
-      return null;
+      return "0";
     else {
       final get_v = Post.fromJson(json.decode(get_valutes));
       valutes.addAll(
           (get_v.valute.values as Iterable<Valute>).toList(growable: false));
     }
     getName_code_from_Valute();
-    notifyListeners();
+    return '1';
+
     //return prefs.getInt(save_valute_Key) ?? 0;
   }
 
@@ -68,7 +71,7 @@ class Get_data extends ChangeNotifier {
       name_code.addAll(
           (get_v.valute.keys as Iterable<String>).toList(growable: false));
     }
-
+    notifyListeners();
     //return prefs.getInt(save_valute_Key) ?? 0;
   }
   //отвечает за получение название кодов валют

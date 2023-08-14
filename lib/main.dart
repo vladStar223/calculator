@@ -1,6 +1,6 @@
 import 'package:calculator/Core/domain/api_clients/api_clients.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
+import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
 import 'package:calculator/Screens/Menu/menu.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
@@ -15,6 +15,7 @@ import 'Core/domain/entity/post.dart';
 import 'Core/provider/Equations/decision_urv.dart';
 import 'Core/provider/Logarith/input_number_log.dart';
 import 'Core/provider/input_class.dart';
+import 'Core/provider/provider_domain/change_valute.dart';
 import 'Core/provider/provider_domain/get_data.dart';
 import 'Core/provider/сhange_of_function.dart';
 
@@ -61,6 +62,7 @@ class _MainState extends State<Main> {
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_log()),
       ChangeNotifierProvider(create: (context) => Get_data()),
+      ChangeNotifierProvider(create: (context) => Change_valute()),
       ChangeNotifierProvider(create: (context) => Decide_valute()),
       ChangeNotifierProvider(create: (context) => Input_number_calculator()),
       ChangeNotifierProvider(create: (context) => Input_number_equations()),
