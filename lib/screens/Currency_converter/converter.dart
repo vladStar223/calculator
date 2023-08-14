@@ -14,6 +14,8 @@ import 'package:sizer/sizer.dart';
 
 import '../../Core/domain/api_clients/api_clients.dart';
 import '../../theme/color/theme.dart';
+import 'converter_input_out.dart';
+import 'key_board_convert.dart';
 
 class Currency_conver extends StatefulWidget {
   @override
@@ -82,6 +84,35 @@ class _Currency_converState extends State<Currency_conver> {
                   height: 5.h,
                 ),
                 SizedBox(height: 35.h, width: 100.w, child: Input_out_valute()),
+                Container(
+                  height: 2.h,
+                  width: 100.w,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Данные передоставлены",
+                        style: TextStyle(
+                            color: AppColors.white,
+                            fontSize: 3.w,
+                            fontWeight: FontWeight.w100,
+                            fontFamily: "Nokora"),
+                      ),
+                      Text(
+                        " ЦБ РФ",
+                        style: TextStyle(
+                            color: AppColors.white,
+                            fontSize: 3.w,
+                            fontWeight: FontWeight.w100,
+                            fontFamily: "Nokora"),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 1.h,
+                ),
+                keyboard_convert()
               ],
             ),
           );
@@ -89,266 +120,6 @@ class _Currency_converState extends State<Currency_conver> {
   }
 }
 
-class Input_out_valute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    var AppColors = Provider.of<AppColor>(context);
-    var data = Provider.of<Get_data>(context);
-    var valute = Provider.of<Decide_valute>(context);
-    final provider = Provider.of<Change_valute>(context);
-    // открывает диалог в меню
-//ffff
-    return Column(children: [
-      ListTile(
-          title: Row(
-            children: [
-              SizedBox(
-                height: 6.h,
-                width: 30.w,
-                child: TextButton(
-                  onPressed: () {
-                    provider.one_trigger();
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return Choose_valute(
-                            dataSet: provider,
-                            valutes: data.valutes,
-                            AppColors: AppColors,
-                          );
-                        });
-                  },
-                  child: Text(
-                    textAlign: TextAlign.right,
-                    data.name_code[provider.index[0]].toString(),
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 8.w,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 6.h,
-                width: 23.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      data.valutes[provider.index[0]].Name,
-                      style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 2.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          trailing: Container(
-            height: 6.h,
-            width: 30.w,
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                valute.valute_cofficients[0],
-              ),
-            ),
-          )),
-      SizedBox(
-        height: 2.h,
-      ),
-      ListTile(
-          title: Row(
-            children: [
-              SizedBox(
-                height: 6.h,
-                width: 30.w,
-                child: TextButton(
-                  onPressed: () {
-                    provider.two_trigger();
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return Choose_valute(
-                            dataSet: provider,
-                            valutes: data.valutes,
-                            AppColors: AppColors,
-                          );
-                        });
-                  },
-                  child: Text(
-                    textAlign: TextAlign.right,
-                    data.name_code[provider.index[1]].toString(),
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 8.w,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 6.h,
-                width: 23.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      data.valutes[provider.index[1]].Name,
-                      style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 2.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          trailing: Container(
-            height: 6.h,
-            width: 30.w,
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                valute.valute_cofficients[1],
-              ),
-            ),
-          )),
-      SizedBox(
-        height: 2.h,
-      ),
-      ListTile(
-          title: Row(
-            children: [
-              SizedBox(
-                height: 6.h,
-                width: 30.w,
-                child: TextButton(
-                  onPressed: () {
-                    provider.three_trigger();
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return Choose_valute(
-                            dataSet: provider,
-                            valutes: data.valutes,
-                            AppColors: AppColors,
-                          );
-                        });
-                  },
-                  child: Text(
-                    textAlign: TextAlign.right,
-                    data.name_code[provider.index[2]].toString(),
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 8.w,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 6.h,
-                width: 23.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      data.valutes[provider.index[2]].Name,
-                      style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 2.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          trailing: Container(
-            height: 6.h,
-            width: 30.w,
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                valute.valute_cofficients[2],
-              ),
-            ),
-          )),
-      SizedBox(
-        height: 2.02.h,
-      ),
-      ListTile(
-          title: Row(
-            children: [
-              SizedBox(
-                height: 6.h,
-                width: 30.w,
-                child: TextButton(
-                  onPressed: () {
-                    provider.four_trigger();
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return Choose_valute(
-                            dataSet: provider,
-                            valutes: data.valutes,
-                            AppColors: AppColors,
-                          );
-                        });
-                  },
-                  child: Text(
-                    textAlign: TextAlign.right,
-                    data.name_code[provider.index[3]].toString(),
-                    style: TextStyle(
-                        color: AppColors.white,
-                        fontSize: 8.w,
-                        fontWeight: FontWeight.w100,
-                        fontFamily: "Nokora"),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 6.h,
-                width: 23.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      data.valutes[provider.index[3]].Name,
-                      style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 2.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          trailing: Container(
-            height: 6.h,
-            width: 30.w,
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                valute.valute_cofficients[3],
-              ),
-            ),
-          )),
-    ]);
-    throw UnimplementedError();
-  }
-}
 /*
 
  child: FutureBuilder<Post>(

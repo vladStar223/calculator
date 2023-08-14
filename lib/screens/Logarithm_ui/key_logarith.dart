@@ -1,5 +1,3 @@
-import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
-import 'package:calculator/Screens/buttons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,12 +5,13 @@ import 'package:sizer/sizer.dart';
 
 import '../../Core/provider/Logarith/input_number_log.dart';
 import '../../theme/color/theme.dart';
+import '../buttons.dart';
 
-class keyboard_convert extends StatelessWidget {
+class keyboard_logarithm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final input_class = Provider.of<Decide_valute>(context);
+    final input_class = Provider.of<Input_log>(context);
     // используешь это удобно но когда все вместе такое
     // TODO: implement build
     var AppColors = Provider.of<AppColor>(context);
@@ -29,7 +28,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "7",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -39,7 +38,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "4",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -49,7 +48,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "1",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -70,7 +69,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "8",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -80,7 +79,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "5",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -90,7 +89,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "2",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -111,7 +110,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "9",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -121,7 +120,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "6",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -131,7 +130,7 @@ class keyboard_convert extends StatelessWidget {
                 number: "3",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: 1.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -171,7 +170,7 @@ class keyboard_convert extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 4.h,
+              height: 2.h,
             ),
             Container(
               height: 19.h,

@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 
 class Change_valute extends ChangeNotifier {
-  List<int> index = [0, 0, 0, 0];
+  List<int> index = [
+    42,
+    13,
+    14,
+    22,
+  ];
   List<bool> type_valute = [false, false, false, false];
   void false_triger() {
     type_valute[0] = false;
