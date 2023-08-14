@@ -101,197 +101,255 @@ class Input_out_valute extends StatelessWidget {
     var valute = Provider.of<Decide_valute>(context);
     final provider = Provider.of<Change_valute>(context);
     // открывает диалог в меню
-
+//ffff
     return Column(children: [
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                SizedBox(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      print("валюта");
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                              valutes: data.valutes,
-                              AppColors: AppColors,
-                            );
-                          });
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
+      ListTile(
+          title: Row(
+            children: [
+              SizedBox(
+                height: 6.h,
+                width: 30.w,
+                child: TextButton(
+                  onPressed: () {
+                    provider.one_trigger();
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Choose_valute(
+                            dataSet: provider,
+                            valutes: data.valutes,
+                            AppColors: AppColors,
+                          );
+                        });
+                  },
+                  child: Text(
+                    textAlign: TextAlign.right,
+                    data.name_code[provider.index[0]].toString(),
+                    style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 8.w,
+                        fontWeight: FontWeight.w100,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 6.h,
+                width: 23.w,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      data.valutes[provider.index[0]].Name,
                       style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
+                          color: AppColors.white,
+                          fontSize: 2.w,
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: 6.h,
-                  width: 23.w,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        data.valutes[0].Name,
-                        style: TextStyle(
-                            color: AppColors.textcolor2,
-                            fontSize: 2.w,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "Nokora"),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
+                  ],
                 ),
               ),
-            )),
+            ],
+          ),
+          trailing: Container(
+            height: 6.h,
+            width: 30.w,
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                valute.valute_cofficients[0],
+              ),
+            ),
+          )),
+      SizedBox(
+        height: 2.h,
       ),
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                Container(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      print("валюта");
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
+      ListTile(
+          title: Row(
+            children: [
+              SizedBox(
+                height: 6.h,
+                width: 30.w,
+                child: TextButton(
+                  onPressed: () {
+                    provider.two_trigger();
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Choose_valute(
+                            dataSet: provider,
+                            valutes: data.valutes,
+                            AppColors: AppColors,
+                          );
+                        });
+                  },
+                  child: Text(
+                    textAlign: TextAlign.right,
+                    data.name_code[provider.index[1]].toString(),
+                    style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 8.w,
+                        fontWeight: FontWeight.w100,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 6.h,
+                width: 23.w,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      data.valutes[provider.index[1]].Name,
                       style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
+                          color: AppColors.white,
+                          fontSize: 2.w,
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
+                  ],
                 ),
               ),
-            )),
+            ],
+          ),
+          trailing: Container(
+            height: 6.h,
+            width: 30.w,
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                valute.valute_cofficients[1],
+              ),
+            ),
+          )),
+      SizedBox(
+        height: 2.h,
       ),
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                Container(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      print("валюта");
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
+      ListTile(
+          title: Row(
+            children: [
+              SizedBox(
+                height: 6.h,
+                width: 30.w,
+                child: TextButton(
+                  onPressed: () {
+                    provider.three_trigger();
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Choose_valute(
+                            dataSet: provider,
+                            valutes: data.valutes,
+                            AppColors: AppColors,
+                          );
+                        });
+                  },
+                  child: Text(
+                    textAlign: TextAlign.right,
+                    data.name_code[provider.index[2]].toString(),
+                    style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 8.w,
+                        fontWeight: FontWeight.w100,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 6.h,
+                width: 23.w,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      data.valutes[provider.index[2]].Name,
                       style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
+                          color: AppColors.white,
+                          fontSize: 2.w,
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
+                  ],
                 ),
               ),
-            )),
+            ],
+          ),
+          trailing: Container(
+            height: 6.h,
+            width: 30.w,
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                valute.valute_cofficients[2],
+              ),
+            ),
+          )),
+      SizedBox(
+        height: 2.h,
       ),
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                Container(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      print("валюта");
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
+      ListTile(
+          title: Row(
+            children: [
+              SizedBox(
+                height: 6.h,
+                width: 30.w,
+                child: TextButton(
+                  onPressed: () {
+                    provider.four_trigger();
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Choose_valute(
+                            dataSet: provider,
+                            valutes: data.valutes,
+                            AppColors: AppColors,
+                          );
+                        });
+                  },
+                  child: Text(
+                    textAlign: TextAlign.right,
+                    data.name_code[provider.index[3]].toString(),
+                    style: TextStyle(
+                        color: AppColors.white,
+                        fontSize: 8.w,
+                        fontWeight: FontWeight.w100,
+                        fontFamily: "Nokora"),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 6.h,
+                width: 23.w,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      data.valutes[provider.index[3]].Name,
                       style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
+                          color: AppColors.white,
+                          fontSize: 2.w,
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
+                  ],
                 ),
               ),
-            )),
+            ],
+          ),
+          trailing: Container(
+            height: 6.h,
+            width: 30.w,
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                valute.valute_cofficients[3],
+              ),
+            ),
+          )),
+      SizedBox(
+        height: 2.h,
       ),
     ]);
     throw UnimplementedError();
