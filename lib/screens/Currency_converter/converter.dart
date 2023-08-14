@@ -6,7 +6,7 @@ import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/get_data.dart';
 import 'package:calculator/Screens/dialog/choose_valute.dart';
-import 'package:calculator/Screens/keyboard.dart';
+import 'package:calculator/Screens/Equations_ui/keyboard_eqution.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -81,10 +81,7 @@ class _Currency_converState extends State<Currency_conver> {
                 SizedBox(
                   height: 5.h,
                 ),
-                Input_out_valute(),
-                SizedBox(
-                  height: 10.h,
-                ),
+                SizedBox(height: 35.h, width: 100.w, child: Input_out_valute()),
               ],
             ),
           );
@@ -287,7 +284,7 @@ class Input_out_valute extends StatelessWidget {
             ),
           )),
       SizedBox(
-        height: 2.h,
+        height: 2.02.h,
       ),
       ListTile(
           title: Row(
@@ -348,9 +345,6 @@ class Input_out_valute extends StatelessWidget {
               ),
             ),
           )),
-      SizedBox(
-        height: 2.h,
-      ),
     ]);
     throw UnimplementedError();
   }
