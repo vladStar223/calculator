@@ -118,7 +118,7 @@ class _screen_normalState extends State<screen_normal> {
         builder: (context, snapshot) {
           if (ConnectionState.done != snapshot.connectionState) {
             // Future hasn't finished yet, return a placeholder
-            return Center(child: Text('Loading'));
+            return const CircularProgressIndicator();
           }
           return Builder(builder: (context) {
             if (Provider.of<AppColor>(context).x == true) {
