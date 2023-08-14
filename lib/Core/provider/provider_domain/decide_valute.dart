@@ -57,8 +57,8 @@ class Decide_valute extends ChangeNotifier implements Input_number {
 
   double get_RUB(int xV, int xType) {
     double x;
-    print(valute[index[xV]].Name);
-    print(valute[index[xType]].Name);
+    //print(valute[index[xV]].Name);
+    // print(valute[index[xType]].Name);
     if (valute[index[xType]].Nominal == 100) {
       x = (valute[index[xType]].Value.toDouble() / 100) *
           double.parse(valute_cofficients[xType]);

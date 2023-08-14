@@ -10,7 +10,7 @@ import '../../domain/entity/valute.dart';
 class Get_data extends ChangeNotifier {
   static const save_valute_Key = 'save_post';
   bool get_data = true;
-  String state_data = "Информация о данных";
+  String state_data = "Данные о валютах";
   var valutes = <Valute>[];
   var rub = Valute("0001", '+7', 'RUB', 1, 'Российский рубль', 1, 1);
   var name_code = [];
@@ -19,7 +19,7 @@ class Get_data extends ChangeNotifier {
   Future<void> get_post() async {
     final valuteResponse = await x.fetchPost();
     if (valuteResponse == "Данные не получены") {
-      state_data = "Данные не получены";
+      state_data = "Проверьте интернет-соединение";
     } else {
       valutes.clear();
       name_code.clear();
@@ -30,7 +30,7 @@ class Get_data extends ChangeNotifier {
           .toList(growable: false));
       name_code.insert(27, "RUB");
       get_data = false;
-      state_data = "Данные получены";
+      state_data = "Данные успешно получены";
       _setPost(valuteResponse);
     }
 
