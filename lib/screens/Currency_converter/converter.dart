@@ -6,7 +6,7 @@ import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/get_data.dart';
 import 'package:calculator/Screens/dialog/choose_valute.dart';
-import 'package:calculator/Screens/keyboard.dart';
+import 'package:calculator/Screens/Equations_ui/keyboard_eqution.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +14,8 @@ import 'package:sizer/sizer.dart';
 
 import '../../Core/domain/api_clients/api_clients.dart';
 import '../../theme/color/theme.dart';
+import 'converter_input_out.dart';
+import 'key_board_convert.dart';
 
 class Currency_conver extends StatefulWidget {
   @override
@@ -81,10 +83,36 @@ class _Currency_converState extends State<Currency_conver> {
                 SizedBox(
                   height: 5.h,
                 ),
-                Input_out_valute(),
-                SizedBox(
-                  height: 10.h,
+                SizedBox(height: 35.h, width: 100.w, child: Input_out_valute()),
+                Container(
+                  height: 2.h,
+                  width: 100.w,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Данные передоставлены",
+                        style: TextStyle(
+                            color: AppColors.white,
+                            fontSize: 3.w,
+                            fontWeight: FontWeight.w100,
+                            fontFamily: "Nokora"),
+                      ),
+                      Text(
+                        " ЦБ РФ",
+                        style: TextStyle(
+                            color: AppColors.white,
+                            fontSize: 3.w,
+                            fontWeight: FontWeight.w100,
+                            fontFamily: "Nokora"),
+                      ),
+                    ],
+                  ),
                 ),
+                SizedBox(
+                  height: 1.h,
+                ),
+                keyboard_convert()
               ],
             ),
           );
@@ -92,230 +120,6 @@ class _Currency_converState extends State<Currency_conver> {
   }
 }
 
-class Input_out_valute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    var AppColors = Provider.of<AppColor>(context);
-    var data = Provider.of<Get_data>(context);
-    var valute = Provider.of<Decide_valute>(context);
-    final provider = Provider.of<Change_valute>(context);
-    // открывает диалог в меню
-
-    return Column(children: [
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                SizedBox(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      print("валюта");
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                            );
-                          });
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
-                      style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 6.h,
-                  width: 23.w,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        data.valutes[0].Name,
-                        style: TextStyle(
-                            color: AppColors.textcolor2,
-                            fontSize: 2.w,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "Nokora"),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
-                ),
-              ),
-            )),
-      ),
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                Container(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                            );
-                          });
-                      print("валюта");
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
-                      style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
-                ),
-              ),
-            )),
-      ),
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                Container(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                            );
-                          });
-                      print("валюта");
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
-                      style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
-                ),
-              ),
-            )),
-      ),
-      Container(
-        height: 6.h,
-        width: 95.w,
-        decoration: BoxDecoration(
-          color: AppColors.output,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: ListTile(
-            title: Row(
-              children: [
-                Container(
-                  height: 6.h,
-                  width: 30.w,
-                  child: TextButton(
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Choose_valute(
-                              dataSet: provider,
-                            );
-                          });
-                      print("валюта");
-                    },
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      data.name_code[0].toString(),
-                      style: TextStyle(
-                          color: AppColors.textcolor2,
-                          fontSize: 8.w,
-                          fontWeight: FontWeight.w100,
-                          fontFamily: "Nokora"),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            trailing: Container(
-              height: 6.h,
-              width: 30.w,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  valute.valute_cofficients[0],
-                ),
-              ),
-            )),
-      ),
-    ]);
-    throw UnimplementedError();
-  }
-}
 /*
 
  child: FutureBuilder<Post>(
@@ -333,3 +137,4 @@ class Input_out_valute extends StatelessWidget {
           },
         ),
  */
+
