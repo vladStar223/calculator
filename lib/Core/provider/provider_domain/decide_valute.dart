@@ -1,6 +1,7 @@
 import 'package:calculator/Core/domain/entity/valute.dart';
 import 'package:calculator/Core/provider/provider_class.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:petitparser/parser.dart';
 
 class Decide_valute extends ChangeNotifier implements Input_number {
   List<String> valute_cofficients = [
@@ -182,10 +183,6 @@ class Decide_valute extends ChangeNotifier implements Input_number {
   @override
   void resuilt() {
     currency_translator();
-    //valute_cofficients[0] = 0.toString();
-    //valute_cofficients[1] = 0.toString();
-    //valute_cofficients[2] = 0.toString();
-    //valute_cofficients[3] = 0.toString();
     // TODO: implement resuilt
   }
 }

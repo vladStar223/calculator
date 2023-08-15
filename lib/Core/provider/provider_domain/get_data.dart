@@ -15,6 +15,7 @@ class Get_data extends ChangeNotifier {
   var rub = Valute("0001", '+7', 'RUB', 1, 'Российский рубль', 1, 1);
   var name_code = [];
   var x = ApiClient();
+  bool restart_var = true;
   List<Valute> get valute => List.unmodifiable(valutes);
   Future<void> get_post() async {
     final valuteResponse = await x.fetchPost();
@@ -30,6 +31,7 @@ class Get_data extends ChangeNotifier {
           .toList(growable: false));
       name_code.insert(27, "RUB");
       get_data = false;
+      restart_var = true;
       state_data = "Данные успешно получены";
       _setPost(valuteResponse);
     }

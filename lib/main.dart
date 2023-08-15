@@ -1,6 +1,7 @@
 import 'package:calculator/Core/domain/api_clients/api_clients.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
 import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
+import 'package:calculator/Core/provider/provider_domain/seach.dart';
 import 'package:calculator/Screens/Menu/menu.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
@@ -58,6 +59,7 @@ class _MainState extends State<Main> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     final scaffoldKey = GlobalKey<ScaffoldState>();
     return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => Seach()),
       ChangeNotifierProvider(create: (context) => Change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_log()),
@@ -118,7 +120,7 @@ class _screen_normalState extends State<screen_normal> {
         builder: (context, snapshot) {
           if (ConnectionState.done != snapshot.connectionState) {
             // Future hasn't finished yet, return a placeholder
-            return Center(child: Text('Loading'));
+            return const CircularProgressIndicator();
           }
           return Builder(builder: (context) {
             if (Provider.of<AppColor>(context).x == true) {
@@ -327,5 +329,19 @@ class View_editer extends StatelessWidget {
       ),
     );
     throw UnimplementedError();
+  }
+}
+
+extension Case on String {
+  // isuppercase
+  bool isUpperCase() {
+    int ascii = codeUnitAt(0);
+    return ascii >= 65 && ascii <= 90;
+  }
+
+  // islowercase
+  bool isLowerCase() {
+    int ascii = codeUnitAt(0);
+    return ascii >= 97 && ascii <= 122;
   }
 }

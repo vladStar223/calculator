@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class Change_valute extends ChangeNotifier {
   List<int> index = [
-    42,
+    27,
     13,
     14,
     22,
