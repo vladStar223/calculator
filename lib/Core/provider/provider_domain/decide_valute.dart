@@ -1,6 +1,7 @@
 import 'package:calculator/Core/domain/entity/valute.dart';
 import 'package:calculator/Core/provider/provider_class.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:petitparser/parser.dart';
 
 class Decide_valute extends ChangeNotifier implements Input_number {
   List<String> valute_cofficients = [
