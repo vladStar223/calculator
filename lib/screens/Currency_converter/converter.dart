@@ -101,83 +101,87 @@ class _Currency_converState extends State<Currency_conver> {
           }
           return Scaffold(
             backgroundColor: AppColors.fon,
-            body: Column(
-              children: [
-                SizedBox(
-                  height: 1.h,
-                ),
-                Row(
-                  children: [
-                    Container(
-                      height: 4.h,
-                      width: 100.w,
-                      child: ListTile(
-                        title: Text(
-                          textAlign: TextAlign.center,
-                          data.state_data,
+            body: ListView(physics: ClampingScrollPhysics(), children: [
+              Column(
+                children: [
+                  SizedBox(
+                    height: 1.h,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 4.h,
+                        width: 100.w,
+                        child: ListTile(
+                          title: Text(
+                            textAlign: TextAlign.center,
+                            data.state_data,
+                            style: TextStyle(
+                                color: AppColors.white,
+                                fontSize: 3.w,
+                                fontWeight: FontWeight.w100,
+                                fontFamily: "Nokora"),
+                          ),
+                          trailing: IconButton(
+                            onPressed: () {
+                              if (data.get_data == true) {
+                                data.get_post();
+                              } else {
+                                print("данные получены");
+                              }
+                            },
+                            tooltip: 'Обновить валюты',
+                            splashRadius: 30,
+                            splashColor: Colors.black12,
+                            style: IconButton.styleFrom(
+                                animationDuration:
+                                    const Duration(seconds: 100)),
+                            icon: Icon(
+                              Icons.browser_updated,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  SizedBox(
+                      height: 35.h, width: 100.w, child: Input_out_valute()),
+                  Container(
+                    height: 2.h,
+                    width: 100.w,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Данные передоставлены",
                           style: TextStyle(
                               color: AppColors.white,
                               fontSize: 3.w,
                               fontWeight: FontWeight.w100,
                               fontFamily: "Nokora"),
                         ),
-                        trailing: IconButton(
-                          onPressed: () {
-                            if (data.get_data == true) {
-                              data.get_post();
-                            } else {
-                              print("данные получены");
-                            }
-                          },
-                          tooltip: 'Обновить валюты',
-                          splashRadius: 30,
-                          splashColor: Colors.black12,
-                          style: IconButton.styleFrom(
-                              animationDuration: const Duration(seconds: 100)),
-                          icon: Icon(
-                            Icons.browser_updated,
-                            color: AppColors.white,
-                          ),
+                        Text(
+                          " ЦБ РФ",
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontSize: 3.w,
+                              fontWeight: FontWeight.w100,
+                              fontFamily: "Nokora"),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                SizedBox(height: 35.h, width: 100.w, child: Input_out_valute()),
-                Container(
-                  height: 2.h,
-                  width: 100.w,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Данные передоставлены",
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 3.w,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "Nokora"),
-                      ),
-                      Text(
-                        " ЦБ РФ",
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 3.w,
-                            fontWeight: FontWeight.w100,
-                            fontFamily: "Nokora"),
-                      ),
-                    ],
                   ),
-                ),
-                SizedBox(
-                  height: 1.h,
-                ),
-                keyboard_convert()
-              ],
-            ),
+                  SizedBox(
+                    height: 1.h,
+                  ),
+                  keyboard_convert()
+                ],
+              ),
+            ]),
           );
         });
   }

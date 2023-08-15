@@ -1,6 +1,7 @@
 import 'package:calculator/Core/domain/api_clients/api_clients.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
 import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
+import 'package:calculator/Core/provider/provider_domain/seach.dart';
 import 'package:calculator/Screens/Menu/menu.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
@@ -58,6 +59,7 @@ class _MainState extends State<Main> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     final scaffoldKey = GlobalKey<ScaffoldState>();
     return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => Seach()),
       ChangeNotifierProvider(create: (context) => Change_of_function()),
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_log()),

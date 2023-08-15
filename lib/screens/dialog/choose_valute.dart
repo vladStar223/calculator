@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
+import 'package:calculator/Core/provider/provider_domain/seach.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,8 +14,13 @@ class Choose_valute extends StatefulWidget {
   final Change_valute dataSet;
   final List<Valute> valutes;
   final AppColor AppColors;
-  const Choose_valute(
-      {required this.dataSet, required this.valutes, required this.AppColors});
+  final Seach seachs;
+  const Choose_valute({
+    required this.dataSet,
+    required this.valutes,
+    required this.AppColors,
+    required this.seachs,
+  });
 
   @override
   State<Choose_valute> createState() => _Choose_valuteState();
@@ -22,7 +28,8 @@ class Choose_valute extends StatefulWidget {
 
 class _Choose_valuteState extends State<Choose_valute> {
   TextStyle textStyle = TextStyle(fontFamily: "Nokora", color: Colors.black);
-  late List<Icon> icon_Country;
+
+  get text => null;
   //print
   @override
   Widget build(BuildContext context) {
@@ -42,43 +49,49 @@ class _Choose_valuteState extends State<Choose_valute> {
             width: 75.w,
             child: Column(
               children: [
-                const Expanded(
+                Expanded(
                   child: TextField(
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Введите название валюты",
                         filled: true),
+                    onChanged: (text) {
+                      print(widget.seachs.valute_name);
+                    },
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(seconds: 5),
+                  duration: Duration(seconds: 3),
                   child: Container(
                     height: 47.h,
                     width: 75.w,
-                    child: ListView.builder(
-                        padding: const EdgeInsets.all(8),
-                        itemCount: widget.valutes.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                              padding: EdgeInsets.symmetric(vertical: 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  TextButton(
-                                    onPressed: () {
-                                      widget.dataSet.set_valute(index);
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text(widget.valutes[index].Name,
-                                        style: TextStyle(
-                                            fontFamily: "Nokora",
-                                            color: widget.AppColors.textcolor2,
-                                            fontWeight: FontWeight.w300,
-                                            fontSize: 20.sp)),
-                                  )
-                                ],
-                              ));
-                        }),
+                    child: Builder(builder: (context) {
+                      return ListView.builder(
+                          padding: const EdgeInsets.all(8),
+                          itemCount: widget.valutes.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+                                        widget.dataSet.set_valute(index);
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text(widget.valutes[index].Name,
+                                          style: TextStyle(
+                                              fontFamily: "Nokora",
+                                              color:
+                                                  widget.AppColors.textcolor2,
+                                              fontWeight: FontWeight.w300,
+                                              fontSize: 20.sp)),
+                                    )
+                                  ],
+                                ));
+                          });
+                    }),
                   ),
                 ),
               ],
