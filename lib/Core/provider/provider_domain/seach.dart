@@ -83,6 +83,7 @@ class Seach extends ChangeNotifier {
   void seach_valute(String text) {
     int i = 0;
     int k = 0;
+    //Stopwatch stopwatch = new Stopwatch()..start();
     if (text.isEmpty == false) {
       if (text[0].isUpperCase() == true) {
         while (i < valute_name.length) {
@@ -106,6 +107,7 @@ class Seach extends ChangeNotifier {
     }
     seach = false;
     print(index);
+    //print('doSomething() executed in ${stopwatch.elapsed}');
     notifyListeners();
     //print(index);
   }

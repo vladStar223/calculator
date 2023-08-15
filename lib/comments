@@ -13,3 +13,6 @@
     double height3 = height - padding.top - kToolbarHeight;
 // использовать для получения размера экрана
 
+Stopwatch stopwatch = new Stopwatch()..start();
+/что проверять  функцию
+print('doSomething() executed in ${stopwatch.elapsed}');
