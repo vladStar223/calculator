@@ -104,7 +104,7 @@ class Seach extends ChangeNotifier {
         }
       }
     }
-    seach = true;
+    seach = false;
     print(index);
     notifyListeners();
     //print(index);
