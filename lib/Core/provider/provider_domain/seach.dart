@@ -1,3 +1,4 @@
+import 'package:calculator/main.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../domain/entity/valute.dart';
@@ -10,6 +11,7 @@ class Seach extends ChangeNotifier {
   bool seach = false;
   void set_value(var valuteName2) {
     valute = valuteName2;
+    index = List<int>.generate(valute.length, (i) => i);
     valute_name.clear();
     valute_name_small.clear();
     set_valute_name();
@@ -32,9 +34,10 @@ class Seach extends ChangeNotifier {
     }
   }
 
-  void seach_string(String x) {
-    String t = x;
-    var p = List<int>.generate(valute.length, (i) => 0);
+  bool seach_string(String text, String valute) {
+    String t = text;
+    String a = valute;
+    var p = List<int>.generate(30 + 1, (i) => 0);
     int j = 0;
     int i = 1;
     while (i < t.length) {
@@ -51,8 +54,7 @@ class Seach extends ChangeNotifier {
         }
       }
     }
-    print(p);
-    String a = "1234";
+    //print(p);
     int m = t.length;
     int n = a.length;
     i = 0;
@@ -62,8 +64,7 @@ class Seach extends ChangeNotifier {
         i += 1;
         j += 1;
         if (j == m) {
-          print("образ найден");
-          break;
+          return true;
         }
       } else {
         if (j > 0) {
@@ -74,7 +75,38 @@ class Seach extends ChangeNotifier {
       }
     }
     if (i == n && j != m) {
-      print("образ не найден");
+      return false;
     }
+    return false;
+  }
+
+  void seach_valute(String text) {
+    int i = 0;
+    int k = 0;
+    if (text.isEmpty == false) {
+      if (text[0].isUpperCase() == true) {
+        while (i < valute_name.length) {
+          bool x = seach_string(text, valute_name[i].trim());
+          if (x == true) {
+            index[k] = i;
+            k = k + 1;
+          }
+          i = i + 1;
+        }
+      } else {
+        while (i < valute_name_small.length) {
+          bool x = seach_string(text, valute_name_small[i].trim());
+          if (x == true) {
+            index[k] = i;
+            k = k + 1;
+          }
+          i = i + 1;
+        }
+      }
+    }
+    seach = true;
+    print(index);
+    notifyListeners();
+    //print(index);
   }
 }
