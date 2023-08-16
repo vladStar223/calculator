@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:calculator/Core/domain/entity/post.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
-import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
-import 'package:calculator/Core/provider/provider_domain/get_data.dart';
+import 'package:calculator/Core/provider/Valute/change_valute.dart';
+import 'package:calculator/Core/provider/Valute/decide_valute.dart';
+import 'package:calculator/Core/provider/provider_domain/Data/get_data.dart';
 import 'package:calculator/Screens/dialog/choose_valute.dart';
 import 'package:calculator/Screens/Equations_ui/keyboard_eqution.dart';
 import 'package:flutter/cupertino.dart';

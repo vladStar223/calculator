@@ -5,7 +5,7 @@ import 'package:calculator/Core/domain/entity/post.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../domain/entity/valute.dart';
+import '../../../domain/entity/valute.dart';
 
 class Get_data extends ChangeNotifier {
   static const save_valute_Key = 'save_post';

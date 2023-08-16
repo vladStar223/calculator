@@ -1,4 +1,4 @@
-import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
+import 'package:calculator/Core/provider/Valute/decide_valute.dart';
 import 'package:calculator/Screens/buttons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

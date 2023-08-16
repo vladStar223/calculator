@@ -1,5 +1,5 @@
 import 'package:calculator/main.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart' show ChangeNotifier;
 
 import '../../domain/entity/valute.dart';
 
