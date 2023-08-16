@@ -1,20 +1,21 @@
 import 'package:calculator/Core/provider/Valute/decide_valute.dart';
 import 'package:calculator/Screens/buttons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../Core/provider/Logarith/input_number_log.dart';
 import '../../theme/color/theme.dart';
 
-class keyboard_convert extends StatelessWidget {
+class KeyboardConvert extends StatelessWidget {
+  const KeyboardConvert({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final input_class = Provider.of<Decide_valute>(context);
+    final inputClass = Provider.of<Decide_valute>(context);
     // используешь это удобно но когда все вместе такое
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -23,7 +24,7 @@ class keyboard_convert extends StatelessWidget {
           children: [
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("7");
+                  inputClass.nums_press("7");
                 },
                 type: 1,
                 number: "7",
@@ -33,7 +34,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("4");
+                  inputClass.nums_press("4");
                 },
                 type: 1,
                 number: "4",
@@ -43,7 +44,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("1");
+                  inputClass.nums_press("1");
                 },
                 type: 1,
                 number: "1",
@@ -53,7 +54,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("e");
+                  inputClass.nums_press("e");
                 },
                 type: 1,
                 number: "e",
@@ -64,7 +65,7 @@ class keyboard_convert extends StatelessWidget {
           children: [
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("8");
+                  inputClass.nums_press("8");
                 },
                 type: 1,
                 number: "8",
@@ -74,7 +75,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("5");
+                  inputClass.nums_press("5");
                 },
                 type: 1,
                 number: "5",
@@ -84,7 +85,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("2");
+                  inputClass.nums_press("2");
                 },
                 type: 1,
                 number: "2",
@@ -94,7 +95,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("0");
+                  inputClass.nums_press("0");
                 },
                 type: 1,
                 number: "0",
@@ -105,7 +106,7 @@ class keyboard_convert extends StatelessWidget {
           children: [
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("9");
+                  inputClass.nums_press("9");
                 },
                 type: 1,
                 number: "9",
@@ -115,7 +116,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("6");
+                  inputClass.nums_press("6");
                 },
                 type: 1,
                 number: "6",
@@ -125,7 +126,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.nums_press("3");
+                  inputClass.nums_press("3");
                 },
                 type: 1,
                 number: "3",
@@ -135,7 +136,7 @@ class keyboard_convert extends StatelessWidget {
             ),
             InputButton(
                 onPressed: () {
-                  input_class.comma_press();
+                  inputClass.comma_press();
                 },
                 type: 1,
                 number: ".",
@@ -144,12 +145,12 @@ class keyboard_convert extends StatelessWidget {
         ),
         Column(
           children: [
-            Container(
+            SizedBox(
               height: 19.h,
               width: 20.w,
               child: ElevatedButton(
                 onPressed: () {
-                  input_class.ac_press();
+                  inputClass.ac_press();
                 },
                 style: ButtonStyle(
                   backgroundColor:
@@ -173,12 +174,12 @@ class keyboard_convert extends StatelessWidget {
             SizedBox(
               height: 4.h,
             ),
-            Container(
+            SizedBox(
               height: 19.h,
               width: 20.w,
               child: ElevatedButton(
                 onPressed: () {
-                  input_class.delete_press();
+                  inputClass.delete_press();
                 },
                 style: ButtonStyle(
                   backgroundColor:
@@ -203,6 +204,5 @@ class keyboard_convert extends StatelessWidget {
         ),
       ],
     );
-    throw UnimplementedError();
   }
 }

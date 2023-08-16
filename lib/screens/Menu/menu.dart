@@ -1,58 +1,62 @@
-import 'package:calculator/Screens/Calculator_ui/screens_calculator.dart';
-import 'package:calculator/Screens/Equations_ui/switching%20classes/animated_class.dart';
 import 'package:calculator/Screens/buttons.dart';
-import 'package:calculator/Screens/Equations_ui/keyboard_eqution.dart';
+import 'package:calculator/screens/Equations_ui/keyboard_eqution.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Core/provider/input_class.dart';
 import '../../Core/provider/сhange_of_function.dart';
 import '../Calculator_ui/key_board.dart';
+import '../Calculator_ui/screens_calculator.dart';
 import '../Currency_converter/converter.dart';
+import '../Equations_ui/switching classes/animated_class.dart';
 import '../Logarithm_ui/screens_logarith.dart';
 
 class Menu extends StatelessWidget {
+  const Menu({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    var AppColors = Provider.of<AppColor>(context);
-    var Change_fun = Provider.of<Change_of_function>(context);
+    // ignore: non_constant_identifier_names
+    AppColor AppColors = Provider.of<AppColor>(context);
+    var changeFun = Provider.of<ChangeFunction>(context);
     return Scaffold(
       drawerEnableOpenDragGesture: false,
       backgroundColor: AppColors.fon,
       body: AnimatedContainer(
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
         child: Builder(builder: (context) {
-          if (Change_fun.equation_function == true) {
-            return Equations();
-          } else if (Change_fun.menu == true) {
-            return SizedBox(height: 93.h, width: 100.w, child: Menu_choose());
-          } else if (Change_fun.currency_convert == true) {
-            return Center(child: Currency_conver());
-          } else if (Change_fun.logarithm == true) {
-            return SizedBox(height: 93.h, width: 100.w, child: Logarith());
+          if (changeFun.equation_function == true) {
+            return const Equations();
+          } else if (changeFun.menu == true) {
+            return SizedBox(
+                height: 93.h, width: 100.w, child: const MenuChoose());
+          } else if (changeFun.currency_convert == true) {
+            return const Center(child: CurrencyConverter());
+          } else if (changeFun.logarithm == true) {
+            return SizedBox(
+                height: 93.h, width: 100.w, child: const Logarithm());
           } else {
-            return Calculators();
+            return const Calculators();
           }
         }),
       ),
     );
-    throw UnimplementedError();
   }
 }
 
-class Menu_choose extends StatelessWidget {
+class MenuChoose extends StatelessWidget {
+  const MenuChoose({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    var AppColors = Provider.of<AppColor>(context);
-    var Change_fun = Provider.of<Change_of_function>(context);
-    const double textSize = 15;
+    // ignore: non_constant_identifier_names
+    AppColor AppColors = Provider.of<AppColor>(context);
+    var changeFun = Provider.of<ChangeFunction>(context);
     const double space = 15;
     return ListView(
       padding: const EdgeInsets.all(20),
@@ -65,13 +69,13 @@ class Menu_choose extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: space),
-              child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: space),
+              child: SizedBox(
                 width: 22.w,
                 height: 10.h,
                 child: ElevatedButton(
                     onPressed: () {
-                      Change_fun.change_state_equation_function();
+                      changeFun.change_state_equation_function();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.buttoncolor1,
@@ -90,13 +94,13 @@ class Menu_choose extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: space),
-              child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: space),
+              child: SizedBox(
                 width: 22.w,
                 height: 10.h,
                 child: ElevatedButton(
                     onPressed: () {
-                      Change_fun.change_state_logarithm();
+                      changeFun.change_state_logarithm();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.buttoncolor1,
@@ -115,13 +119,13 @@ class Menu_choose extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: space),
-              child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: space),
+              child: SizedBox(
                 width: 22.w,
                 height: 10.h,
                 child: ElevatedButton(
                     onPressed: () {
-                      Change_fun.change_state_currency_convert();
+                      changeFun.change_state_currency_convert();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.buttoncolor1,
@@ -140,35 +144,38 @@ class Menu_choose extends StatelessWidget {
         ),
       ],
     );
-    throw UnimplementedError();
   }
 }
 
 class Equations extends StatelessWidget {
+  const Equations({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Column(
       children: [
-        SizedBox(height: 43.30.h, width: 95.w, child: AnimatedScreen()),
+        SizedBox(height: 43.30.h, width: 95.w, child: const AnimatedScreen()),
         // resuilt_animated_screen(), не используется, но может нужно тебе
         SizedBox(
           height: 49.7.h,
           width: 100.w,
-          child: keyboard_equation(),
+          child: const KeyboardEquation(),
         ),
       ],
     );
-    throw UnimplementedError();
   }
 }
 
 class Calculators extends StatelessWidget {
+  const Calculators({super.key});
+
   @override
   Widget build(BuildContext context) {
-    var AppColors = Provider.of<AppColor>(context);
-    var Number_calculator = Provider.of<Input_number_calculator>(context);
-    var changeOfFunction = Provider.of<Change_of_function>(context);
+    // ignore: non_constant_identifier_names
+    AppColor AppColors = Provider.of<AppColor>(context);
+    var numberCalculator = Provider.of<Input_number_calculator>(context);
+    var changeOfFunction = Provider.of<ChangeFunction>(context);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     // TODO: implement build
@@ -190,7 +197,7 @@ class Calculators extends StatelessWidget {
                       children: [
                         Builder(builder: (context) {
                           /// some operation here ...
-                          if (Number_calculator.decide == true) {
+                          if (numberCalculator.decide == true) {
                             return Column(
                               children: [
                                 Row(
@@ -201,7 +208,7 @@ class Calculators extends StatelessWidget {
                                         fit: BoxFit.contain,
                                         child: Text(
                                           textAlign: TextAlign.right,
-                                          Number_calculator.count,
+                                          numberCalculator.count,
                                           style: TextStyle(
                                               color: AppColors.white,
                                               fontSize: 45,
@@ -220,7 +227,7 @@ class Calculators extends StatelessWidget {
                                         fit: BoxFit.contain,
                                         child: Text(
                                           textAlign: TextAlign.right,
-                                          Number_calculator.result,
+                                          numberCalculator.result,
                                           style: TextStyle(
                                               color: AppColors.white,
                                               fontSize: 45,
@@ -242,7 +249,7 @@ class Calculators extends StatelessWidget {
                                     fit: BoxFit.contain,
                                     child: Text(
                                       textAlign: TextAlign.right,
-                                      Number_calculator.count,
+                                      numberCalculator.count,
                                       style: TextStyle(
                                           color: AppColors.white,
                                           fontSize: 45,
@@ -264,7 +271,7 @@ class Calculators extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 )
               ],
@@ -455,10 +462,10 @@ class Calculators extends StatelessWidget {
                     Sta_inputButton(
                         onPressed: () {
                           context
-                              .read<Change_of_function>()
+                              .read<ChangeFunction>()
                               .change_state_calculator();
                           context
-                              .read<Change_of_function>()
+                              .read<ChangeFunction>()
                               .change_state_calculator_expanded();
                         },
                         type: 1,
@@ -498,10 +505,10 @@ class Calculators extends StatelessWidget {
       return Column(
         children: [
           AnimatedCrossFade(
-            firstChild:
-                SizedBox(height: 43.39.h, width: 100.w, child: calculator()),
-            secondChild:
-                SizedBox(height: 30.39.h, width: 100.w, child: calculator()),
+            firstChild: SizedBox(
+                height: 43.39.h, width: 100.w, child: const Calculator()),
+            secondChild: SizedBox(
+                height: 30.39.h, width: 100.w, child: const Calculator()),
             crossFadeState: changeOfFunction.calculator
                 ? CrossFadeState.showFirst
                 : CrossFadeState.showSecond,
@@ -509,14 +516,14 @@ class Calculators extends StatelessWidget {
           ),
           AnimatedCrossFade(
               firstChild: SizedBox(
-                height: 49.7.h,
+                height: 50.h,
                 width: 100.w,
-                child: keyboard_calculator(),
+                child: const KeyboardCalculator(),
               ),
               secondChild: SizedBox(
-                height: 63.7.h,
+                height: 64.h,
                 width: 100.w,
-                child: Keyboard_calculator_expanded(),
+                child: const KeyboardCalculatorExpanded(),
               ),
               crossFadeState: changeOfFunction.calculator
                   ? CrossFadeState.showFirst
@@ -526,6 +533,5 @@ class Calculators extends StatelessWidget {
         ],
       );
     }
-    throw UnimplementedError();
   }
 }

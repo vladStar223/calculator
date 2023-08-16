@@ -1,19 +1,21 @@
-import 'package:calculator/Screens/Equations_ui/keyboard_eqution.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Core/provider/Logarith/input_number_log.dart';
 import '../../theme/color/theme.dart';
-import 'key_logarith.dart';
+import 'key_logarithm.dart';
 
-class Logarith extends StatelessWidget {
+class Logarithm extends StatelessWidget {
+  const Logarithm({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    var AppColors = Provider.of<AppColor>(context);
-    var Number = Provider.of<Input_log>(context);
+    // ignore: non_constant_identifier_names
+    AppColor AppColors = Provider.of<AppColor>(context);
+    // ignore: non_constant_identifier_names
+    Input_log Number = Provider.of<Input_log>(context);
     return Scaffold(
       drawerEnableOpenDragGesture: false,
       backgroundColor: AppColors.fon,
@@ -160,10 +162,9 @@ class Logarith extends StatelessWidget {
           SizedBox(
             height: 3.h,
           ),
-          keyboard_logarithm()
+          const KeyboardLogarithm()
         ],
       ),
     );
-    throw UnimplementedError();
   }
 }

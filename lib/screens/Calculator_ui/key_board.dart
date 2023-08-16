@@ -8,13 +8,13 @@ import '../../theme/color/theme.dart';
 import '../../theme/icon/my_flutter_app_icons.dart';
 import '../buttons.dart';
 
-class keyboard_calculator extends StatelessWidget {
+class KeyboardCalculator extends StatelessWidget {
+  const KeyboardCalculator({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final animation = Provider.of<Input_number_calculator>(context);
-    // используешь это удобно но когда все вместе такое
-    // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     return Column(
       children: [
@@ -173,7 +173,7 @@ class keyboard_calculator extends StatelessWidget {
             InputButton(
                 onPressed: () {
                   context
-                      .read<Change_of_function>()
+                      .read<ChangeFunction>()
                       .change_state_calculator_expanded();
                 },
                 type: 1,
@@ -204,14 +204,16 @@ class keyboard_calculator extends StatelessWidget {
         ),
       ],
     );
-    throw UnimplementedError();
   }
 }
 
-class Keyboard_calculator_expanded extends StatelessWidget {
+class KeyboardCalculatorExpanded extends StatelessWidget {
+  const KeyboardCalculatorExpanded({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     return Column(
       children: [
@@ -476,7 +478,7 @@ class Keyboard_calculator_expanded extends StatelessWidget {
           children: [
             InputButton_mini(
                 onPressed: () {
-                  context.read<Change_of_function>().change_state_calculator();
+                  context.read<ChangeFunction>().change_state_calculator();
                 },
                 type: 1,
                 number: "less",
@@ -516,6 +518,5 @@ class Keyboard_calculator_expanded extends StatelessWidget {
         ),
       ],
     );
-    throw UnimplementedError();
   }
 }

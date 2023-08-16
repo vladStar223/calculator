@@ -1,31 +1,23 @@
-import 'dart:convert';
-
-import 'package:calculator/Core/domain/entity/post.dart';
-import 'package:calculator/Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/Valute/change_valute.dart';
-import 'package:calculator/Core/provider/Valute/decide_valute.dart';
 import 'package:calculator/Core/provider/provider_domain/Data/get_data.dart';
-import 'package:calculator/Screens/dialog/choose_valute.dart';
-import 'package:calculator/Screens/Equations_ui/keyboard_eqution.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../Core/domain/api_clients/api_clients.dart';
 import '../../theme/color/theme.dart';
 import 'converter_input_out.dart';
 import 'key_board_convert.dart';
 
-class Currency_conver extends StatefulWidget {
+class CurrencyConverter extends StatefulWidget {
+  const CurrencyConverter({super.key});
+
   @override
-  State<Currency_conver> createState() => _Currency_converState();
+  State<CurrencyConverter> createState() => _CurrencyConverterState();
 }
 
-class _Currency_converState extends State<Currency_conver> {
+class _CurrencyConverterState extends State<CurrencyConverter> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build\
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     var data = Provider.of<Get_data>(context);
 
@@ -44,7 +36,7 @@ class _Currency_converState extends State<Currency_conver> {
                 ),
                 Row(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 4.h,
                       width: 100.w,
                       child: ListTile(
@@ -101,7 +93,7 @@ class _Currency_converState extends State<Currency_conver> {
           }
           return Scaffold(
             backgroundColor: AppColors.fon,
-            body: ListView(physics: ClampingScrollPhysics(), children: [
+            body: ListView(physics: const ClampingScrollPhysics(), children: [
               Column(
                 children: [
                   SizedBox(
@@ -109,7 +101,7 @@ class _Currency_converState extends State<Currency_conver> {
                   ),
                   Row(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 4.h,
                         width: 100.w,
                         child: ListTile(
@@ -149,8 +141,8 @@ class _Currency_converState extends State<Currency_conver> {
                     height: 5.h,
                   ),
                   SizedBox(
-                      height: 35.h, width: 100.w, child: Input_out_valute()),
-                  Container(
+                      height: 35.h, width: 100.w, child: const ShowValute()),
+                  SizedBox(
                     height: 2.h,
                     width: 100.w,
                     child: Row(
@@ -178,7 +170,7 @@ class _Currency_converState extends State<Currency_conver> {
                   SizedBox(
                     height: 1.h,
                   ),
-                  keyboard_convert()
+                  const KeyboardConvert()
                 ],
               ),
             ]),

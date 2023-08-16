@@ -1,14 +1,17 @@
-import 'package:calculator/theme/color/theme.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+
 import '../../Core/provider/Equations/decision_urv.dart';
 import '../../Core/provider/input_class.dart';
+import '../../theme/color/theme.dart';
 
-class resuilt extends StatelessWidget {
+class Resuilt extends StatelessWidget {
+  const Resuilt({super.key});
+
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     var decision = Provider.of<Decision_urv>(context);
     var fonturv = 7;
@@ -234,9 +237,12 @@ class resuilt extends StatelessWidget {
   }
 }
 
-class resuilt_urv3 extends StatelessWidget {
+class ResultUrv3 extends StatelessWidget {
+  const ResultUrv3({super.key});
+
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     var decision = Provider.of<Decision_urv>(context);
     // TODO: implement build
@@ -410,15 +416,16 @@ class resuilt_urv3 extends StatelessWidget {
         ]),
       );
     });
-
-    throw UnimplementedError();
   }
 }
 
-class resuilt_urv4 extends StatelessWidget {
+class ResultUrv4 extends StatelessWidget {
+  const ResultUrv4({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     var decision = Provider.of<Decision_urv>(context);
     var fonturv = 7;
@@ -689,15 +696,5 @@ class resuilt_urv4 extends StatelessWidget {
         }
       });
     });
-
-    throw UnimplementedError();
-  }
-}
-
-class Not_x extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
   }
 }

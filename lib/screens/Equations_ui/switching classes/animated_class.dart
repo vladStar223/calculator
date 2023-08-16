@@ -1,9 +1,9 @@
-import 'package:calculator/Screens/Equations_ui/result.dart';
-import 'package:calculator/Screens/Equations_ui/screens_equations.dart';
+import 'package:calculator/screens/Equations_ui/result.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../Core/provider/input_class.dart';
+import '../screens_equations.dart';
 
 /*
 class peter1_PEWEHUE extends ChangeNotifier {} // это неизвестно зачем существует, оно бесполезное
@@ -64,32 +64,32 @@ class AnimatedScreen extends StatelessWidget {
           AnimatedScreenItem(
             opacity: animated.active_input_screen[0] ? 1 : 0,
             ignoring: animated.active_input_screen[0] ? false : true,
-            child: const quadratic_equation(), //показывает ввод х2 уравнение
+            child: const QuadraticEquation(), //показывает ввод х2 уравнение
           ),
           AnimatedScreenItem(
             opacity: animated.active_input_screen[1] ? 1 : 0,
             ignoring: animated.active_input_screen[1] ? false : true,
-            child: const cubic_equation(), // показывает ввод х3 уравнение
+            child: const CubicEquation(), // показывает ввод х3 уравнение
           ),
           AnimatedScreenItem(
             opacity: animated.active_input_screen[2] ? 1 : 0,
             ignoring: animated.active_input_screen[2] ? false : true,
-            child: const biquadrate_equation(), //показывает ввод х4 уравнение
+            child: const BiquadrateEquation(), //показывает ввод х4 уравнение
           ),
           AnimatedScreenItem(
             opacity: animated.active_resuilt_screen[0] ? 1 : 0,
             ignoring: animated.active_resuilt_screen[0] ? false : true,
-            child: resuilt(), //показывает результаты х2 уравнения
+            child: Resuilt(), //показывает результаты х2 уравнения
           ),
           AnimatedScreenItem(
             opacity: animated.active_resuilt_screen[1] ? 1 : 0,
             ignoring: animated.active_resuilt_screen[1] ? false : true,
-            child: resuilt_urv3(), //показывает результаты х3 уравнения
+            child: ResultUrv3(), //показывает результаты х3 уравнения
           ),
           AnimatedScreenItem(
             opacity: animated.active_resuilt_screen[2] ? 1 : 0,
             ignoring: animated.active_resuilt_screen[2] ? false : true,
-            child: resuilt_urv4(), //показывает результаты х4 уравнения
+            child: ResultUrv4(), //показывает результаты х4 уравнения
           ),
         ],
       ),
