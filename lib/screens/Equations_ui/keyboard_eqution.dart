@@ -1,20 +1,16 @@
-import 'package:flutter/cupertino.dart';
-import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
-import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import '../../Core/provider/Equations/decision_urv.dart';
-import '../../Core/provider/Logarith/input_number_log.dart';
 import '../../Core/provider/input_class.dart';
-import '../../Core/provider/сhange_of_function.dart';
 import '../buttons.dart';
 
-class keyboard_equation extends StatelessWidget {
+class KeyboardEquation extends StatelessWidget {
+  const KeyboardEquation({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    final animation = Provider.of<Input_number_equations>(context);
     final equations = Provider.of<Input_number_equations>(context);
     // используешь это удобно но когда все вместе такое
     // TODO: implement build
@@ -207,6 +203,5 @@ class keyboard_equation extends StatelessWidget {
         ),
       ],
     );
-    throw UnimplementedError();
   }
 }

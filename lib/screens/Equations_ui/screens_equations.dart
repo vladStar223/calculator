@@ -1,22 +1,17 @@
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Core/provider/input_class.dart';
 
-class quadratic_equation extends StatefulWidget {
-  const quadratic_equation({super.key});
+class QuadraticEquation extends StatelessWidget {
+  const QuadraticEquation({super.key});
 
-  @override
-  State<quadratic_equation> createState() => _quadratic_equationState();
-}
-
-class _quadratic_equationState extends State<quadratic_equation> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     final equations = Provider.of<Input_number_equations>(context);
     return Container(
@@ -25,7 +20,7 @@ class _quadratic_equationState extends State<quadratic_equation> {
         borderRadius: BorderRadius.circular(45),
       ),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+        padding: const EdgeInsets.fromLTRB(40, 30, 30, 30),
         child: Column(
           children: [
             Row(
@@ -218,21 +213,16 @@ class _quadratic_equationState extends State<quadratic_equation> {
         ),
       ),
     );
-    throw UnimplementedError();
   }
 }
 
-class cubic_equation extends StatefulWidget {
-  const cubic_equation({super.key});
+class CubicEquation extends StatelessWidget {
+  const CubicEquation({super.key});
 
-  @override
-  State<cubic_equation> createState() => _cubic_equationState();
-}
-
-class _cubic_equationState extends State<cubic_equation> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     final equations = Provider.of<Input_number_equations>(context);
     return Container(
@@ -241,7 +231,7 @@ class _cubic_equationState extends State<cubic_equation> {
         borderRadius: BorderRadius.circular(45),
       ),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+        padding: const EdgeInsets.fromLTRB(40, 30, 30, 30),
         child: Column(
           children: [
             Row(
@@ -490,17 +480,13 @@ class _cubic_equationState extends State<cubic_equation> {
   }
 }
 
-class biquadrate_equation extends StatefulWidget {
-  const biquadrate_equation({super.key});
+class BiquadrateEquation extends StatelessWidget {
+  const BiquadrateEquation({super.key});
 
-  @override
-  State<biquadrate_equation> createState() => _biquadrate_equationState();
-}
-
-class _biquadrate_equationState extends State<biquadrate_equation> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     final equations = Provider.of<Input_number_equations>(context);
     return Container(
@@ -509,7 +495,7 @@ class _biquadrate_equationState extends State<biquadrate_equation> {
         borderRadius: BorderRadius.circular(45),
       ),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(40, 30, 30, 30),
+        padding: const EdgeInsets.fromLTRB(40, 30, 30, 30),
         child: Column(
           children: [
             Row(

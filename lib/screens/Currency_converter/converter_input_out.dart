@@ -1,5 +1,4 @@
 import 'package:calculator/Core/provider/Seach/seach.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -10,18 +9,21 @@ import '../../Core/provider/provider_domain/Data/get_data.dart';
 import '../../theme/color/theme.dart';
 import '../Dialog/choose_valute.dart';
 
-class Input_out_valute extends StatefulWidget {
+class ShowValute extends StatefulWidget {
+  const ShowValute({super.key});
+
   @override
-  State<Input_out_valute> createState() => _Input_out_valuteState();
+  State<ShowValute> createState() => _ShowValuteState();
 }
 
-class _Input_out_valuteState extends State<Input_out_valute> {
+class _ShowValuteState extends State<ShowValute> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     var data = Provider.of<Get_data>(context);
-    var valute_decide = Provider.of<Decide_valute>(context);
+    var valuteDecide = Provider.of<Decide_valute>(context);
     final provider = Provider.of<Change_valute>(context);
     var seach1 = Provider.of<Seach>(context);
     //
@@ -31,7 +33,6 @@ class _Input_out_valuteState extends State<Input_out_valute> {
 //ffff
     return Builder(builder: (context) {
       if (data.restart_var == true) {
-        print('d');
         Provider.of<Seach>(context).set_value(data.valutes);
         Provider.of<Decide_valute>(context).set_valute(data.valutes);
         Provider.of<Decide_valute>(context).set_index(provider.index);
@@ -50,7 +51,7 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                       showDialog(
                           context: context,
                           builder: (context) {
-                            return Choose_valute(
+                            return ChooseValute(
                               dataSet: provider,
                               valutes: data.valutes,
                               AppColors: AppColors, seachs: seach1,
@@ -88,19 +89,19 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                 ),
               ],
             ),
-            trailing: Container(
+            trailing: SizedBox(
               height: 6.h,
               width: 30.w,
               child: TextButton(
                 onPressed: () {
-                  valute_decide.set_type_one();
+                  valuteDecide.set_type_one();
                 },
                 child: Text(
                   style: TextStyle(
                       color: AppColors.color_of_border, fontSize: 12.sp),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  valute_decide.valute_cofficients[0],
+                  valuteDecide.valute_cofficients[0],
                 ),
               ),
             )),
@@ -119,7 +120,7 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                       showDialog(
                           context: context,
                           builder: (context) {
-                            return Choose_valute(
+                            return ChooseValute(
                               dataSet: provider,
                               valutes: data.valutes,
                               AppColors: AppColors,
@@ -157,19 +158,19 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                 ),
               ],
             ),
-            trailing: Container(
+            trailing: SizedBox(
               height: 6.h,
               width: 30.w,
               child: TextButton(
                 onPressed: () {
-                  valute_decide.set_type_two();
+                  valuteDecide.set_type_two();
                 },
                 child: Text(
                   style: TextStyle(
                       color: AppColors.color_of_border, fontSize: 12.sp),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  valute_decide.valute_cofficients[1],
+                  valuteDecide.valute_cofficients[1],
                 ),
               ),
             )),
@@ -188,7 +189,7 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                       showDialog(
                           context: context,
                           builder: (context) {
-                            return Choose_valute(
+                            return ChooseValute(
                               dataSet: provider,
                               valutes: data.valutes,
                               AppColors: AppColors,
@@ -226,19 +227,19 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                 ),
               ],
             ),
-            trailing: Container(
+            trailing: SizedBox(
               height: 6.h,
               width: 30.w,
               child: TextButton(
                 onPressed: () {
-                  valute_decide.set_type_three();
+                  valuteDecide.set_type_three();
                 },
                 child: Text(
                   style: TextStyle(
                       color: AppColors.color_of_border, fontSize: 12.sp),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  valute_decide.valute_cofficients[2],
+                  valuteDecide.valute_cofficients[2],
                 ),
               ),
             )),
@@ -257,7 +258,7 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                       showDialog(
                           context: context,
                           builder: (context) {
-                            return Choose_valute(
+                            return ChooseValute(
                               dataSet: provider,
                               valutes: data.valutes,
                               AppColors: AppColors,
@@ -295,24 +296,23 @@ class _Input_out_valuteState extends State<Input_out_valute> {
                 ),
               ],
             ),
-            trailing: Container(
+            trailing: SizedBox(
               height: 6.h,
               width: 30.w,
               child: TextButton(
                 onPressed: () {
-                  valute_decide.set_type_four();
+                  valuteDecide.set_type_four();
                 },
                 child: Text(
                   style: TextStyle(
                       color: AppColors.color_of_border, fontSize: 12.sp),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  valute_decide.valute_cofficients[3],
+                  valuteDecide.valute_cofficients[3],
                 ),
               ),
             )),
       ]);
     });
-    throw UnimplementedError();
   }
 }

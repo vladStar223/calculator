@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class Change_of_function extends ChangeNotifier {
+class ChangeFunction extends ChangeNotifier {
   // класс отвечает за  измения функционало приложение
   bool sta_calculator = true;
   bool calculator = false;

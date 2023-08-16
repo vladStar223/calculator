@@ -1,19 +1,19 @@
-import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Core/provider/input_class.dart';
 
-class calculator extends StatelessWidget {
+class Calculator extends StatelessWidget {
+  const Calculator({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
-    var Number_calculator = Provider.of<Input_number_calculator>(context);
+    var numberCalculator = Provider.of<Input_number_calculator>(context);
     return Column(
       children: [
         Expanded(
@@ -24,7 +24,7 @@ class calculator extends StatelessWidget {
               children: [
                 Builder(builder: (context) {
                   /// some operation here ...
-                  if (Number_calculator.decide == true) {
+                  if (numberCalculator.decide == true) {
                     return Column(
                       children: [
                         Row(
@@ -35,7 +35,7 @@ class calculator extends StatelessWidget {
                                 fit: BoxFit.contain,
                                 child: Text(
                                   textAlign: TextAlign.right,
-                                  Number_calculator.count,
+                                  numberCalculator.count,
                                   style: TextStyle(
                                       color: AppColors.white,
                                       fontSize: 12.w,
@@ -54,7 +54,7 @@ class calculator extends StatelessWidget {
                                 fit: BoxFit.contain,
                                 child: Text(
                                   textAlign: TextAlign.right,
-                                  Number_calculator.result,
+                                  numberCalculator.result,
                                   style: TextStyle(
                                       color: AppColors.white,
                                       fontSize: 10.w,
@@ -76,7 +76,7 @@ class calculator extends StatelessWidget {
                             fit: BoxFit.contain,
                             child: Text(
                               textAlign: TextAlign.right,
-                              Number_calculator.count,
+                              numberCalculator.count,
                               style: TextStyle(
                                   color: AppColors.white,
                                   fontSize: 12.w,

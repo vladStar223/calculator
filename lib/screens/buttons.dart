@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -20,6 +22,7 @@ class InputButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(
@@ -160,7 +163,8 @@ class Sta_inputButton extends StatelessWidget {
     // Full screen width and height
     double width = MediaQuery.of(context).size.width / 100;
     double height = MediaQuery.of(context).size.height / 100;
-    var AppColors = Provider.of<AppColor>(context);
+    // ignore: non_constant_identifier_names
+    AppColor AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(
         height: height * 9,
@@ -295,7 +299,8 @@ class Sta_special_InputButton extends StatelessWidget {
     // TODO: implement build
     double width = MediaQuery.of(context).size.width / 100;
     double height = MediaQuery.of(context).size.height / 100;
-    var AppColors = Provider.of<AppColor>(context);
+    // ignore: non_constant_identifier_names
+    AppColor AppColors = Provider.of<AppColor>(context);
     // TODO: implement build
     return Container(
       height: height * 9,
@@ -338,6 +343,7 @@ class InputButton_mini extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(
@@ -581,6 +587,7 @@ class Special_InputButton extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     // TODO: implement build
     return Container(
@@ -618,6 +625,7 @@ class Special_InputButton_mini extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(

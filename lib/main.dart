@@ -54,10 +54,9 @@ class _MainState extends State<Main> {
 // To make this screen full screen.
 // It will hide status bar and notch.
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
-    final scaffoldKey = GlobalKey<ScaffoldState>();
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => Seach()),
-      ChangeNotifierProvider(create: (context) => Change_of_function()),
+      ChangeNotifierProvider(create: (context) => ChangeFunction()),
       ChangeNotifierProvider(create: (context) => AppColor()),
       ChangeNotifierProvider(create: (context) => Input_log()),
       ChangeNotifierProvider(create: (context) => Get_data()),
@@ -75,19 +74,21 @@ class _MainState extends State<Main> {
           return Decision_urv(inputNumberEquations);
         },
       ),
-    ], child: screen_normal());
+    ], child: const ScreenNormal());
   }
 }
 
-class screen_normal extends StatefulWidget {
-  const screen_normal({super.key});
+// ignore: camel_case_types
+class ScreenNormal extends StatefulWidget {
+  const ScreenNormal({super.key});
 
   @override
-  State<screen_normal> createState() => _screen_normalState();
+  State<ScreenNormal> createState() => _ScreenNormalState();
 }
 
-class _screen_normalState extends State<screen_normal> {
-  var _future;
+class _ScreenNormalState extends State<ScreenNormal> {
+  // ignore: prefer_typing_uninitialized_variables
+  late final _future;
   @override
   void initState() {
     // TODO: implement initState
@@ -98,13 +99,12 @@ class _screen_normalState extends State<screen_normal> {
   Future<void> doSomeAsyncStuff() async {
     Provider.of<AppColor>(context, listen: false).initType();
     SystemChannels.textInput.invokeMethod('TextInput.hide');
-    print("no");
   }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    _getInfo() {
+    getInfo() {
       PackageInfo.fromPlatform().then((PackageInfo packageInfo) {
         appName = packageInfo.appName;
         packageName = packageInfo.packageName;
@@ -123,27 +123,30 @@ class _screen_normalState extends State<screen_normal> {
           return Builder(builder: (context) {
             if (Provider.of<AppColor>(context).x == true) {
               Provider.of<AppColor>(context).Change_color();
-              _getInfo();
+              getInfo();
             }
-            return View_editer();
+            return const ViewEditer();
           });
         });
-    throw UnimplementedError();
   }
 }
 
-class View_editer extends StatelessWidget {
+class ViewEditer extends StatelessWidget {
+  const ViewEditer({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    var AppColors = Provider.of<AppColor>(context);
-    const displayName = "displayName";
-    var changeOfFunction = Provider.of<Change_of_function>(context);
+    // ignore: non_constant_identifier_names
+    AppColor AppColors;
+    AppColors = Provider.of<AppColor>(context);
+    var changeOfFunction = Provider.of<ChangeFunction>(context);
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     var typeChoose =
         Provider.of<Input_number_equations>(context).active_resuilt_screen;
+    // ignore: no_leading_underscores_for_local_identifiers
     _showDialog(BuildContext context) {
-      VoidCallback continueCallBack = () => {
+      continueCallBack() => {
             Navigator.of(context).pop(),
             // code on continue comes here
           };
@@ -161,8 +164,9 @@ class View_editer extends StatelessWidget {
       );
     } // открывает диалог в верней панели
 
+    // ignore: no_leading_underscores_for_local_identifiers
     _showDialog1(BuildContext context) {
-      VoidCallback continueCallBack = () => {
+      continueCallBack() => {
             Navigator.of(context).pop(),
             // code on continue comes here
           };
@@ -184,7 +188,7 @@ class View_editer extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              Container(
+              SizedBox(
                 height: 100,
                 child: DrawerHeader(
                   margin: EdgeInsets.zero,
@@ -298,13 +302,14 @@ class View_editer extends StatelessWidget {
                   onPressed: () {
                     scaffoldKey.currentState!.openDrawer();
                   },
-                  icon: Icon(MyFlutterApp.menu_circle)),
+                  icon: const Icon(MyFlutterApp.menu_circle)),
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
                     changeOfFunction.change_state_calculator();
                   },
-                  icon: Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
+                  icon:
+                      const Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
@@ -319,14 +324,13 @@ class View_editer extends StatelessWidget {
                   onPressed: () {
                     _showDialog(context);
                   },
-                  icon: Icon(MyFlutterApp.question_circle)),
+                  icon: const Icon(MyFlutterApp.question_circle)),
             ],
           ),
           Flexible(child: Menu())
         ],
       ),
     );
-    throw UnimplementedError();
   }
 }
 
