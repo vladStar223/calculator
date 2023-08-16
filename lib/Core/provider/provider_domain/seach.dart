@@ -85,7 +85,9 @@ class Seach extends ChangeNotifier {
     int k = 0;
     //Stopwatch stopwatch = new Stopwatch()..start();
     if (text.isEmpty == false) {
-      if (text[0].isUpperCase() == true) {
+      if (text[0].toUpperCase() == text[0]) {
+        i = 0;
+        print("dd000");
         while (i < valute_name.length) {
           bool x = seach_string(text, valute_name[i].trim());
           if (x == true) {
@@ -95,6 +97,7 @@ class Seach extends ChangeNotifier {
           i = i + 1;
         }
       } else {
+        i = 0;
         while (i < valute_name_small.length) {
           bool x = seach_string(text, valute_name_small[i].trim());
           if (x == true) {
@@ -104,9 +107,12 @@ class Seach extends ChangeNotifier {
           i = i + 1;
         }
       }
+    } else {
+      index.clear();
+      index = List<int>.generate(valute.length, (i) => i);
     }
     seach = false;
-    print(index);
+    //print(index);
     //print('doSomething() executed in ${stopwatch.elapsed}');
     notifyListeners();
     //print(index);
