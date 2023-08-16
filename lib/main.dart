@@ -100,6 +100,7 @@ class _screen_normalState extends State<screen_normal> {
 
   Future<void> doSomeAsyncStuff() async {
     Provider.of<AppColor>(context, listen: false).initType();
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
     print("no");
   }
 
