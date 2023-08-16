@@ -509,12 +509,12 @@ class Calculators extends StatelessWidget {
           ),
           AnimatedCrossFade(
               firstChild: SizedBox(
-                height: 49.7.h,
+                height: 50.h,
                 width: 100.w,
                 child: keyboard_calculator(),
               ),
               secondChild: SizedBox(
-                height: 63.7.h,
+                height: 64.h,
                 width: 100.w,
                 child: Keyboard_calculator_expanded(),
               ),
