@@ -1,5 +1,3 @@
-import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -162,18 +160,6 @@ class Sta_inputButton extends StatelessWidget {
     // Full screen width and height
     double width = MediaQuery.of(context).size.width / 100;
     double height = MediaQuery.of(context).size.height / 100;
-
-// Height (without SafeArea)
-    var padding = MediaQuery.of(context).viewPadding;
-    double height1 = height - padding.top - padding.bottom;
-
-// Height (without status bar)
-    double height2 = height - padding.top;
-
-// Height (without status and toolbar)
-    double height3 = height - padding.top - kToolbarHeight;
-// использовать для получения размера экрана
-
     var AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(
@@ -330,12 +316,10 @@ class Sta_special_InputButton extends StatelessWidget {
         //size: 9.w,
       ),
     );
-    throw UnimplementedError();
   }
 }
 
 class InputButton_mini extends StatelessWidget {
-  @override
   final Function() onPressed;
   final int type;
   final String number;
@@ -489,7 +473,7 @@ class InputButton_mini extends StatelessWidget {
           ),
           child: AnimatedCrossFade(
               firstChild: Text(
-                number + "¯¹",
+                "$number¯¹",
                 style: TextStyle(
                     color: AppColors.textcolor2,
                     fontSize: 3.w,
@@ -505,7 +489,7 @@ class InputButton_mini extends StatelessWidget {
               crossFadeState: Provider.of<Input_number_calculator>(context).arc
                   ? CrossFadeState.showFirst
                   : CrossFadeState.showSecond,
-              duration: Duration(milliseconds: 300)),
+              duration: const Duration(milliseconds: 300)),
         ),
       );
     }
@@ -526,7 +510,7 @@ class InputButton_mini extends StatelessWidget {
           ),
           child: AnimatedCrossFade(
               firstChild: Text(
-                number + "¯¹",
+                "$number¯¹",
                 style: TextStyle(
                     color: AppColors.textcolor2,
                     fontSize: 3.4.w,
@@ -542,7 +526,7 @@ class InputButton_mini extends StatelessWidget {
               crossFadeState: Provider.of<Input_number_calculator>(context).arc
                   ? CrossFadeState.showFirst
                   : CrossFadeState.showSecond,
-              duration: Duration(milliseconds: 300)),
+              duration: const Duration(milliseconds: 300)),
         ),
       );
     }
@@ -579,7 +563,7 @@ class InputButton_mini extends StatelessWidget {
               crossFadeState: Provider.of<Input_number_calculator>(context).deg
                   ? CrossFadeState.showFirst
                   : CrossFadeState.showSecond,
-              duration: Duration(milliseconds: 250)),
+              duration: const Duration(milliseconds: 250)),
         ),
       );
     }
@@ -618,7 +602,6 @@ class Special_InputButton extends StatelessWidget {
         //size: 9.w,
       ),
     );
-    throw UnimplementedError();
   }
 }
 

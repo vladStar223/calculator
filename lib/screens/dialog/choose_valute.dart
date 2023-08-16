@@ -1,12 +1,8 @@
-// ignore: camel_case_types
-import 'dart:ui';
-
+import 'package:calculator/Core/provider/Valute/change_valute.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import '../../Core/domain/entity/valute.dart';
 import 'package:calculator/Core/provider/Seach/seach.dart';
-import '../../Core/provider/Valute/change_valute.dart';
 import 'package:calculator/theme/color/theme.dart';
 
 class Choose_valute extends StatefulWidget {
@@ -27,7 +23,8 @@ class Choose_valute extends StatefulWidget {
 }
 
 class _Choose_valuteState extends State<Choose_valute> {
-  TextStyle textStyle = TextStyle(fontFamily: "Nokora", color: Colors.black);
+  TextStyle textStyle =
+      const TextStyle(fontFamily: "Nokora", color: Colors.black);
 
   get text => null;
   //print
@@ -37,38 +34,34 @@ class _Choose_valuteState extends State<Choose_valute> {
       child: SingleChildScrollView(
         child: AlertDialog(
           insetPadding: EdgeInsets.zero,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(35.0))),
-          title: Center(
+          title: const Center(
               child: Text(
             "Выбор валюты",
             style: TextStyle(fontFamily: "Nokora", color: Colors.black),
           )),
-          content: Container(
+          content: SizedBox(
             height: 53.h,
             width: 75.w,
             child: Column(
               children: [
                 Expanded(
                   child: TextField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: "Введите название валюты",
                         filled: true),
                     onChanged: (text) {
-                      try {
-                        widget.seachs.seach_valute(text);
-                        widget.seachs.seach = true;
-                        setState(() {});
-                      } catch (e) {
-                        print(e);
-                      }
+                      widget.seachs.seach_valute(text);
+                      widget.seachs.seach = true;
+                      setState(() {});
                     },
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(seconds: 3),
-                  child: Container(
+                  duration: const Duration(seconds: 3),
+                  child: SizedBox(
                     height: 47.h,
                     width: 75.w,
                     child: Builder(builder: (context) {
@@ -78,7 +71,8 @@ class _Choose_valuteState extends State<Choose_valute> {
                             itemCount: widget.valutes.length,
                             itemBuilder: (BuildContext context, int index) {
                               return Container(
-                                  padding: EdgeInsets.symmetric(vertical: 10),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -110,7 +104,8 @@ class _Choose_valuteState extends State<Choose_valute> {
                             itemCount: widget.valutes.length,
                             itemBuilder: (BuildContext context, int index) {
                               return Container(
-                                  padding: EdgeInsets.symmetric(vertical: 10),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -145,7 +140,7 @@ class _Choose_valuteState extends State<Choose_valute> {
                 Container(
                   height: 6.h,
                   width: 75.w,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                     Radius.circular(70.0),
                   )),
