@@ -1,7 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:calculator/main.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -13,8 +11,10 @@ class BlurryDialog extends StatelessWidget {
   bool calculator;
 
   BlurryDialog(this.title, this.content, this.continueCallBack,
-      this.type_choose, this.calculator);
-  TextStyle textStyle = TextStyle(fontFamily: "Nokora", color: Colors.black);
+      this.type_choose, this.calculator,
+      {super.key});
+  TextStyle textStyle =
+      const TextStyle(fontFamily: "Nokora", color: Colors.black);
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +35,13 @@ class BlurryDialog extends StatelessWidget {
             ),
             actions: <Widget>[
               TextButton(
-                child: Text("Открыть"),
+                child: const Text("Открыть"),
                 onPressed: () {
                   _launchURL(type_choose);
                 },
               ),
               TextButton(
-                child: Text("Закрыть"),
+                child: const Text("Закрыть"),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -57,7 +57,7 @@ class BlurryDialog extends StatelessWidget {
                 style: textStyle,
               ),
             ),
-            content: Container(
+            content: SizedBox(
               height: 8.6.h,
               child: Column(
                 children: [
@@ -90,7 +90,7 @@ class BlurryDialog extends StatelessWidget {
             ),
             actions: <Widget>[
               TextButton(
-                child: Text("Закрыть"),
+                child: const Text("Закрыть"),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -103,17 +103,17 @@ class BlurryDialog extends StatelessWidget {
   }
 }
 
-_launchURL(var type_choose) async {
+_launchURL(var typeChoose) async {
   var url;
-  if (type_choose[0] == true) {
+  if (typeChoose[0] == true) {
     url =
         'https://skysmart.ru/articles/mathematic/kak-reshat-kvadratnye-uravneniya';
   }
-  if (type_choose[1] == true) {
+  if (typeChoose[1] == true) {
     url =
         'https://all-equa.ru/articles/priblizhennoe-vychislenie-korney-kubicheskogo-uravneniya/';
   }
-  if (type_choose[2] == true) {
+  if (typeChoose[2] == true) {
     url = 'https://tutomath.ru/baza-znanij/bikvadratnye-uravneniya.html';
   }
   //url =
