@@ -76,7 +76,6 @@ class OverflowException implements Exception {
 dynamic factorial_search(dynamic a) {
   var n = a;
   var i = 1;
-  var f = 1;
   if (n > 64) {
     throw OverflowException(n);
   } else {

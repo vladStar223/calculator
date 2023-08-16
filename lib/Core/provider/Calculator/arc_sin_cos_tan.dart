@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:angles/angles.dart';
 
 class Decide_angel_arc {
