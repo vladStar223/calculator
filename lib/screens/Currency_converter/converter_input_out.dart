@@ -1,12 +1,12 @@
-import 'package:calculator/Core/provider/provider_domain/seach.dart';
+import 'package:calculator/Core/provider/Seach/seach.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../Core/provider/provider_domain/change_valute.dart';
-import '../../Core/provider/provider_domain/decide_valute.dart';
-import '../../Core/provider/provider_domain/get_data.dart';
+import '../../Core/provider/Valute/change_valute.dart';
+import '../../Core/provider/Valute/decide_valute.dart';
+import '../../Core/provider/provider_domain/Data/get_data.dart';
 import '../../theme/color/theme.dart';
 import '../Dialog/choose_valute.dart';
 

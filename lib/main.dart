@@ -1,7 +1,7 @@
 import 'package:calculator/Core/domain/api_clients/api_clients.dart';
 import 'package:calculator/Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/provider_domain/decide_valute.dart';
-import 'package:calculator/Core/provider/provider_domain/seach.dart';
+import 'package:calculator/Core/provider/Valute/decide_valute.dart';
+import 'package:calculator/Core/provider/Seach/seach.dart';
 import 'package:calculator/Screens/Menu/menu.dart';
 import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/screens/dialog/alertDialog_widget.dart';
@@ -16,8 +16,8 @@ import 'Core/domain/entity/post.dart';
 import 'Core/provider/Equations/decision_urv.dart';
 import 'Core/provider/Logarith/input_number_log.dart';
 import 'Core/provider/input_class.dart';
-import 'Core/provider/provider_domain/change_valute.dart';
-import 'Core/provider/provider_domain/get_data.dart';
+import 'Core/provider/Valute/change_valute.dart';
+import 'Core/provider/provider_domain/Data/get_data.dart';
 import 'Core/provider/сhange_of_function.dart';
 
 //начало программы
@@ -100,6 +100,7 @@ class _screen_normalState extends State<screen_normal> {
 
   Future<void> doSomeAsyncStuff() async {
     Provider.of<AppColor>(context, listen: false).initType();
+    SystemChannels.textInput.invokeMethod('TextInput.hide');
     print("no");
   }
 

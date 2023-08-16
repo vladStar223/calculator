@@ -1,14 +1,13 @@
+// ignore: camel_case_types
 import 'dart:ui';
 
-import 'package:calculator/Core/provider/provider_domain/change_valute.dart';
-import 'package:calculator/Core/provider/provider_domain/seach.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Core/domain/entity/valute.dart';
-import '../../theme/color/theme.dart';
+import 'package:calculator/Core/provider/Seach/seach.dart';
+import '../../Core/provider/Valute/change_valute.dart';
+import 'package:calculator/theme/color/theme.dart';
 
 class Choose_valute extends StatefulWidget {
   final Change_valute dataSet;
@@ -16,6 +15,7 @@ class Choose_valute extends StatefulWidget {
   final AppColor AppColors;
   final Seach seachs;
   const Choose_valute({
+    super.key,
     required this.dataSet,
     required this.valutes,
     required this.AppColors,
