@@ -1,28 +1,24 @@
-import 'dart:ui';
-
-import 'package:calculator/theme/color/theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:package_info_plus/package_info_plus.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-@override
 late String appName;
 late String packageName;
 late String version;
 late String buildNumber;
 
-class About_programm extends StatelessWidget {
+// ignore: must_be_immutable
+@override
+class AboutProgramm extends StatelessWidget {
   VoidCallback continueCallBack;
 
-  About_programm(this.continueCallBack);
+  AboutProgramm(this.continueCallBack, {super.key});
 
-  TextStyle textStyle = TextStyle(fontFamily: "Nokora", color: Colors.black);
+  TextStyle textStyle =
+      const TextStyle(fontFamily: "Nokora", color: Colors.black);
 
   TextStyle textStyle2 =
-      TextStyle(fontFamily: "Nokora", color: Colors.black, fontSize: 20);
+      const TextStyle(fontFamily: "Nokora", color: Colors.black, fontSize: 20);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +30,7 @@ class About_programm extends StatelessWidget {
           style: textStyle,
         ),
       ),
-      content: Container(
+      content: SizedBox(
         height: 10.8.h,
         child: Column(
           children: [
@@ -64,7 +60,7 @@ class About_programm extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 2,
             ),
             Row(
@@ -74,7 +70,7 @@ class About_programm extends StatelessWidget {
                   "Иконки : ",
                   style: textStyle2,
                 ),
-                Text(
+                const Text(
                   "https://ru.freepik.com/icon",
                   style: TextStyle(
                       fontFamily: "Nokora", color: Colors.black, fontSize: 15),
@@ -86,13 +82,13 @@ class About_programm extends StatelessWidget {
       ),
       actions: <Widget>[
         TextButton(
-          child: Text("Открыть Репозиторий"),
+          child: const Text("Открыть Репозиторий"),
           onPressed: () {
             _launchURL();
           },
         ),
         TextButton(
-          child: Text("Закрыть"),
+          child: const Text("Закрыть"),
           onPressed: () {
             Navigator.of(context).pop();
           },

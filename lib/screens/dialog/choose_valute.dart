@@ -5,24 +5,26 @@ import '../../Core/domain/entity/valute.dart';
 import 'package:calculator/Core/provider/Seach/seach.dart';
 import 'package:calculator/theme/color/theme.dart';
 
-class Choose_valute extends StatefulWidget {
+class ChooseValute extends StatefulWidget {
   final Change_valute dataSet;
   final List<Valute> valutes;
+  // ignore: non_constant_identifier_names
   final AppColor AppColors;
   final Seach seachs;
-  const Choose_valute({
+  const ChooseValute({
     super.key,
     required this.dataSet,
     required this.valutes,
+    // ignore: non_constant_identifier_names
     required this.AppColors,
     required this.seachs,
   });
 
   @override
-  State<Choose_valute> createState() => _Choose_valuteState();
+  State<ChooseValute> createState() => _ChooseValuteState();
 }
 
-class _Choose_valuteState extends State<Choose_valute> {
+class _ChooseValuteState extends State<ChooseValute> {
   TextStyle textStyle =
       const TextStyle(fontFamily: "Nokora", color: Colors.black);
 
