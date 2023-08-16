@@ -1,8 +1,5 @@
-import 'package:calculator/Core/provider/Valute/decide_valute.dart';
-import 'package:calculator/Core/provider/Seach/seach.dart';
-import 'package:calculator/Screens/Menu/menu.dart';
-import 'package:calculator/screens/dialog/about_program.dart';
-import 'package:calculator/screens/dialog/alertDialog_widget.dart';
+//начало программы
+import 'package:calculator/screens/Dialog/about_program.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
@@ -10,14 +7,18 @@ import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+
 import 'Core/provider/Equations/decision_urv.dart';
 import 'Core/provider/Logarith/input_number_log.dart';
-import 'Core/provider/input_class.dart';
+import 'Core/provider/Seach/seach.dart';
 import 'Core/provider/Valute/change_valute.dart';
+import 'Core/provider/Valute/decide_valute.dart';
+import 'Core/provider/input_class.dart';
 import 'Core/provider/provider_domain/Data/get_data.dart';
 import 'Core/provider/сhange_of_function.dart';
+import 'Screens/Dialog/alertDialog_widget.dart';
+import 'Screens/Menu/menu.dart';
 
-//начало программы
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
@@ -170,7 +171,7 @@ class ViewEditer extends StatelessWidget {
             Navigator.of(context).pop(),
             // code on continue comes here
           };
-      About_programm alert = About_programm(continueCallBack);
+      AboutProgramm alert = AboutProgramm(continueCallBack);
       showDialog(
         context: context,
         builder: (BuildContext context) {

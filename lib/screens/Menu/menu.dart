@@ -1,7 +1,5 @@
-import 'package:calculator/Screens/Calculator_ui/screens_calculator.dart';
-import 'package:calculator/Screens/Equations_ui/switching%20classes/animated_class.dart';
 import 'package:calculator/Screens/buttons.dart';
-import 'package:calculator/Screens/Equations_ui/keyboard_eqution.dart';
+import 'package:calculator/screens/Equations_ui/keyboard_eqution.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +9,9 @@ import 'package:sizer/sizer.dart';
 import '../../Core/provider/input_class.dart';
 import '../../Core/provider/сhange_of_function.dart';
 import '../Calculator_ui/key_board.dart';
+import '../Calculator_ui/screens_calculator.dart';
 import '../Currency_converter/converter.dart';
+import '../Equations_ui/switching classes/animated_class.dart';
 import '../Logarithm_ui/screens_logarith.dart';
 
 class Menu extends StatelessWidget {
@@ -160,7 +160,7 @@ class Equations extends StatelessWidget {
         SizedBox(
           height: 49.7.h,
           width: 100.w,
-          child: keyboard_equation(),
+          child: const KeyboardEquation(),
         ),
       ],
     );
@@ -505,10 +505,10 @@ class Calculators extends StatelessWidget {
       return Column(
         children: [
           AnimatedCrossFade(
-            firstChild:
-                SizedBox(height: 43.39.h, width: 100.w, child: calculator()),
-            secondChild:
-                SizedBox(height: 30.39.h, width: 100.w, child: calculator()),
+            firstChild: SizedBox(
+                height: 43.39.h, width: 100.w, child: const Calculator()),
+            secondChild: SizedBox(
+                height: 30.39.h, width: 100.w, child: const Calculator()),
             crossFadeState: changeOfFunction.calculator
                 ? CrossFadeState.showFirst
                 : CrossFadeState.showSecond,
