@@ -152,11 +152,12 @@ class ViewEditer extends StatelessWidget {
             // code on continue comes here
           };
       BlurryDialog alert = BlurryDialog(
-          "Сообщение",
-          "Для подробной информации перейдите на  интернет ресурс",
           continueCallBack,
           typeChoose,
-          changeOfFunction.calculator);
+          changeOfFunction.calculator,
+          changeOfFunction.menu,
+          changeOfFunction.currency_convert,
+          changeOfFunction.logarithm);
       showDialog(
         context: context,
         builder: (BuildContext context) {
