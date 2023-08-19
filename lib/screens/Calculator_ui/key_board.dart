@@ -179,7 +179,7 @@ class KeyboardCalculator extends StatelessWidget {
                       .change_state_calculator_expanded();
                 },
                 myIcon: Icon(MyFlutterApp.maximize_4562502,
-                    color: AppColors.textcolor2, size: 12.w)),
+                    color: AppColors.textcolor2, size: 9.w)),
             InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("0");

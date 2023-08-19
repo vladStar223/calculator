@@ -289,7 +289,7 @@ class Sta_inputButton extends StatelessWidget {
 class Sta_special_InputButton extends StatelessWidget {
   final Function() onPressed;
   final Icon myIcon;
-  final type;
+  final int type;
   const Sta_special_InputButton({
     super.key,
     required this.onPressed,

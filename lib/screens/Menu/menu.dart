@@ -459,18 +459,19 @@ class Calculators extends StatelessWidget {
                   // тут нужна анимация
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Sta_inputButton(
-                        onPressed: () {
-                          context
-                              .read<ChangeFunction>()
-                              .change_state_calculator();
-                          context
-                              .read<ChangeFunction>()
-                              .change_state_calculator_expanded();
-                        },
-                        type: 1,
-                        number: "big",
-                        font: 8.0),
+                    Sta_special_InputButton(
+                      type: 2,
+                      onPressed: () {
+                        context.read<ChangeFunction>().sta_calculator = false;
+                        context
+                            .read<ChangeFunction>()
+                            .change_state_calculator_expanded();
+                      },
+                      myIcon:
+                          Icon(MyFlutterApp.maximize_4562502, // знак проценатп
+                              color: AppColors.textcolor2,
+                              size: 35),
+                    ),
                     Sta_inputButton(
                         onPressed: () {
                           context
