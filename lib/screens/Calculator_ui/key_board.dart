@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -170,15 +171,15 @@ class KeyboardCalculator extends StatelessWidget {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            InputButton(
+            Special_InputButton(
+                type: 2,
                 onPressed: () {
                   context
                       .read<ChangeFunction>()
                       .change_state_calculator_expanded();
                 },
-                type: 1,
-                number: "big",
-                font: 8.0),
+                myIcon: Icon(MyFlutterApp.maximize_4562502,
+                    color: AppColors.textcolor2, size: 12.w)),
             InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("0");
@@ -476,13 +477,13 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
           // тут нужна анимация
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            InputButton_mini(
+            Special_InputButton_mini(
+                type: 2,
                 onPressed: () {
                   context.read<ChangeFunction>().change_state_calculator();
                 },
-                type: 1,
-                number: "less",
-                font: 5),
+                myIcon: Icon(MyFlutterApp.minimize_4562479,
+                    color: AppColors.textcolor2, size: 9.w)),
             InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("e");

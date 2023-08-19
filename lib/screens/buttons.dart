@@ -289,10 +289,12 @@ class Sta_inputButton extends StatelessWidget {
 class Sta_special_InputButton extends StatelessWidget {
   final Function() onPressed;
   final Icon myIcon;
+  final type;
   const Sta_special_InputButton({
     super.key,
     required this.onPressed,
     required this.myIcon,
+    this.type = 1,
   });
   @override
   Widget build(BuildContext context) {
@@ -302,25 +304,47 @@ class Sta_special_InputButton extends StatelessWidget {
     // ignore: non_constant_identifier_names
     AppColor AppColors = Provider.of<AppColor>(context);
     // TODO: implement build
-    return Container(
-      height: height * 9,
-      width: width * 20,
-      decoration: BoxDecoration(
-        color: AppColors.buttoncolor1,
-        shape: BoxShape.circle,
-      ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          shape: const CircleBorder(),
-          backgroundColor: AppColors.buttoncolor1,
-          animationDuration: const Duration(milliseconds: 2500),
+    if (type == 1) {
+      return Container(
+        height: height * 9,
+        width: width * 20,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor1,
+          shape: BoxShape.circle,
         ),
-        child: myIcon,
-        //color: AppColors.textcolor,
-        //size: 9.w,
-      ),
-    );
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: myIcon,
+          //color: AppColors.textcolor,
+          //size: 9.w,
+        ),
+      );
+    } else {
+      return Container(
+        height: height * 9,
+        width: width * 20,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor2,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: myIcon,
+          //color: AppColors.textcolor,
+          //size: 9.w,
+        ),
+      );
+    }
   }
 }
 
@@ -580,8 +604,10 @@ class InputButton_mini extends StatelessWidget {
 class Special_InputButton extends StatelessWidget {
   final Function() onPressed;
   final Icon myIcon;
+  final type;
   const Special_InputButton({
     super.key,
+    this.type = 1,
     required this.onPressed,
     required this.myIcon,
   });
@@ -590,25 +616,47 @@ class Special_InputButton extends StatelessWidget {
     // ignore: non_constant_identifier_names
     var AppColors = Provider.of<AppColor>(context);
     // TODO: implement build
-    return Container(
-      height: 9.h,
-      width: 20.w,
-      decoration: BoxDecoration(
-        color: AppColors.buttoncolor1,
-        shape: BoxShape.circle,
-      ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          shape: const CircleBorder(),
-          backgroundColor: AppColors.buttoncolor1,
-          animationDuration: const Duration(milliseconds: 2500),
+    if (type == 1) {
+      return Container(
+        height: 9.h,
+        width: 20.w,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor1,
+          shape: BoxShape.circle,
         ),
-        child: myIcon,
-        //color: AppColors.textcolor,
-        //size: 9.w,
-      ),
-    );
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor1,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: myIcon,
+          //color: AppColors.textcolor,
+          //size: 9.w,
+        ),
+      );
+    } else {
+      return Container(
+        height: 9.h,
+        width: 20.w,
+        decoration: BoxDecoration(
+          color: AppColors.buttoncolor2,
+          shape: BoxShape.circle,
+        ),
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(),
+            backgroundColor: AppColors.buttoncolor2,
+            animationDuration: const Duration(milliseconds: 2500),
+          ),
+          child: myIcon,
+          //color: AppColors.textcolor,
+          //size: 9.w,
+        ),
+      );
+    }
   }
 }
 

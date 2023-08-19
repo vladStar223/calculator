@@ -52,6 +52,9 @@ class MyFlutterApp {
   static const IconData svg_editor_image__1_ = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData desions_ = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData currency_exchange_3845944 = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData maximize_4562502 = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData minimize_4562479 = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData cash_flow_8350947 = IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData question_circle = IconData(0xe87d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData menu_circle = IconData(0xe87e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData math = IconData(0xf01a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
