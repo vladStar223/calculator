@@ -22,7 +22,7 @@ class Logarithm extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(4.w),
+            padding: EdgeInsets.all(2.w),
             child: Text(
               textAlign: TextAlign.center,
               "Решение логарифмов",
@@ -128,41 +128,48 @@ class Logarithm extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 4.h,
-          ),
-          Column(
-            children: [
-              Row(
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Flexible(
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: Text(
-                        textAlign: TextAlign.right,
-                        Number.result,
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 8.5.w,
-                            fontFamily: "Nokora",
-                            fontWeight: FontWeight.w300),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.contain,
+                          child: Text(
+                            textAlign: TextAlign.right,
+                            Number.result,
+                            style: TextStyle(
+                                color: AppColors.white,
+                                fontSize: 12.w,
+                                fontFamily: "Nokora",
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
+                  ),
+                  Container(
+                    width: 100.w,
+                    height: 0.3.h,
+                    color: AppColors.textcolor,
                   ),
                 ],
               ),
-              Container(
-                width: 100.w,
-                height: 0.5.h,
-                color: AppColors.textcolor,
-              ),
-            ],
+            ),
           ),
           SizedBox(
-            height: 3.h,
+            height: 1.h,
           ),
-          const KeyboardLogarithm()
+          SizedBox(
+            height: 45.h,
+            width: 100.w,
+            child: KeyboardLogarithm(),
+          ),
         ],
       ),
     );

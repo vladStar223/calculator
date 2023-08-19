@@ -614,15 +614,19 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "9") {
         text = text + "×" + "sin";
       } else {
-        if (text != "0") {
-          if (text.length < text_length &&
-              text[text.length - 1] != "n" &&
-              text[text.length - 2] != "i" &&
-              text[text.length - 3] != "s") {
+        if (text == "0") {
+          text = "sin";
+        } else {
+          if (text.contains('sin') == true) {
+            if (text.length < text_length &&
+                text[text.length - 1] != "n" &&
+                text[text.length - 2] != "i" &&
+                text[text.length - 3] != "s") {
+              text += "sin";
+            }
+          } else {
             text += "sin";
           }
-        } else {
-          text = "sin";
         }
       }
 
@@ -637,22 +641,26 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
           text[text.length - 1] == "7" ||
           text[text.length - 1] == "8" ||
           text[text.length - 1] == "9") {
-        text = text + "×" + "arcsin";
+        text = text + "×" + "arcsin0.";
       } else {
-        if (text != "0") {
-          if (text.length < text_length &&
-              text[text.length - 1] != "." &&
-              text[text.length - 2] != "0" &&
-              text[text.length - 3] != "n" &&
-              text[text.length - 4] != "i" &&
-              text[text.length - 5] != "s" &&
-              text[text.length - 6] != "c" &&
-              text[text.length - 7] != "r" &&
-              text[text.length - 8] != "a") {
-            text += "arccos0.";
-          }
+        if (text == "0") {
+          text = "arcsin0.";
         } else {
-          text = "arccos0.";
+          if (text.contains('arcsin') == true) {
+            if (text.length < text_length &&
+                text[text.length - 1] != "." &&
+                text[text.length - 2] != "0" &&
+                text[text.length - 3] != "n" &&
+                text[text.length - 4] != "i" &&
+                text[text.length - 5] != "s" &&
+                text[text.length - 6] != "c" &&
+                text[text.length - 7] != "r" &&
+                text[text.length - 8] != "a") {
+              text += "arcsin0.";
+            }
+          } else {
+            text += "arcsin0.";
+          }
         }
       }
     }
@@ -678,10 +686,14 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "cos";
       } else {
         if (text != "0") {
-          if (text.length < text_length &&
-              text[text.length - 1] != "s" &&
-              text[text.length - 2] != "o" &&
-              text[text.length - 3] != "c") {
+          if (text.contains('cos') == true) {
+            if (text.length < text_length &&
+                text[text.length - 1] != "s" &&
+                text[text.length - 2] != "0" &&
+                text[text.length - 3] != "c") {
+              text += "cos";
+            }
+          } else {
             text += "cos";
           }
         } else {
@@ -701,15 +713,19 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "arccos0.";
       } else {
         if (text != "0") {
-          if (text.length < text_length &&
-              text[text.length - 1] != "." &&
-              text[text.length - 2] != "0" &&
-              text[text.length - 3] != "s" &&
-              text[text.length - 4] != "o" &&
-              text[text.length - 5] != "c" &&
-              text[text.length - 6] != "c" &&
-              text[text.length - 7] != "r" &&
-              text[text.length - 8] != "a") {
+          if (text.contains('arccos') == true) {
+            if (text.length < text_length &&
+                text[text.length - 1] != "." &&
+                text[text.length - 2] != "0" &&
+                text[text.length - 3] != "s" &&
+                text[text.length - 4] != "o" &&
+                text[text.length - 5] != "c" &&
+                text[text.length - 6] != "c" &&
+                text[text.length - 7] != "r" &&
+                text[text.length - 8] != "a") {
+              text += "arccos0.";
+            }
+          } else {
             text += "arccos0.";
           }
         } else {
@@ -739,7 +755,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "tan";
       } else {
         if (text != "0") {
-          if (text != "0") {
+          if (text.contains('tan') == true) {
             if (text.length < text_length &&
                 text[text.length - 1] != "n" &&
                 text[text.length - 2] != "a" &&
@@ -747,7 +763,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
               text += "tan";
             }
           } else {
-            text = "tan";
+            text += "tan";
           }
         } else {
           text = "tan";
@@ -766,15 +782,19 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
         text = text + "×" + "arctan0.";
       } else {
         if (text != "0") {
-          if (text.length < text_length &&
-              text[text.length - 1] != "." &&
-              text[text.length - 2] != "0" &&
-              text[text.length - 3] != "n" &&
-              text[text.length - 4] != "a" &&
-              text[text.length - 5] != "t" &&
-              text[text.length - 6] != "c" &&
-              text[text.length - 7] != "r" &&
-              text[text.length - 8] != "a") {
+          if (text.contains('arctan') == true) {
+            if (text.length < text_length &&
+                text[text.length - 1] != "." &&
+                text[text.length - 2] != "0" &&
+                text[text.length - 3] != "n" &&
+                text[text.length - 4] != "a" &&
+                text[text.length - 5] != "t" &&
+                text[text.length - 6] != "c" &&
+                text[text.length - 7] != "r" &&
+                text[text.length - 8] != "a") {
+              text += "arctan0.";
+            }
+          } else {
             text += "arctan0.";
           }
         } else {
@@ -955,7 +975,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     result = calcString(text2).toString();
-    if (result == "Infinity") {
+    if (result == "Infinity" || result == 'NaN') {
       result = "На ноль делить нельзя";
     }
     determing_to_true_trigger_end(text);

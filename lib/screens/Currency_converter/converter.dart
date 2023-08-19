@@ -1,4 +1,5 @@
 import 'package:calculator/Core/provider/provider_domain/Data/get_data.dart';
+import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -129,7 +130,8 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                                 animationDuration:
                                     const Duration(seconds: 100)),
                             icon: Icon(
-                              Icons.browser_updated,
+                              MyFlutterApp.cash_flow_8350947,
+                              size: 6.w,
                               color: AppColors.white,
                             ),
                           ),
@@ -196,4 +198,3 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
           },
         ),
  */
-

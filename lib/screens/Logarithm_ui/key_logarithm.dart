@@ -30,7 +30,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "7",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -40,7 +40,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "4",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -50,7 +50,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "1",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -71,7 +71,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "8",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -81,7 +81,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "5",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -91,7 +91,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "2",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -112,7 +112,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "9",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -122,7 +122,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "6",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -132,7 +132,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "3",
                 font: 8.0),
             SizedBox(
-              height: 1.5.h,
+              height: 2.5.h,
             ),
             InputButton(
                 onPressed: () {
@@ -172,7 +172,7 @@ class KeyboardLogarithm extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 2.h,
+              height: 4.h,
             ),
             SizedBox(
               height: 19.h,

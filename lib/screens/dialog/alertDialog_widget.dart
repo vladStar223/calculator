@@ -4,15 +4,15 @@ import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlurryDialog extends StatelessWidget {
-  String title;
-  String content;
   VoidCallback continueCallBack;
-  var type_choose;
+  List<bool> type_choose;
   bool calculator;
+  bool menu;
+  bool convertCurrency;
+  bool logarithm;
 
-  BlurryDialog(this.title, this.content, this.continueCallBack,
-      this.type_choose, this.calculator,
-      {super.key});
+  BlurryDialog(this.continueCallBack, this.type_choose, this.calculator,
+      this.menu, this.convertCurrency, this.logarithm);
   TextStyle textStyle =
       const TextStyle(fontFamily: "Nokora", color: Colors.black);
 
@@ -23,14 +23,135 @@ class BlurryDialog extends StatelessWidget {
       child: Builder(builder: (context) {
         // отвечает за провекру что показывать
         /// some operation here ...
+        if (menu) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.zero,
+            title: Center(
+              child: Text(
+                "Пользование",
+                style: textStyle,
+              ),
+            ),
+            content: SizedBox(
+              height: 5.h,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Нажмите на кнопки для выбора функционала ",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            color: Colors.black,
+                            fontSize: 11.sp),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: const Text("Закрыть"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        }
+        if (convertCurrency) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.zero,
+            title: Center(
+              child: Text(
+                "Пользование",
+                style: textStyle,
+              ),
+            ),
+            content: SizedBox(
+              height: 8.h,
+              child: Column(
+                children: [
+                  Text(
+                    "Если ничего не появилось нажмите на кнопку Загрузки в верхней части экрана",
+                    style: TextStyle(
+                        fontFamily: "Nokora",
+                        color: Colors.black,
+                        fontSize: 11.sp),
+                  ),
+                  SizedBox(
+                    height: 0.3.h,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Для загрузки валюты нужно интернет соединение",
+                        style: TextStyle(
+                            fontFamily: "Nokora",
+                            color: Colors.black,
+                            fontSize: 10.5.sp),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: const Text("Закрыть"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        }
+        if (logarithm) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.zero,
+            title: Center(
+              child: Text(
+                "Пользование",
+                style: textStyle,
+              ),
+            ),
+            content: SizedBox(
+              height: 4.h,
+              child: Column(
+                children: [
+                  Text(
+                    "Вводите a и b логарифма и получайте ответ",
+                    style: TextStyle(
+                        fontFamily: "Nokora",
+                        color: Colors.black,
+                        fontSize: 12.sp),
+                  ),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: const Text("Закрыть"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        }
         if (calculator == false) {
           return AlertDialog(
-            title: Text(
-              title,
-              style: textStyle,
+            title: Row(
+              children: [
+                Text(
+                  "Для подробной информации",
+                ),
+              ],
             ),
             content: Text(
-              content,
+              "Нажмите открыть для перехода на сайт с обьяснением",
               style: textStyle,
             ),
             actions: <Widget>[
