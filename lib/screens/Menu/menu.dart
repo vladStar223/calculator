@@ -33,12 +33,12 @@ class Menu extends StatelessWidget {
             return const Equations();
           } else if (changeFun.menu == true) {
             return SizedBox(
-                height: 93.h, width: 100.w, child: const MenuChoose());
+                height: 95.h, width: 100.w, child: const MenuChoose());
           } else if (changeFun.currency_convert == true) {
             return const Center(child: CurrencyConverter());
           } else if (changeFun.logarithm == true) {
             return SizedBox(
-                height: 93.h, width: 100.w, child: const Logarithm());
+                height: 95.h, width: 100.w, child: const Logarithm());
           } else {
             return const Calculators();
           }
