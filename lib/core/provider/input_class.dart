@@ -975,7 +975,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
     }
 
     result = calcString(text2).toString();
-    if (result == "Infinity") {
+    if (result == "Infinity" || result == 'NaN') {
       result = "На ноль делить нельзя";
     }
     determing_to_true_trigger_end(text);
