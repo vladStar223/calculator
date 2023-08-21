@@ -58,17 +58,22 @@ class Decide_valute extends ChangeNotifier implements Input_number {
 
   double get_RUB(int xV, int xType) {
     double x;
-    //print(valute[index[xV]].Name);
-    // print(valute[index[xType]].Name);
-    if (valute[index[xType]].Nominal == 100) {
-      x = (valute[index[xType]].Value.toDouble() / 100) *
+    //print(valute[index[xType]].Name);
+    if (valute[index[xV]].Nominal == 100) {
+      x = valute[index[xType]].Value.toDouble() *
           double.parse(valute_cofficients[xType]);
+      x = x / (valute[index[xV]].Value.toDouble() / 100);
+    } else if (valute[index[xType]].Nominal == 100) {
+      x = valute[index[xType]].Value.toDouble() *
+          double.parse(valute_cofficients[xType]);
+      x = x / 100;
+      x = x / (valute[index[xV]].Value.toDouble());
     } else {
       x = valute[index[xType]].Value.toDouble() *
           double.parse(valute_cofficients[xType]);
+      x = x / valute[index[xV]].Value.toDouble();
     }
     // функция переводит от числа в массиве в рубли
-    x = x / valute[index[xV]].Value.toDouble();
     return x;
   }
 
