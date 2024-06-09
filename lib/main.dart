@@ -307,21 +307,23 @@ class ViewEditer extends StatelessWidget {
                   },
                   icon: const Icon(MyFlutterApp.menu_circle)),
               IconButton(
-                  color: AppColors.textcolorfortop,
-                  onPressed: () {
-                    changeOfFunction.change_state_calculator();
-                  },
-                  icon:
-                      const Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
-              IconButton(
-                  color: AppColors.textcolorfortop,
-                  onPressed: () {
-                    changeOfFunction.change_state_menu();
-                  },
-                  icon: Icon(
-                    MyFlutterApp.functions_icon_144317,
-                    color: AppColors.white,
-                  )),
+                color: AppColors.textcolorfortop,
+                onPressed: () {
+                  changeOfFunction.change_state_calculator();
+                },
+                icon: const Icon(MyFlutterApp.calculator_icon_icons_com_66651),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    foregroundColor: AppColors.color_of_border),
+                onPressed: () {
+                  changeOfFunction.change_state_menu();
+                },
+                child: Icon(
+                  MyFlutterApp.functions_icon_144317,
+                  color: AppColors.white,
+                ),
+              ),
               IconButton(
                   color: AppColors.textcolorfortop,
                   onPressed: () {
