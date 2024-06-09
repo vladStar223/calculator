@@ -1,4 +1,5 @@
 import 'package:calculator/Core/provider/Seach/seach.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -33,9 +34,9 @@ class _ShowValuteState extends State<ShowValute> {
 //ffff
     return Builder(builder: (context) {
       if (data.restart_var == true) {
-        Provider.of<Seach>(context).set_value(data.valutes);
-        Provider.of<Decide_valute>(context).set_valute(data.valutes);
-        Provider.of<Decide_valute>(context).set_index(provider.index);
+        seach1.set_value(data.valutes);
+        valuteDecide.set_valute(data.valutes);
+        valuteDecide.set_index(provider.index);
         data.restart_var = false;
       }
       return Column(children: [
