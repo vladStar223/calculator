@@ -95,6 +95,7 @@ class _ScreenNormalState extends State<ScreenNormal> {
     // TODO: implement initState
     _future = doSomeAsyncStuff();
     super.initState();
+    var n = 1;
   }
 
   Future<void> doSomeAsyncStuff() async {
