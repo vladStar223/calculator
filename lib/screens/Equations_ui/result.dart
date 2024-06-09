@@ -248,14 +248,14 @@ class Nosolution extends StatelessWidget {
                       fontSize: 6.w,
                       color: AppColors.textcolor),
                 ),
-                Text(
-                  "Тест",
-                  style: TextStyle(
-                      fontFamily: "Nokora",
-                      fontSize: 6.w,
-                      color: AppColors.textcolor),
-                ),
               ],
+            ),
+            Text(
+              "Тест",
+              style: TextStyle(
+                  fontFamily: "Nokora",
+                  fontSize: 6.w,
+                  color: AppColors.textcolor),
             ),
           ],
         ),

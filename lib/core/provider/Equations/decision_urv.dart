@@ -20,7 +20,7 @@ class Decision_urv extends ChangeNotifier {
   String x2 = "0.0";
   String x3 = "0.0";
   double x4 = 0;
-  bool bex = true;
+  bool bex = false;
   int kx = 0;
   int kv = 0;
   String urvshow =
@@ -124,14 +124,14 @@ class Decision_urv extends ChangeNotifier {
       x1 = -c / b;
       x1 = sqrt(x1) * 1;
       x2 = (sqrt(x1) * -1).toString();
-      kx = 1;
+      bex = true;
     }
     if (b == 0) {
       x1 = -c / b;
       x1 = sqrt(x1);
       x1 = sqrt(x1) * 1;
       x2 = (sqrt(x1) * -1).toString();
-      kx = 1;
+      bex = true;
     }
     if (c == 0) {}
     if (d > 0) {
@@ -143,11 +143,13 @@ class Decision_urv extends ChangeNotifier {
       x4 = sqrt(double.parse(x2)) * 1;
       x1 = sqrt(x1) * 1;
       x2 = (x1 * -1).toString();
+      bex = true;
     }
     if (d == 0) {
       x1 = (-1 * b) / (2 * a);
       x1 = sqrt(x1) * 1;
       x2 = (x1 * -1).toString();
+      bex = true;
     }
     if (d < 0) {
       bex = false;
@@ -156,11 +158,11 @@ class Decision_urv extends ChangeNotifier {
       x1 = 0;
       x1 = sqrt(x1) * 1;
       x2 = (sqrt(x1) * -1).toString();
-      kx = 1;
+      bex = true;
     }
     if (b == 0 && c == 0) {
       x1 = 0;
-      kx = 1;
+      bex = true;
     }
     if (a == 0 && b == 0) {
       kx = 0;
@@ -230,35 +232,40 @@ class Decision_urv extends ChangeNotifier {
     d = (b * b) - (4 * a * c);
     if (a == 0) {
       x1 = -c / b;
+      bex = true;
     }
     if (b == 0) {
       x1 = -c / b;
       x1 = sqrt(x1);
+      bex = true;
     }
     if (c == 0) {
       x1 = 0;
       x2 = (-b / a).toString();
+      bex = true;
     }
     if (d > 0) {
       D = sqrt(d);
       x1 = ((-b + D) / (2 * a));
       x2 = ((-b - D) / (2 * a)).toString();
+      bex = true;
     }
     if (d == 0) {
       x1 = (-1 * b) / (2 * a);
       x1 = sqrt(x1) * 1;
       x2 = (x1 * -1).toString();
+      bex = true;
     }
     if (d < 0) {
       bex = false;
     }
     if (a == 0 && c == 0) {
       x1 = 0;
-      kx = 1;
+      bex = true;
     }
     if (b == 0 && c == 0) {
       x1 = 0;
-      kx = 1;
+      bex = true;
     }
     if (a == 0 && b == 0) {
       kx = 0;
