@@ -6,9 +6,14 @@ import 'package:sizer/sizer.dart';
 
 import '../../theme/color/theme.dart';
 
-class KeyboardConvert extends StatelessWidget {
+class KeyboardConvert extends StatefulWidget {
   const KeyboardConvert({super.key});
 
+  @override
+  State<KeyboardConvert> createState() => _KeyboardConvertState();
+}
+
+class _KeyboardConvertState extends State<KeyboardConvert> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
