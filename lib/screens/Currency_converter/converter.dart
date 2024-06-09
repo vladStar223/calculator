@@ -3,6 +3,7 @@ import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import '../../Core/provider/Valute/decide_valute.dart';
 import '../../theme/color/theme.dart';
 import 'converter_input_out.dart';
 import 'key_board_convert.dart';
@@ -91,92 +92,93 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                 ),
               ],
             );
-          }
-          return Scaffold(
-            backgroundColor: AppColors.fon,
-            body: ListView(physics: const ClampingScrollPhysics(), children: [
-              Column(
-                children: [
-                  SizedBox(
-                    height: 1.h,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        height: 4.h,
-                        width: 100.w,
-                        child: ListTile(
-                          title: Text(
-                            textAlign: TextAlign.center,
-                            data.state_data,
+          } else {
+            return Scaffold(
+              backgroundColor: AppColors.fon,
+              body: ListView(physics: const ClampingScrollPhysics(), children: [
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          height: 4.h,
+                          width: 100.w,
+                          child: ListTile(
+                            title: Text(
+                              textAlign: TextAlign.center,
+                              data.state_data,
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: 3.w,
+                                  fontWeight: FontWeight.w100,
+                                  fontFamily: "Nokora"),
+                            ),
+                            trailing: IconButton(
+                              onPressed: () {
+                                if (data.get_data == true) {
+                                  data.get_post();
+                                } else {
+                                  print("данные получены");
+                                }
+                              },
+                              tooltip: 'Обновить валюты',
+                              splashRadius: 30,
+                              splashColor: Colors.black12,
+                              style: IconButton.styleFrom(
+                                  animationDuration:
+                                      const Duration(seconds: 100)),
+                              icon: Icon(
+                                MyFlutterApp.cash_flow_8350947,
+                                size: 6.w,
+                                color: AppColors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    SizedBox(
+                        height: 35.h, width: 100.w, child: const ShowValute()),
+                    SizedBox(
+                      height: 2.h,
+                      width: 100.w,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Данные передоставлены",
                             style: TextStyle(
                                 color: AppColors.white,
                                 fontSize: 3.w,
                                 fontWeight: FontWeight.w100,
                                 fontFamily: "Nokora"),
                           ),
-                          trailing: IconButton(
-                            onPressed: () {
-                              if (data.get_data == true) {
-                                data.get_post();
-                              } else {
-                                print("данные получены");
-                              }
-                            },
-                            tooltip: 'Обновить валюты',
-                            splashRadius: 30,
-                            splashColor: Colors.black12,
-                            style: IconButton.styleFrom(
-                                animationDuration:
-                                    const Duration(seconds: 100)),
-                            icon: Icon(
-                              MyFlutterApp.cash_flow_8350947,
-                              size: 6.w,
-                              color: AppColors.white,
-                            ),
+                          Text(
+                            " ЦБ РФ",
+                            style: TextStyle(
+                                color: AppColors.white,
+                                fontSize: 3.w,
+                                fontWeight: FontWeight.w100,
+                                fontFamily: "Nokora"),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  SizedBox(
-                      height: 35.h, width: 100.w, child: const ShowValute()),
-                  SizedBox(
-                    height: 2.h,
-                    width: 100.w,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Данные передоставлены",
-                          style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 3.w,
-                              fontWeight: FontWeight.w100,
-                              fontFamily: "Nokora"),
-                        ),
-                        Text(
-                          " ЦБ РФ",
-                          style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 3.w,
-                              fontWeight: FontWeight.w100,
-                              fontFamily: "Nokora"),
-                        ),
-                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 1.h,
-                  ),
-                  const KeyboardConvert()
-                ],
-              ),
-            ]),
-          );
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                    const KeyboardConvert()
+                  ],
+                ),
+              ]),
+            );
+          }
         });
   }
 }

@@ -117,7 +117,7 @@ class Decide_valute extends ChangeNotifier implements Input_number {
       if (text[0] == '-' || text[0] == '+') {
         text += '.';
       } else {
-        text = '+' + text + '.';
+        text = text + '.';
       }
     }
     determing_to_true_trigger_end(text);
