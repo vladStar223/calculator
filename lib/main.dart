@@ -301,29 +301,38 @@ class ViewEditer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
+                  splashRadius: 22,
                   color: AppColors.textcolorfortop,
                   onPressed: () {
                     scaffoldKey.currentState!.openDrawer();
                   },
                   icon: const Icon(MyFlutterApp.menu_circle)),
+              TextButton(
+                style: TextButton.styleFrom(
+                    foregroundColor: AppColors.color_of_border),
+                onPressed: () {
+                  changeOfFunction.change_state_calculator();
+                },
+                child: Icon(
+                  MyFlutterApp.calculator_icon_icons_com_66651,
+                  color: AppColors.white,
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    foregroundColor: AppColors.color_of_border),
+                onPressed: () {
+                  changeOfFunction.change_state_menu();
+                },
+                child: Icon(
+                  MyFlutterApp.functions_icon_144317,
+                  color: AppColors.white,
+                ),
+              ),
               IconButton(
                   color: AppColors.textcolorfortop,
-                  onPressed: () {
-                    changeOfFunction.change_state_calculator();
-                  },
-                  icon:
-                      const Icon(MyFlutterApp.calculator_icon_icons_com_66651)),
-              IconButton(
-                  color: AppColors.textcolorfortop,
-                  onPressed: () {
-                    changeOfFunction.change_state_menu();
-                  },
-                  icon: Icon(
-                    MyFlutterApp.functions_icon_144317,
-                    color: AppColors.white,
-                  )),
-              IconButton(
-                  color: AppColors.textcolorfortop,
+                  splashRadius: 22,
+                  splashColor: AppColors.color_of_border,
                   onPressed: () {
                     _showDialog(context);
                   },
