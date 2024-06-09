@@ -301,17 +301,22 @@ class ViewEditer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
+                  splashRadius: 22,
                   color: AppColors.textcolorfortop,
                   onPressed: () {
                     scaffoldKey.currentState!.openDrawer();
                   },
                   icon: const Icon(MyFlutterApp.menu_circle)),
-              IconButton(
-                color: AppColors.textcolorfortop,
+              TextButton(
+                style: TextButton.styleFrom(
+                    foregroundColor: AppColors.color_of_border),
                 onPressed: () {
                   changeOfFunction.change_state_calculator();
                 },
-                icon: const Icon(MyFlutterApp.calculator_icon_icons_com_66651),
+                child: Icon(
+                  MyFlutterApp.calculator_icon_icons_com_66651,
+                  color: AppColors.white,
+                ),
               ),
               TextButton(
                 style: TextButton.styleFrom(
@@ -326,6 +331,8 @@ class ViewEditer extends StatelessWidget {
               ),
               IconButton(
                   color: AppColors.textcolorfortop,
+                  splashRadius: 22,
+                  splashColor: AppColors.color_of_border,
                   onPressed: () {
                     _showDialog(context);
                   },
