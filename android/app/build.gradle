@@ -62,16 +62,18 @@ android {
     }
     signingConfigs {
         release {
+
                 keyAlias keystoreProperties['keyAlias']
                 keyPassword keystoreProperties['keyPassword']
-            storeFile file('F:\\calculator\\upload-keystore.jks')
+                storeFile file('C:\\Users\\Владислав\\keys\\keys.keystore')
                 storePassword keystoreProperties['storePassword']
         }
     }
     buildTypes {
         release {
+            testCoverageEnabled = false
+            debuggable = false
             signingConfig signingConfigs.release
-
         }
     }
 
