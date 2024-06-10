@@ -35,7 +35,7 @@ dependencies:
   shared_preferences:
   advance_math:
   angles:
-  sizer: ^2.0.15
+  sizer:
 
   eval_ex:
   flutter:
