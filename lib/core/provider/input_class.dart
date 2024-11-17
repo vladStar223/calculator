@@ -296,7 +296,7 @@ class Input_number_calculator extends ChangeNotifier implements Input_number {
   String count = "0";
   String result = "0";
   bool decide = false;
-  int text_length = 40; // отвечает за максимальную длинну count
+  int text_length = 1000000000000; // отвечает за максимальную длинну count
   String determing_to_true_trigger_start() {
     return count;
   }
