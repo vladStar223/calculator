@@ -1,14 +1,13 @@
-import 'package:calculator/Core/provider/Seach/seach.dart';
+import 'package:calculator/core/provider/Seach/seach.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../Core/provider/Valute/change_valute.dart';
-import '../../Core/provider/Valute/decide_valute.dart';
-import '../../Core/provider/provider_domain/Data/get_data.dart';
+import '../../core/provider/Valute/change_valute.dart';
+import '../../core/provider/Valute/decide_valute.dart';
+import '../../core/provider/provider_domain/Data/get_data.dart';
 import '../../theme/color/theme.dart';
-import '../Dialog/choose_valute.dart';
+import '../dialog/choose_valute.dart';
 
 class ShowValute extends StatefulWidget {
   const ShowValute({super.key});
@@ -44,8 +43,8 @@ class _ShowValuteState extends State<ShowValute> {
             title: Row(
               children: [
                 SizedBox(
-                  height: 6.h,
-                  width: 30.w,
+                  height: context.h(6),
+                  width: context.w(30),
                   child: TextButton(
                     onPressed: () {
                       provider.one_trigger();
@@ -65,15 +64,15 @@ class _ShowValuteState extends State<ShowValute> {
                       data.name_code[provider.index[0]].toString(),
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 8.w,
+                          fontSize: context.w(8),
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 6.h,
-                  width: 23.w,
+                  height: context.h(6),
+                  width: context.w(23),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -81,7 +80,7 @@ class _ShowValuteState extends State<ShowValute> {
                         data.valutes[provider.index[0]].Name,
                         style: TextStyle(
                             color: AppColors.white,
-                            fontSize: 2.w,
+                            fontSize: context.w(2),
                             fontWeight: FontWeight.w100,
                             fontFamily: "Nokora"),
                       ),
@@ -91,15 +90,15 @@ class _ShowValuteState extends State<ShowValute> {
               ],
             ),
             trailing: SizedBox(
-              height: 6.h,
-              width: 30.w,
+              height: context.h(6),
+              width: context.w(30),
               child: TextButton(
                 onPressed: () {
                   valuteDecide.set_type_one();
                 },
                 child: Text(
                   style: TextStyle(
-                      color: AppColors.color_of_border, fontSize: 12.sp),
+                      color: AppColors.color_of_border, fontSize: context.sp(12)),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   valuteDecide.valute_cofficients[0],
@@ -107,14 +106,14 @@ class _ShowValuteState extends State<ShowValute> {
               ),
             )),
         SizedBox(
-          height: 2.h,
+          height: context.h(2),
         ),
         ListTile(
             title: Row(
               children: [
                 SizedBox(
-                  height: 6.h,
-                  width: 30.w,
+                  height: context.h(6),
+                  width: context.w(30),
                   child: TextButton(
                     onPressed: () {
                       provider.two_trigger();
@@ -134,15 +133,15 @@ class _ShowValuteState extends State<ShowValute> {
                       data.name_code[provider.index[1]].toString(),
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 8.w,
+                          fontSize: context.w(8),
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 6.h,
-                  width: 23.w,
+                  height: context.h(6),
+                  width: context.w(23),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -150,7 +149,7 @@ class _ShowValuteState extends State<ShowValute> {
                         data.valutes[provider.index[1]].Name,
                         style: TextStyle(
                             color: AppColors.white,
-                            fontSize: 2.w,
+                            fontSize: context.w(2),
                             fontWeight: FontWeight.w100,
                             fontFamily: "Nokora"),
                       ),
@@ -160,15 +159,15 @@ class _ShowValuteState extends State<ShowValute> {
               ],
             ),
             trailing: SizedBox(
-              height: 6.h,
-              width: 30.w,
+              height: context.h(6),
+              width: context.w(30),
               child: TextButton(
                 onPressed: () {
                   valuteDecide.set_type_two();
                 },
                 child: Text(
                   style: TextStyle(
-                      color: AppColors.color_of_border, fontSize: 12.sp),
+                      color: AppColors.color_of_border, fontSize: context.sp(12)),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   valuteDecide.valute_cofficients[1],
@@ -176,14 +175,14 @@ class _ShowValuteState extends State<ShowValute> {
               ),
             )),
         SizedBox(
-          height: 2.h,
+          height: context.h(2),
         ),
         ListTile(
             title: Row(
               children: [
                 SizedBox(
-                  height: 6.h,
-                  width: 30.w,
+                  height: context.h(6),
+                  width: context.w(30),
                   child: TextButton(
                     onPressed: () {
                       provider.three_trigger();
@@ -203,15 +202,15 @@ class _ShowValuteState extends State<ShowValute> {
                       data.name_code[provider.index[2]].toString(),
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 8.w,
+                          fontSize: context.w(8),
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 6.h,
-                  width: 23.w,
+                  height: context.h(6),
+                  width: context.w(23),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -219,7 +218,7 @@ class _ShowValuteState extends State<ShowValute> {
                         data.valutes[provider.index[2]].Name,
                         style: TextStyle(
                             color: AppColors.white,
-                            fontSize: 2.w,
+                            fontSize: context.w(2),
                             fontWeight: FontWeight.w100,
                             fontFamily: "Nokora"),
                       ),
@@ -229,15 +228,15 @@ class _ShowValuteState extends State<ShowValute> {
               ],
             ),
             trailing: SizedBox(
-              height: 6.h,
-              width: 30.w,
+              height: context.h(6),
+              width: context.w(30),
               child: TextButton(
                 onPressed: () {
                   valuteDecide.set_type_three();
                 },
                 child: Text(
                   style: TextStyle(
-                      color: AppColors.color_of_border, fontSize: 12.sp),
+                      color: AppColors.color_of_border, fontSize: context.sp(12)),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   valuteDecide.valute_cofficients[2],
@@ -245,14 +244,14 @@ class _ShowValuteState extends State<ShowValute> {
               ),
             )),
         SizedBox(
-          height: 2.02.h,
+          height: context.h(2.02),
         ),
         ListTile(
             title: Row(
               children: [
                 SizedBox(
-                  height: 6.h,
-                  width: 30.w,
+                  height: context.h(6),
+                  width: context.w(30),
                   child: TextButton(
                     onPressed: () {
                       provider.four_trigger();
@@ -272,15 +271,15 @@ class _ShowValuteState extends State<ShowValute> {
                       data.name_code[provider.index[3]].toString(),
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 8.w,
+                          fontSize: context.w(8),
                           fontWeight: FontWeight.w100,
                           fontFamily: "Nokora"),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 6.h,
-                  width: 23.w,
+                  height: context.h(6),
+                  width: context.w(23),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -288,7 +287,7 @@ class _ShowValuteState extends State<ShowValute> {
                         data.valutes[provider.index[3]].Name,
                         style: TextStyle(
                             color: AppColors.white,
-                            fontSize: 2.w,
+                            fontSize: context.w(2),
                             fontWeight: FontWeight.w100,
                             fontFamily: "Nokora"),
                       ),
@@ -298,15 +297,15 @@ class _ShowValuteState extends State<ShowValute> {
               ],
             ),
             trailing: SizedBox(
-              height: 6.h,
-              width: 30.w,
+              height: context.h(6),
+              width: context.w(30),
               child: TextButton(
                 onPressed: () {
                   valuteDecide.set_type_four();
                 },
                 child: Text(
                   style: TextStyle(
-                      color: AppColors.color_of_border, fontSize: 12.sp),
+                      color: AppColors.color_of_border, fontSize: context.sp(12)),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   valuteDecide.valute_cofficients[3],

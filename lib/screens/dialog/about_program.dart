@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 late String appName;
@@ -31,7 +31,7 @@ class AboutProgramm extends StatelessWidget {
         ),
       ),
       content: SizedBox(
-        height: 10.8.h,
+        height: context.h(10.8),
         child: Column(
           children: [
             Row(

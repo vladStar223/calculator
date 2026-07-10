@@ -1,8 +1,8 @@
-import 'package:calculator/Core/provider/Valute/change_valute.dart';
+import 'package:calculator/core/provider/Valute/change_valute.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-import '../../Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/Seach/seach.dart';
+import '../../core/domain/entity/valute.dart';
+import 'package:calculator/core/provider/Seach/seach.dart';
 import 'package:calculator/theme/color/theme.dart';
 
 class ChooseValute extends StatefulWidget {
@@ -44,8 +44,8 @@ class _ChooseValuteState extends State<ChooseValute> {
             style: TextStyle(fontFamily: "Nokora", color: Colors.black),
           )),
           content: SizedBox(
-            height: 53.h,
-            width: 75.w,
+            height: context.h(53),
+            width: context.w(75),
             child: Column(
               children: [
                 Expanded(
@@ -64,8 +64,8 @@ class _ChooseValuteState extends State<ChooseValute> {
                 AnimatedContainer(
                   duration: const Duration(seconds: 3),
                   child: SizedBox(
-                    height: 47.h,
-                    width: 75.w,
+                    height: context.h(47),
+                    width: context.w(75),
                     child: Builder(builder: (context) {
                       if (widget.seachs.seach == true) {
                         return ListView.builder(
@@ -95,7 +95,7 @@ class _ChooseValuteState extends State<ChooseValute> {
                                                 color:
                                                     widget.AppColors.textcolor2,
                                                 fontWeight: FontWeight.w300,
-                                                fontSize: 20.sp)),
+                                                fontSize: context.sp(20))),
                                       )
                                     ],
                                   ));
@@ -123,7 +123,7 @@ class _ChooseValuteState extends State<ChooseValute> {
                                                 color:
                                                     widget.AppColors.textcolor2,
                                                 fontWeight: FontWeight.w300,
-                                                fontSize: 20.sp)),
+                                                fontSize: context.sp(20))),
                                       )
                                     ],
                                   ));
@@ -140,8 +140,8 @@ class _ChooseValuteState extends State<ChooseValute> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 6.h,
-                  width: 75.w,
+                  height: context.h(6),
+                  width: context.w(75),
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                     Radius.circular(70.0),
@@ -155,7 +155,7 @@ class _ChooseValuteState extends State<ChooseValute> {
                       "Закрыть",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 6.w,
+                          fontSize: context.w(6),
                           fontFamily: "Nokora"),
                     ),
                     onPressed: () {
@@ -166,7 +166,7 @@ class _ChooseValuteState extends State<ChooseValute> {
               ],
             ),
             SizedBox(
-              height: 2.h,
+              height: context.h(2),
             )
           ],
         ),

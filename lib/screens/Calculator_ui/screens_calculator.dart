@@ -1,9 +1,8 @@
 import 'package:calculator/theme/color/theme.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../Core/provider/input_class.dart';
+import '../../core/provider/input_class.dart';
 
 class Calculator extends StatelessWidget {
   const Calculator({super.key});
@@ -38,7 +37,7 @@ class Calculator extends StatelessWidget {
                                   numberCalculator.count,
                                   style: TextStyle(
                                       color: AppColors.white,
-                                      fontSize: 12.w,
+                                      fontSize: context.w(12),
                                       fontFamily: "Nokora",
                                       fontWeight: FontWeight.w300),
                                 ),
@@ -57,7 +56,7 @@ class Calculator extends StatelessWidget {
                                   numberCalculator.result,
                                   style: TextStyle(
                                       color: AppColors.white,
-                                      fontSize: 10.w,
+                                      fontSize: context.w(10),
                                       fontFamily: "Nokora",
                                       fontWeight: FontWeight.w300),
                                 ),
@@ -79,7 +78,7 @@ class Calculator extends StatelessWidget {
                               numberCalculator.count,
                               style: TextStyle(
                                   color: AppColors.white,
-                                  fontSize: 12.w,
+                                  fontSize: context.w(12),
                                   fontFamily: "Nokora",
                                   fontWeight: FontWeight.w300),
                             ),
@@ -90,8 +89,8 @@ class Calculator extends StatelessWidget {
                   }
                 }),
                 Container(
-                  width: 100.w,
-                  height: 0.3.h,
+                  width: context.w(100),
+                  height: context.h(0.3),
                   color: AppColors.textcolor,
                 ),
               ],
@@ -99,7 +98,7 @@ class Calculator extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 1.9.h,
+          height: context.h(1.9),
         )
       ],
     );

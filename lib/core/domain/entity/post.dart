@@ -1,4 +1,4 @@
-import 'package:calculator/Core/domain/entity/valute.dart';
+import 'package:calculator/core/domain/entity/valute.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'post.g.dart';
 
