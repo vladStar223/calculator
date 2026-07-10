@@ -1,9 +1,9 @@
-import 'package:calculator/Core/provider/provider_domain/Data/get_data.dart';
+import 'package:calculator/core/provider/provider_domain/Data/get_data.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import '../../Core/provider/Valute/decide_valute.dart';
+import '../../core/provider/Valute/decide_valute.dart';
 import '../../theme/color/theme.dart';
 import 'converter_input_out.dart';
 import 'key_board_convert.dart';

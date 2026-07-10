@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:calculator/Core/domain/api_clients/api_clients.dart';
-import 'package:calculator/Core/domain/entity/post.dart';
+import 'package:calculator/core/domain/api_clients/api_clients.dart';
+import 'package:calculator/core/domain/entity/post.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

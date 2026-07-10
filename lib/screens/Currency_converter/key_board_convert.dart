@@ -1,5 +1,5 @@
-import 'package:calculator/Core/provider/Valute/decide_valute.dart';
-import 'package:calculator/Screens/buttons.dart';
+import 'package:calculator/core/provider/Valute/decide_valute.dart';
+import 'package:calculator/screens/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';

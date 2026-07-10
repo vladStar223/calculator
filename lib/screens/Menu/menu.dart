@@ -1,4 +1,4 @@
-import 'package:calculator/Screens/buttons.dart';
+import 'package:calculator/screens/buttons.dart';
 import 'package:calculator/screens/Equations_ui/keyboard_eqution.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../Core/provider/input_class.dart';
-import '../../Core/provider/сhange_of_function.dart';
+import '../../core/provider/input_class.dart';
+import '../../core/provider/сhange_of_function.dart';
 import '../Calculator_ui/key_board.dart';
 import '../Calculator_ui/screens_calculator.dart';
 import '../Currency_converter/converter.dart';

@@ -1,8 +1,8 @@
-import 'package:calculator/Core/provider/Valute/change_valute.dart';
+import 'package:calculator/core/provider/Valute/change_valute.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import '../../Core/domain/entity/valute.dart';
-import 'package:calculator/Core/provider/Seach/seach.dart';
+import '../../core/domain/entity/valute.dart';
+import 'package:calculator/core/provider/Seach/seach.dart';
 import 'package:calculator/theme/color/theme.dart';
 
 class ChooseValute extends StatefulWidget {

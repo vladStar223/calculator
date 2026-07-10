@@ -1,14 +1,14 @@
-import 'package:calculator/Core/provider/Seach/seach.dart';
+import 'package:calculator/core/provider/Seach/seach.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../Core/provider/Valute/change_valute.dart';
-import '../../Core/provider/Valute/decide_valute.dart';
-import '../../Core/provider/provider_domain/Data/get_data.dart';
+import '../../core/provider/Valute/change_valute.dart';
+import '../../core/provider/Valute/decide_valute.dart';
+import '../../core/provider/provider_domain/Data/get_data.dart';
 import '../../theme/color/theme.dart';
-import '../Dialog/choose_valute.dart';
+import '../dialog/choose_valute.dart';
 
 class ShowValute extends StatefulWidget {
   const ShowValute({super.key});
