@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import '../../Core/provider/Equations/decision_urv.dart';
-import '../../Core/provider/input_class.dart';
+import '../../core/provider/Equations/decision_urv.dart';
+import '../../core/provider/input_class.dart';
 import '../buttons.dart';
 
 class KeyboardEquation extends StatelessWidget {

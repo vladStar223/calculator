@@ -1,5 +1,5 @@
 //начало программы
-import 'package:calculator/screens/Dialog/about_program.dart';
+import 'package:calculator/screens/dialog/about_program.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
@@ -8,16 +8,16 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import 'Core/provider/Equations/decision_urv.dart';
-import 'Core/provider/Logarith/input_number_log.dart';
-import 'Core/provider/Seach/seach.dart';
-import 'Core/provider/Valute/change_valute.dart';
-import 'Core/provider/Valute/decide_valute.dart';
-import 'Core/provider/input_class.dart';
-import 'Core/provider/provider_domain/Data/get_data.dart';
-import 'Core/provider/сhange_of_function.dart';
-import 'Screens/Dialog/alertDialog_widget.dart';
-import 'Screens/Menu/menu.dart';
+import 'core/provider/Equations/decision_urv.dart';
+import 'core/provider/Logarith/input_number_log.dart';
+import 'core/provider/Seach/seach.dart';
+import 'core/provider/Valute/change_valute.dart';
+import 'core/provider/Valute/decide_valute.dart';
+import 'core/provider/input_class.dart';
+import 'core/provider/provider_domain/Data/get_data.dart';
+import 'core/provider/сhange_of_function.dart';
+import 'screens/dialog/alertDialog_widget.dart';
+import 'screens/Menu/menu.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

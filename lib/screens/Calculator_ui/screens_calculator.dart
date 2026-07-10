@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../Core/provider/input_class.dart';
+import '../../core/provider/input_class.dart';
 
 class Calculator extends StatelessWidget {
   const Calculator({super.key});

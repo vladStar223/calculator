@@ -2,7 +2,7 @@ import 'package:calculator/screens/Equations_ui/result.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../Core/provider/input_class.dart';
+import '../../../core/provider/input_class.dart';
 import '../screens_equations.dart';
 
 /*

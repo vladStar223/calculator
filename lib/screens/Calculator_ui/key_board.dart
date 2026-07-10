@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../Core/provider/input_class.dart';
-import '../../Core/provider/сhange_of_function.dart';
+import '../../core/provider/input_class.dart';
+import '../../core/provider/сhange_of_function.dart';
 import '../../theme/color/theme.dart';
 import '../../theme/icon/my_flutter_app_icons.dart';
 import '../buttons.dart';
