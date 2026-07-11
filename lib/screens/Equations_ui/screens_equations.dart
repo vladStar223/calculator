@@ -1,9 +1,8 @@
 import 'package:calculator/theme/color/theme.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../Core/provider/input_class.dart';
+import '../../core/provider/input_class.dart';
 
 class QuadraticEquation extends StatelessWidget {
   const QuadraticEquation({super.key});
@@ -27,7 +26,7 @@ class QuadraticEquation extends StatelessWidget {
               children: [
                 Center(
                   child: Container(
-                    width: 75.w,
+                    width: context.w(75),
                     height: 60,
                     decoration: BoxDecoration(
                       color: AppColors.buttoncolor1,
@@ -38,7 +37,7 @@ class QuadraticEquation extends StatelessWidget {
                         "ax² + bx - c = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 5.h,
+                            fontSize: context.h(5),
                             fontWeight: FontWeight.w200,
                             color: AppColors.textcolor),
                       ),
@@ -48,22 +47,22 @@ class QuadraticEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 2.h,
+              height: context.h(2),
             ),
             Row(
               children: [
                 Text(
                   "a = ",
                   style: TextStyle(
-                      fontSize: 10.w,
+                      fontSize: context.w(10),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.w,
-                      height: 5.1.h,
+                      width: context.w(53),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -71,7 +70,7 @@ class QuadraticEquation extends StatelessWidget {
                             color: equations.active_coefficient[0]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -89,7 +88,7 @@ class QuadraticEquation extends StatelessWidget {
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -101,22 +100,22 @@ class QuadraticEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 3.h,
+              height: context.h(3),
             ),
             Row(
               children: [
                 Text(
                   "b = ",
                   style: TextStyle(
-                      fontSize: 10.w,
+                      fontSize: context.w(10),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.w,
-                      height: 5.1.h,
+                      width: context.w(53),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -124,7 +123,7 @@ class QuadraticEquation extends StatelessWidget {
                             color: equations.active_coefficient[1]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -142,7 +141,7 @@ class QuadraticEquation extends StatelessWidget {
                             equations.text_in_cofficients[1],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -154,14 +153,14 @@ class QuadraticEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 3.h,
+              height: context.h(3),
             ),
             Row(
               children: [
                 Text(
                   "c = ",
                   style: TextStyle(
-                      fontSize: 10.w,
+                      fontSize: context.w(10),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
@@ -171,8 +170,8 @@ class QuadraticEquation extends StatelessWidget {
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.8.w,
-                      height: 5.1.h,
+                      width: context.w(53.8),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -180,7 +179,7 @@ class QuadraticEquation extends StatelessWidget {
                             color: equations.active_coefficient[2]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -198,7 +197,7 @@ class QuadraticEquation extends StatelessWidget {
                             equations.text_in_cofficients[2],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -238,7 +237,7 @@ class CubicEquation extends StatelessWidget {
               children: [
                 Center(
                   child: Container(
-                    width: 75.w,
+                    width: context.w(75),
                     height: 60,
                     decoration: BoxDecoration(
                       color: AppColors.buttoncolor1,
@@ -249,7 +248,7 @@ class CubicEquation extends StatelessWidget {
                         "ax³ + bx² + cx + d = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 6.w,
+                            fontSize: context.w(6),
                             fontWeight: FontWeight.w200,
                             color: AppColors.textcolor),
                       ),
@@ -259,22 +258,22 @@ class CubicEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 0.8.h,
+              height: context.h(0.8),
             ),
             Row(
               children: [
                 Text(
                   "a = ",
                   style: TextStyle(
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.w,
-                      height: 5.1.h,
+                      width: context.w(53),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -282,7 +281,7 @@ class CubicEquation extends StatelessWidget {
                             color: equations.active_coefficient[0]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -300,7 +299,7 @@ class CubicEquation extends StatelessWidget {
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -312,22 +311,22 @@ class CubicEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 1.h,
+              height: context.h(1),
             ),
             Row(
               children: [
                 Text(
                   "b = ",
                   style: TextStyle(
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.w,
-                      height: 5.1.h,
+                      width: context.w(53),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -335,7 +334,7 @@ class CubicEquation extends StatelessWidget {
                             color: equations.active_coefficient[1]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -353,7 +352,7 @@ class CubicEquation extends StatelessWidget {
                             equations.text_in_cofficients[1],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -365,14 +364,14 @@ class CubicEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 1.h,
+              height: context.h(1),
             ),
             Row(
               children: [
                 Text(
                   "c = ",
                   style: TextStyle(
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
@@ -382,8 +381,8 @@ class CubicEquation extends StatelessWidget {
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.w,
-                      height: 5.1.h,
+                      width: context.w(53),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -391,7 +390,7 @@ class CubicEquation extends StatelessWidget {
                             color: equations.active_coefficient[2]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -409,7 +408,7 @@ class CubicEquation extends StatelessWidget {
                             equations.text_in_cofficients[2],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -421,22 +420,22 @@ class CubicEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 1.h,
+              height: context.h(1),
             ),
             Row(
               children: [
                 Text(
                   "d = ",
                   style: TextStyle(
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.8.w,
-                      height: 5.1.h,
+                      width: context.w(53.8),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -444,7 +443,7 @@ class CubicEquation extends StatelessWidget {
                             color: equations.active_coefficient[3]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -462,7 +461,7 @@ class CubicEquation extends StatelessWidget {
                             equations.text_in_cofficients[3],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -502,7 +501,7 @@ class BiquadrateEquation extends StatelessWidget {
               children: [
                 Center(
                   child: Container(
-                    width: 75.w,
+                    width: context.w(75),
                     height: 60,
                     decoration: BoxDecoration(
                       color: AppColors.buttoncolor1,
@@ -513,7 +512,7 @@ class BiquadrateEquation extends StatelessWidget {
                         "ax⁴ + bx² - c = 0",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 5.h,
+                            fontSize: context.h(5),
                             fontWeight: FontWeight.w200,
                             color: AppColors.textcolor),
                       ),
@@ -523,22 +522,22 @@ class BiquadrateEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 2.h,
+              height: context.h(2),
             ),
             Row(
               children: [
                 Text(
                   "a = ",
                   style: TextStyle(
-                      fontSize: 10.w,
+                      fontSize: context.w(10),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.w,
-                      height: 5.1.h,
+                      width: context.w(53),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -546,7 +545,7 @@ class BiquadrateEquation extends StatelessWidget {
                             color: equations.active_coefficient[0]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -564,7 +563,7 @@ class BiquadrateEquation extends StatelessWidget {
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -576,22 +575,22 @@ class BiquadrateEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 3.h,
+              height: context.h(3),
             ),
             Row(
               children: [
                 Text(
                   "b = ",
                   style: TextStyle(
-                      fontSize: 10.w,
+                      fontSize: context.w(10),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.w,
-                      height: 5.1.h,
+                      width: context.w(53),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -599,7 +598,7 @@ class BiquadrateEquation extends StatelessWidget {
                             color: equations.active_coefficient[1]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -617,7 +616,7 @@ class BiquadrateEquation extends StatelessWidget {
                             equations.text_in_cofficients[1],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),
@@ -629,14 +628,14 @@ class BiquadrateEquation extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 3.h,
+              height: context.h(3),
             ),
             Row(
               children: [
                 Text(
                   "c = ",
                   style: TextStyle(
-                      fontSize: 10.w,
+                      fontSize: context.w(10),
                       fontFamily: "Nokora",
                       color: AppColors.textcolor),
                 ),
@@ -646,8 +645,8 @@ class BiquadrateEquation extends StatelessWidget {
                 Center(
                   child: Center(
                     child: Container(
-                      width: 53.8.w,
-                      height: 5.1.h,
+                      width: context.w(53.8),
+                      height: context.h(5.1),
                       decoration: BoxDecoration(
                         color: AppColors.output,
                         borderRadius: BorderRadius.circular(10),
@@ -655,7 +654,7 @@ class BiquadrateEquation extends StatelessWidget {
                             color: equations.active_coefficient[2]
                                 ? AppColors.color_of_border
                                 : Colors.transparent,
-                            width: 0.5.w),
+                            width: context.w(0.5)),
                       ),
                       child: TextButton(
                         style: ButtonStyle(
@@ -673,7 +672,7 @@ class BiquadrateEquation extends StatelessWidget {
                             equations.text_in_cofficients[2],
                             style: TextStyle(
                                 color: AppColors.textcolor2,
-                                fontSize: 5.3.w,
+                                fontSize: context.w(5.3),
                                 fontFamily: "Nokora",
                                 fontWeight: FontWeight.w300),
                           ),

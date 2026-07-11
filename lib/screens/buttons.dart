@@ -1,10 +1,9 @@
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../Core/provider/input_class.dart';
+import '../core/provider/input_class.dart';
 import '../theme/color/theme.dart';
 
 class InputButton extends StatelessWidget {
@@ -26,8 +25,8 @@ class InputButton extends StatelessWidget {
     var AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(
-        height: 9.h,
-        width: 20.w,
+        height: context.h(9),
+        width: context.w(20),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -44,7 +43,7 @@ class InputButton extends StatelessWidget {
             number,
             style: TextStyle(
                 color: AppColors.textcolor2,
-                fontSize: font.w,
+                fontSize: context.w(font),
                 fontFamily: "Nokora"),
           ),
         ),
@@ -52,8 +51,8 @@ class InputButton extends StatelessWidget {
     }
     if (type == 2) {
       return Container(
-        height: 9.h,
-        width: 20.w,
+        height: context.h(9),
+        width: context.w(20),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -70,7 +69,7 @@ class InputButton extends StatelessWidget {
               number,
               style: TextStyle(
                   color: AppColors.textcolor,
-                  fontSize: font.w,
+                  fontSize: context.w(font),
                   fontFamily: "Nokora"),
             ),
           ),
@@ -79,8 +78,8 @@ class InputButton extends StatelessWidget {
     }
     if (type == 3) {
       return Container(
-        height: 9.h,
-        width: 20.w,
+        height: context.h(9),
+        width: context.w(20),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -103,7 +102,7 @@ class InputButton extends StatelessWidget {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.w,
+                fontSize: context.w(5),
                 fontFamily: "Nokora"),
           ),
         ),
@@ -111,8 +110,8 @@ class InputButton extends StatelessWidget {
     }
     if (type == 4) {
       return Container(
-        height: 9.h,
-        width: 20.w,
+        height: context.h(9),
+        width: context.w(20),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -135,7 +134,7 @@ class InputButton extends StatelessWidget {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.w,
+                fontSize: context.w(5),
                 fontFamily: "Nokora"),
           ),
         ),
@@ -321,7 +320,7 @@ class Sta_special_InputButton extends StatelessWidget {
           ),
           child: myIcon,
           //color: AppColors.textcolor,
-          //size: 9.w,
+          //size: context.w(9),
         ),
       );
     } else {
@@ -341,7 +340,7 @@ class Sta_special_InputButton extends StatelessWidget {
           ),
           child: myIcon,
           //color: AppColors.textcolor,
-          //size: 9.w,
+          //size: context.w(9),
         ),
       );
     }
@@ -371,8 +370,8 @@ class InputButton_mini extends StatelessWidget {
     var AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -389,7 +388,7 @@ class InputButton_mini extends StatelessWidget {
             number,
             style: TextStyle(
                 color: AppColors.textcolor2,
-                fontSize: font.w,
+                fontSize: context.w(font),
                 fontFamily: "Nokora"),
           ),
         ),
@@ -397,8 +396,8 @@ class InputButton_mini extends StatelessWidget {
     }
     if (type == 2) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -415,7 +414,7 @@ class InputButton_mini extends StatelessWidget {
               number,
               style: TextStyle(
                   color: AppColors.textcolor,
-                  fontSize: font.w,
+                  fontSize: context.w(font),
                   fontFamily: "Nokora"),
             ),
           ),
@@ -424,8 +423,8 @@ class InputButton_mini extends StatelessWidget {
     }
     if (type == 3) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -448,7 +447,7 @@ class InputButton_mini extends StatelessWidget {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.w,
+                fontSize: context.w(5),
                 fontFamily: "Nokora"),
           ),
         ),
@@ -456,8 +455,8 @@ class InputButton_mini extends StatelessWidget {
     }
     if (type == 4) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -480,7 +479,7 @@ class InputButton_mini extends StatelessWidget {
             "AC",
             style: TextStyle(
                 color: AppColors.textcolor,
-                fontSize: 5.w,
+                fontSize: context.w(5),
                 fontFamily: "Nokora"),
           ),
         ),
@@ -488,8 +487,8 @@ class InputButton_mini extends StatelessWidget {
     }
     if (type == 5) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -506,14 +505,14 @@ class InputButton_mini extends StatelessWidget {
                 "$number¯¹",
                 style: TextStyle(
                     color: AppColors.textcolor2,
-                    fontSize: 3.w,
+                    fontSize: context.w(3),
                     fontFamily: "Nokora"),
               ),
               secondChild: Text(
                 number,
                 style: TextStyle(
                     color: AppColors.textcolor2,
-                    fontSize: 4.w,
+                    fontSize: context.w(4),
                     fontFamily: "Nokora"),
               ),
               crossFadeState: Provider.of<Input_number_calculator>(context).arc
@@ -525,8 +524,8 @@ class InputButton_mini extends StatelessWidget {
     }
     if (type == 7) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -543,14 +542,14 @@ class InputButton_mini extends StatelessWidget {
                 "$number¯¹",
                 style: TextStyle(
                     color: AppColors.textcolor2,
-                    fontSize: 3.4.w,
+                    fontSize: context.w(3.4),
                     fontFamily: "Nokora"),
               ),
               secondChild: Text(
                 number,
                 style: TextStyle(
                     color: AppColors.textcolor2,
-                    fontSize: 5.w,
+                    fontSize: context.w(5),
                     fontFamily: "Nokora"),
               ),
               crossFadeState: Provider.of<Input_number_calculator>(context).arc
@@ -562,8 +561,8 @@ class InputButton_mini extends StatelessWidget {
     }
     if (type == 6) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -580,14 +579,14 @@ class InputButton_mini extends StatelessWidget {
                 "deg",
                 style: TextStyle(
                     color: AppColors.textcolor2,
-                    fontSize: 5.w,
+                    fontSize: context.w(5),
                     fontFamily: "Nokora"),
               ),
               secondChild: Text(
                 "rad",
                 style: TextStyle(
                     color: AppColors.textcolor2,
-                    fontSize: 5.w,
+                    fontSize: context.w(5),
                     fontFamily: "Nokora"),
               ),
               crossFadeState: Provider.of<Input_number_calculator>(context).deg
@@ -618,8 +617,8 @@ class Special_InputButton extends StatelessWidget {
     // TODO: implement build
     if (type == 1) {
       return Container(
-        height: 9.h,
-        width: 20.w,
+        height: context.h(9),
+        width: context.w(20),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -633,13 +632,13 @@ class Special_InputButton extends StatelessWidget {
           ),
           child: myIcon,
           //color: AppColors.textcolor,
-          //size: 9.w,
+          //size: context.w(9),
         ),
       );
     } else {
       return Container(
-        height: 9.h,
-        width: 20.w,
+        height: context.h(9),
+        width: context.w(20),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,
@@ -653,7 +652,7 @@ class Special_InputButton extends StatelessWidget {
           ),
           child: myIcon,
           //color: AppColors.textcolor,
-          //size: 9.w,
+          //size: context.w(9),
         ),
       );
     }
@@ -677,8 +676,8 @@ class Special_InputButton_mini extends StatelessWidget {
     var AppColors = Provider.of<AppColor>(context);
     if (type == 1) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor1,
           shape: BoxShape.circle,
@@ -692,14 +691,14 @@ class Special_InputButton_mini extends StatelessWidget {
           ),
           child: myIcon,
           //color: AppColors.textcolor,
-          //size: 9.w,
+          //size: context.w(9),
         ),
       );
     }
     if (type == 2) {
       return Container(
-        height: 8.h,
-        width: 17.w,
+        height: context.h(8),
+        width: context.w(17),
         decoration: BoxDecoration(
           color: AppColors.buttoncolor2,
           shape: BoxShape.circle,

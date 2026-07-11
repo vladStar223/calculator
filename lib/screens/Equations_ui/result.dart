@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../Core/provider/Equations/decision_urv.dart';
-import '../../Core/provider/input_class.dart';
+import '../../core/provider/Equations/decision_urv.dart';
+import '../../core/provider/input_class.dart';
 import '../../theme/color/theme.dart';
 
 class Resuilt extends StatelessWidget {
@@ -39,19 +38,19 @@ class Resuilt extends StatelessWidget {
                 "Решение",
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: 9.w,
+                    fontSize: context.w(9),
                     fontWeight: FontWeight.w200,
                     color: AppColors.textcolor),
               ),
             ),
             SizedBox(
-              height: 1.h,
+              height: context.h(1),
             ),
             Text(
               Provider.of<Decision_urv>(context).urvshow,
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: fonturv.w,
+                  fontSize: context.w(fonturv.toDouble()),
                   fontWeight: FontWeight.w200,
                   color: AppColors.textcolor),
             ),
@@ -59,7 +58,7 @@ class Resuilt extends StatelessWidget {
               "D = b² - 4 × a × c",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 8.w,
+                  fontSize: context.w(8),
                   fontWeight: FontWeight.w200,
                   color: AppColors.textcolor),
             ),
@@ -67,7 +66,7 @@ class Resuilt extends StatelessWidget {
               "X = -+√D ÷ 2 * a",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 8.w,
+                  fontSize: context.w(8),
                   fontWeight: FontWeight.w200,
                   color: AppColors.textcolor),
             ),
@@ -78,13 +77,13 @@ class Resuilt extends StatelessWidget {
                   "√D =",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
                 Container(
-                  width: 60.w,
-                  height: 5.1.h,
+                  width: context.w(60),
+                  height: context.h(5.1),
                   decoration: BoxDecoration(
                     color: AppColors.output,
                     borderRadius: BorderRadius.circular(10),
@@ -96,7 +95,7 @@ class Resuilt extends StatelessWidget {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           color: AppColors.textcolor2,
-                          fontSize: 5.3.w,
+                          fontSize: context.w(5.3),
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
                     ),
@@ -111,13 +110,13 @@ class Resuilt extends StatelessWidget {
                   "X1 =",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
                 Container(
-                  width: 60.w,
-                  height: 5.1.h,
+                  width: context.w(60),
+                  height: context.h(5.1),
                   decoration: BoxDecoration(
                     color: AppColors.output,
                     borderRadius: BorderRadius.circular(10),
@@ -129,7 +128,7 @@ class Resuilt extends StatelessWidget {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           color: AppColors.textcolor2,
-                          fontSize: 5.3.w,
+                          fontSize: context.w(5.3),
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
                     ),
@@ -144,13 +143,13 @@ class Resuilt extends StatelessWidget {
                   "X2 =",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
                 Container(
-                  width: 60.w,
-                  height: 5.1.h,
+                  width: context.w(60),
+                  height: context.h(5.1),
                   decoration: BoxDecoration(
                     color: AppColors.output,
                     borderRadius: BorderRadius.circular(10),
@@ -162,7 +161,7 @@ class Resuilt extends StatelessWidget {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           color: AppColors.textcolor2,
-                          fontSize: 5.3.w,
+                          fontSize: context.w(5.3),
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
                     ),
@@ -209,24 +208,24 @@ class Nosolution extends StatelessWidget {
             "Решение",
             style: TextStyle(
                 fontFamily: "Nokora",
-                fontSize: 9.w,
+                fontSize: context.w(9),
                 fontWeight: FontWeight.w200,
                 color: AppColors.textcolor),
           ),
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Text(
           decision.urvshow,
           style: TextStyle(
               fontFamily: "Nokora",
-              fontSize: fonturv.w,
+              fontSize: context.w(fonturv.toDouble()),
               fontWeight: FontWeight.w200,
               color: AppColors.textcolor),
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -235,7 +234,7 @@ class Nosolution extends StatelessWidget {
               "Нет корней",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 10.w,
+                  fontSize: context.w(10),
                   color: AppColors.textcolor),
             ),
             Row(
@@ -245,7 +244,7 @@ class Nosolution extends StatelessWidget {
                   "Перепроверьте коэффициенты",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 6.w,
+                      fontSize: context.w(6),
                       color: AppColors.textcolor),
                 ),
               ],
@@ -254,7 +253,7 @@ class Nosolution extends StatelessWidget {
               "Тест",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 6.w,
+                  fontSize: context.w(6),
                   color: AppColors.textcolor),
             ),
           ],
@@ -301,19 +300,19 @@ class ResultUrv3 extends StatelessWidget {
               "Решение",
               style: TextStyle(
                   fontFamily: "Nokora",
-                  fontSize: 9.w,
+                  fontSize: context.w(9),
                   fontWeight: FontWeight.w200,
                   color: AppColors.textcolor),
             ),
           ),
           SizedBox(
-            height: 1.h,
+            height: context.h(1),
           ),
           Text(
             decision.urvshow,
             style: TextStyle(
                 fontFamily: "Nokora",
-                fontSize: fonturv.w,
+                fontSize: context.w(fonturv.toDouble()),
                 fontWeight: FontWeight.w200,
                 color: AppColors.textcolor),
           ),
@@ -321,7 +320,7 @@ class ResultUrv3 extends StatelessWidget {
             "Метод решения по формуле Кардано",
             style: TextStyle(
                 fontFamily: "Nokora",
-                fontSize: 3.w,
+                fontSize: context.w(3),
                 fontWeight: FontWeight.w200,
                 color: AppColors.textcolor),
           ),
@@ -329,7 +328,7 @@ class ResultUrv3 extends StatelessWidget {
             "Q = (a² - 3 * b) / 9",
             style: TextStyle(
                 fontFamily: "Nokora",
-                fontSize: 6.w,
+                fontSize: context.w(6),
                 fontWeight: FontWeight.w200,
                 color: AppColors.textcolor),
           ),
@@ -337,7 +336,7 @@ class ResultUrv3 extends StatelessWidget {
             "R = (2 * a ³- 9 * a * b + 27 * c) / 54",
             style: TextStyle(
                 fontFamily: "Nokora",
-                fontSize: 6.w,
+                fontSize: context.w(6),
                 fontWeight: FontWeight.w200,
                 color: AppColors.textcolor),
           ),
@@ -348,13 +347,13 @@ class ResultUrv3 extends StatelessWidget {
                 "X1 =",
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: 9.w,
+                    fontSize: context.w(9),
                     fontWeight: FontWeight.w200,
                     color: AppColors.textcolor),
               ),
               Container(
-                width: 60.w,
-                height: 5.1.h,
+                width: context.w(60),
+                height: context.h(5.1),
                 decoration: BoxDecoration(
                   color: AppColors.output,
                   borderRadius: BorderRadius.circular(10),
@@ -366,7 +365,7 @@ class ResultUrv3 extends StatelessWidget {
                     textAlign: TextAlign.right,
                     style: TextStyle(
                         color: AppColors.textcolor2,
-                        fontSize: 5.w,
+                        fontSize: context.w(5),
                         fontFamily: "Nokora",
                         fontWeight: FontWeight.w300),
                   ),
@@ -381,13 +380,13 @@ class ResultUrv3 extends StatelessWidget {
                 "X2 =",
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: 9.w,
+                    fontSize: context.w(9),
                     fontWeight: FontWeight.w200,
                     color: AppColors.textcolor),
               ),
               Container(
-                width: 60.w,
-                height: 5.1.h,
+                width: context.w(60),
+                height: context.h(5.1),
                 decoration: BoxDecoration(
                   color: AppColors.output,
                   borderRadius: BorderRadius.circular(10),
@@ -399,7 +398,7 @@ class ResultUrv3 extends StatelessWidget {
                     textAlign: TextAlign.right,
                     style: TextStyle(
                         color: AppColors.textcolor2,
-                        fontSize: fontx.w,
+                        fontSize: context.w(fontx.toDouble()),
                         fontFamily: "Nokora",
                         fontWeight: FontWeight.w300),
                   ),
@@ -414,13 +413,13 @@ class ResultUrv3 extends StatelessWidget {
                 "X3 =",
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: 9.w,
+                    fontSize: context.w(9),
                     fontWeight: FontWeight.w200,
                     color: AppColors.textcolor),
               ),
               Container(
-                width: 60.w,
-                height: 5.1.h,
+                width: context.w(60),
+                height: context.h(5.1),
                 decoration: BoxDecoration(
                   color: AppColors.output,
                   borderRadius: BorderRadius.circular(10),
@@ -432,7 +431,7 @@ class ResultUrv3 extends StatelessWidget {
                     textAlign: TextAlign.right,
                     style: TextStyle(
                         color: AppColors.textcolor2,
-                        fontSize: fontx.w,
+                        fontSize: context.w(fontx.toDouble()),
                         fontFamily: "Nokora",
                         fontWeight: FontWeight.w300),
                   ),
@@ -486,19 +485,19 @@ class ResultUrv4 extends StatelessWidget {
                   "Решение",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
               ),
               SizedBox(
-                height: 1.h,
+                height: context.h(1),
               ),
               Text(
                 decision.urvshow,
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: fonturv.w,
+                    fontSize: context.w(fonturv.toDouble()),
                     fontWeight: FontWeight.w200,
                     color: AppColors.textcolor),
               ),
@@ -506,14 +505,14 @@ class ResultUrv4 extends StatelessWidget {
                 "решается через замену переменной",
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: 4.w,
+                    fontSize: context.w(4),
                     color: AppColors.textcolor),
               ),
               Text(
                 "t = x²",
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: 5.w,
+                    fontSize: context.w(5),
                     color: AppColors.textcolor),
               ),
               Row(
@@ -523,13 +522,13 @@ class ResultUrv4 extends StatelessWidget {
                     "X1 =",
                     style: TextStyle(
                         fontFamily: "Nokora",
-                        fontSize: 9.w,
+                        fontSize: context.w(9),
                         fontWeight: FontWeight.w200,
                         color: AppColors.textcolor),
                   ),
                   Container(
-                    width: 60.w,
-                    height: 5.1.h,
+                    width: context.w(60),
+                    height: context.h(5.1),
                     decoration: BoxDecoration(
                       color: AppColors.output,
                       borderRadius: BorderRadius.circular(10),
@@ -541,7 +540,7 @@ class ResultUrv4 extends StatelessWidget {
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             color: AppColors.textcolor2,
-                            fontSize: fontx.w,
+                            fontSize: context.w(fontx.toDouble()),
                             fontFamily: "Nokora",
                             fontWeight: FontWeight.w300),
                       ),
@@ -550,7 +549,7 @@ class ResultUrv4 extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 0.4.h,
+                height: context.h(0.4),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -559,13 +558,13 @@ class ResultUrv4 extends StatelessWidget {
                     "X2 =",
                     style: TextStyle(
                         fontFamily: "Nokora",
-                        fontSize: 9.w,
+                        fontSize: context.w(9),
                         fontWeight: FontWeight.w200,
                         color: AppColors.textcolor),
                   ),
                   Container(
-                    width: 60.w,
-                    height: 5.1.h,
+                    width: context.w(60),
+                    height: context.h(5.1),
                     decoration: BoxDecoration(
                       color: AppColors.output,
                       borderRadius: BorderRadius.circular(10),
@@ -577,7 +576,7 @@ class ResultUrv4 extends StatelessWidget {
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             color: AppColors.textcolor2,
-                            fontSize: fontx.w,
+                            fontSize: context.w(fontx.toDouble()),
                             fontFamily: "Nokora",
                             fontWeight: FontWeight.w300),
                       ),
@@ -586,7 +585,7 @@ class ResultUrv4 extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 0.4.h,
+                height: context.h(0.4),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -595,13 +594,13 @@ class ResultUrv4 extends StatelessWidget {
                     "X3 =",
                     style: TextStyle(
                         fontFamily: "Nokora",
-                        fontSize: 9.w,
+                        fontSize: context.w(9),
                         fontWeight: FontWeight.w200,
                         color: AppColors.textcolor),
                   ),
                   Container(
-                    width: 60.w,
-                    height: 5.1.h,
+                    width: context.w(60),
+                    height: context.h(5.1),
                     decoration: BoxDecoration(
                       color: AppColors.output,
                       borderRadius: BorderRadius.circular(10),
@@ -613,7 +612,7 @@ class ResultUrv4 extends StatelessWidget {
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             color: AppColors.textcolor2,
-                            fontSize: fontx.w,
+                            fontSize: context.w(fontx.toDouble()),
                             fontFamily: "Nokora",
                             fontWeight: FontWeight.w300),
                       ),
@@ -622,7 +621,7 @@ class ResultUrv4 extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 0.4.h,
+                height: context.h(0.4),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -631,13 +630,13 @@ class ResultUrv4 extends StatelessWidget {
                     "X4 =",
                     style: TextStyle(
                         fontFamily: "Nokora",
-                        fontSize: 9.w,
+                        fontSize: context.w(9),
                         fontWeight: FontWeight.w200,
                         color: AppColors.textcolor),
                   ),
                   Container(
-                    width: 60.w,
-                    height: 5.1.h,
+                    width: context.w(60),
+                    height: context.h(5.1),
                     decoration: BoxDecoration(
                       color: AppColors.output,
                       borderRadius: BorderRadius.circular(10),
@@ -649,7 +648,7 @@ class ResultUrv4 extends StatelessWidget {
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             color: AppColors.textcolor2,
-                            fontSize: fontx.w,
+                            fontSize: context.w(fontx.toDouble()),
                             fontFamily: "Nokora",
                             fontWeight: FontWeight.w300),
                       ),
@@ -671,19 +670,19 @@ class ResultUrv4 extends StatelessWidget {
                   "Решение",
                   style: TextStyle(
                       fontFamily: "Nokora",
-                      fontSize: 9.w,
+                      fontSize: context.w(9),
                       fontWeight: FontWeight.w200,
                       color: AppColors.textcolor),
                 ),
               ),
               SizedBox(
-                height: 1.h,
+                height: context.h(1),
               ),
               Text(
                 decision.urvshow,
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: fonturv.w,
+                    fontSize: context.w(fonturv.toDouble()),
                     fontWeight: FontWeight.w200,
                     color: AppColors.textcolor),
               ),
@@ -691,7 +690,7 @@ class ResultUrv4 extends StatelessWidget {
                 "решается через замену переменной",
                 style: TextStyle(
                     fontFamily: "Nokora",
-                    fontSize: 4.w,
+                    fontSize: context.w(4),
                     color: AppColors.textcolor),
               ),
               Column(
@@ -701,7 +700,7 @@ class ResultUrv4 extends StatelessWidget {
                     "Нет корней",
                     style: TextStyle(
                         fontFamily: "Nokora",
-                        fontSize: 10.w,
+                        fontSize: context.w(10),
                         color: AppColors.textcolor),
                   ),
                   Row(
@@ -711,7 +710,7 @@ class ResultUrv4 extends StatelessWidget {
                         "Перепроверьте коэффициенты",
                         style: TextStyle(
                             fontFamily: "Nokora",
-                            fontSize: 6.w,
+                            fontSize: context.w(6),
                             color: AppColors.textcolor),
                       ),
                     ],

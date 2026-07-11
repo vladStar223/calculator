@@ -1,5 +1,5 @@
 import 'package:advance_math/advance_math.dart';
-import 'package:calculator/Core/provider/Calculator/sin_cos_tan.dart';
+import 'package:calculator/core/provider/Calculator/sin_cos_tan.dart';
 import 'package:petitparser/petitparser.dart';
 
 import 'arc_sin_cos_tan.dart';
