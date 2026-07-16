@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -20,7 +21,7 @@ class KeyboardCalculator extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 0.7.h,
+          height: context.h(0.7),
         ),
         Row(
           // тут нужна анимация
@@ -43,17 +44,17 @@ class KeyboardCalculator extends StatelessWidget {
                   context.read<Input_number_calculator>().percent_of_number();
                 },
                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
-                    color: AppColors.textcolor, size: 5.w)),
+                    color: AppColors.textcolor, size: context.w(5))),
             Special_InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().division();
                 },
                 myIcon: Icon(MyFlutterApp.desions_,
-                    color: AppColors.textcolor, size: 5.w)),
+                    color: AppColors.textcolor, size: context.w(5))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -87,11 +88,11 @@ class KeyboardCalculator extends StatelessWidget {
                 myIcon: Icon(
                     MyFlutterApp.multiplication_tbget5tyleyh, // знак проценатп
                     color: AppColors.textcolor,
-                    size: 9.w)),
+                    size: context.w(9))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -124,11 +125,11 @@ class KeyboardCalculator extends StatelessWidget {
                 },
                 myIcon: Icon(MyFlutterApp.minus_uk9l2bpabquc, // знак проценатп
                     color: AppColors.textcolor,
-                    size: 5.w)),
+                    size: context.w(5))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -161,11 +162,11 @@ class KeyboardCalculator extends StatelessWidget {
                 },
                 myIcon: Icon(MyFlutterApp.plus_fx7mv1cmdi3i, // знак проценатп
                     color: AppColors.textcolor,
-                    size: 5.w)),
+                    size: context.w(5))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -179,7 +180,7 @@ class KeyboardCalculator extends StatelessWidget {
                       .change_state_calculator_expanded();
                 },
                 myIcon: Icon(MyFlutterApp.maximize_4562502,
-                    color: AppColors.textcolor2, size: 9.w)),
+                    color: AppColors.textcolor2, size: context.w(9))),
             InputButton(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("0");
@@ -219,7 +220,7 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 0.2.h,
+          height: context.h(0.2),
         ),
         Row(
           // тут нужна анимация
@@ -258,7 +259,7 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -302,7 +303,7 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 0.7.h,
+          height: context.h(0.7),
         ),
         Row(
           // тут нужна анимация
@@ -316,7 +317,7 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
                 myIcon: Icon(
                   MyFlutterApp.math,
                   color: AppColors.textcolor2,
-                  size: 6.w,
+                  size: context.w(6),
                 )),
             InputButton_mini(
                 onPressed: () {}, type: 4, number: "AC", font: 5.0),
@@ -332,17 +333,17 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
                   context.read<Input_number_calculator>().percent_of_number();
                 },
                 myIcon: Icon(MyFlutterApp.svg_editor_image__1_,
-                    color: AppColors.textcolor, size: 5.w)),
+                    color: AppColors.textcolor, size: context.w(5))),
             Special_InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().division();
                 },
                 myIcon: Icon(MyFlutterApp.desions_,
-                    color: AppColors.textcolor, size: 4.w)),
+                    color: AppColors.textcolor, size: context.w(4))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -381,11 +382,11 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
                   context.read<Input_number_calculator>().multiplication();
                 },
                 myIcon: Icon(MyFlutterApp.multiplication_tbget5tyleyh,
-                    color: AppColors.textcolor, size: 8.w)),
+                    color: AppColors.textcolor, size: context.w(8))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -424,11 +425,11 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
                   context.read<Input_number_calculator>().minus_press();
                 },
                 myIcon: Icon(MyFlutterApp.minus_uk9l2bpabquc,
-                    color: AppColors.textcolor, size: 5.w)),
+                    color: AppColors.textcolor, size: context.w(5))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -467,11 +468,11 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
                   context.read<Input_number_calculator>().plus_press();
                 },
                 myIcon: Icon(MyFlutterApp.plus_fx7mv1cmdi3i,
-                    color: AppColors.textcolor, size: 4.w)),
+                    color: AppColors.textcolor, size: context.w(4))),
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -483,7 +484,7 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
                   context.read<ChangeFunction>().change_state_calculator();
                 },
                 myIcon: Icon(MyFlutterApp.minimize_4562479,
-                    color: AppColors.textcolor2, size: 9.w)),
+                    color: AppColors.textcolor2, size: context.w(9))),
             InputButton_mini(
                 onPressed: () {
                   context.read<Input_number_calculator>().nums_press("e");
@@ -515,7 +516,7 @@ class KeyboardCalculatorExpanded extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
       ],
     );

@@ -1,4 +1,5 @@
 import 'package:calculator/screens/buttons.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:calculator/screens/Equations_ui/keyboard_eqution.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
@@ -33,12 +34,12 @@ class Menu extends StatelessWidget {
             return const Equations();
           } else if (changeFun.menu == true) {
             return SizedBox(
-                height: 95.h, width: 100.w, child: const MenuChoose());
+                height: context.h(95), width: context.w(100), child: const MenuChoose());
           } else if (changeFun.currency_convert == true) {
             return const Center(child: CurrencyConverter());
           } else if (changeFun.logarithm == true) {
             return SizedBox(
-                height: 95.h, width: 100.w, child: const Logarithm());
+                height: context.h(95), width: context.w(100), child: const Logarithm());
           } else {
             return const Calculators();
           }
@@ -63,7 +64,7 @@ class MenuChoose extends StatelessWidget {
       scrollDirection: Axis.vertical,
       children: [
         SizedBox(
-          height: 4.h,
+          height: context.h(4),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,8 +72,8 @@ class MenuChoose extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: space),
               child: SizedBox(
-                width: 22.w,
-                height: 10.h,
+                width: context.w(22),
+                height: context.h(10),
                 child: ElevatedButton(
                     onPressed: () {
                       changeFun.change_state_equation_function();
@@ -87,7 +88,7 @@ class MenuChoose extends StatelessWidget {
                       "ax² - bx",
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 4.w,
+                          fontSize: context.w(4),
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
                     )),
@@ -96,8 +97,8 @@ class MenuChoose extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: space),
               child: SizedBox(
-                width: 22.w,
-                height: 10.h,
+                width: context.w(22),
+                height: context.h(10),
                 child: ElevatedButton(
                     onPressed: () {
                       changeFun.change_state_logarithm();
@@ -112,7 +113,7 @@ class MenuChoose extends StatelessWidget {
                       "log",
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 4.w,
+                          fontSize: context.w(4),
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
                     )),
@@ -121,8 +122,8 @@ class MenuChoose extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: space),
               child: SizedBox(
-                width: 22.w,
-                height: 10.h,
+                width: context.w(22),
+                height: context.h(10),
                 child: ElevatedButton(
                     onPressed: () {
                       changeFun.change_state_currency_convert();
@@ -136,7 +137,7 @@ class MenuChoose extends StatelessWidget {
                     child: Icon(
                       MyFlutterApp.currency_exchange_3845944,
                       color: AppColors.white,
-                      size: 10.w,
+                      size: context.w(10),
                     )),
               ),
             ),
@@ -156,11 +157,11 @@ class Equations extends StatelessWidget {
     // TODO: implement build
     return Column(
       children: [
-        SizedBox(height: 43.30.h, width: 95.w, child: const AnimatedScreen()),
+        SizedBox(height: context.h(43.30), width: context.w(95), child: const AnimatedScreen()),
         // resuilt_animated_screen(), не используется, но может нужно тебе
         SizedBox(
-          height: 49.7.h,
-          width: 100.w,
+          height: context.h(49.7),
+          width: context.w(100),
           child: const KeyboardEquation(),
         ),
       ],
@@ -508,9 +509,9 @@ class Calculators extends StatelessWidget {
         children: [
           AnimatedCrossFade(
             firstChild: SizedBox(
-                height: 43.39.h, width: 100.w, child: const Calculator()),
+                height: context.h(43.39), width: context.w(100), child: const Calculator()),
             secondChild: SizedBox(
-                height: 30.39.h, width: 100.w, child: const Calculator()),
+                height: context.h(30.39), width: context.w(100), child: const Calculator()),
             crossFadeState: changeOfFunction.calculator
                 ? CrossFadeState.showFirst
                 : CrossFadeState.showSecond,
@@ -518,13 +519,13 @@ class Calculators extends StatelessWidget {
           ),
           AnimatedCrossFade(
               firstChild: SizedBox(
-                height: 50.h,
-                width: 100.w,
+                height: context.h(50),
+                width: context.w(100),
                 child: const KeyboardCalculator(),
               ),
               secondChild: SizedBox(
-                height: 64.h,
-                width: 100.w,
+                height: context.h(64),
+                width: context.w(100),
                 child: const KeyboardCalculatorExpanded(),
               ),
               crossFadeState: changeOfFunction.calculator

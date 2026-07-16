@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -22,13 +23,13 @@ class Logarithm extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(2.w),
+            padding: EdgeInsets.all(context.w(2)),
             child: Text(
               textAlign: TextAlign.center,
               "Решение логарифмов",
               style: TextStyle(
                   color: AppColors.white,
-                  fontSize: 10.w,
+                  fontSize: context.w(10),
                   fontWeight: FontWeight.w100,
                   fontFamily: "Nokora"),
             ),
@@ -41,16 +42,16 @@ class Logarithm extends StatelessWidget {
                 "log",
                 style: TextStyle(
                     color: AppColors.white,
-                    fontSize: 25.w,
+                    fontSize: context.w(25),
                     fontWeight: FontWeight.w100,
                     fontFamily: "Nokora"),
               ),
               SizedBox(
-                width: 1.5.w,
+                width: context.w(1.5),
               ),
               Container(
-                width: 45.w,
-                height: 7.5.h,
+                width: context.w(45),
+                height: context.h(7.5),
                 decoration: BoxDecoration(
                   color: AppColors.buttoncolor1,
                   borderRadius: BorderRadius.circular(10),
@@ -58,7 +59,7 @@ class Logarithm extends StatelessWidget {
                       color: Number.active_coefficient[1]
                           ? AppColors.color_of_border
                           : Colors.transparent,
-                      width: 0.8.w),
+                      width: context.w(0.8)),
                 ),
                 child: TextButton(
                   style: ButtonStyle(
@@ -77,7 +78,7 @@ class Logarithm extends StatelessWidget {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 5.3.w,
+                          fontSize: context.w(5.3),
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
                     ),
@@ -89,11 +90,11 @@ class Logarithm extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: 40.w,
+                width: context.w(40),
               ),
               Container(
-                width: 20.w,
-                height: 6.h,
+                width: context.w(20),
+                height: context.h(6),
                 decoration: BoxDecoration(
                   color: AppColors.buttoncolor1,
                   borderRadius: BorderRadius.circular(10),
@@ -101,7 +102,7 @@ class Logarithm extends StatelessWidget {
                       color: Number.active_coefficient[0]
                           ? AppColors.output
                           : Colors.transparent,
-                      width: 0.8.w),
+                      width: context.w(0.8)),
                 ),
                 child: TextButton(
                   style: ButtonStyle(
@@ -119,7 +120,7 @@ class Logarithm extends StatelessWidget {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           color: AppColors.white,
-                          fontSize: 5.3.w,
+                          fontSize: context.w(5.3),
                           fontFamily: "Nokora",
                           fontWeight: FontWeight.w300),
                     ),
@@ -129,8 +130,8 @@ class Logarithm extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 9.h,
-            width: 100.w,
+            height: context.h(9),
+            width: context.w(100),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -145,7 +146,7 @@ class Logarithm extends StatelessWidget {
                           Number.result,
                           style: TextStyle(
                               color: AppColors.white,
-                              fontSize: 12.w,
+                              fontSize: context.w(12),
                               fontFamily: "Nokora",
                               fontWeight: FontWeight.w300),
                         ),
@@ -154,19 +155,19 @@ class Logarithm extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  width: 100.w,
-                  height: 0.3.h,
+                  width: context.w(100),
+                  height: context.h(0.3),
                   color: AppColors.textcolor,
                 ),
               ],
             ),
           ),
           SizedBox(
-            height: 2.h,
+            height: context.h(2),
           ),
           SizedBox(
-            height: 46.h,
-            width: 100.w,
+            height: context.h(46),
+            width: context.w(100),
             child: KeyboardLogarithm(),
           ),
         ],

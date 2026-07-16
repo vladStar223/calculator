@@ -1,6 +1,6 @@
 import 'dart:ui';
+import 'package:calculator/core/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlurryDialog extends StatelessWidget {
@@ -33,7 +33,7 @@ class BlurryDialog extends StatelessWidget {
               ),
             ),
             content: SizedBox(
-              height: 5.h,
+              height: context.h(5),
               child: Column(
                 children: [
                   Row(
@@ -44,7 +44,7 @@ class BlurryDialog extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: "Nokora",
                             color: Colors.black,
-                            fontSize: 11.sp),
+                            fontSize: context.sp(11)),
                       ),
                     ],
                   ),
@@ -71,7 +71,7 @@ class BlurryDialog extends StatelessWidget {
               ),
             ),
             content: SizedBox(
-              height: 8.h,
+              height: context.h(8),
               child: Column(
                 children: [
                   Text(
@@ -79,10 +79,10 @@ class BlurryDialog extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: "Nokora",
                         color: Colors.black,
-                        fontSize: 11.sp),
+                        fontSize: context.sp(11)),
                   ),
                   SizedBox(
-                    height: 0.3.h,
+                    height: context.h(0.3),
                   ),
                   Row(
                     children: [
@@ -91,7 +91,7 @@ class BlurryDialog extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: "Nokora",
                             color: Colors.black,
-                            fontSize: 10.5.sp),
+                            fontSize: context.sp(10.5)),
                       ),
                     ],
                   ),
@@ -118,7 +118,7 @@ class BlurryDialog extends StatelessWidget {
               ),
             ),
             content: SizedBox(
-              height: 4.h,
+              height: context.h(4),
               child: Column(
                 children: [
                   Text(
@@ -126,7 +126,7 @@ class BlurryDialog extends StatelessWidget {
                     style: TextStyle(
                         fontFamily: "Nokora",
                         color: Colors.black,
-                        fontSize: 12.sp),
+                        fontSize: context.sp(12)),
                   ),
                 ],
               ),
@@ -179,7 +179,7 @@ class BlurryDialog extends StatelessWidget {
               ),
             ),
             content: SizedBox(
-              height: 8.6.h,
+              height: context.h(8.6),
               child: Column(
                 children: [
                   Row(

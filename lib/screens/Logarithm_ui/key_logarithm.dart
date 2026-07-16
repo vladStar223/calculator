@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -30,7 +31,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "7",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -40,7 +41,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "4",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -50,7 +51,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "1",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -71,7 +72,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "8",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -81,7 +82,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "5",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -91,7 +92,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "2",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -112,7 +113,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "9",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -122,7 +123,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "6",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -132,7 +133,7 @@ class KeyboardLogarithm extends StatelessWidget {
                 number: "3",
                 font: 8.0),
             SizedBox(
-              height: 2.5.h,
+              height: context.h(2.5),
             ),
             InputButton(
                 onPressed: () {
@@ -146,8 +147,8 @@ class KeyboardLogarithm extends StatelessWidget {
         Column(
           children: [
             SizedBox(
-              height: 19.h,
-              width: 20.w,
+              height: context.h(19),
+              width: context.w(20),
               child: ElevatedButton(
                 onPressed: () {
                   inputClass.ac_press();
@@ -165,18 +166,18 @@ class KeyboardLogarithm extends StatelessWidget {
                     "AC",
                     style: TextStyle(
                         color: AppColors.textcolor,
-                        fontSize: 8.w,
+                        fontSize: context.w(8),
                         fontFamily: "Nokora"),
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: 4.h,
+              height: context.h(4),
             ),
             SizedBox(
-              height: 19.h,
-              width: 20.w,
+              height: context.h(19),
+              width: context.w(20),
               child: ElevatedButton(
                 onPressed: () {
                   inputClass.delete_press();
@@ -194,7 +195,7 @@ class KeyboardLogarithm extends StatelessWidget {
                     "Del",
                     style: TextStyle(
                         color: AppColors.textcolor,
-                        fontSize: 7.w,
+                        fontSize: context.w(7),
                         fontFamily: "Nokora"),
                   ),
                 ),

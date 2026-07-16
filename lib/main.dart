@@ -1,5 +1,6 @@
 //начало программы
 import 'package:calculator/screens/dialog/about_program.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';

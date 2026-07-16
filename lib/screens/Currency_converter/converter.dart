@@ -1,4 +1,8 @@
 import 'package:calculator/core/provider/provider_domain/Data/get_data.dart';
+import 'package:calculator/core/responsive.dart';
+import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:calculator/theme/icon/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,20 +38,20 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
             return Column(
               children: [
                 SizedBox(
-                  height: 1.h,
+                  height: context.h(1),
                 ),
                 Row(
                   children: [
                     SizedBox(
-                      height: 4.h,
-                      width: 100.w,
+                      height: context.h(4),
+                      width: context.w(100),
                       child: ListTile(
                         title: Text(
                           textAlign: TextAlign.center,
                           data.state_data,
                           style: TextStyle(
                               color: AppColors.white,
-                              fontSize: 3.w,
+                              fontSize: context.w(3),
                               fontWeight: FontWeight.w100,
                               fontFamily: "Nokora"),
                         ),
@@ -74,7 +78,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                   ],
                 ),
                 SizedBox(
-                  height: 45.h,
+                  height: context.h(45),
                 ),
                 Column(
                   children: [
@@ -83,7 +87,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                         "Получите данные для подсчета",
                         style: TextStyle(
                             color: AppColors.white,
-                            fontSize: 6.w,
+                            fontSize: context.w(6),
                             fontWeight: FontWeight.w100,
                             fontFamily: "Nokora"),
                       ),
@@ -99,20 +103,20 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                 Column(
                   children: [
                     SizedBox(
-                      height: 1.h,
+                      height: context.h(1),
                     ),
                     Row(
                       children: [
                         SizedBox(
-                          height: 4.h,
-                          width: 100.w,
+                          height: context.h(4),
+                          width: context.w(100),
                           child: ListTile(
                             title: Text(
                               textAlign: TextAlign.center,
                               data.state_data,
                               style: TextStyle(
                                   color: AppColors.white,
-                                  fontSize: 3.w,
+                                  fontSize: context.w(3),
                                   fontWeight: FontWeight.w100,
                                   fontFamily: "Nokora"),
                             ),
@@ -132,7 +136,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                                       const Duration(seconds: 100)),
                               icon: Icon(
                                 MyFlutterApp.cash_flow_8350947,
-                                size: 6.w,
+                                size: context.w(6),
                                 color: AppColors.white,
                               ),
                             ),
@@ -141,13 +145,13 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                       ],
                     ),
                     SizedBox(
-                      height: 5.h,
+                      height: context.h(5),
                     ),
                     SizedBox(
-                        height: 35.h, width: 100.w, child: const ShowValute()),
+                        height: context.h(35), width: context.w(100), child: const ShowValute()),
                     SizedBox(
-                      height: 2.h,
-                      width: 100.w,
+                      height: context.h(2),
+                      width: context.w(100),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -155,7 +159,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                             "Данные передоставлены",
                             style: TextStyle(
                                 color: AppColors.white,
-                                fontSize: 3.w,
+                                fontSize: context.w(3),
                                 fontWeight: FontWeight.w100,
                                 fontFamily: "Nokora"),
                           ),
@@ -163,7 +167,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                             " ЦБ РФ",
                             style: TextStyle(
                                 color: AppColors.white,
-                                fontSize: 3.w,
+                                fontSize: context.w(3),
                                 fontWeight: FontWeight.w100,
                                 fontFamily: "Nokora"),
                           ),
@@ -171,7 +175,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                       ),
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: context.h(1),
                     ),
                     const KeyboardConvert()
                   ],

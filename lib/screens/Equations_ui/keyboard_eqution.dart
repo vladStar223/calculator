@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:calculator/core/responsive.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import '../../core/provider/Equations/decision_urv.dart';
@@ -17,7 +18,7 @@ class KeyboardEquation extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 0.7.h,
+          height: context.h(0.7),
         ),
         Row(
           // тут нужна анимация
@@ -52,7 +53,7 @@ class KeyboardEquation extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -89,7 +90,7 @@ class KeyboardEquation extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -126,7 +127,7 @@ class KeyboardEquation extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
@@ -163,7 +164,7 @@ class KeyboardEquation extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 1.h,
+          height: context.h(1),
         ),
         Row(
           // тут нужна анимация
