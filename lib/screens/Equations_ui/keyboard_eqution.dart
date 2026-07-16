@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:calculator/core/responsive.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 import '../../core/provider/Equations/decision_urv.dart';
 import '../../core/provider/input_class.dart';
 import '../buttons.dart';

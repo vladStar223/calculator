@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
+
 import 'core/provider/Equations/decision_urv.dart';
 import 'core/provider/Logarith/input_number_log.dart';
 import 'core/provider/Seach/seach.dart';

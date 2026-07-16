@@ -3,6 +3,11 @@ import 'package:calculator/core/responsive.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
+
 import '../../core/provider/Valute/change_valute.dart';
 import '../../core/provider/Valute/decide_valute.dart';
 import '../../core/provider/provider_domain/Data/get_data.dart';

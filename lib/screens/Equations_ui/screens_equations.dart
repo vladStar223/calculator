@@ -2,6 +2,8 @@ import 'package:calculator/theme/color/theme.dart';
 import 'package:calculator/core/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
+
 import '../../core/provider/input_class.dart';
 
 class QuadraticEquation extends StatelessWidget {
